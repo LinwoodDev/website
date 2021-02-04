@@ -21,8 +21,7 @@ const features = [
     imageUrl: 'img/undraw_Sorting_thoughts_re_fgli.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Next future, advanced, serverless, free note app
       </>
     ),
   },
@@ -31,8 +30,7 @@ const features = [
     imageUrl: 'img/undraw_online_test_gba7.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Free, opensource, serverless learning platform
       </>
     ),
   },
