@@ -17,9 +17,21 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
+          to: 'docs/bot/overview',
+          activeBasePath: 'docs/bot',
+          label: 'Bot',
+          position: 'left',
+        },
+        {
+          to: 'docs/butterfly/overview',
+          activeBasePath: 'docs/butterfly',
+          label: 'Butterfly',
+          position: 'left',
+        },
+        {
+          to: 'docs/dev-doctor/overview',
+          activeBasePath: 'docs/dev-doctor',
+          label: 'Dev-Doctor',
           position: 'left',
         },
         {to: 'blog', label: 'Blog', position: 'left'},

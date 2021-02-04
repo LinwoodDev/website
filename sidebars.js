@@ -1,31 +1,23 @@
 module.exports = {
-  docs: [
-    'doc1',
+  bot: [
+    'bot/overview',
     {
       type: 'category',
-      label: 'Bot',
-      items: [
-        'bot/overview',
-        {
+      label: 'Getting started',
+      items: ['bot/getting-started/overview', 'bot/getting-started/adding']
+    },
+    {
+      type: 'category',
+      label: 'Modules',
+      items: [{
           type: 'category',
-          label: 'Getting started',
-          items: ['bot/getting-started/overview', 'bot/getting-started/adding']
+          label: 'Main',
+          items: ['bot/modules/main/overview', 'bot/modules/main/commands']
         },
         {
           type: 'category',
-          label: 'Modules',
-          items: [ 
-            {
-              type: 'category',
-              label: 'Main',
-              items: ['bot/modules/main/overview', 'bot/modules/main/commands', 'bot/modules/main/settings_commands']
-            },
-            {
-              type: 'category',
-              label: 'Karma',
-              items: ['bot/modules/karma/overview', 'bot/modules/karma/commands']
-            }
-          ]
+          label: 'Karma',
+          items: ['bot/modules/karma/overview', 'bot/modules/karma/commands']
         }
       ]
     }

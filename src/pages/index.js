@@ -8,18 +8,17 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
+    title: 'Linwood Bot',
     imageUrl: 'img/undraw_chat_bot_kli5.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Modular, free, opensource, customizable discord bot. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Butterfly',
+    imageUrl: 'img/undraw_Sorting_thoughts_re_fgli.svg',
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -28,8 +27,8 @@ const features = [
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Dev-Doctor',
+    imageUrl: 'img/undraw_online_test_gba7.svg',
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -65,16 +64,6 @@ function Home() {
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/')}>
-              Get Started
-            </Link>
-          </div>
         </div>
       </header>
       <main>
