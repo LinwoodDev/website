@@ -4,7 +4,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Getting started',
-      items: ['bot/getting-started/overview', 'bot/getting-started/adding']
+      items: ['bot/getting-started/overview', 'bot/getting-started/adding', 'bot/getting-started/using']
     },
     {
       type: 'category',
