@@ -2,6 +2,7 @@ module.exports = {
   title: 'Linwood',
   tagline: 'Applications for you',
   url: 'https://linwood.tk',
+  cname: 'linwood.tk',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
