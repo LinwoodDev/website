@@ -1,15 +1,27 @@
 module.exports = {
-  docs: [
-    'doc1',
+  'dev-doctor': [
+    'dev-doctor/overview',
+    'dev-doctor/privacypolicy'
+  ],
+  bot: [
+    'bot/overview',
     {
       type: 'category',
-      label: 'Bot',
-      items: [
-        'bot/overview', 
+      label: 'Getting started',
+      items: ['bot/getting-started/overview', 'bot/getting-started/adding', 'bot/getting-started/using']
+    },
+    {
+      type: 'category',
+      label: 'Modules',
+      items: [{
+          type: 'category',
+          label: 'Main',
+          items: ['bot/modules/main/overview', 'bot/modules/main/commands']
+        },
         {
           type: 'category',
-          label: 'Getting started',
-          items: ['bot/getting-started/overview', "bot/getting-started/adding"]
+          label: 'Karma',
+          items: ['bot/modules/karma/overview', 'bot/modules/karma/commands']
         }
       ]
     }

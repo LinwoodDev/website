@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Linwood Bot',
+    imageUrl: 'img/undraw_chat_bot_kli5.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Modular, free, opensource, customizable discord bot. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Butterfly',
+    imageUrl: 'img/undraw_Sorting_thoughts_re_fgli.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Next future, advanced, serverless, free note app
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Dev-Doctor',
+    imageUrl: 'img/undraw_online_test_gba7.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Free, opensource, serverless learning platform
       </>
     ),
   },
@@ -60,12 +57,12 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Welcome on the Linwood website!">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
+          {/* <div className={styles.buttons}>
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
@@ -74,7 +71,7 @@ function Home() {
               to={useBaseUrl('docs/')}>
               Get Started
             </Link>
-          </div>
+          </div> */}
         </div>
       </header>
       <main>
