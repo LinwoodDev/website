@@ -1,9 +1,34 @@
 module.exports = {
   'dev-doctor': [
     'dev-doctor/overview',
-    'dev-doctor/privacypolicy',
-    'dev-doctor/own-backend',
-    'dev-doctor/backends'
+    {
+      type: 'category',
+      label: 'Backend',
+      items: [
+        'dev-doctor/backend/overview',
+        'dev-doctor/backend/own',
+        'dev-doctor/backend/collection',
+        {
+          type: 'category',
+          label: 'API',
+          items: [
+            'dev-doctor/backend/api/main',
+            'dev-doctor/backend/api/course',
+            'dev-doctor/backend/api/part',
+
+            {
+              type: 'category',
+              label: 'Item',
+              collapsed: false,
+              items: [
+                'dev-doctor/backend/api/item/overview'
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    'dev-doctor/privacypolicy'
   ],
   bot: [
     'bot/overview',
