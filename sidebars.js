@@ -1,7 +1,9 @@
 module.exports = {
   'dev-doctor': [
     'dev-doctor/overview',
-    'dev-doctor/privacypolicy'
+    'dev-doctor/privacypolicy',
+    'dev-doctor/own-backend',
+    'dev-doctor/backends'
   ],
   bot: [
     'bot/overview',
