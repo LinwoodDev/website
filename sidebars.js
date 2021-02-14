@@ -21,7 +21,10 @@ module.exports = {
               label: 'Item',
               collapsed: false,
               items: [
-                'dev-doctor/backend/api/item/overview'
+                'dev-doctor/backend/api/item/overview',
+                'dev-doctor/backend/api/item/text',
+                'dev-doctor/backend/api/item/video',
+                'dev-doctor/backend/api/item/quiz'
               ]
             }
           ]
