@@ -45,3 +45,4 @@ courses:
 | description |             String             |  false   | 1.1.0 |                                                   The description of the current backend. It will show up in the backend store after the title. |
 | icon        | String (png, jpg, svg) or null |  false   | 1.1.0 | The icon will show up in the backend store in the list left to the title, on the details page of the backend store and in the servers settings. |
 | courses     |         Array<String\>         |   true   | 0.1.0 |                                                        The folder names of the courses. With this option the app will iterate above the courses |
+| support_url |             String             |  false   | 1.1.2 |                                                                                                          The current url where you can get help |

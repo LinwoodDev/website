@@ -117,3 +117,4 @@ parts:
 | category      |         Array<String\>         |  false   | 1.2.0 |                        The current category of the course. You can see the categories in the list |
 | private       |            Boolean             |  false   | 1.2.0 |                                                       Controls if the course is shown in the list |
 | parts         |         Array<String\>         |   true   | 0.1.0 |                                       The course contents. This are the folder names of the parts |
+| support_url   |             String             |  false   | 1.1.2 |                   The current url where you can get help. This will override the main support url |
