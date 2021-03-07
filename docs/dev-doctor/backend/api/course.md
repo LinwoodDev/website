@@ -4,11 +4,16 @@ title: Course
 
 ## Example
 
-### JSON
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-`<course>/config.json`
+<Tabs defaultValue="json" values={[
+  { label: 'JSON', value: 'json', },
+  { label: 'YAML', value: 'yaml', },
+]}>
+<TabItem value="json">
 
-````json
+````json title="<course>/config.json"
 {
   "icon": "png",
   "name": "Example course",
@@ -27,11 +32,10 @@ title: Course
 }
 ````
 
-### YAML
+</TabItem>
+<TabItem value="yaml">
 
-`<course>/config.yml`
-
-````yaml
+````yaml title="<course>/config.yml"
 # The icon of the backend. Supported values are [png, jpg, svg, null]
 icon: png
 
@@ -101,6 +105,9 @@ parts:
 - part-2
 
 ````
+
+</TabItem>
+</Tabs>
 
 ## Options
 

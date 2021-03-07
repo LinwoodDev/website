@@ -8,9 +8,18 @@ Extends [Item](overview)
 
 ### JSON
 
-In the items option in the [part](../part): `<course>/<part>/config.json`
+In the items option in the [part](../part)
 
-```json
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="json" values={[
+  { label: 'JSON', value: 'json', },
+  { label: 'YAML', value: 'yaml', },
+]}>
+<TabItem value="json">
+
+```json title="<course>/<part>/config.json"
 {
     "name": "Welcome",
     "description": "Welcome to the course",
@@ -20,17 +29,19 @@ In the items option in the [part](../part): `<course>/<part>/config.json`
 }
 ```
 
-### YAML
+</TabItem>
+<TabItem value="yaml">
 
-In the items option in the [part](../part): `<course>/<part>/config.yml`
-
-```yaml
+```yaml title="<course>/<part>/config.yml"
 name: Welcome
 description: Welcome to the course
 type: video
 source: youtube
 url: ScMzIvxBSi4
 ```
+
+</TabItem>
+</Tabs>
 
 ## Options
 

@@ -3,12 +3,16 @@ title: Part
 ---
 
 ## Example
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### JSON
+<Tabs defaultValue="json" values={[
+  { label: 'JSON', value: 'json', },
+  { label: 'YAML', value: 'yaml', },
+]}>
+<TabItem value="json">
 
-`<course>/<part>/config.json`
-
-```json
+```json title="<course>/<part>/config.json"
 {
   "name": "Part 1",
   "description": "This is a description",
@@ -81,11 +85,10 @@ title: Part
 }
 ```
 
-### YAML
+</TabItem>
+<TabItem value="yaml">
 
-`<course>/<part>/config.yml`
-
-```yaml
+```yaml title="<course>/<part>/config.yml"
 # The name of the current part. The name will stand on the sidebar
 name: Part 1
 
@@ -134,6 +137,9 @@ items:
     - name: C
     - name: D
 ```
+
+</TabItem>
+</Tabs>
 
 ## Options
 
