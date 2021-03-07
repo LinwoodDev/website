@@ -6,11 +6,18 @@ Extends [Item](overview)
 
 ## Example
 
-### JSON
+In the items option in the [part](../part)
 
-In the items option in the [part](../part): `<course>/<part>/config.json`
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-```json
+<Tabs defaultValue="json" values={[
+  { label: 'JSON', value: 'json', },
+  { label: 'YAML', value: 'yaml', },
+]}>
+<TabItem value="json">
+
+```json title="<course>/<part>/config.json"
 {
     "name": "Text",
     "type": "text",
@@ -18,16 +25,18 @@ In the items option in the [part](../part): `<course>/<part>/config.json`
 }
 ```
 
-### YAML
+</TabItem>
+<TabItem value="yaml">
 
-In the items option in the [part](../part): `<course>/<part>/config.yml`
-
-```yaml
+```yaml title="<course>/<part>/config.yml"
 name: Text
 type: text
 text: >
   Here you can write something. Markdown is supported!
 ```
+
+</TabItem>
+</Tabs>
 
 ## Options
 

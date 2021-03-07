@@ -3,11 +3,16 @@ title: Main
 ---
 ## Example
 
-### JSON
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-`config.json`
+<Tabs defaultValue="json" values={[
+  { label: 'JSON', value: 'json', },
+  { label: 'YAML', value: 'yaml', },
+]}>
+<TabItem value="json">
 
-```json
+```json title="config.json"
 {
     "name": "Dev-Doctor",
     "description": "The sample backend of dev-doctor",
@@ -19,11 +24,10 @@ title: Main
 }
 ```
 
-### YAML
+</TabItem>
+<TabItem value="yaml">
 
-`config.yml`
-
-```yaml
+```yaml title="config.yml"
 # The name of the current backend
 name: 'Dev-Doctor'
 # The description of the current backend
@@ -36,6 +40,9 @@ courses:
 - example
 - example2
 ```
+
+</TabItem>
+</Tabs>
 
 ## Options
 
