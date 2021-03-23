@@ -6,8 +6,6 @@ Extends [Item](overview)
 
 ## Example
 
-### JSON
-
 In the items option in the [part](../part)
 
 import Tabs from '@theme/Tabs';
@@ -45,7 +43,7 @@ url: ScMzIvxBSi4
 
 ## Options
 
-| Name   |       Type       | Required | Since |                                                       Description |
-| :----- | :--------------: | :------: | :---: | ----------------------------------------------------------------: |
-| source | String (youtube) |   true   | 0.1.0 |           The source of the file. Currently there is only youtube |
-| url    |      String      |   true   | 0.1.0 | The current url of the file. On youtube it is the id of the video |
+| Name   |         Type          | Required | Since |                                                       Description |
+| :----- | :-------------------: | :------: | :---: | ----------------------------------------------------------------: |
+| source | String (youtube, url) |   true   | 0.1.0 |           The source of the file. Currently there is only youtube |
+| url    |        String         |   true   | 0.1.0 | The current url of the file. On youtube it is the id of the video |
