@@ -109,7 +109,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/LinwoodCloud/website/edit/master/',
+            'https://github.com/LinwoodCloud/website/edit/main/',
         },
         blog: {
           feedOptions: {
@@ -119,7 +119,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/LinwoodCloud/website/edit/master/',
+            'https://github.com/LinwoodCloud/website/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
