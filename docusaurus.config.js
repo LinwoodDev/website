@@ -29,8 +29,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/dev-doctor/overview',
-          activeBasePath: 'docs/dev-doctor',
+          href: 'https://docs.dev-doctor.cf',
           label: 'Dev-Doctor',
           position: 'left',
         },
