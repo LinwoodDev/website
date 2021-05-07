@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: 'Linwood Bot',
-    imageUrl: 'img/undraw_chat_bot_kli5.svg',
+    imageUrl: 'img/Bot.svg',
     description: (
       <>
         Modular, free, opensource, customizable discord bot. 
@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: 'Butterfly',
-    imageUrl: 'img/undraw_Sorting_thoughts_re_fgli.svg',
+    imageUrl: 'img/Butterfly.svg',
     description: (
       <>
         Next future, advanced, serverless, free note app
@@ -27,13 +27,31 @@ const features = [
   },
   {
     title: 'Dev-Doctor',
-    imageUrl: 'img/undraw_online_test_gba7.svg',
+    imageUrl: 'img/Dev-Doctor.svg',
     description: (
       <>
         Free, opensource, serverless learning platform
       </>
     ),
   },
+  {
+    title: 'Flow',
+    imageUrl: 'img/Flow.svg',
+    description: (
+      <>
+        Feature rich event, group and time managment system
+      </>
+    ),
+  },
+  {
+    title: 'Discord',
+    imageUrl: 'img/Discord.svg',
+    description: (
+      <>
+        A project without a community isn't a good project. You can join the discord and talk to each other!
+      </>
+    ),
+  }
 ];
 
 function Feature({imageUrl, title, description}) {
