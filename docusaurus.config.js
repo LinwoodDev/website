@@ -16,16 +16,20 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {
+        /*{
           to: 'docs/bot/overview',
           activeBasePath: 'docs/bot',
           label: 'Bot',
           position: 'left',
+        },*/
+        {
+          href: 'https://docs.butterfly.linwood.tk',
+          label: 'Butterfly',
+          position: 'left',
         },
         {
-          to: 'docs/butterfly/overview',
-          activeBasePath: 'docs/butterfly',
-          label: 'Butterfly',
+          href: 'https://docs.flow.linwood.tk',
+          label: 'Flow',
           position: 'left',
         },
         {
