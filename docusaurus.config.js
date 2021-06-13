@@ -37,6 +37,11 @@ module.exports = {
           label: 'Dev-Doctor',
           position: 'left',
         },
+        {
+          href: 'https://launch.linwood.tk',
+          label: 'Launcher',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/LinwoodCloud/website.git',
