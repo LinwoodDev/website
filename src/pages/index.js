@@ -44,6 +44,15 @@ const features = [
     ),
   },
   {
+    title: 'Launcher',
+    imageUrl: 'img/Launcher.svg',
+    description: (
+      <>
+        Opensource start page
+      </>
+    ),
+  },
+  {
     title: 'Discord',
     imageUrl: 'img/Discord.svg',
     description: (
