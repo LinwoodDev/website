@@ -38,7 +38,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://launch.linwood.tk',
+          href: 'https://docs.launch.linwood.tk',
           label: 'Launcher',
           position: 'left',
         },
