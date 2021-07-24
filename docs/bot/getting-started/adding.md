@@ -2,4 +2,4 @@
 title: Adding the bot
 ---
 
-* Click [here](//invite.linwood.tk)
+* Click [here](//invite.linwood.dev)
