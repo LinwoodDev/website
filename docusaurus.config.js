@@ -23,22 +23,22 @@ module.exports = {
           position: 'left',
         },*/
         {
-          href: 'https://docs.butterfly.linwood.tk',
+          href: 'https://docs.butterfly.linwood.dev',
           label: 'Butterfly',
           position: 'left',
         },
         {
-          href: 'https://docs.flow.linwood.tk',
+          href: 'https://docs.flow.linwood.dev',
           label: 'Flow',
           position: 'left',
         },
         {
-          href: 'https://docs.dev-doctor.cf',
+          href: 'https://docs.dev-doctor.linwood.dev',
           label: 'Dev-Doctor',
           position: 'left',
         },
         {
-          href: 'https://docs.launch.linwood.tk',
+          href: 'https://docs.launch.linwood.dev',
           label: 'Launcher',
           position: 'left',
         },
@@ -71,7 +71,7 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.linwood.tk',
+              href: 'https://discord.linwood.dev',
             },
             {
               label: 'Twitter',
