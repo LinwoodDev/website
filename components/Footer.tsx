@@ -6,7 +6,6 @@ import {
     Stack,
     Text,
     Flex,
-    Tag,
     useColorModeValue,
     Image,
   } from '@chakra-ui/react';
