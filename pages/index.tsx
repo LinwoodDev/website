@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import { Container, Stack, Box, Heading, Text, Button, Link, useColorModeValue } from '@chakra-ui/react';
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
@@ -64,6 +65,7 @@ const Home: NextPage = () => {
           </Stack>
         </Container>
       </main>
+      <Footer />
     </div>
   )
 }
