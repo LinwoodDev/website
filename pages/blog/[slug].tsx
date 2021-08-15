@@ -7,6 +7,7 @@ import { getAllPosts, getPostBySlug } from '../../lib/blog'
 import React from 'react'
 import { Container, Heading, Image, Text } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 type Props = {
   post: PostType
