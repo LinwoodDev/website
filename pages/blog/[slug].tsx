@@ -17,7 +17,6 @@ const Post = ({ post }: Props) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
-  console.log(post.content);
   return (
     <div>
       <Navbar />
@@ -43,6 +42,7 @@ const Post = ({ post }: Props) => {
           </article>
         </>
       )}
+      <Footer />
     </div>
   )
 }

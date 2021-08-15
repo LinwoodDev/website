@@ -15,7 +15,9 @@ import {
     useColorMode,
     useBreakpointValue,
     useDisclosure,
+    Image,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import {
     HamburgerIcon,
     CloseIcon,
@@ -45,7 +47,6 @@ export default function Navbar() {
                 borderColor={useColorModeValue('gray.200', 'gray.900')}
                 align={'center'}>
                 <Flex
-                    flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
                     display={{ base: 'flex', md: 'none' }}>
                     <IconButton
@@ -58,12 +59,14 @@ export default function Navbar() {
                     />
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                    <Text
-                        textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-                        fontFamily={'heading'}
-                        color={useColorModeValue('gray.800', 'white')}>
-                        Logo
-                    </Text>
+                    <Stack flexDirection="row" alignItems="center">
+                        <Image ml={2} mr={4} src="/logo.svg" style={{ maxHeight: "2em" }} />{' '}
+                        <Text as={NextLink} href="/"
+                            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+                            fontFamily={'heading'}
+                            color={useColorModeValue('gray.800', 'white')}>Linwood Development
+                        </Text>
+                    </Stack>
                     <Box flex="1">
                         <Flex flex="1" display={{ base: 'none', md: 'flex' }} ml={10} justifyContent="center" alignItems="center">
                             <DesktopNav />

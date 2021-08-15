@@ -1,5 +1,6 @@
 import { Box, Container, Heading, LinkBox, LinkOverlay, Stack, Text } from '@chakra-ui/react'
 import Head from 'next/head'
+import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import { getAllPosts } from '../../lib/blog'
 import PostType from '../../types/post'
@@ -33,6 +34,7 @@ const Index = ({ allPosts }: Props) => {
                     </Stack>
                 </Container>
             </main>
+            <Footer />
         </div>
     )
 }
