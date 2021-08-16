@@ -32,7 +32,7 @@ const Post = ({ post }: Props) => {
               </title>
               <meta property="og:image" content={post.ogImage?.url} />
             </Head>
-            <Container maxW="3xl" p={4} pt={12}>
+            <Container maxW="3xl" p={4} pt={12} pb={24} minH="100vh">
               <Image src={post.coverImage} />
               <Heading p={8} as="h1">{post.title}</Heading>
               <Text p={4}>{post.date} - {post.author}</Text>
