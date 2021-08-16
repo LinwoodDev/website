@@ -4,6 +4,7 @@ import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import { getAllPosts } from '../../lib/blog'
 import PostType from '../../types/post'
+import NextLink from 'next/link';
 
 
 type Props = {
@@ -24,7 +25,6 @@ const Index = ({ allPosts }: Props) => {
                     <Stack
                         as={Box}
                         py={{ base: 20, md: 36 }}>
-                        {allPosts?.toString()}
                         {allPosts.map((post) => (
                             <BlogEntryCard
                                 key={post.slug}
@@ -61,11 +61,13 @@ interface CardProps {
 function BlogEntryCard({ post }: CardProps) {
     return (
         <LinkBox borderWidth="1px" borderRadius="lg" overflow="hidden" p={8}>
-            <LinkOverlay href={"/blog/" + post.slug}>
-                <Heading fontSize="xl">
-                    {post.title}
-                </Heading>
-            </LinkOverlay>
+            <NextLink href={"/blog/" + post.slug} passHref>
+                <LinkOverlay>
+                    <Heading fontSize="xl">
+                        {post.title}
+                    </Heading>
+                </LinkOverlay>
+            </NextLink>
             <Text>
                 {post.excerpt}
             </Text>
