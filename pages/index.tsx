@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import { Container, Stack, Box, Heading, Text, Button, Flex } from '@chakra-ui/react';
+import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem } from '@chakra-ui/react';
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             py={{ base: 20, md: 36 }}>
             <Heading
               fontWeight={600}
-              fontSize="6xl"
+              fontSize={{ base: "5xl", md: "6xl" }}
               lineHeight={'110%'}>
               Linwood{' '}
               <Text as={'span'} color={'green.400'}>
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
             </Stack>
           </Stack>
         </Container>
-        <Container maxW={'3xl'} id="contact">
+        <Container maxW={'4xl'} id="contact">
           <Stack
             as={Box}
             spacing={{ base: 8, md: 14 }}
@@ -64,10 +64,15 @@ const Home: NextPage = () => {
               lineHeight={'110%'}>
               Apps
             </Heading>
-            <Stack direction="row" justifyContent="center" spacing={3} alignContent="stretch">
-              <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
-              <ProjectCard name="Launch" description=" Opensource start page " source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
-            </Stack>
+            <Wrap justifyContent="center" spacing={3} alignContent="stretch">
+              <WrapItem>
+                <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
+              </WrapItem>
+
+              <WrapItem>
+                <ProjectCard name="Launch" description=" Opensource start page " source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
+              </WrapItem>
+            </Wrap>
             <Heading
               fontWeight={600}
               as="h3"
@@ -76,9 +81,11 @@ const Home: NextPage = () => {
               lineHeight={'110%'}>
               Bot
             </Heading>
-            <Stack direction="row" justifyContent="center" spacing={3} alignContent="stretch">
-              <ProjectCard name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
-            </Stack>
+            <Wrap justifyContent="center" spacing={3} alignContent="stretch">
+              <WrapItem>
+                <ProjectCard name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
+              </WrapItem>
+            </Wrap>
           </Stack>
         </Container>
         <Container maxW={'3xl'} id="contact">
@@ -118,7 +125,7 @@ interface ProjectCardProps {
 export function ProjectCard({ name, description, website, source }: ProjectCardProps): ReactElement {
   const router = useRouter();
   return (
-    <Flex flexDir="column" p={8} w="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Flex flexDir="column" p={8} w="sm" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" minH="100%">
       <Heading fontSize="lg">
         {name}
       </Heading>
