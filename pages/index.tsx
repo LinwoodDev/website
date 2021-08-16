@@ -36,14 +36,10 @@ const Home: NextPage = () => {
               </Text>
             </Heading>
             <Stack direction="row" justifyContent="center" spacing={3} alignItems="center">
-              <Button colorScheme="green" size="lg">Projects</Button>
               <Button
-                as={Link}
-                _hover={{
-                  textDecoration: 'none',
-                  bg: useColorModeValue('gray.200', 'gray.700'),
-                }}
-                href={'#contact'} size="lg">Contact</Button>
+                onClick={() => router.push('#projects')} colorScheme="green" size="lg">Projects</Button>
+              <Button
+                onClick={() => router.push('#contact')} size="lg">Contact</Button>
             </Stack>
           </Stack>
         </Container>
