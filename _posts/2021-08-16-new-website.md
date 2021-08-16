@@ -1,6 +1,6 @@
 ---
-title: Dev-Doctor 1.1.1
-date: "2021-02-17"
+title: Dev-Doctor 1.0 Released
+date: "2021-02-13"
 author: 
     name: CodeDoctorDE
     url: https://github.com/CodeDoctorDE
@@ -8,6 +8,5 @@ author:
 tags: [dev-doctor]
 ---
 
-Fixing translation bug
-
-See more here: <https://github.com/LinwoodCloud/dev_doctor/releases/tag/1.1.1>
+Hello, 
+Linwood has a new website. Try it out!

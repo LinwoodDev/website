@@ -5,5 +5,8 @@ module.exports = withPWA({
   pwa: {
     dest: 'public'
   },
+  images: {
+    domains: ['avatars1.githubusercontent.com'],
+  },
   reactStrictMode: true,
 })
