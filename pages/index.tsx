@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import { Container, Stack, Box, Heading, Text, Button, Link, useColorModeValue, Flex } from '@chakra-ui/react';
+import { Container, Stack, Box, Heading, Text, Button, Flex } from '@chakra-ui/react';
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
