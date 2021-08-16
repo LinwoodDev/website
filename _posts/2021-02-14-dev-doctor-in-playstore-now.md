@@ -1,9 +1,10 @@
 ---
 title: Dev-Doctor in Play Store now
-author: CodeDoctorDE
-author_title: Linwood Core Team
-author_url: https://github.com/CodeDoctorDE
-author_image_url: https://avatars1.githubusercontent.com/u/20452814?v=4
+date: "2021-02-14"
+author: 
+    name: CodeDoctorDE
+    url: https://github.com/CodeDoctorDE
+    image: https://avatars1.githubusercontent.com/u/20452814?v=4
 tags: [dev-doctor]
 ---
 

@@ -18,6 +18,7 @@ import {
     Image,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import NextImage from 'next/image';
 import {
     HamburgerIcon,
     CloseIcon,
@@ -61,10 +62,13 @@ export default function Navbar() {
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
                     <NextLink href="/" passHref>
-                        <Link>
+                        <Link
+                            _hover={{
+                                textDecoration: 'none'
+                            }}>
                             <Stack flexDirection="row" alignItems="center">
-                                <Image ml={2} mr={4} src="/logo.svg" style={{ maxHeight: "2em" }} />{' '}
-                                <Text display={{ base: 'flex', md: 'none' }}
+                                <NextImage src="/logo.svg" alt="Logo" height="32" width="32" />{' '}
+                                <Text pl={2} display={{ base: 'flex', md: 'none' }}
                                     textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                                     fontFamily={'heading'}
                                     color={useColorModeValue('gray.800', 'white')}>
@@ -115,7 +119,7 @@ const DesktopNav = () => {
                                 fontSize={'sm'}
                                 fontWeight={500}
                                 color={linkColor}
-                                onClick={(event) => router.push(navItem.href || '#')}
+                                onClick={() => router.push(navItem.href || '#')}
                                 _hover={{
                                     textDecoration: 'none',
                                     color: linkHoverColor,
@@ -153,15 +157,15 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
     return (
-        <NextLink
-            href={href || '#'} passHref>
-            <Link
-                role={'group'}
-                display={'block'}
-                p={2}
-                rounded={'md'}
-                _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}>
-                <Stack direction={'row'} align={'center'}>
+        <Link
+            role={'group'}
+            display={'block'}
+            p={2}
+            rounded={'md'}
+            _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}>
+            <Stack direction={'row'} align={'center'}>
+                <NextLink
+                    href={href || '#'} passHref>
                     <Box>
                         <Text
                             transition={'all .3s ease'}
@@ -171,19 +175,19 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
                         </Text>
                         <Text fontSize={'sm'}>{subLabel}</Text>
                     </Box>
-                    <Flex
-                        transition={'all .3s ease'}
-                        transform={'translateX(-10px)'}
-                        opacity={0}
-                        _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-                        justify={'flex-end'}
-                        align={'center'}
-                        flex={1}>
-                        <Icon color={'green.400'} w={5} h={5} as={ChevronRightIcon} />
-                    </Flex>
-                </Stack>
-            </Link>
-        </NextLink>
+                </NextLink>
+                <Flex
+                    transition={'all .3s ease'}
+                    transform={'translateX(-10px)'}
+                    opacity={0}
+                    _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+                    justify={'flex-end'}
+                    align={'center'}
+                    flex={1}>
+                    <Icon color={'green.400'} w={5} h={5} as={ChevronRightIcon} />
+                </Flex>
+            </Stack>
+        </Link>
     );
 };
 
@@ -205,17 +209,17 @@ const MobileNavItem = ({ label, subLabel, children, href }: NavItem) => {
 
     return (
         <Stack spacing={4} onClick={children && onToggle}>
-            <NextLink
-                href={href ?? '#'}
-                passHref>
-                <Flex
-                    py={2}
-                    as={Link}
-                    justify={'space-between'}
-                    align={'center'}
-                    _hover={{
-                        textDecoration: 'none',
-                    }}>
+            <Flex
+                py={2}
+                as={Link}
+                justify={'space-between'}
+                align={'center'}
+                _hover={{
+                    textDecoration: 'none',
+                }}>
+                <NextLink
+                    href={href ?? '#'}
+                    passHref>
                     <Text
                         fontWeight={600}
                         color={useColorModeValue('gray.600', 'gray.200')}>
@@ -226,17 +230,17 @@ const MobileNavItem = ({ label, subLabel, children, href }: NavItem) => {
                         }
                         {!subLabel && label}
                     </Text>
-                    {children && (
-                        <Icon
-                            as={ChevronDownIcon}
-                            transition={'all .25s ease-in-out'}
-                            transform={isOpen ? 'rotate(180deg)' : ''}
-                            w={6}
-                            h={6}
-                        />
-                    )}
-                </Flex>
-            </NextLink>
+                </NextLink>
+                {children && (
+                    <Icon
+                        as={ChevronDownIcon}
+                        transition={'all .25s ease-in-out'}
+                        transform={isOpen ? 'rotate(180deg)' : ''}
+                        w={6}
+                        h={6}
+                    />
+                )}
+            </Flex>
 
             <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
                 <Stack

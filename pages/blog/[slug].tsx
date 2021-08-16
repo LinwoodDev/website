@@ -5,9 +5,10 @@ import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 import { getAllPosts, getPostBySlug } from '../../lib/blog'
 import React from 'react'
-import { Container, Heading, Image, Text } from '@chakra-ui/react'
+import { Box, Container, Heading, Image, Text } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import AuthorDisplay from '../../components/AuthorDisplay'
 
 type Props = {
   post: PostType
@@ -35,8 +36,11 @@ const Post = ({ post }: Props) => {
             <Container maxW="3xl" p={4} pt={12} pb={24} minH="100vh">
               <Image src={post.coverImage} />
               <Heading p={8} as="h1">{post.title}</Heading>
-              <Text p={4}>{post.date} - {post.author}</Text>
-              <Text>
+              <Box p={4}>
+              <AuthorDisplay author={post.author} />
+              </Box>
+              <Text p={4}>{post.date}</Text>
+              <Text p={4}>
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
               </Text>
             </Container>

@@ -77,7 +77,7 @@ const Home: NextPage = () => {
               fontWeight={600}
               as="h3"
               fontSize="3xl"
-              id="apps"
+              id="bot"
               lineHeight={'110%'}>
               Bot
             </Heading>
