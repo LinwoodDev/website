@@ -8,5 +8,5 @@ author:
 tags: [dev-doctor]
 ---
 
-Hello, 
+Hello,
 Linwood has a new website. Try it out!

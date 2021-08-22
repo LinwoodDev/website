@@ -13,7 +13,7 @@ import {
   
   const Logo = (props: any) => {
     return (
-      <Image src="/logo.svg" />
+      <Image alt="Logo" src="/logo.svg" />
     );
   };
   

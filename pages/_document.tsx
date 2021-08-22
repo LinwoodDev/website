@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 const APP_NAME = 'Linowod Development'
 const APP_DESCRIPTION = 'Linwood home page'
 
-export default class extends Document {
+export default class WebsiteDocument extends Document {
   static getInitialProps(ctx : DocumentContext) {
     return Document.getInitialProps(ctx)
   }
