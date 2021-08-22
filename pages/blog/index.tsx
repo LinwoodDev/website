@@ -2,7 +2,7 @@ import { Box, Container, Heading, LinkBox, LinkOverlay, Stack, Text } from '@cha
 import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
-import { getAllPosts } from '../../lib/blog'
+import { getAllPosts, generateRssFeed } from '../../lib/blog'
 import PostType from '../../types/post'
 import NextLink from 'next/link';
 
@@ -40,6 +40,7 @@ const Index = ({ allPosts }: Props) => {
 }
 export default Index;
 export const getStaticProps = async () => {
+    await generateRssFeed();
     const allPosts = getAllPosts([
         'title',
         'date',
@@ -74,3 +75,4 @@ function BlogEntryCard({ post }: CardProps) {
         </LinkBox>
     )
 }
+

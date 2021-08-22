@@ -2,3 +2,6 @@ sw*.js
 sw*.js.map
 workbox*.js
 workbox*.js.map
+blog/atom.xml
+blog/feed.json
+blog/feed.xml
