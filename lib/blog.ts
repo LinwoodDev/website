@@ -81,16 +81,6 @@ export const generateRssFeed = () => {
 
   posts.forEach((post) => {
     const url = `${siteURL}/blog/${post.slug}`;
-    console.log({
-      title: post.title,
-      id: post.slug,
-      link: url,
-      description: post.excerpt ?? "",
-      content: post.content ?? "",
-      author: [author],
-      contributor: [author],
-      date: post.date ? new Date(post.date) : new Date(),
-    });
     feed.addItem({
       title: post.title,
       id: post.slug,
