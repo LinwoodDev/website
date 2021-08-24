@@ -34,7 +34,9 @@ const Post = ({ post }: Props) => {
               <meta property="og:image" content={post.ogImage?.url} />
             </Head>
             <Container maxW="3xl" p={4} pt={12} pb={24} minH="100vh">
-              <Image src={post.coverImage} alt="Post logo" />
+              {post.coverImage &&
+                <Image src={post.coverImage} alt="Post logo" />
+              }
               <Heading p={8} as="h1">{post.title}</Heading>
               <Box p={4}>
               <AuthorDisplay author={post.author} />
