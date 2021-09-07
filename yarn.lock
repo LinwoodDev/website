@@ -1675,7 +1675,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/portal@npm:1.2.9":
+"@chakra-ui/portal@npm:1.2.9, @chakra-ui/portal@npm:^1.2.9":
   version: 1.2.9
   resolution: "@chakra-ui/portal@npm:1.2.9"
   dependencies:
@@ -1735,7 +1735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/react-env@npm:1.0.6":
+"@chakra-ui/react-env@npm:1.0.6, @chakra-ui/react-env@npm:^1.0.6":
   version: 1.0.6
   resolution: "@chakra-ui/react-env@npm:1.0.6"
   dependencies:
@@ -2684,10 +2684,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^16.7.10":
+"@types/node@npm:*":
   version: 16.7.10
   resolution: "@types/node@npm:16.7.10"
   checksum: 0518803caa1a14f4070e770a280eda1c4b4581a425cbda481cdd54b1f34a7ea497ff067fd23b90e3d4f4fdcfba15c1316182875e9cf9f5b2e880de1e595de053
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.7.13":
+  version: 16.7.13
+  resolution: "@types/node@npm:16.7.13"
+  checksum: 15dc28aa44674d3f49dcca4a6523b6ab1ef9bbea5c659057bec13153e1873718d6b62ab0ea57a3d57ee37f0f1136ae30e3ea503df43b0afa3ae437c8750be7f5
   languageName: node
   linkType: hard
 
@@ -2705,7 +2712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.0, @types/react@npm:^17.0.19":
+"@types/react@npm:^17.0.0":
   version: 17.0.19
   resolution: "@types/react@npm:17.0.19"
   dependencies:
@@ -2713,6 +2720,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: d5af52623dd863e5a9f64eb72979f19c21e03012e25ee93adc93f664ed7976e81b654128dc653b225ad5ba2aaae24e0febe37face272bb051d6289e23ed7177d
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^17.0.20":
+  version: 17.0.20
+  resolution: "@types/react@npm:17.0.20"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: e342bfaa4fe052fc3a445ea49f746f3fd82cfc9c8028eae139a3e0763ead1871f353bd40da2a472f23d2b52544d2781d40e3159c0703e7e2ff08c13f067a3b9c
   languageName: node
   linkType: hard
 
@@ -8851,11 +8869,11 @@ typescript@^4.4.2:
 
 "typescript@patch:typescript@^4.4.2#~builtin<compat/typescript>":
   version: 4.4.2
-  resolution: "typescript@patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=d8b4e7"
+  resolution: "typescript@patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 11d6ab6e868117908c388401e2ac06d503c5c8709115ab80ee69a1a6352c1f98471d1e595636bfe6a2d6b20b03a44df6bb2d3d198cea97c0c328968cd18d2b70
+  checksum: 3109ae25705746996007161cdd3271857db4f40356b894e34d4cabc216bf9e251f53e0bb6e48df2450b5e3fd948dcbee716a616a4ad4cf7251292025e6163cb1
   languageName: node
   linkType: hard
 
@@ -9227,12 +9245,14 @@ typescript@^4.4.2:
   resolution: "website@workspace:."
   dependencies:
     "@chakra-ui/icons": ^1.0.15
+    "@chakra-ui/portal": ^1.2.9
     "@chakra-ui/react": ^1.6.7
+    "@chakra-ui/react-env": ^1.0.6
     "@chakra-ui/system": ^1.7.3
     "@emotion/react": ^11
     "@emotion/styled": ^11
-    "@types/node": ^16.7.10
-    "@types/react": ^17.0.19
+    "@types/node": ^16.7.13
+    "@types/react": ^17.0.20
     eslint: ^7.32.0
     eslint-config-next: ^11.1.2
     feed: ^4.2.2
