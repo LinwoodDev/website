@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/portal": "^1.2.9",
     "@chakra-ui/react": "^1.6.7",
+    "@chakra-ui/react-env": "^1.0.6",
+    "@chakra-ui/system": "^1.7.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "feed": "^4.2.2",
@@ -25,12 +28,11 @@
     "remark-html": "^14.0.0"
   },
   "devDependencies": {
-    "@chakra-ui/system": "^1.7.3",
-    "@types/node": "^16.7.10",
-    "@types/react": "^17.0.19",
+    "@types/node": "^16.7.13",
+    "@types/react": "^17.0.20",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
     "typescript": "^4.4.2"
   },
-  "packageManager": "yarn@3.0.1"
+  "packageManager": "yarn@3.0.2"
 }
