@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem } from '@chakra-ui/react';
+import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem, Image } from '@chakra-ui/react';
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
@@ -45,6 +45,7 @@ const Home: NextPage = () => {
         </Container>
         <Container maxW={'4xl'} id="contact">
           <Stack
+            alignItems="stretch"
             as={Box}
             spacing={{ base: 8, md: 14 }}
             py={{ base: 20, md: 36 }}>
@@ -64,13 +65,14 @@ const Home: NextPage = () => {
               lineHeight={'110%'}>
               Apps
             </Heading>
+            <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
             <Wrap justifyContent="center" spacing={3} alignContent="stretch">
               <WrapItem>
                 <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
               </WrapItem>
 
               <WrapItem>
-                <ProjectCard name="Launch" description=" Opensource start page " source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
+                <ProjectCard name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
               </WrapItem>
             </Wrap>
             <Heading
@@ -120,12 +122,17 @@ interface ProjectCardProps {
   description: string;
   website?: string;
   source?: string;
+  big?: boolean;
+  banner?: string;
 }
 
-export function ProjectCard({ name, description, website, source }: ProjectCardProps): ReactElement {
+export function ProjectCard({ name, description, website, source, big, banner }: ProjectCardProps): ReactElement {
   const router = useRouter();
   return (
-    <Flex flexDir="column" p={8} w="sm" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" minH="100%">
+    <Flex flexDir="column" p={8} w={big ? "inherit" : "sm"} maxW={big ? "inherit" : "sm"} borderWidth="1px" borderRadius="lg" overflow="hidden" minH="100%">
+      {banner &&
+        <Image src={banner} layout="fixed" width="100%" height="100%" p={8} />
+      }
       <Heading fontSize="lg">
         {name}
       </Heading>
