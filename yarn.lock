@@ -6261,8 +6261,8 @@ __metadata:
   linkType: hard
 
 "mdast-util-to-hast@npm:^12.0.0":
-  version: 12.1.0
-  resolution: "mdast-util-to-hast@npm:12.1.0"
+  version: 12.0.0
+  resolution: "mdast-util-to-hast@npm:12.0.0"
   dependencies:
     "@types/hast": ^2.0.0
     "@types/mdast": ^3.0.0
@@ -6274,7 +6274,7 @@ __metadata:
     unist-util-generated: ^2.0.0
     unist-util-position: ^4.0.0
     unist-util-visit: ^4.0.0
-  checksum: d20202a5266ab485f04ec13b4cb55def308d96023cff417446cc43d11778092c72664cfde49fe9af14016d38dd21b765c7ca865a0cfa41b9b0ab420a05749b2a
+  checksum: 27ee12d7e7471069e48568b482cf2256a936f0206b1f083c023b5619e07d051d5c63d23f570d40c01b950519a3058e44903a17fd76ee15654957a04d9b8e0a03
   languageName: node
   linkType: hard
 

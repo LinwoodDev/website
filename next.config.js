@@ -8,7 +8,7 @@ module.exports = withPWA({
     runtimeCaching,
   },
   images: {
-    domains: ['avatars1.githubusercontent.com'],
+    domains: ['avatars1.githubusercontent.com', 'github.com'],
   },
   reactStrictMode: true,
 })
