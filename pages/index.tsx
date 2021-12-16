@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import React, { ReactElement } from 'react'
 import Navbar from '../components/Navbar'
 import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem, Image } from '@chakra-ui/react';
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
             </Stack>
           </Stack>
         </Container>
-        <Container maxW={'4xl'} id="contact">
+        <Container maxW={'4xl'} id="projects">
           <Stack
             alignItems="stretch"
             as={Box}
@@ -53,7 +54,6 @@ const Home: NextPage = () => {
               fontWeight={600}
               as="h2"
               fontSize="5xl"
-              id="projects"
               lineHeight={'110%'}>
               Projects
             </Heading>
@@ -115,7 +115,6 @@ const Home: NextPage = () => {
   )
 }
 
-import React, { ReactElement } from 'react'
 
 interface ProjectCardProps {
   name: string;
