@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import React, { ReactElement } from 'react'
 import Navbar from '../components/Navbar'
-import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem, Image } from '@chakra-ui/react';
+import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem , Image } from '@chakra-ui/react';
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
@@ -130,7 +130,7 @@ export function ProjectCard({ name, description, website, source, big, banner }:
   return (
     <Flex flexDir="column" p={8} w={big ? "inherit" : "sm"} maxW={big ? "inherit" : "sm"} borderWidth="1px" borderRadius="lg" overflow="hidden" minH="100%">
       {banner &&
-        <Image src={banner} layout="fixed" width="100%" height="100%" p={8} />
+        <Image src={banner} width="100%" height="100%" p={8} alt="Banner" />
       }
       <Heading fontSize="lg">
         {name}
