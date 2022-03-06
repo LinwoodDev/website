@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import React, { ReactElement } from 'react'
-import Navbar from '../components/Navbar'
-import { Container, Stack, Box, Heading, Text, Button, Flex, Wrap, WrapItem , Image } from '@chakra-ui/react';
+import Navbar from '../components/LinwoodShell'
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
+import { Box, Button, Card, Container, Grid, Group, Image, Text, Title } from '@mantine/core';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -21,93 +21,60 @@ const Home: NextPage = () => {
 
       <main>
 
-        <Container maxW={'3xl'}>
-          <Stack
-            as={Box}
-            textAlign={'center'}
-            spacing={{ base: 8, md: 14 }}
-            py={{ base: 20, md: 36 }}>
-            <Heading
-              fontWeight={600}
-              fontSize={{ base: "5xl", md: "6xl" }}
-              lineHeight={'110%'}>
+        <Container size={'lg'}>
+          <Box>
+            <Title>
               Linwood{' '}
-              <Text as={'span'} color={'green.400'}>
+              <Text color={'green'}>
                 Development
               </Text>
-            </Heading>
-            <Stack direction="row" justifyContent="center" spacing={3} alignItems="center">
+            </Title>
+            <Group spacing={3} position="center">
               <Button
-                onClick={() => router.push('#projects')} colorScheme="green" size="lg">Projects</Button>
+                onClick={() => router.push('#projects')} color="green" size="lg">Projects</Button>
               <Button
                 onClick={() => router.push('#contact')} size="lg">Contact</Button>
-            </Stack>
-          </Stack>
+            </Group>
+          </Box>
         </Container>
-        <Container maxW={'4xl'} id="projects">
-          <Stack
-            alignItems="stretch"
-            as={Box}
-            spacing={{ base: 8, md: 14 }}
-            py={{ base: 20, md: 36 }}>
-            <Heading
-              fontWeight={600}
-              as="h2"
-              fontSize="5xl"
-              lineHeight={'110%'}>
+        <Container size={'lg'} id="projects">
+          <Box>
+            <Title order={2}>
               Projects
-            </Heading>
-            <Heading
-              fontWeight={600}
-              as="h3"
-              fontSize="3xl"
-              id="apps"
-              lineHeight={'110%'}>
+            </Title>
+            <Title order={3}>
               Apps
-            </Heading>
+            </Title>
             <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
-            <Wrap justifyContent="center" spacing={3} alignContent="stretch">
-              <WrapItem>
+            <Grid gutter={3}>
+              <Grid.Col>
                 <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
-              </WrapItem>
+              </Grid.Col>
 
-              <WrapItem>
+              <Grid.Col>
                 <ProjectCard name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
-              </WrapItem>
-            </Wrap>
-            <Heading
-              fontWeight={600}
-              as="h3"
-              fontSize="3xl"
-              id="bot"
-              lineHeight={'110%'}>
+              </Grid.Col>
+            </Grid>
+            <Title order={3}>
               Bot
-            </Heading>
-            <Wrap justifyContent="center" spacing={3} alignContent="stretch">
-              <WrapItem>
+            </Title>
+            <Grid gutter={3}>
+              <Grid.Col>
                 <ProjectCard name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
-              </WrapItem>
-            </Wrap>
-          </Stack>
+              </Grid.Col>
+            </Grid>
+          </Box>
         </Container>
-        <Container maxW={'3xl'} id="contact">
-          <Stack
-            as={Box}
-            textAlign={'center'}
-            spacing={{ base: 8, md: 14 }}
-            py={{ base: 20, md: 36 }}>
-            <Heading
-              fontWeight={600}
-              as="h2"
-              fontSize="5xl"
-              lineHeight={'110%'}>
+        <Container size={'lg'} id="contact">
+          <Box>
+            <Title order={2}>
               Contact
-            </Heading>
-            <Stack direction="row" justifyContent="center" spacing={3} alignItems="center">
-              <Button onClick={() => router.push("https://github.com/LinwoodCloud")} colorScheme="green" size="lg" leftIcon={<GithubLogo size={24} />}>GitHub</Button>
-              <Button onClick={() => router.push("https://twitter.com/LinwoodCloud")} colorScheme="teal" size="lg" leftIcon={<TwitterLogo size={24} />}>Twitter</Button>
-            </Stack>
-          </Stack>
+            </Title>
+            <Group spacing={3} position="center">
+              <Button onClick={() => router.push("https://github.com/LinwoodCloud")} color="green" size="lg" leftIcon={<GithubLogo size={24} />}>GitHub</Button>
+              <Button onClick={() => router.push("https://twitter.com/LinwoodCloud")} color="teal" size="lg" leftIcon={<TwitterLogo size={24} />}>Twitter</Button>
+            </Group>
+          </Box>
         </Container>
       </main>
       <Footer />
@@ -128,27 +95,31 @@ interface ProjectCardProps {
 export function ProjectCard({ name, description, website, source, big, banner }: ProjectCardProps): ReactElement {
   const router = useRouter();
   return (
-    <Flex flexDir="column" p={8} w={big ? "inherit" : "sm"} maxW={big ? "inherit" : "sm"} borderWidth="1px" borderRadius="lg" overflow="hidden" minH="100%">
-      {banner &&
-        <Image src={banner} width="100%" height="100%" p={8} alt="Banner" />
-      }
-      <Heading fontSize="lg">
-        {name}
-      </Heading>
-      <Text flex={1} pt={4} pb={8}>
-        {description}
-      </Text>
-      {(website || source) &&
-        <Flex flexDir="row">
-          {website &&
-            <Button m={1} flex="1" colorScheme="green" onClick={() => router.push(website)}>View website</Button>
-          }
-          {source &&
-            <Button m={1} flex="1" onClick={() => router.push(source)}>View source</Button>
-          }
-        </Flex>
-      }
-    </Flex>
+    <div style={{ minWidth: 340, margin: 'auto' }}>
+      <Card shadow="sm" padding="lg">
+        {banner &&
+          <Card.Section>
+            <Image src={banner} width="100%" height="100%" alt="Banner" />
+          </Card.Section>
+        }
+        <Text size="lg">
+          {name}
+        </Text>
+        <Text>
+          {description}
+        </Text>
+        {(website || source) &&
+          <Group>
+            {website &&
+              <Button m={1} color="green" onClick={() => router.push(website)}>View website</Button>
+            }
+            {source &&
+              <Button m={1} onClick={() => router.push(source)}>View source</Button>
+            }
+          </Group>
+        }
+      </Card>
+    </div>
   )
 }
 

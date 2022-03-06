@@ -1,10 +1,10 @@
-import { Box, Container, Heading, LinkBox, LinkOverlay, Stack, Text } from '@chakra-ui/react'
 import Head from 'next/head'
 import Footer from '../../components/Footer'
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/LinwoodShell'
 import { getAllPosts, generateRssFeed } from '../../lib/blog'
 import PostType from '../../types/post'
 import NextLink from 'next/link';
+import { Container } from '@mantine/core'
 
 
 type Props = {
@@ -20,7 +20,7 @@ const Index = ({ allPosts }: Props) => {
             <Navbar />
 
             <main>
-                <Container maxW="3xl" p={4} pt={12}>
+                <Container size="lg" p={4} pt={12}>
                     <Heading as="h1">Blog</Heading>
                     <Stack
                         as={Box}
