@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import React, { ReactElement } from 'react'
-import Navbar from '../components/LinwoodShell'
+import LinwoodHeader from '../components/LinwoodHeader'
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
@@ -17,13 +17,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      <LinwoodHeader />
 
       <main>
 
-        <Container size={'lg'}>
+        <Container size={'lg'} sx={{ minHeight: "100vh" }}>
           <Box>
-            <Title>
+            <Title align="center" order={1}>
               Linwood{' '}
               <Text color={'green'}>
                 Development
@@ -96,7 +96,7 @@ export function ProjectCard({ name, description, website, source, big, banner }:
   const router = useRouter();
   return (
     <div style={{ minWidth: 340, margin: 'auto' }}>
-      <Card shadow="sm" padding="lg">
+      <Card shadow="sm">
         {banner &&
           <Card.Section>
             <Image src={banner} width="100%" height="100%" alt="Banner" />
@@ -111,10 +111,10 @@ export function ProjectCard({ name, description, website, source, big, banner }:
         {(website || source) &&
           <Group>
             {website &&
-              <Button m={1} color="green" onClick={() => router.push(website)}>View website</Button>
+              <Button color="green" onClick={() => router.push(website)}>View website</Button>
             }
             {source &&
-              <Button m={1} onClick={() => router.push(source)}>View source</Button>
+              <Button onClick={() => router.push(source)}>View source</Button>
             }
           </Group>
         }

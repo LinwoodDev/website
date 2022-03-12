@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Footer from '../../components/Footer'
-import Navbar from '../../components/LinwoodShell'
+import Navbar from '../../components/LinwoodHeader'
 import { getAllPosts, generateRssFeed } from '../../lib/blog'
 import PostType from '../../types/post'
 import NextLink from 'next/link';
-import { Container } from '@mantine/core'
+import { Box, Card, Container, Text, Title } from '@mantine/core'
 
 
 type Props = {
@@ -20,18 +20,16 @@ const Index = ({ allPosts }: Props) => {
             <Navbar />
 
             <main>
-                <Container size="lg" p={4} pt={12}>
-                    <Heading as="h1">Blog</Heading>
-                    <Stack
-                        as={Box}
-                        py={{ base: 20, md: 36 }}>
+                <Container size="lg">
+                    <Title order={1}>Blog</Title>
+                    <Box>
                         {allPosts.map((post) => (
                             <BlogEntryCard
                                 key={post.slug}
                                 post={post}
                             />
                         ))}
-                    </Stack>
+                    </Box>
                 </Container>
             </main>
             <Footer />
@@ -61,18 +59,16 @@ interface CardProps {
 
 function BlogEntryCard({ post }: CardProps) {
     return (
-        <LinkBox borderWidth="1px" borderRadius="lg" overflow="hidden" p={8}>
-            <NextLink href={"/blog/" + post.slug} passHref>
-                <LinkOverlay>
-                    <Heading fontSize="xl">
-                        {post.title}
-                    </Heading>
-                </LinkOverlay>
-            </NextLink>
-            <Text>
-                {post.excerpt}
-            </Text>
-        </LinkBox>
+        <NextLink href={"/blog/" + post.slug} passHref>
+            <Card style={{ cursor: "pointer" }}>
+                <Text size="md">
+                    {post.title}
+                </Text>
+                <Text>
+                    {post.excerpt}
+                </Text>
+            </Card>
+        </NextLink>
     )
 }
 

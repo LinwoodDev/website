@@ -5,9 +5,10 @@ import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 import { getAllPosts, getPostBySlug } from '../../lib/blog'
 import React from 'react'
-import Navbar from '../../components/LinwoodShell'
+import Navbar from '../../components/LinwoodHeader'
 import Footer from '../../components/Footer'
 import AuthorDisplay from '../../components/AuthorDisplay'
+import { Box, Container, Image, Text, Title } from '@mantine/core'
 
 type Props = {
   post: PostType
@@ -22,7 +23,7 @@ const Post = ({ post }: Props) => {
     <div>
       <Navbar />
       {router.isFallback ? (
-        <Heading>Loading…</Heading>
+        <Title>Loading…</Title>
       ) : (
         <>
           <article className="mb-32">
@@ -32,16 +33,16 @@ const Post = ({ post }: Props) => {
               </title>
               <meta property="og:image" content={post.ogImage?.url} />
             </Head>
-            <Container maxW="3xl" p={4} pt={12} pb={24} minH="100vh">
+            <Container size="xl" style={{minHeight: "100vh"}}>
               {post.coverImage &&
                 <Image src={post.coverImage} alt="Post logo" />
               }
-              <Heading p={8} as="h1">{post.title}</Heading>
-              <Box p={4}>
-              <AuthorDisplay author={post.author} />
+              <Title order={1}>{post.title}</Title>
+              <Box>
+                <AuthorDisplay author={post.author} />
               </Box>
-              <Text p={4}>{post.date}</Text>
-              <Text p={4}>
+              <Text>{post.date}</Text>
+              <Text>
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
               </Text>
             </Container>

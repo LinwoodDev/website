@@ -1,4 +1,4 @@
-import { Group, Image, Text } from '@mantine/core';
+import { Box, Center, Container, Group, Image, SimpleGrid, Text } from '@mantine/core';
 import Link from 'next/link';
 
 import { ReactNode } from 'react';
@@ -11,7 +11,7 @@ const Logo = (props: any) => {
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text size={'lg'} mb={2}>
+    <Text size={'lg'}>
       {children}
     </Text>
   );
@@ -20,11 +20,9 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function Footer() {
   const date = new Date();
   return (
-    <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={8}>
+    <Box>
+      <Container size="lg">
+        <SimpleGrid cols={2} breakpoints={[{minWidth: "md", cols: 3}]} spacing={8}>
           <Group align={'flex-start'}>
             <ListHeader>Support</ListHeader>
             <Link href={'https://status.linwood.dev'}>Status</Link>
@@ -39,26 +37,11 @@ export default function Footer() {
           </Group>
         </SimpleGrid>
       </Container>
-      <Box py={10}>
-        <Flex
-          align={'center'}
-          _before={{
-            content: '""',
-            borderBottom: '1px solid',
-            borderColor: useColorModeValue('gray.200', 'gray.700'),
-            flexGrow: 1,
-            mr: 8,
-          }}
-          _after={{
-            content: '""',
-            borderBottom: '1px solid',
-            borderColor: useColorModeValue('gray.200', 'gray.700'),
-            flexGrow: 1,
-            ml: 8,
-          }}>
+      <Box>
+        <Center>
           <Logo />
-        </Flex>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+        </Center>
+        <Text size={'sm'} align={'center'}>
           © {date.getFullYear()} Linwood Development
         </Text>
       </Box>
