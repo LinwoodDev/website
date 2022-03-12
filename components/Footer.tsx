@@ -1,7 +1,7 @@
 import { Box, Center, Container, Group, Image, SimpleGrid, Text } from '@mantine/core';
-import Link from 'next/link';
 
 import { ReactNode } from 'react';
+import Link from './Link';
 
 const Logo = (props: any) => {
   return (
@@ -20,17 +20,17 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function Footer() {
   const date = new Date();
   return (
-    <Box>
+    <Box sx={{paddingTop: "10em"}}>
       <Container size="lg">
-        <SimpleGrid cols={2} breakpoints={[{minWidth: "md", cols: 3}]} spacing={8}>
-          <Group align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
+        <SimpleGrid cols={1} breakpoints={[{ minWidth: "md", cols: 2 }]} spacing={8}>
+          <Group direction='column' align="center">
+            <Text align="center">Support</Text>
             <Link href={'https://status.linwood.dev'}>Status</Link>
             <Link href={'https://codedoctor.tk/impress.html'}>Imprint</Link>
             <Link href={'https://codedoctor.tk/privacy.html'}>Privacy Policy</Link>
           </Group>
-          <Group align={'flex-start'}>
-            <ListHeader>Follow Us</ListHeader>
+          <Group direction='column' align="center">
+            <Text align="center">Follow Us</Text>
             <Link href={'https://github.com/LinwoodCloud'}>GitHub</Link>
             <Link href={'https://twitter.com/LinwoodCloud'}>Twitter</Link>
             <Link href={'https://discord.linwood.dev'}>Discord</Link>

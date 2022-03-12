@@ -13,6 +13,7 @@ import {
 import { useBooleanToggle } from '@mantine/hooks';
 import { CaretDown } from 'phosphor-react';
 import { ColorSchemeSwitcher } from './ColorSchemeSwitch';
+import Link from './Link';
 
 const HEADER_HEIGHT = 60;
 
@@ -85,16 +86,15 @@ export function HeaderAction({ links }: HeaderActionProps) {
           placement="end"
           gutter={1}
           control={
-            <a
+            <Link
               href={link.link}
               className={classes.link}
-              onClick={(event) => event.preventDefault()}
             >
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
                 <CaretDown size={12} />
               </Center>
-            </a>
+            </Link>
           }
         >
           {menuItems}
@@ -103,14 +103,13 @@ export function HeaderAction({ links }: HeaderActionProps) {
     }
 
     return (
-      <a
+      <Link
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
-      </a>
+      </Link>
     );
   });
 

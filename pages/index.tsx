@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <main>
 
         <Container size={'lg'} sx={{ minHeight: "100vh" }}>
-          <Box>
+          <Box sx={{marginTop: "10em"}}>
             <Title align="center" order={1}>
               Linwood{' '}
               <Text color={'green'}>
@@ -46,12 +46,12 @@ const Home: NextPage = () => {
               Apps
             </Title>
             <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
-            <Grid gutter={3}>
-              <Grid.Col>
+            <Grid grow>
+              <Grid.Col span={4}>
                 <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
               </Grid.Col>
 
-              <Grid.Col>
+              <Grid.Col span={4}>
                 <ProjectCard name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
               </Grid.Col>
             </Grid>
@@ -66,8 +66,8 @@ const Home: NextPage = () => {
           </Box>
         </Container>
         <Container size={'lg'} id="contact">
-          <Box>
-            <Title order={2}>
+          <Box sx={{marginTop: "10em"}}>
+            <Title align="center" order={2}>
               Contact
             </Title>
             <Group spacing={3} position="center">
@@ -95,7 +95,7 @@ interface ProjectCardProps {
 export function ProjectCard({ name, description, website, source, big, banner }: ProjectCardProps): ReactElement {
   const router = useRouter();
   return (
-    <div style={{ minWidth: 340, margin: 'auto' }}>
+    <div style={{ maxWidth: big ? '' : "20em", margin: 'auto' }}>
       <Card shadow="sm">
         {banner &&
           <Card.Section>
