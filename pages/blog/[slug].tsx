@@ -8,7 +8,7 @@ import React from 'react'
 import Navbar from '../../components/LinwoodHeader'
 import Footer from '../../components/Footer'
 import AuthorDisplay from '../../components/AuthorDisplay'
-import { Box, Container, Image, Text, Title } from '@mantine/core'
+import { Box, Container, Image, Space, Text, Title } from '@mantine/core'
 
 type Props = {
   post: PostType
@@ -22,6 +22,7 @@ const Post = ({ post }: Props) => {
   return (
     <div>
       <Navbar />
+      <Space h={'xl'} />
       {router.isFallback ? (
         <Title>Loading…</Title>
       ) : (
@@ -33,7 +34,7 @@ const Post = ({ post }: Props) => {
               </title>
               <meta property="og:image" content={post.ogImage?.url} />
             </Head>
-            <Container size="xl" style={{minHeight: "100vh"}}>
+            <Container size="sm" style={{minHeight: "100vh"}}>
               {post.coverImage &&
                 <Image src={post.coverImage} alt="Post logo" />
               }

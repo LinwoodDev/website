@@ -11,9 +11,9 @@
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
-    "@mantine/core": "^4.0.2",
-    "@mantine/hooks": "^4.0.2",
-    "@mantine/next": "^4.0.2",
+    "@mantine/core": "^4.0.3",
+    "@mantine/hooks": "^4.0.3",
+    "@mantine/next": "^4.0.3",
     "feed": "^4.2.2",
     "framer-motion": "^6.2.8",
     "gray-matter": "^4.0.3",

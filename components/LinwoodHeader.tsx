@@ -55,6 +55,13 @@ const useStyles = createStyles((theme) => ({
   linkLabel: {
     marginRight: 5,
   },
+
+  headerItem: {
+    
+    [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+      width: "10em"
+    }
+  }
 }));
 
 export default function LinwoodHeader() {
@@ -114,9 +121,9 @@ export function HeaderAction({ links }: HeaderActionProps) {
   });
 
   return (
-    <Header height={HEADER_HEIGHT} sx={{ borderBottom: 0 }}>
+    <Header height={HEADER_HEIGHT} style={{ borderBottom: 0 }}>
       <Container className={classes.inner} fluid>
-        <Group>
+        <Group className={classes.headerItem}>
           <Burger
             opened={opened}
             onClick={() => toggleOpened()}
@@ -128,8 +135,10 @@ export function HeaderAction({ links }: HeaderActionProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
+        <Group className={classes.headerItem} position="right">
         <ColorSchemeSwitcher />
-      </Container>
-    </Header>
+      </Group>
+    </Container>
+    </Header >
   );
 }
