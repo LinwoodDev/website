@@ -5,7 +5,7 @@ import LinwoodHeader from '../components/LinwoodHeader'
 import { GithubLogo, TwitterLogo } from 'phosphor-react';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
-import { Box, Button, Card, Container, Grid, Group, Image, Text, Title } from '@mantine/core';
+import { Box, Button, Card, Container, Grid, Group, Image, Space, Text, Title } from '@mantine/core';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -46,23 +46,18 @@ const Home: NextPage = () => {
               Apps
             </Title>
             <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
-            <Grid grow>
-              <Grid.Col span={4}>
-                <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
-              </Grid.Col>
-
-              <Grid.Col span={4}>
-                <ProjectCard name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
-              </Grid.Col>
-            </Grid>
+            <Space h="md" />
+            <Group noWrap={false} align="stretch" position='left'>
+              <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
+              <ProjectCard name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
+            </Group>
+            <Space h="xl" />
             <Title order={3}>
               Bot
             </Title>
-            <Grid gutter={3}>
-              <Grid.Col>
-                <ProjectCard name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
-              </Grid.Col>
-            </Grid>
+            <Group noWrap={false} align="stretch" position='left'>
+              <ProjectCard name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
+            </Group>
           </Box>
         </Container>
         <Container size={'lg'} id="contact">
@@ -95,31 +90,33 @@ interface ProjectCardProps {
 export function ProjectCard({ name, description, website, source, big, banner }: ProjectCardProps): ReactElement {
   const router = useRouter();
   return (
-    <div style={{ maxWidth: big ? '' : "20em", margin: 'auto' }}>
-      <Card shadow="sm">
-        {banner &&
-          <Card.Section>
-            <Image src={banner} width="100%" height="100%" alt="Banner" />
-          </Card.Section>
-        }
+    <Card shadow="sm" style={{ maxWidth: big ? '' : "20em", minHeight: "20em", display: "flex", flexDirection: "column" }}>
+      {banner &&<>
+        <Card.Section>
+          <Image src={banner} width="100%" height="100%" alt="Banner" />
+        </Card.Section>
+        <Space h="sm" />
+        </>
+      }
+      <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Text size="lg">
           {name}
         </Text>
         <Text>
           {description}
         </Text>
-        {(website || source) &&
-          <Group>
-            {website &&
-              <Button color="green" onClick={() => router.push(website)}>View website</Button>
-            }
-            {source &&
-              <Button onClick={() => router.push(source)}>View source</Button>
-            }
-          </Group>
-        }
-      </Card>
-    </div>
+      </Box>
+      {(website || source) &&
+        <Group>
+          {website &&
+            <Button color="green" onClick={() => router.push(website)}>View website</Button>
+          }
+          {source &&
+            <Button onClick={() => router.push(source)}>View source</Button>
+          }
+        </Group>
+      }
+    </Card>
   )
 }
 
