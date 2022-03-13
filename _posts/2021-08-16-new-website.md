@@ -1,5 +1,5 @@
 ---
-title: Dev-Doctor 1.0 Released
+title: New website
 date: "2021-02-13"
 author: 
     name: CodeDoctorDE

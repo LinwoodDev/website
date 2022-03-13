@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import Author from '../types/author';
 import { useRouter } from 'next/router';
 import { Avatar, Group, Text } from '@mantine/core';
-import { Anchor } from 'phosphor-react';
+import Link from './Link';
 
 interface Props {
     author: Author;
@@ -25,8 +25,8 @@ export default function AuthorDisplay({ author }: Props): ReactElement {
     if (!author.url)
         return content;
     return (
-        <Anchor onClick={() => router.push(author.url!)}>
+        <Link href={author.url}>
             {content}
-        </Anchor>
+        </Link>
     )
 }

@@ -48,15 +48,15 @@ const Home: NextPage = () => {
             <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
             <Space h="md" />
             <Group noWrap={false} align="stretch" position='left'>
-              <ProjectCard name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
-              <ProjectCard name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
+              <ProjectCard banner='/Dev-Doctor.png' name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
+              <ProjectCard banner='/Launcher.png' name="Launch" description="Opensource start page" source="https://github.com/LinwoodCloud/Launcher" website="https://docs.launch.linwood.dev" />
             </Group>
             <Space h="xl" />
             <Title order={3}>
               Bot
             </Title>
             <Group noWrap={false} align="stretch" position='left'>
-              <ProjectCard name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
+              <ProjectCard banner='/Bot.png' name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
             </Group>
           </Box>
         </Container>
@@ -99,7 +99,7 @@ export function ProjectCard({ name, description, website, source, big, banner }:
         </>
       }
       <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        <Text size="lg">
+        <Text weight={700} mt={"xs"} size="lg">
           {name}
         </Text>
         <Text>
