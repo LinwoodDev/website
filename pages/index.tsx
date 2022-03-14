@@ -42,9 +42,11 @@ const Home: NextPage = () => {
             <Title order={2}>
               Projects
             </Title>
+            <Space h="md" />
             <Title order={3}>
               Apps
             </Title>
+            <Space h="md" />
             <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
             <Space h="md" />
             <Group noWrap={false} align="stretch" position='left'>
@@ -55,6 +57,7 @@ const Home: NextPage = () => {
             <Title order={3}>
               Bot
             </Title>
+            <Space h="md" />
             <Group noWrap={false} align="stretch" position='left'>
               <ProjectCard banner='/Bot.png' name="Linwood Bot" description="Modular, free, opensource, customizable discord bot" source="https://github.com/LinwoodCloud/Bot" />
             </Group>
@@ -90,13 +93,13 @@ interface ProjectCardProps {
 export function ProjectCard({ name, description, website, source, big, banner }: ProjectCardProps): ReactElement {
   const router = useRouter();
   return (
-    <Card shadow="sm" style={{ maxWidth: big ? '' : "20em", minHeight: "20em", display: "flex", flexDirection: "column" }}>
-      {banner &&<>
+    <Card radius={18} shadow="sm" style={{ maxWidth: big ? '' : "20em", minHeight: "20em", display: "flex", flexDirection: "column" }}>
+      {banner && <>
         <Card.Section>
           <Image src={banner} width="100%" height="100%" alt="Banner" />
         </Card.Section>
         <Space h="sm" />
-        </>
+      </>
       }
       <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Text weight={700} mt={"xs"} size="lg">
@@ -106,13 +109,14 @@ export function ProjectCard({ name, description, website, source, big, banner }:
           {description}
         </Text>
       </Box>
+      <Space h="md" />
       {(website || source) &&
         <Group>
           {website &&
-            <Button color="green" onClick={() => router.push(website)}>View website</Button>
+            <Button sx={{ flex: 1 }} fullWidth color="green" onClick={() => router.push(website)}>View website</Button>
           }
           {source &&
-            <Button onClick={() => router.push(source)}>View source</Button>
+            <Button sx={{ flex: 1 }} fullWidth onClick={() => router.push(source)}>View source</Button>
           }
         </Group>
       }
