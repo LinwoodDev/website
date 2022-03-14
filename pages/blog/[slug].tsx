@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 import { getAllPosts, getPostBySlug } from '../../lib/blog'
 import React from 'react'
