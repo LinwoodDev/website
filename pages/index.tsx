@@ -47,7 +47,7 @@ const Home: NextPage = () => {
               Apps
             </Title>
             <Space h="md" />
-            <ProjectCard banner="https://github.com/LinwoodCloud/butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
+            <ProjectCard banner="https://github.com/LinwoodCloud/Butterfly/blob/develop/docs/static/img/banner.png?raw=true" name="Butterfly" description="Change the world" source="https://github.com/LinwoodCloud/butterfly" website="https://docs.butterfly.linwood.dev" big={true} />
             <Space h="md" />
             <Group noWrap={false} align="stretch" position='left'>
               <ProjectCard banner='/Dev-Doctor.png' name="Dev-Doctor" description="Free, opensource, serverless learning platform" source="https://github.com/LinwoodCloud/dev_doctor" website="https://docs.dev-doctor.linwood.dev" />
