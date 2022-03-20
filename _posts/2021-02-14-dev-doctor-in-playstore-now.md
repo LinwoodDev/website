@@ -1,10 +1,10 @@
 ---
 title: Dev-Doctor in Play Store now
 date: "2021-02-14"
-author: 
-    name: CodeDoctorDE
-    url: https://github.com/CodeDoctorDE
-    image: https://avatars1.githubusercontent.com/u/20452814?v=4
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
 tags: [dev-doctor]
 ---
 

@@ -1498,68 +1498,68 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "@mantine/core@npm:4.0.5"
+"@mantine/core@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "@mantine/core@npm:4.0.7"
   dependencies:
-    "@mantine/styles": 4.0.5
+    "@mantine/styles": 4.0.7
     "@popperjs/core": ^2.9.3
     "@radix-ui/react-scroll-area": ^0.1.1
     clsx: ^1.1.1
     react-popper: ^2.2.5
     react-textarea-autosize: ^8.3.2
   peerDependencies:
-    "@mantine/hooks": 4.0.5
+    "@mantine/hooks": 4.0.7
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 7686f129760b4a516b4fd71ed48795f0f3665469f19e05bba25899c7258aa4ebac6c7c395ca20fddba5c27c2e47e4a3f6b9608f51a292bea37be6a266e350894
+  checksum: e5970738e64109adbec88040bb8a111c87ccdb891f3660ccf2670f1677039c8bf8306e6cf577490aa5543d01146c5573b9ba3cbe697f23b0ad38842b66074079
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "@mantine/hooks@npm:4.0.5"
+"@mantine/hooks@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "@mantine/hooks@npm:4.0.7"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: f7f8ed266bdbd4a5e81029a36a3bbe63d44285df77c2a10121a68451855994e521e66598d22fb623e91e7ea208f775a0a768f2e29a6e3311349f7345acced85a
+  checksum: 726ab184adb5f2c6fd252ae8e2c100a89d938277a75f27906f5011f753afe249b3b60c3755990224a92002a7e16adec2d7304a8b2c5ca12d5967292850ebd29e
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "@mantine/next@npm:4.0.5"
+"@mantine/next@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "@mantine/next@npm:4.0.7"
   dependencies:
-    "@mantine/ssr": 4.0.5
+    "@mantine/ssr": 4.0.7
   peerDependencies:
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 3e4cc64673a43911ded7a450f3009e046c94ad6086e82d59fb21688392eba2db4a469288504b2491b847d501eb34199fe8cb889979eba682f8aa00ba91df698c
+  checksum: 1509b49e96e6ba65d70f136bb5664f9ddbd4cccea4ff0885206a4bb5f3ecd1f192d9ac6ba52c7d89ac8fcb1cee6af956ff38a56fad37e83434f55d761aecc042
   languageName: node
   linkType: hard
 
-"@mantine/ssr@npm:4.0.5":
-  version: 4.0.5
-  resolution: "@mantine/ssr@npm:4.0.5"
+"@mantine/ssr@npm:4.0.7":
+  version: 4.0.7
+  resolution: "@mantine/ssr@npm:4.0.7"
   dependencies:
     "@emotion/cache": ^11.7.1
     "@emotion/react": ^11.7.1
     "@emotion/serialize": ^1.0.2
     "@emotion/server": ^11.4.0
     "@emotion/utils": ^1.0.0
-    "@mantine/styles": 4.0.5
+    "@mantine/styles": 4.0.7
     csstype: ^3.0.9
     html-react-parser: ^1.3.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 772571457a83f82df4b747264ba9216d53d22c1a3af438738f6b92a9b5370af751b1a65873ce3aa77901bea863ae8587dcccb62f2d2b87e00ccca0a33e031a6f
+  checksum: 781c47e787d6dd65ef84126e858cc16279439fcb0bf8a2906ca887991fd3ee85f8bbae2c97e24c7924d697b7d2b69ee2f6a1f8aa7d9755f14451d44e578e527a
   languageName: node
   linkType: hard
 
-"@mantine/styles@npm:4.0.5":
-  version: 4.0.5
-  resolution: "@mantine/styles@npm:4.0.5"
+"@mantine/styles@npm:4.0.7":
+  version: 4.0.7
+  resolution: "@mantine/styles@npm:4.0.7"
   dependencies:
     "@emotion/cache": ^11.7.1
     "@emotion/react": ^11.7.1
@@ -1570,7 +1570,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 0f10395862671fc05fc19621025466ca8299c312fc40fa70674bb23260dc52358c1a6d6a5834b6ce801f8a31e388e961d3d4e8d135243b279d976a1edd778920
+  checksum: f55e7a936110ae154713668b114eb760fe003e6aa9523d44baba649e27335a24172c3983b534da521f6d9c9d1af38fcd6400a6b1365339309e0bb6453c6157ab
   languageName: node
   linkType: hard
 
@@ -2035,6 +2035,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2":
+  version: 2.4.4
+  resolution: "@types/prettier@npm:2.4.4"
+  checksum: 2c2cc57efd49c7d8907415a72f96c84a6dd8696dd3bf8aa4ca3a667427bebf71cbfbc912673624bdfc935d272d1c008c639cf155f6449315990a4dc110f0d216
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*, @types/prop-types@npm:^15.0.0":
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
@@ -2042,14 +2049,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.40":
-  version: 17.0.40
-  resolution: "@types/react@npm:17.0.40"
+"@types/react@npm:^17.0.41":
+  version: 17.0.41
+  resolution: "@types/react@npm:17.0.41"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 24d1b210b5bf3c7d49f9a7fe5490db02e005a1d989045a2d67528347557dd0bcb0d7bcf96088152697e97521ac4c9506d1357ee48a2b7d4e701c70d838dc7284
+  checksum: 1b086ec0ea5d666f05e19e0724e41278d27a2ca29a2cd71b9d9ab3fe27dba233806eb728d744e092c9fe9637ac738d8c5a05983cde84d215342949b47ecba2ef
   languageName: node
   linkType: hard
 
@@ -3229,6 +3236,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "eslint-config-prettier@npm:8.5.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 0d0f5c32e7a0ad91249467ce71ca92394ccd343178277d318baf32063b79ea90216f4c81d1065d60f96366fdc60f151d4d68ae7811a58bd37228b84c2083f893
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.4, eslint-import-resolver-node@npm:^0.3.6":
   version: 0.3.6
   resolution: "eslint-import-resolver-node@npm:0.3.6"
@@ -4043,6 +4061,15 @@ fsevents@~2.3.2:
   dependencies:
     ms: ^2.0.0
   checksum: 9c7a74a2827f9294c009266c82031030eae811ca87b0da3dceb8d6071b9bde22c9f3daef0469c3c533cc67a97d8a167cd9fc0389350e5f415f61a79b171ded16
+  languageName: node
+  linkType: hard
+
+"husky@npm:^7.0.4":
+  version: 7.0.4
+  resolution: "husky@npm:7.0.4"
+  bin:
+    husky: lib/bin.js
+  checksum: c6ec4af63da2c9522da8674a20ad9b48362cc92704896cc8a58c6a2a39d797feb2b806f93fbd83a6d653fbdceb2c3b6e0b602c6b2e8565206ffc2882ef7db9e9
   languageName: node
   linkType: hard
 
@@ -5724,6 +5751,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"prettier@npm:2.6.0":
+  version: 2.6.0
+  resolution: "prettier@npm:2.6.0"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 3e527ad62279676778a8404d18174d7ca2365ada4caba6eebbcdd9907d1187afd3bc6ade5b4e5f5d4549bb9fb71e45ca8930d71500017635524f8fc05bc52e93
+  languageName: node
+  linkType: hard
+
 "pretty-bytes@npm:^5.3.0, pretty-bytes@npm:^5.4.1":
   version: 5.6.0
   resolution: "pretty-bytes@npm:5.6.0"
@@ -7190,19 +7226,23 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@emotion/react": ^11.8.2
     "@emotion/styled": ^11.8.1
-    "@mantine/core": ^4.0.5
-    "@mantine/hooks": ^4.0.5
-    "@mantine/next": ^4.0.5
+    "@mantine/core": ^4.0.7
+    "@mantine/hooks": ^4.0.7
+    "@mantine/next": ^4.0.7
     "@types/node": ^17.0.21
-    "@types/react": ^17.0.40
+    "@types/prettier": ^2
+    "@types/react": ^17.0.41
     eslint: ^8.11.0
     eslint-config-next: ^12.1.0
+    eslint-config-prettier: ^8.5.0
     feed: ^4.2.2
     framer-motion: ^6.2.8
     gray-matter: ^4.0.3
+    husky: ^7.0.4
     next: ^12.1.0
     next-pwa: ^5.4.6
     phosphor-react: ^1.4.1
+    prettier: 2.6.0
     react: 17.0.2
     react-dom: 17.0.2
     react-markdown: ^8.0.1
