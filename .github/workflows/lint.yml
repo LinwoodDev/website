@@ -7,16 +7,16 @@ on: [push, pull_request]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    runs-on:
+      ubuntu-latest
+      # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-        cache: 'npm'
-    - run: yarn --immutable
-    - run: yarn format-check
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: "npm"
+      - run: yarn --immutable
+      - run: yarn format-check
