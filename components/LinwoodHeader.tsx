@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   createStyles,
   Menu,
@@ -23,36 +23,42 @@ const HEADER_HEIGHT = 60;
 const useStyles = createStyles((theme) => ({
   inner: {
     height: HEADER_HEIGHT,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 
   links: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
+    [theme.fn.smallerThan("sm")]: {
+      display: "none",
     },
   },
 
   burger: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
+    [theme.fn.largerThan("sm")]: {
+      display: "none",
     },
   },
 
   link: {
-    display: 'block',
+    display: "block",
     lineHeight: 1,
     padding: '16px 12px',
     borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    textDecoration: "none",
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
-    '&:hover': {
-      textDecoration: 'none',
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    "&:hover": {
+      textDecoration: "none",
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
     },
   },
   linkActive: {
@@ -90,22 +96,29 @@ const useStyles = createStyles((theme) => ({
   },
 
   headerItem: {
-
     [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
-      width: "10em"
-    }
-  }
+      width: "10em",
+    },
+  },
 }));
 
 export default function LinwoodHeader() {
-  return <HeaderAction links={[
-    { link: "/", label: "Home" },
-    { link: "/blog", label: "Blog" },
-  ]} />;
+  return (
+    <HeaderAction
+      links={[
+        { link: "/", label: "Home" },
+        { link: "/blog", label: "Blog" },
+      ]}
+    />
+  );
 }
 
 interface HeaderActionProps {
-  links: { link: string; label: string; links?: { link: string; label: string }[] }[];
+  links: {
+    link: string;
+    label: string;
+    links?: { link: string; label: string }[];
+  }[];
 }
 
 export function HeaderAction({ links }: HeaderActionProps) {
@@ -129,10 +142,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
           gutter={1}
           opened={opened}
           control={
-            <Link
-              href={link.link}
-              className={classes.link}
-            >
+            <Link href={link.link} className={classes.link}>
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
                 <CaretDown onClick={() => toggleOpened()} size={12} />

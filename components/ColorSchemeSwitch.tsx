@@ -1,18 +1,23 @@
-import React from 'react';
-import { createStyles, Switch, Group, useMantineColorScheme } from '@mantine/core';
-import { MoonStars, Sun } from 'phosphor-react';
+import React from "react";
+import {
+  createStyles,
+  Switch,
+  Group,
+  useMantineColorScheme,
+} from "@mantine/core";
+import { MoonStars, Sun } from "phosphor-react";
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: 'relative',
-    '& *': {
-      cursor: 'pointer',
+    position: "relative",
+    "& *": {
+      cursor: "pointer",
     },
   },
 
   icon: {
-    pointerEvents: 'none',
-    position: 'absolute',
+    pointerEvents: "none",
+    position: "absolute",
     zIndex: 1,
     top: 3,
   },
@@ -37,7 +42,11 @@ export function ColorSchemeSwitcher() {
       <div className={classes.root}>
         <Sun className={cx(classes.icon, classes.iconLight)} size={18} />
         <MoonStars className={cx(classes.icon, classes.iconDark)} size={18} />
-        <Switch checked={colorScheme === 'dark'} onChange={() => toggleColorScheme()} size="md" />
+        <Switch
+          checked={colorScheme === "dark"}
+          onChange={() => toggleColorScheme()}
+          size="md"
+        />
       </div>
     </Group>
   );

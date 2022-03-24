@@ -1,10 +1,10 @@
 ---
 title: Dev-Doctor has Crowdin
 date: "2021-04-03"
-author: 
-    name: CodeDoctorDE
-    url: https://github.com/CodeDoctorDE
-    image: https://avatars1.githubusercontent.com/u/20452814?v=4
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
 tags: [dev-doctor]
 ---
 
