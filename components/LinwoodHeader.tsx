@@ -11,12 +11,12 @@ import {
   Title,
   Transition,
   Paper,
-} from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
-import { CaretDown } from 'phosphor-react';
-import { ColorSchemeSwitcher } from './ColorSchemeSwitch';
-import Link from './Link';
-import { useRouter } from 'next/router';
+} from "@mantine/core";
+import { useBooleanToggle } from "@mantine/hooks";
+import { CaretDown } from "phosphor-react";
+import { ColorSchemeSwitcher } from "./ColorSchemeSwitch";
+import Link from "./Link";
+import { useRouter } from "next/router";
 
 const HEADER_HEIGHT = 60;
 
@@ -43,7 +43,7 @@ const useStyles = createStyles((theme) => ({
   link: {
     display: "block",
     lineHeight: 1,
-    padding: '16px 12px',
+    padding: "16px 12px",
     borderRadius: theme.radius.sm,
     textDecoration: "none",
     color:
@@ -62,21 +62,27 @@ const useStyles = createStyles((theme) => ({
     },
   },
   linkActive: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    padding: '16px 12px',
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[6]
+        : theme.colors.gray[0],
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
+    padding: "16px 12px",
     borderRadius: theme.radius.sm,
-    textDecoration: 'none',
+    textDecoration: "none",
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
     lineHeight: 1,
-    display: 'block',
-    '&:hover': {
-      textDecoration: 'none',
-    }
+    display: "block",
+    "&:hover": {
+      textDecoration: "none",
+    },
   },
   dropdown: {
-    position: 'absolute',
+    position: "absolute",
     top: HEADER_HEIGHT,
     left: 0,
     right: 0,
@@ -84,10 +90,10 @@ const useStyles = createStyles((theme) => ({
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
-    overflow: 'hidden',
+    overflow: "hidden",
 
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
+    [theme.fn.largerThan("sm")]: {
+      display: "none",
     },
   },
 
@@ -192,6 +198,6 @@ export function HeaderAction({ links }: HeaderActionProps) {
           </Paper>
         )}
       </Transition>
-    </Header >
+    </Header>
   );
 }
