@@ -9,11 +9,14 @@ import {
   Button,
   Burger,
   Title,
+  Transition,
+  Paper,
 } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { CaretDown } from 'phosphor-react';
 import { ColorSchemeSwitcher } from './ColorSchemeSwitch';
 import Link from './Link';
+import { useRouter } from 'next/router';
 
 const HEADER_HEIGHT = 60;
 
@@ -40,7 +43,7 @@ const useStyles = createStyles((theme) => ({
   link: {
     display: 'block',
     lineHeight: 1,
-    padding: '8px 12px',
+    padding: '16px 12px',
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
@@ -52,13 +55,42 @@ const useStyles = createStyles((theme) => ({
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   },
+  linkActive: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    padding: '16px 12px',
+    borderRadius: theme.radius.sm,
+    textDecoration: 'none',
+    fontSize: theme.fontSizes.sm,
+    fontWeight: 500,
+    lineHeight: 1,
+    display: 'block',
+    '&:hover': {
+      textDecoration: 'none',
+    }
+  },
+  dropdown: {
+    position: 'absolute',
+    top: HEADER_HEIGHT,
+    left: 0,
+    right: 0,
+    zIndex: 0,
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+    borderTopWidth: 0,
+    overflow: 'hidden',
+
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
+    },
+  },
 
   linkLabel: {
     marginRight: 5,
   },
 
   headerItem: {
-    
+
     [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
       width: "10em"
     }
@@ -78,8 +110,10 @@ interface HeaderActionProps {
 
 export function HeaderAction({ links }: HeaderActionProps) {
   const { classes } = useStyles();
+  const router = useRouter();
   const [opened, toggleOpened] = useBooleanToggle(false);
   const items = links.map((link) => {
+    const active = link.link === router.pathname;
     const menuItems = link.links?.map((item) => (
       <Menu.Item key={item.link}>{item.label}</Menu.Item>
     ));
@@ -93,6 +127,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
           transitionDuration={0}
           placement="end"
           gutter={1}
+          opened={opened}
           control={
             <Link
               href={link.link}
@@ -100,7 +135,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
             >
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
-                <CaretDown size={12} />
+                <CaretDown onClick={() => toggleOpened()} size={12} />
               </Center>
             </Link>
           }
@@ -114,7 +149,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
       <Link
         key={link.label}
         href={link.link}
-        className={classes.link}
+        className={active ? classes.linkActive : classes.link}
       >
         {link.label}
       </Link>
@@ -137,9 +172,16 @@ export function HeaderAction({ links }: HeaderActionProps) {
           {items}
         </Group>
         <Group className={classes.headerItem} position="right">
-        <ColorSchemeSwitcher />
-      </Group>
-    </Container>
+          <ColorSchemeSwitcher />
+        </Group>
+      </Container>
+      <Transition transition="pop-top-right" duration={200} mounted={opened}>
+        {(styles) => (
+          <Paper className={classes.dropdown} withBorder style={styles}>
+            {items}
+          </Paper>
+        )}
+      </Transition>
     </Header >
   );
 }

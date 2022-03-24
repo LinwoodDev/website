@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import { useState } from 'react';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import '../styles/globals.css';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
