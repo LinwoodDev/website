@@ -3,10 +3,14 @@ import Author from "./author";
 type PostType = {
   slug: string;
   title: string;
-  date: string;
-  coverImage: string;
+  date: {
+    year: number;
+    month: number;
+    day: number;
+  },
+  coverImage?: string;
   author: Author;
-  excerpt: string;
+  excerpt?: string;
   ogImage?: {
     url: string;
   };

@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import PostType from "../../types/post";
-import { getAllPosts, getPostBySlug } from "../../lib/blog";
+import PostType from "../../../../../types/post";
+import { getAllPosts, getPostBySlug } from "../../../../../lib/blog";
 import React from "react";
-import Navbar from "../../components/LinwoodHeader";
-import Footer from "../../components/Footer";
-import AuthorDisplay from "../../components/AuthorDisplay";
+import Navbar from "../../../../../components/LinwoodHeader";
+import Footer from "../../../../../components/Footer";
+import AuthorDisplay from "../../../../../components/AuthorDisplay";
 import {
   Blockquote,
   Box,
@@ -19,7 +19,7 @@ import {
   TypographyStylesProvider,
 } from "@mantine/core";
 import ReactMarkdown from "react-markdown";
-import Link from "../../components/Link";
+import Link from "../../../../../components/Link";
 
 type Props = {
   post: PostType;
@@ -51,7 +51,7 @@ const Post = ({ post }: Props) => {
               <Box>
                 <AuthorDisplay author={post.author} />
               </Box>
-              <Text>{post.date}</Text>
+              <Text>{post.date.year}-{("0" + post.date.month).slice(-2)}-{("0" + post.date.day).slice(-2)}</Text>
               <TypographyStylesProvider>
                 <ReactMarkdown components={{}}>{post.content}</ReactMarkdown>
               </TypographyStylesProvider>
@@ -68,36 +68,35 @@ export default Post;
 
 type Params = {
   params: {
+    year: string;
+    month: string;
+    day: string;
     slug: string;
   };
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const {year, month, day, slug} = params;
+  const post = getPostBySlug(`${year}-${("0" + month).slice(-2)}-${("0" + day).slice(-2)}-${slug}`);
 
   return {
     props: {
-      post,
+      post
     },
   };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllPosts();
 
   return {
     paths: posts.map((post) => {
       return {
         params: {
           slug: post.slug,
+          year: post.date.year.toString(),
+          month: ("0" + post.date.month.toString()).slice(-2),
+          day: ("0" + post.date.day.toString()).slice(-2),
         },
       };
     }),

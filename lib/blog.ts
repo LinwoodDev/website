@@ -10,7 +10,22 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getPostsByDate({year, month, day} : {year: number, month?: number, day?: number}) : Post[] {
+  return getAllPosts()
+    .filter(post => {
+      const {date} = post;
+      const postYear = date.year;
+      const postMonth = date.month;
+      const postDay = date.day;
+      return (
+        postYear === year &&
+        (month ? postMonth === month : true) &&
+        (date ? postDay === day : true)
+      );
+    });
+}
+
+export function getPostBySlug(slug: string) : Post {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -21,41 +36,36 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   };
 
   const items: Items = {};
+  const dateString = data.date ?? realSlug.split('-').slice(0, 3).join('-');
 
-  // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = realSlug;
-    }
-    if (field === "content") {
-      items[field] = content;
-    }
-
-    if (data[field]) {
-      items[field] = data[field];
-    }
-  });
-
-  return items;
+  return {
+    author: data.author,
+    date: {
+      year: parseInt(dateString.split('-')[0]),
+      month: parseInt(dateString.split('-')[1]),
+      day: parseInt(dateString.split('-')[2]),
+    },
+    slug: realSlug.split('-').slice(3).join('-'),
+    title: data.title,
+    coverImage: data.coverImage ?? null,
+    content,
+    excerpt: data.excerpt ?? null,
+    ogImage: data.ogImage ?? null,
+  };
 }
 
-export function getAllPosts(fields: string[] = []) {
+export function getAllPosts() : Post[] {
   const slugs = getPostSlugs();
   return (
     slugs
-      .map((slug) => getPostBySlug(slug, fields))
+      .map((slug) => getPostBySlug(slug))
       // sort posts by date in descending order
-      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+      .sort((post1, post2) => (new Date(post1.date.year, post1.date.month - 1, post1.date.day).getTime() > new Date(post2.date.year, post2.date.month - 1, post2.date.day).getTime() ? -1 : 1))
   );
 }
 
 export const generateRssFeed = () => {
-  const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "excerpt",
-  ]) as any as Post[];
+  const posts = getAllPosts();
   const siteURL = process.env.SITE_URL ?? "https://linwood.dev";
   const date = new Date();
   const author = {
@@ -92,7 +102,11 @@ export const generateRssFeed = () => {
       content: post.content ?? "",
       author: [author],
       contributor: [author],
-      date: post.date ? new Date(post.date) : new Date(),
+      date: post.date ? new Date(
+        post.date.year,
+        post.date.month - 1,
+        post.date.day
+      ) : new Date(),
     });
   });
 

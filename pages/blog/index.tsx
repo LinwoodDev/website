@@ -37,14 +37,7 @@ const Index = ({ allPosts }: Props) => {
 export default Index;
 export const getStaticProps = async () => {
   await generateRssFeed();
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const allPosts = getAllPosts();
 
   return {
     props: { allPosts },
@@ -57,11 +50,11 @@ interface CardProps {
 
 function BlogEntryCard({ post }: CardProps) {
   return (
-    <NextLink href={"/blog/" + post.slug} passHref>
+    <NextLink href={`/blog/${post.date.year}/${("0" + post.date.month).slice(-2)}/${("0" + post.date.day).slice(-2)}/${post.slug}`} passHref>
       <Card withBorder style={{ cursor: "pointer" }}>
         <Text size="md">{post.title}</Text>
         <Text color="gray">
-          {post.date} - {post.author.name}
+          {post.date.year}-{("0" + post.date.month).slice(-2)}-{("0" + post.date.day).slice(-2)} - {post.author.name}
         </Text>
         <Text>{post.excerpt}</Text>
       </Card>

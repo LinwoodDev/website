@@ -1,6 +1,5 @@
 ---
 title: Butterfly released!
-date: "2021-10-08"
 author:
   name: CodeDoctorDE
   url: https://github.com/CodeDoctorDE
