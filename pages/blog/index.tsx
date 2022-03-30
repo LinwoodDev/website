@@ -11,7 +11,7 @@ type Props = {
 };
 const Index = ({ allPosts }: Props) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Linwood Blog</title>
       </Head>
@@ -25,13 +25,13 @@ const Index = ({ allPosts }: Props) => {
           <Space h={"xl"} />
           <Group direction="column" spacing={16} align="stretch">
             {allPosts.map((post) => (
-              <BlogEntryCard key={post.slug} post={post} />
+              <BlogEntryCard key={post.fileName} post={post} />
             ))}
           </Group>
         </Container>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 export default Index;
@@ -44,11 +44,11 @@ export const getStaticProps = async () => {
   };
 };
 
-interface CardProps {
+export interface CardProps {
   post: PostType;
 }
 
-function BlogEntryCard({ post }: CardProps) {
+export function BlogEntryCard({ post }: CardProps) {
   return (
     <NextLink
       href={`/blog/${post.date.year}/${("0" + post.date.month).slice(-2)}/${(

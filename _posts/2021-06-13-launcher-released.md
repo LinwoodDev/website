@@ -5,7 +5,7 @@ author:
   name: CodeDoctorDE
   url: https://github.com/CodeDoctorDE
   image: https://avatars1.githubusercontent.com/u/20452814?v=4
-tags: [dev-doctor]
+tags: [launch]
 ---
 
 I released a new project named Linwood Launcher. It's currently a website where you can pin your favorite app and your favorite search engine and customize it. Try it out at <https://launch.linwood.dev>.

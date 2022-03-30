@@ -2,6 +2,7 @@ import Author from "./author";
 
 type PostType = {
   slug: string;
+  fileName: string;
   title: string;
   date: {
     year: number;
@@ -15,6 +16,7 @@ type PostType = {
     url: string;
   };
   content: string;
+  tags: string[];
 };
 
 export default PostType;

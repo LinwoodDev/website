@@ -8,9 +8,11 @@ import Navbar from "../../../../../components/LinwoodHeader";
 import Footer from "../../../../../components/Footer";
 import AuthorDisplay from "../../../../../components/AuthorDisplay";
 import {
+  Badge,
   Blockquote,
   Box,
   Container,
+  Group,
   Image,
   List,
   Space,
@@ -19,7 +21,7 @@ import {
   TypographyStylesProvider,
 } from "@mantine/core";
 import ReactMarkdown from "react-markdown";
-import Link from "../../../../../components/Link";
+import { NextLink } from "@mantine/next";
 
 type Props = {
   post: PostType;
@@ -48,9 +50,15 @@ const Post = ({ post }: Props) => {
                 <Image src={post.coverImage} alt="Post logo" />
               )}
               <Title order={1}>{post.title}</Title>
-              <Box>
-                <AuthorDisplay author={post.author} />
-              </Box>
+              <Group noWrap={false} mt={8} mb={16}>
+                {post.tags.map((tag) => (
+                  <Badge component={NextLink} href={`/blog/tag/${tag}`} variant="outline" key={tag}>
+                    {tag}
+                  </Badge>
+                ))}
+              </Group>
+              <AuthorDisplay author={post.author} />
+              <Space h="xl" />
               <Text>
                 {post.date.year}-{("0" + post.date.month).slice(-2)}-
                 {("0" + post.date.day).slice(-2)}

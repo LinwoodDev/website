@@ -52,13 +52,27 @@ export function getPostBySlug(slug: string): Post {
       month: parseInt(dateString.split("-")[1]),
       day: parseInt(dateString.split("-")[2]),
     },
+    fileName: realSlug,
     slug: realSlug.split("-").slice(3).join("-"),
     title: data.title,
     coverImage: data.coverImage ?? null,
+    tags: data.tags ?? [],
     content,
     excerpt: data.excerpt ?? null,
     ogImage: data.ogImage ?? null,
   };
+}
+
+export function getPostTags() : string[] {
+  const tags: string[] = [];
+  getAllPosts().forEach((post) => {
+    post.tags.forEach((tag) => {
+      if (!tags.includes(tag)) {
+        tags.push(tag);
+      }
+    });
+  });
+  return tags;
 }
 
 export function getAllPosts(): Post[] {
