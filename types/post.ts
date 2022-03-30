@@ -7,7 +7,7 @@ type PostType = {
     year: number;
     month: number;
     day: number;
-  },
+  };
   coverImage?: string;
   author: Author;
   excerpt?: string;

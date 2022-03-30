@@ -51,7 +51,10 @@ const Post = ({ post }: Props) => {
               <Box>
                 <AuthorDisplay author={post.author} />
               </Box>
-              <Text>{post.date.year}-{("0" + post.date.month).slice(-2)}-{("0" + post.date.day).slice(-2)}</Text>
+              <Text>
+                {post.date.year}-{("0" + post.date.month).slice(-2)}-
+                {("0" + post.date.day).slice(-2)}
+              </Text>
               <TypographyStylesProvider>
                 <ReactMarkdown components={{}}>{post.content}</ReactMarkdown>
               </TypographyStylesProvider>
@@ -76,12 +79,14 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const {year, month, day, slug} = params;
-  const post = getPostBySlug(`${year}-${("0" + month).slice(-2)}-${("0" + day).slice(-2)}-${slug}`);
+  const { year, month, day, slug } = params;
+  const post = getPostBySlug(
+    `${year}-${("0" + month).slice(-2)}-${("0" + day).slice(-2)}-${slug}`
+  );
 
   return {
     props: {
-      post
+      post,
     },
   };
 }
