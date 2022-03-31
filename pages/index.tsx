@@ -17,6 +17,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
+import { NextLink } from "@mantine/next";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -145,7 +146,6 @@ export function ProjectCard({
   big,
   banner,
 }: ProjectCardProps): ReactElement {
-  const router = useRouter();
   return (
     <Card
       radius={18}
@@ -179,7 +179,8 @@ export function ProjectCard({
               sx={{ flex: 1 }}
               fullWidth
               color="green"
-              onClick={() => router.push(website)}
+              component={NextLink}
+              href={website}
             >
               View website
             </Button>
@@ -188,7 +189,8 @@ export function ProjectCard({
             <Button
               sx={{ flex: 1 }}
               fullWidth
-              onClick={() => router.push(source)}
+              component={NextLink}
+              href={source}
             >
               View source
             </Button>
