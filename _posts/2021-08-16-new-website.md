@@ -1,6 +1,5 @@
 ---
 title: New website
-date: "2021-02-13"
 author:
   name: CodeDoctorDE
   url: https://github.com/CodeDoctorDE
