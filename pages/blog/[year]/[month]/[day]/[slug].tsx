@@ -52,7 +52,12 @@ const Post = ({ post }: Props) => {
               <Title order={1}>{post.title}</Title>
               <Group noWrap={false} mt={8} mb={16}>
                 {post.tags.map((tag) => (
-                  <Badge component={NextLink} href={`/blog/tag/${tag}`} variant="outline" key={tag}>
+                  <Badge
+                    component={NextLink}
+                    href={`/blog/tag/${tag}`}
+                    variant="outline"
+                    key={tag}
+                  >
                     {tag}
                   </Badge>
                 ))}

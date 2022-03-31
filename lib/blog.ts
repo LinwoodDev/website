@@ -63,7 +63,7 @@ export function getPostBySlug(slug: string): Post {
   };
 }
 
-export function getPostTags() : string[] {
+export function getPostTags(): string[] {
   const tags: string[] = [];
   getAllPosts().forEach((post) => {
     post.tags.forEach((tag) => {
