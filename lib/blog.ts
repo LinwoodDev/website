@@ -54,7 +54,7 @@ export function getPostBySlug(slug: string): Post {
     },
     fileName: realSlug,
     slug: realSlug.split("-").slice(3).join("-"),
-    title: data.title,
+    title: (data.title as string).trim(),
     coverImage: data.coverImage ?? null,
     tags: data.tags ?? [],
     content,
