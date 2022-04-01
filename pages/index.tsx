@@ -22,7 +22,7 @@ import { NextLink } from "@mantine/next";
 const Home: NextPage = () => {
   const router = useRouter();
   return (
-    <div>
+    <>
       <Head>
         <title>Linwood Dev</title>
         <meta
@@ -42,13 +42,14 @@ const Home: NextPage = () => {
             </Title>
             <Group spacing={3} position="center">
               <Button
-                onClick={() => router.push("#projects")}
+                component={NextLink}
+                href="#projects"
                 color="green"
                 size="lg"
               >
                 Projects
               </Button>
-              <Button onClick={() => router.push("#contact")} size="lg">
+              <Button component={NextLink} href="#contact" size="lg">
                 Contact
               </Button>
             </Group>
@@ -105,7 +106,8 @@ const Home: NextPage = () => {
             </Title>
             <Group spacing={3} position="center">
               <Button
-                onClick={() => router.push("https://github.com/LinwoodCloud")}
+                component={NextLink}
+                href="https://github.com/LinwoodCloud"
                 color="green"
                 size="lg"
                 leftIcon={<GithubLogo size={24} />}
@@ -113,7 +115,8 @@ const Home: NextPage = () => {
                 GitHub
               </Button>
               <Button
-                onClick={() => router.push("https://twitter.com/LinwoodCloud")}
+                component={NextLink}
+                href="https://twitter.com/LinwoodCloud"
                 color="teal"
                 size="lg"
                 leftIcon={<TwitterLogo size={24} />}
@@ -125,7 +128,7 @@ const Home: NextPage = () => {
         </Container>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
