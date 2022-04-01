@@ -3,8 +3,8 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/LinwoodHeader";
 import { getAllPosts, generateRssFeed } from "../../lib/blog";
 import PostType from "../../types/post";
-import NextLink from "next/link";
 import { Box, Card, Container, Group, Space, Text, Title } from "@mantine/core";
+import { NextLink } from "@mantine/next";
 
 type Props = {
   allPosts: PostType[];
@@ -50,20 +50,20 @@ export interface CardProps {
 
 export function BlogEntryCard({ post }: CardProps) {
   return (
-    <NextLink
+    <Card
       href={`/blog/${post.date.year}/${("0" + post.date.month).slice(-2)}/${(
         "0" + post.date.day
       ).slice(-2)}/${post.slug}`}
-      passHref
+      component={NextLink}
+      withBorder
+      style={{ cursor: "pointer" }}
     >
-      <Card withBorder style={{ cursor: "pointer" }}>
-        <Text size="md">{post.title}</Text>
-        <Text color="gray">
-          {post.date.year}-{("0" + post.date.month).slice(-2)}-
-          {("0" + post.date.day).slice(-2)} - {post.author.name}
-        </Text>
-        <Text>{post.excerpt}</Text>
-      </Card>
-    </NextLink>
+      <Text size="md">{post.title}</Text>
+      <Text color="gray">
+        {post.date.year}-{("0" + post.date.month).slice(-2)}-
+        {("0" + post.date.day).slice(-2)} - {post.author.name}
+      </Text>
+      <Text>{post.excerpt}</Text>
+    </Card>
   );
 }
