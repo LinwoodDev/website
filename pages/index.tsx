@@ -5,6 +5,11 @@ import LinwoodHeader from "../components/LinwoodHeader";
 import { GithubLogo, TwitterLogo } from "phosphor-react";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
+import Image, { StaticImageData } from "next/image";
+import botPic from "../public/Bot.png";
+import devDoctorPic from "../public/Dev-Doctor.png";
+import launcherPic from "../public/Launcher.png";
+import butterflyBannerPic from "../public/ButterflyBanner.png";
 import {
   Box,
   Button,
@@ -12,7 +17,6 @@ import {
   Container,
   Grid,
   Group,
-  Image,
   Space,
   Text,
   Title,
@@ -62,7 +66,7 @@ const Home: NextPage = () => {
             <Title order={3}>Apps</Title>
             <Space h="md" />
             <ProjectCard
-              banner="https://github.com/LinwoodCloud/Butterfly/blob/develop/docs/static/img/banner.png?raw=true"
+              banner={butterflyBannerPic}
               name="Butterfly"
               description="Change the world"
               source="https://github.com/LinwoodCloud/butterfly"
@@ -72,14 +76,14 @@ const Home: NextPage = () => {
             <Space h="md" />
             <Group noWrap={false} align="stretch" position="left">
               <ProjectCard
-                banner="/Dev-Doctor.png"
+                banner={devDoctorPic}
                 name="Dev-Doctor"
                 description="Free, opensource, serverless learning platform"
                 source="https://github.com/LinwoodCloud/dev_doctor"
                 website="https://docs.dev-doctor.linwood.dev"
               />
               <ProjectCard
-                banner="/Launcher.png"
+                banner={launcherPic}
                 name="Launch"
                 description="Opensource start page"
                 source="https://github.com/LinwoodCloud/Launcher"
@@ -91,7 +95,7 @@ const Home: NextPage = () => {
             <Space h="md" />
             <Group noWrap={false} align="stretch" position="left">
               <ProjectCard
-                banner="/Bot.png"
+                banner={botPic}
                 name="Linwood Bot"
                 description="Modular, free, opensource, customizable discord bot"
                 source="https://github.com/LinwoodCloud/Bot"
@@ -138,7 +142,7 @@ interface ProjectCardProps {
   website?: string;
   source?: string;
   big?: boolean;
-  banner?: string;
+  banner?: StaticImageData;
 }
 
 export function ProjectCard({
@@ -163,7 +167,7 @@ export function ProjectCard({
       {banner && (
         <>
           <Card.Section>
-            <Image src={banner} width="100%" height="100%" alt="Banner" />
+            <Image objectPosition={"50% 50%"} layout="responsive" src={banner} alt="Banner" />
           </Card.Section>
           <Space h="sm" />
         </>

@@ -1498,68 +1498,67 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@mantine/core@npm:4.1.1"
+"@mantine/core@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@mantine/core@npm:4.1.2"
   dependencies:
-    "@mantine/styles": 4.1.1
+    "@mantine/styles": 4.1.2
     "@popperjs/core": ^2.9.3
     "@radix-ui/react-scroll-area": ^0.1.1
-    clsx: ^1.1.1
     react-popper: ^2.2.5
     react-textarea-autosize: ^8.3.2
   peerDependencies:
-    "@mantine/hooks": 4.1.1
+    "@mantine/hooks": 4.1.2
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 11a120e3c086e45d9e74248a7dd31d8cc8b23d3c8d162ed0f535463fe11593b65e023da0bc7d67c2deb5e57c791ef1598abe95b66534a4ac0196969961a94047
+  checksum: ec75a62c9acdbfa05669a2cc702c8d8d4cf0dc640da9fc3bd717f279328e835c0551aa16623cf3835e88889b7dd9f7993069ed929a9718631b2bb43fc2427030
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@mantine/hooks@npm:4.1.1"
+"@mantine/hooks@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@mantine/hooks@npm:4.1.2"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 028f1a69f2dd2309efd64ce4a9631e1d79a0272a84e7df5a14df4d65f7c2208112246d5441faae58ad14ec17493d412d5d52373b012ae7f4dc1d483769d4ad01
+  checksum: cfc41bf4797efd22cc2b193a3391570a835c3b4d348c44dafc798782e126deae7fafa6996fd040e84454b1515606d7ee98b41ffd91a3a4a4facc5bfb3430743a
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@mantine/next@npm:4.1.1"
+"@mantine/next@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@mantine/next@npm:4.1.2"
   dependencies:
-    "@mantine/ssr": 4.1.1
+    "@mantine/ssr": 4.1.2
   peerDependencies:
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 98588adc5ff3b236ca903bbc56f1c6be3c279c8d4bc94116318e6e74903b1aa963f8a3a7ecdce70224c524fd4c1c07c4c8dd273f8fd70833a89f660a5dfc82f4
+  checksum: d7717374cb9ba802e1a66b8d1eac3e73f84fbed552849de643cf0d9730c81f41582c5e8578ffdeea2eac8bce75d00dc9def2e34975fbb39c1208ca1109a7a94b
   languageName: node
   linkType: hard
 
-"@mantine/ssr@npm:4.1.1":
-  version: 4.1.1
-  resolution: "@mantine/ssr@npm:4.1.1"
+"@mantine/ssr@npm:4.1.2":
+  version: 4.1.2
+  resolution: "@mantine/ssr@npm:4.1.2"
   dependencies:
     "@emotion/cache": ^11.7.1
     "@emotion/react": ^11.7.1
     "@emotion/serialize": ^1.0.2
     "@emotion/server": ^11.4.0
     "@emotion/utils": ^1.0.0
-    "@mantine/styles": 4.1.1
+    "@mantine/styles": 4.1.2
     csstype: ^3.0.9
     html-react-parser: ^1.3.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 0be53dca43eb95dad9e900bed29dc58aa20a8c7cde0cb0bdd00d2c9605167a5230c26f703d4fed444801e9c94df71e81bf0450466354d40339cca96c4b2c2554
+  checksum: 6957182bddf6f956f435dd15fffe2f1abb08cbc1a5f1707b9d013343f3ccb60e0e005ff24b2a9ae5db89c0c03b90009b4eae121848a55062724635bb7ad50c80
   languageName: node
   linkType: hard
 
-"@mantine/styles@npm:4.1.1":
-  version: 4.1.1
-  resolution: "@mantine/styles@npm:4.1.1"
+"@mantine/styles@npm:4.1.2":
+  version: 4.1.2
+  resolution: "@mantine/styles@npm:4.1.2"
   dependencies:
     "@emotion/cache": ^11.7.1
     "@emotion/react": ^11.7.1
@@ -1570,14 +1569,14 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 67680e93b566c504c0b6d32223c4c8d301f424403df513000a926624e90a92cdbf60a7ba2b32405e5a087224d72038137aa50662d11597417bc563c60979ef0f
+  checksum: 8569684b5b5325d3547433fbd0d89a240a2d33236b0aafde566563bc5810284ef6b84a539b986f9583d18e04106f40e28d408bdb3c8a67bc01a4aebbf77c58d9
   languageName: node
   linkType: hard
 
-"@next/env@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/env@npm:12.1.5-canary.0"
-  checksum: 5175a5f60c191be960ee08afaacea5a04ed99b998d180a06aa6d6c7aac1a3fda368105cc83e3048270dc3022667770a04d1db718fe45bd89c8c51a67d602609c
+"@next/env@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/env@npm:12.1.5-canary.1"
+  checksum: 7534f9232e791e27fb02dcad69ad3dd9f63dedba902bcb3616b2f8c76ef3f33d31b2477b1bf3c885aca063a49857dbce6bad9f1c37fd4fccfe8d59f8c2b04226
   languageName: node
   linkType: hard
 
@@ -1590,86 +1589,86 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/swc-android-arm-eabi@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-android-arm-eabi@npm:12.1.5-canary.0"
+"@next/swc-android-arm-eabi@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-android-arm-eabi@npm:12.1.5-canary.1"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@next/swc-android-arm64@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-android-arm64@npm:12.1.5-canary.0"
+"@next/swc-android-arm64@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-android-arm64@npm:12.1.5-canary.1"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-darwin-arm64@npm:12.1.5-canary.0"
+"@next/swc-darwin-arm64@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-darwin-arm64@npm:12.1.5-canary.1"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-darwin-x64@npm:12.1.5-canary.0"
+"@next/swc-darwin-x64@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-darwin-x64@npm:12.1.5-canary.1"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm-gnueabihf@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-linux-arm-gnueabihf@npm:12.1.5-canary.0"
+"@next/swc-linux-arm-gnueabihf@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-linux-arm-gnueabihf@npm:12.1.5-canary.1"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-linux-arm64-gnu@npm:12.1.5-canary.0"
+"@next/swc-linux-arm64-gnu@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-linux-arm64-gnu@npm:12.1.5-canary.1"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-linux-arm64-musl@npm:12.1.5-canary.0"
+"@next/swc-linux-arm64-musl@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-linux-arm64-musl@npm:12.1.5-canary.1"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-linux-x64-gnu@npm:12.1.5-canary.0"
+"@next/swc-linux-x64-gnu@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-linux-x64-gnu@npm:12.1.5-canary.1"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-linux-x64-musl@npm:12.1.5-canary.0"
+"@next/swc-linux-x64-musl@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-linux-x64-musl@npm:12.1.5-canary.1"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-win32-arm64-msvc@npm:12.1.5-canary.0"
+"@next/swc-win32-arm64-msvc@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-win32-arm64-msvc@npm:12.1.5-canary.1"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-win32-ia32-msvc@npm:12.1.5-canary.0"
+"@next/swc-win32-ia32-msvc@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-win32-ia32-msvc@npm:12.1.5-canary.1"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "@next/swc-win32-x64-msvc@npm:12.1.5-canary.0"
+"@next/swc-win32-x64-msvc@npm:12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "@next/swc-win32-x64-msvc@npm:12.1.5-canary.1"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -5291,9 +5290,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"next-pwa@npm:^5.4.6":
-  version: 5.4.6
-  resolution: "next-pwa@npm:5.4.6"
+"next-pwa@npm:^5.4.7":
+  version: 5.4.7
+  resolution: "next-pwa@npm:5.4.7"
   dependencies:
     babel-loader: ^8.2.3
     clean-webpack-plugin: ^4.0.0
@@ -5303,27 +5302,27 @@ fsevents@~2.3.2:
     workbox-window: ^6.5.1
   peerDependencies:
     next: ">=9.0.0"
-  checksum: 4b4a951a2334ec6e6f37e5554bf71d85a9eba11db33c3bf77d974a625fa5fe63830f3a68a9c2160074952878586ade7c910b7c097ea077f8b9e628acd8945b12
+  checksum: eebacf2e2cb56b8be2414841e95cfdb0b72232dc1a4f2dfd7fdd83d96c468f4ba36105c9dce00ba6f405a97d94b24e6e2a3fd96d1bc847fe3dcf3219ba565b3f
   languageName: node
   linkType: hard
 
-"next@npm:^12.1.5-canary.0":
-  version: 12.1.5-canary.0
-  resolution: "next@npm:12.1.5-canary.0"
+"next@npm:^12.1.5-canary.1":
+  version: 12.1.5-canary.1
+  resolution: "next@npm:12.1.5-canary.1"
   dependencies:
-    "@next/env": 12.1.5-canary.0
-    "@next/swc-android-arm-eabi": 12.1.5-canary.0
-    "@next/swc-android-arm64": 12.1.5-canary.0
-    "@next/swc-darwin-arm64": 12.1.5-canary.0
-    "@next/swc-darwin-x64": 12.1.5-canary.0
-    "@next/swc-linux-arm-gnueabihf": 12.1.5-canary.0
-    "@next/swc-linux-arm64-gnu": 12.1.5-canary.0
-    "@next/swc-linux-arm64-musl": 12.1.5-canary.0
-    "@next/swc-linux-x64-gnu": 12.1.5-canary.0
-    "@next/swc-linux-x64-musl": 12.1.5-canary.0
-    "@next/swc-win32-arm64-msvc": 12.1.5-canary.0
-    "@next/swc-win32-ia32-msvc": 12.1.5-canary.0
-    "@next/swc-win32-x64-msvc": 12.1.5-canary.0
+    "@next/env": 12.1.5-canary.1
+    "@next/swc-android-arm-eabi": 12.1.5-canary.1
+    "@next/swc-android-arm64": 12.1.5-canary.1
+    "@next/swc-darwin-arm64": 12.1.5-canary.1
+    "@next/swc-darwin-x64": 12.1.5-canary.1
+    "@next/swc-linux-arm-gnueabihf": 12.1.5-canary.1
+    "@next/swc-linux-arm64-gnu": 12.1.5-canary.1
+    "@next/swc-linux-arm64-musl": 12.1.5-canary.1
+    "@next/swc-linux-x64-gnu": 12.1.5-canary.1
+    "@next/swc-linux-x64-musl": 12.1.5-canary.1
+    "@next/swc-win32-arm64-msvc": 12.1.5-canary.1
+    "@next/swc-win32-ia32-msvc": 12.1.5-canary.1
+    "@next/swc-win32-x64-msvc": 12.1.5-canary.1
     caniuse-lite: ^1.0.30001283
     postcss: 8.4.5
     styled-jsx: 5.0.1
@@ -5367,7 +5366,7 @@ fsevents@~2.3.2:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: daadd95919f1b270f24c8ac7dddfeb0b760fe1e686f5a9a00536a21079f4f9aa6ba50711e560ee924bb59ce1cf423ed8888ec9e12479ede3fd5fa5fa9db8b836
+  checksum: 19d1b03e326417a165985d871f9db87ec4615574aaa42987f1132132a5a04e1bbca0cf152c6f17347403678fa7bd39fb2389362512b2dba36323262810d54900
   languageName: node
   linkType: hard
 
@@ -5762,12 +5761,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.6.1":
-  version: 2.6.1
-  resolution: "prettier@npm:2.6.1"
+"prettier@npm:2.6.2":
+  version: 2.6.2
+  resolution: "prettier@npm:2.6.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 78be1f8a3ddfad7c3d8a854b6c8941a3bb1ddfca4225c38d778e0fe1029a55368f71b3bbefff82c689015fbb4d391ec44add957f01308ad2725e01a7c1f37cb6
+  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
   languageName: node
   linkType: hard
 
@@ -7245,9 +7244,9 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@emotion/react": ^11.8.2
     "@emotion/styled": ^11.8.1
-    "@mantine/core": ^4.1.1
-    "@mantine/hooks": ^4.1.1
-    "@mantine/next": ^4.1.1
+    "@mantine/core": ^4.1.2
+    "@mantine/hooks": ^4.1.2
+    "@mantine/next": ^4.1.2
     "@types/node": ^17.0.23
     "@types/react": ^17.0.43
     eslint: ^8.12.0
@@ -7257,10 +7256,10 @@ resolve@^2.0.0-next.3:
     framer-motion: ^6.2.8
     gray-matter: ^4.0.3
     husky: ^7.0.4
-    next: ^12.1.5-canary.0
-    next-pwa: ^5.4.6
+    next: ^12.1.5-canary.1
+    next-pwa: ^5.4.7
     phosphor-react: ^1.4.1
-    prettier: 2.6.1
+    prettier: 2.6.2
     react: 18.0.0
     react-dom: 18.0.0
     react-markdown: ^8.0.2
