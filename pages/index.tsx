@@ -167,7 +167,12 @@ export function ProjectCard({
       {banner && (
         <>
           <Card.Section>
-            <Image objectPosition={"50% 50%"} layout="responsive" src={banner} alt="Banner" />
+            <Image
+              objectPosition={"50% 50%"}
+              layout="responsive"
+              src={banner}
+              alt="Banner"
+            />
           </Card.Section>
           <Space h="sm" />
         </>

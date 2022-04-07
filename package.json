@@ -15,15 +15,15 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@emotion/react": "^11.8.2",
+    "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mantine/core": "^4.1.2",
     "@mantine/hooks": "^4.1.2",
     "@mantine/next": "^4.1.2",
     "feed": "^4.2.2",
-    "framer-motion": "^6.2.8",
+    "framer-motion": "^6.2.9",
     "gray-matter": "^4.0.3",
-    "next": "^12.1.5-canary.1",
+    "next": "^12.1.5-canary.3",
     "next-pwa": "^5.4.7",
     "phosphor-react": "^1.4.1",
     "react": "18.0.0",

@@ -22,6 +22,7 @@ import {
 } from "@mantine/core";
 import ReactMarkdown from "react-markdown";
 import { NextLink } from "@mantine/next";
+import Link from "../../../../../components/Link";
 
 type Props = {
   post: PostType;
@@ -32,6 +33,9 @@ const Post = ({ post }: Props) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+  const year = post.date.year;
+  const month = ("0" + post.date.day).slice(-2);
+  const day = ("0" + post.date.month).slice(-2);
   return (
     <div>
       <Navbar />
@@ -63,11 +67,13 @@ const Post = ({ post }: Props) => {
                 ))}
               </Group>
               <AuthorDisplay author={post.author} />
-              <Space h="xl" />
-              <Text>
-                {post.date.year}-{("0" + post.date.month).slice(-2)}-
-                {("0" + post.date.day).slice(-2)}
-              </Text>
+              <Space h={"md"} />
+              <Group spacing={1}>
+                <Link href={`/blog/${year}`}>{year}</Link>-
+                <Link href={`/blog/${year}/${month}`}>{month}</Link>-
+                <Link href={`/blog/${year}/${month}/${day}`}>{day}</Link>
+              </Group>
+              <Space h={"md"} />
               <TypographyStylesProvider>
                 <ReactMarkdown components={{}}>{post.content}</ReactMarkdown>
               </TypographyStylesProvider>
