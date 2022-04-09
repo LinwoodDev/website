@@ -40,8 +40,8 @@ const Home: NextPage = () => {
 
       <main>
         <Container size={"lg"} style={{ minHeight: "100vh" }}>
-          <Box sx={{ marginTop: "10em" }}>
-            <Title align="center" order={1}>
+          <Box mt="10em" mb={10}>
+            <Title align="center" order={1} mb={10}>
               Linwood <Text color={"green"}>Development</Text>
             </Title>
             <Group spacing={3} position="center">
@@ -105,7 +105,7 @@ const Home: NextPage = () => {
         </Container>
         <Container size={"lg"} id="contact">
           <Box sx={{ marginTop: "10em" }}>
-            <Title align="center" order={2}>
+            <Title align="center" order={2} mb={10}>
               Contact
             </Title>
             <Group spacing={3} position="center">
