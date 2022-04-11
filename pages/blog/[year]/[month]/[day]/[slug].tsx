@@ -34,8 +34,8 @@ const Post = ({ post }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
   const year = post.date.year;
-  const month = ("0" + post.date.day).slice(-2);
-  const day = ("0" + post.date.month).slice(-2);
+  const month = ("0" + post.date.month).slice(-2);
+  const day = ("0" + post.date.day).slice(-2);
   return (
     <div>
       <Navbar />
