@@ -15,7 +15,6 @@ import {
   Button,
   Card,
   Container,
-  Grid,
   Group,
   Space,
   Text,
@@ -121,7 +120,22 @@ const Home: NextPage = () => {
               <Button
                 component={NextLink}
                 href="https://twitter.com/LinwoodCloud"
-                color="teal"
+                styles={(theme) => ({
+                  root: {
+                    backgroundColor: "#00acee",
+                    border: 0,
+                    paddingLeft: 20,
+                    paddingRight: 20,
+
+                    "&:hover": {
+                      backgroundColor: theme.fn.darken("#00acee", 0.1),
+                    },
+                  },
+
+                  leftIcon: {
+                    marginRight: 15,
+                  },
+                })}
                 size="lg"
                 leftIcon={<TwitterLogo size={24} />}
               >
