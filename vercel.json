@@ -1,7 +1,10 @@
 {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "redirects": [
-        { "source": "/impress", "destination": "https://me.linwood.dev/impress" },
-        { "source": "/privacypolicy", "destination": "https://me.linwood.dev/privacypolicy" }
-    ]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/impress", "destination": "https://me.linwood.dev/impress" },
+    {
+      "source": "/privacypolicy",
+      "destination": "https://me.linwood.dev/privacypolicy"
+    }
+  ]
 }

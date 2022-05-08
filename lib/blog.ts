@@ -3,6 +3,7 @@ import { join } from "path";
 import matter from "gray-matter";
 import { Feed } from "feed";
 import Post from "../types/post";
+import { compile } from "@mdx-js/mdx";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -32,11 +33,11 @@ export function getPostsByDate({
   });
 }
 
-export function getPostBySlug(slug: string): Post {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+export function getPostBySlug(slug: string, compileContent?: boolean): Post {
+  const realSlug = slug.replace(/\.mdx$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  var { data, content } = matter(fileContents);
 
   type Items = {
     [key: string]: string;
@@ -77,29 +78,19 @@ export function getPostTags(): string[] {
 
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
-  return (
-    slugs
-      .map((slug) => getPostBySlug(slug))
-      // sort posts by date in descending order
-      .sort((post1, post2) =>
-        new Date(
-          post1.date.year,
-          post1.date.month - 1,
-          post1.date.day
-        ).getTime() >
-        new Date(
-          post2.date.year,
-          post2.date.month - 1,
-          post2.date.day
-        ).getTime()
-          ? -1
-          : 1
-      )
+  var posts = slugs.map((slug) => getPostBySlug(slug));
+  // sort posts by date in descending order
+  posts = posts.sort((post1, post2) =>
+    new Date(post1.date.year, post1.date.month - 1, post1.date.day).getTime() >
+    new Date(post2.date.year, post2.date.month - 1, post2.date.day).getTime()
+      ? -1
+      : 1
   );
+  return posts;
 }
 
-export const generateRssFeed = () => {
-  const posts = getAllPosts();
+export const generateRssFeed = async () => {
+  const posts = await getAllPosts();
   const siteURL = process.env.SITE_URL ?? "https://linwood.dev";
   const date = new Date();
   const author = {

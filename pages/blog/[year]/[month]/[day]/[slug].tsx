@@ -9,26 +9,25 @@ import Footer from "../../../../../components/Footer";
 import AuthorDisplay from "../../../../../components/AuthorDisplay";
 import {
   Badge,
-  Blockquote,
-  Box,
   Container,
   Group,
   Image,
-  List,
   Space,
-  Text,
   Title,
   TypographyStylesProvider,
 } from "@mantine/core";
-import ReactMarkdown from "react-markdown";
 import { NextLink } from "@mantine/next";
 import Link from "../../../../../components/Link";
+import { GetStaticProps } from "next";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 type Props = {
   post: PostType;
+  mdxSource: MDXRemoteSerializeResult;
 };
 
-const Post = ({ post }: Props) => {
+const Post = ({ post, mdxSource }: Props) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -75,7 +74,7 @@ const Post = ({ post }: Props) => {
               </Group>
               <Space h={"md"} />
               <TypographyStylesProvider>
-                <ReactMarkdown components={{}}>{post.content}</ReactMarkdown>
+                <MDXRemote {...mdxSource} />
               </TypographyStylesProvider>
             </Container>
           </article>
@@ -97,18 +96,19 @@ type Params = {
   };
 };
 
-export async function getStaticProps({ params }: Params) {
-  const { year, month, day, slug } = params;
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const { year, month, day, slug } = params!;
   const post = getPostBySlug(
     `${year}-${("0" + month).slice(-2)}-${("0" + day).slice(-2)}-${slug}`
   );
-
+  const mdxSource = await serialize(post.content);
   return {
     props: {
       post,
+      mdxSource,
     },
   };
-}
+};
 
 export async function getStaticPaths() {
   const posts = getAllPosts();
