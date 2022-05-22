@@ -32,9 +32,9 @@ export default function Footer() {
           <Group direction="column" align="center">
             <Text align="center">Support</Text>
             <Link href={"https://status.linwood.dev"}>Status</Link>
-            <Link href={"https://codedoctor.tk/impress.html"}>Imprint</Link>
-            <Link href={"https://codedoctor.tk/privacy.html"}>
-              Privacy Policy
+            <Link href={"/imprint"}>Imprint/Impressum</Link>
+            <Link href={"/privacypolicy"}>
+              Privacy Policy/Datenschutzerklärung
             </Link>
           </Group>
           <Group direction="column" align="center">
