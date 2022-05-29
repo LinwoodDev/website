@@ -3,8 +3,9 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/LinwoodHeader";
 import { getAllPosts, generateRssFeed } from "../../lib/blog";
 import PostType from "../../types/post";
-import { Box, Card, Container, Group, Space, Text, Title } from "@mantine/core";
+import { Box, Card, Container, Divider, Group, Menu, Space, Text, Title } from "@mantine/core";
 import { NextLink } from "@mantine/next";
+import { useRouter } from "next/router";
 
 type Props = {
   allPosts: PostType[];
@@ -21,7 +22,10 @@ const Index = ({ allPosts }: Props) => {
 
       <main>
         <Container size="sm">
-          <Title order={1}>Blog</Title>
+          <Group position="apart">
+            <Title order={1}>Blog</Title>
+            <BlogMenu />
+          </Group>
           <Space h={"xl"} />
           <Group direction="column" spacing={16} align="stretch">
             {allPosts.map((post) => (
@@ -66,4 +70,18 @@ export function BlogEntryCard({ post }: CardProps) {
       <Text>{post.excerpt}</Text>
     </Card>
   );
+}
+
+export function BlogMenu() {
+  const router = useRouter();
+  const openDiscord = () => router.push("https://go.linwood.dev/discord");
+  const openGitHub = () => router.push("https://github.com/LinwoodCloud");
+  const openRSS = () => router.push("https://www.linwood.dev/blog/atom.xml");
+  return (
+    <Menu placement="end" position="top" withArrow>
+      <Menu.Item onClick={openRSS}>RSS-Blog</Menu.Item>
+      <Menu.Item onClick={openDiscord}>Discord</Menu.Item>
+      <Menu.Item onClick={openGitHub}>GitHub</Menu.Item>
+    </Menu>
+  )
 }
