@@ -6,7 +6,7 @@ import LinwoodHeader from "../components/LinwoodHeader";
 
 type Props = {};
 
-export default function ImpressPage({ }: Props) {
+export default function ImpressPage({}: Props) {
   return (
     <>
       <Head>
@@ -43,17 +43,17 @@ export default function ImpressPage({ }: Props) {
             <p>
               Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs.1 TMG
               f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen
-              Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir als
-              Diensteanbieter jedoch nicht verpflichtet, &uuml;bermittelte oder
-              gespeicherte fremde Informationen zu &uuml;berwachen oder nach
-              Umst&auml;nden zu forschen, die auf eine rechtswidrige
+              Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir
+              als Diensteanbieter jedoch nicht verpflichtet, &uuml;bermittelte
+              oder gespeicherte fremde Informationen zu &uuml;berwachen oder
+              nach Umst&auml;nden zu forschen, die auf eine rechtswidrige
               T&auml;tigkeit hinweisen.
             </p>
             <p>
               Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
               Informationen nach den allgemeinen Gesetzen bleiben hiervon
-              unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist jedoch erst ab
-              dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
+              unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist jedoch erst
+              ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
               m&ouml;glich. Bei Bekanntwerden von entsprechenden
               Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
             </p>
@@ -82,16 +82,17 @@ export default function ImpressPage({ }: Props) {
               Vervielf&auml;ltigung, Bearbeitung, Verbreitung und jede Art der
               Verwertung au&szlig;erhalb der Grenzen des Urheberrechtes
               bed&uuml;rfen der schriftlichen Zustimmung des jeweiligen Autors
-              bzw. Erstellers. Downloads und Kopien dieser Seite sind nur f&uuml;r
-              den privaten, nicht kommerziellen Gebrauch gestattet.
+              bzw. Erstellers. Downloads und Kopien dieser Seite sind nur
+              f&uuml;r den privaten, nicht kommerziellen Gebrauch gestattet.
             </p>
             <p>
               Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt
               wurden, werden die Urheberrechte Dritter beachtet. Insbesondere
               werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie
-              trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten
-              wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
-              Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+              trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
+              bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
+              Rechtsverletzungen werden wir derartige Inhalte umgehend
+              entfernen.
             </p>
 
             <p>

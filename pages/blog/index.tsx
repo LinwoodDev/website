@@ -3,7 +3,15 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/LinwoodHeader";
 import { getAllPosts, generateRssFeed } from "../../lib/blog";
 import PostType from "../../types/post";
-import { Box, Card, Container, Divider, Group, Menu, Space, Text, Title } from "@mantine/core";
+import {
+  Card,
+  Container,
+  Group,
+  Menu,
+  Space,
+  Text,
+  Title,
+} from "@mantine/core";
 import { NextLink } from "@mantine/next";
 import { useRouter } from "next/router";
 
@@ -83,5 +91,5 @@ export function BlogMenu() {
       <Menu.Item onClick={openDiscord}>Discord</Menu.Item>
       <Menu.Item onClick={openGitHub}>GitHub</Menu.Item>
     </Menu>
-  )
+  );
 }
