@@ -1510,67 +1510,67 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^4.2.7":
-  version: 4.2.7
-  resolution: "@mantine/core@npm:4.2.7"
+"@mantine/core@npm:^4.2.8":
+  version: 4.2.8
+  resolution: "@mantine/core@npm:4.2.8"
   dependencies:
-    "@mantine/styles": 4.2.7
+    "@mantine/styles": 4.2.8
     "@popperjs/core": ^2.9.3
     "@radix-ui/react-scroll-area": ^0.1.1
     react-popper: ^2.2.5
     react-textarea-autosize: ^8.3.2
   peerDependencies:
-    "@mantine/hooks": 4.2.7
+    "@mantine/hooks": 4.2.8
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: f86d17fe8793bf37ef40eba9bf369db268e64923fe907ebcd8d977685bf1efda8c2b6a0f490cc3de87212273e930107e7d9e7135e4babe087a3e40d0f85b44af
+  checksum: a7434d542657e5b196dc795503f667a4eff0cc4eed3870c3bd3ae1f645e01bc9c9e3dd32387907700cb96a41a70b836c0003756f5f488e7db7f61dee175386e6
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^4.2.7":
-  version: 4.2.7
-  resolution: "@mantine/hooks@npm:4.2.7"
+"@mantine/hooks@npm:^4.2.8":
+  version: 4.2.8
+  resolution: "@mantine/hooks@npm:4.2.8"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 66dc8887b7913334ed1ce6f4be0353f4273142b10d1e820d4395edbad5fc7dc7f8483e07abe5956d7463fc77365340765c80843d8f825dc00c447310eb58831d
+  checksum: 371bc3fa19130838d1a53454291b84c41390f9e8d4d89166c3ba36b60e5e671502b221a98834a42be3de0c6ab878eb0a950a58f8770e44ad6d9cba1468ef0aae
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^4.2.7":
-  version: 4.2.7
-  resolution: "@mantine/next@npm:4.2.7"
+"@mantine/next@npm:^4.2.8":
+  version: 4.2.8
+  resolution: "@mantine/next@npm:4.2.8"
   dependencies:
-    "@mantine/ssr": 4.2.7
+    "@mantine/ssr": 4.2.8
   peerDependencies:
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 4aa9384559ca7882aa2719629a79e2eb8b60c8491a6a22ff12c535585701d9b7f2d577bc8c043c6ea7669e890440606c253fd7e4656b05b4f5d815db5c121b27
+  checksum: 48d658a6c1954a30906c34602a37da4b00ca3712819ba1cc1719045a95d412d1f3c6d847116b85f37c34dfdbac84929c525fdb20b4b93734f6016e1988924bfa
   languageName: node
   linkType: hard
 
-"@mantine/ssr@npm:4.2.7":
-  version: 4.2.7
-  resolution: "@mantine/ssr@npm:4.2.7"
+"@mantine/ssr@npm:4.2.8":
+  version: 4.2.8
+  resolution: "@mantine/ssr@npm:4.2.8"
   dependencies:
     "@emotion/cache": 11.7.1
     "@emotion/react": 11.7.1
     "@emotion/serialize": 1.0.2
     "@emotion/server": 11.4.0
     "@emotion/utils": 1.0.0
-    "@mantine/styles": 4.2.7
+    "@mantine/styles": 4.2.8
     csstype: 3.0.9
     html-react-parser: 1.3.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: dcbbe3c4992f16c147ebb66fe156561cc1e6f6c0166ac33cc0d422c3250864c3d80773f32bd755e6c300f7035fe3341cffcd3a0ccb919775e782e227bd3876d1
+  checksum: f2588004ffa65890e4e88ff23aae54124ccc96edda8fcdf4fee9ec93219e156a9862ce6c8473c8096b4944858c56cd8268cd8451118ce55c8358f8c569699a54
   languageName: node
   linkType: hard
 
-"@mantine/styles@npm:4.2.7":
-  version: 4.2.7
-  resolution: "@mantine/styles@npm:4.2.7"
+"@mantine/styles@npm:4.2.8":
+  version: 4.2.8
+  resolution: "@mantine/styles@npm:4.2.8"
   dependencies:
     "@emotion/cache": 11.7.1
     "@emotion/react": 11.7.1
@@ -1581,7 +1581,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: f8a1dc2ca9be269e249671b2dc8a5849e859775c133a607723313aa2978cd7b3669217749d9ce6a8abbecfdaab567e4549af9683383030236883dde777a8628c
+  checksum: 03bbddecb1837bca42e2667cb548d821adfb758c66d71c7719390b3921483d3d4997a03b1aaceccc4e557160522000e68978aa3c8b38f2ae3e4a9d85927e519d
   languageName: node
   linkType: hard
 
@@ -2162,7 +2162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:>=16, @types/react@npm:^18.0.9":
+"@types/react@npm:>=16":
   version: 18.0.9
   resolution: "@types/react@npm:18.0.9"
   dependencies:
@@ -2170,6 +2170,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 162364dad716d9017ee34aabf2ea37499709ebbdef70392ae1b39225985971e1a46f121efb9c5c7da92144ee1d96d4525df806a7c1c03a5db7fd31dd034ddc7a
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.11":
+  version: 18.0.11
+  resolution: "@types/react@npm:18.0.11"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: a2138d6929c36a398b0b43eb815b4e67c4f15aeebbdf8b1959edac56b8662d7409020a00540369b4eb1054579b1e8c9549447ae9b0335d5d1ec4ed4e1be2d628
   languageName: node
   linkType: hard
 
@@ -3592,9 +3603,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.16.0":
-  version: 8.16.0
-  resolution: "eslint@npm:8.16.0"
+"eslint@npm:^8.17.0":
+  version: 8.17.0
+  resolution: "eslint@npm:8.17.0"
   dependencies:
     "@eslint/eslintrc": ^1.3.0
     "@humanwhocodes/config-array": ^0.9.2
@@ -3633,7 +3644,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 654a0200b49dc07280673fee13cdfb04326466790e031dfa9660b69fba3b1cf766a51504328f9de56bd18e6b5eb7578985cf29dc7f016c5ec851220ff9db95eb
+  checksum: b484c96681c6b19f5b437f664623f1cd310d3ee9be88400d8450e086e664cd968a9dc202f0b0678578fd50e7a445b92586efe8c787de5073ff2f83213b00bb7b
   languageName: node
   linkType: hard
 
@@ -3897,9 +3908,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^6.3.4":
-  version: 6.3.4
-  resolution: "framer-motion@npm:6.3.4"
+"framer-motion@npm:^6.3.10":
+  version: 6.3.10
+  resolution: "framer-motion@npm:6.3.10"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     framesync: 6.0.1
@@ -3913,7 +3924,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: ea4ea22059f6723804f3890327e4f22c3ead564cbd54dc1df66ff6b010835202e42de0fe325f956074033359904206af72714f01c26859cb80279583908ae3e9
+  checksum: 19d21425a674bafdd22560a069455ef965d78f8e6201791b38174a632e39c0fc1313d92f3b36249074b42dfa17f148e39bb19f8a48bb70a850c4926a863242ae
   languageName: node
   linkType: hard
 
@@ -7441,23 +7452,23 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.2":
-  version: 4.7.2
-  resolution: "typescript@npm:4.7.2"
+"typescript@npm:^4.7.3":
+  version: 4.7.3
+  resolution: "typescript@npm:4.7.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5163585e6b56410f77d5483b698d9489bbee8902c99029eb70cf6d21525a186530ce19a00951af84eefd4a131cc51d0959f5118e25e70ab61f45ac4057dbd1ef
+  checksum: fd13a1ce53790a36bb8350e1f5e5e384b5f6cb9b0635114a6d01d49cb99916abdcfbc13c7521cdae2f2d3f6d8bc4a8ae7625edf645a04ee940588cd5e7597b2f
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.2#~builtin<compat/typescript>":
-  version: 4.7.2
-  resolution: "typescript@patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=7ad353"
+"typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
+  version: 4.7.3
+  resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 7e2b9a9f4a70fb7616f1b0d986977f8e34a74f046202fa7f24fdee79589598277810fa216b3776c20c0683a9235872c73be34fdb93f67f98c1efaca40999422f
+  checksum: 137d18a77f52254a284960b16ab53d0619f57b69b5d585804b8413f798a1175ce3e774fb95e6a101868577aafe357d8fcfc9171f0dc9fc0c210e9ae59d107cc0
   languageName: node
   linkType: hard
 
@@ -7809,19 +7820,19 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
-    "@mantine/core": ^4.2.7
-    "@mantine/hooks": ^4.2.7
-    "@mantine/next": ^4.2.7
+    "@mantine/core": ^4.2.8
+    "@mantine/hooks": ^4.2.8
+    "@mantine/next": ^4.2.8
     "@mdx-js/loader": ^2.1.1
     "@mdx-js/mdx": ^2.1.1
     "@types/mdx": ^2.0.2
     "@types/node": ^16
-    "@types/react": ^18.0.9
-    eslint: ^8.16.0
+    "@types/react": ^18.0.11
+    eslint: ^8.17.0
     eslint-config-next: ^12.1.6
     eslint-config-prettier: ^8.5.0
     feed: ^4.2.2
-    framer-motion: ^6.3.4
+    framer-motion: ^6.3.10
     gray-matter: ^4.0.3
     husky: ^8.0.1
     next: ^12.1.6
@@ -7831,7 +7842,7 @@ resolve@^2.0.0-next.3:
     prettier: 2.6.2
     react: 18.1.0
     react-dom: 18.1.0
-    typescript: ^4.7.2
+    typescript: ^4.7.3
   languageName: unknown
   linkType: soft
 

@@ -48,7 +48,7 @@ const Post = ({ post, mdxSource }: Props) => {
               <title>{post.title} | Linwood Blog</title>
               <meta property="og:image" content={post.ogImage?.url} />
             </Head>
-            <Container size="sm" style={{ minHeight: "100vh" }}>
+            <Container size="md" style={{ minHeight: "100vh" }}>
               {post.coverImage && (
                 <Image src={post.coverImage} alt="Post logo" />
               )}

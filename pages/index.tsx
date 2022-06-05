@@ -70,6 +70,7 @@ const Home: NextPage = () => {
               description="Change the world"
               source="https://github.com/LinwoodCloud/butterfly"
               website="https://docs.butterfly.linwood.dev"
+              blog="butterfly"
               big={true}
             />
             <Space h="md" />
@@ -80,6 +81,7 @@ const Home: NextPage = () => {
                 description="Free, opensource, serverless learning platform"
                 source="https://github.com/LinwoodCloud/dev_doctor"
                 website="https://docs.dev-doctor.linwood.dev"
+                blog="dev-doctor"
               />
               <ProjectCard
                 banner={launcherPic}
@@ -87,6 +89,7 @@ const Home: NextPage = () => {
                 description="Opensource start page"
                 source="https://github.com/LinwoodCloud/Launcher"
                 website="https://docs.launch.linwood.dev"
+                blog="launch"
               />
             </Group>
             <Space h="xl" />
@@ -156,6 +159,7 @@ interface ProjectCardProps {
   website?: string;
   source?: string;
   big?: boolean;
+  blog?: string;
   banner?: StaticImageData;
 }
 
@@ -166,6 +170,7 @@ export function ProjectCard({
   source,
   big,
   banner,
+  blog,
 }: ProjectCardProps): ReactElement {
   return (
     <Card
@@ -219,6 +224,17 @@ export function ProjectCard({
               href={source}
             >
               View source
+            </Button>
+          )}
+          {blog && (
+            <Button
+              sx={{ flex: 1 }}
+              fullWidth
+              component={NextLink}
+              href={`/blog/tag/${blog}`}
+              color="orange"
+            >
+              View blog
             </Button>
           )}
         </Group>
