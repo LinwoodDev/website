@@ -213,7 +213,7 @@ export function ProjectCard({
               component={NextLink}
               href={website}
             >
-              View website
+              Website
             </Button>
           )}
           {source && (
@@ -223,7 +223,7 @@ export function ProjectCard({
               component={NextLink}
               href={source}
             >
-              View source
+              Source
             </Button>
           )}
           {blog && (
@@ -234,7 +234,7 @@ export function ProjectCard({
               href={`/blog/tag/${blog}`}
               color="orange"
             >
-              View blog
+              Blog
             </Button>
           )}
         </Group>
