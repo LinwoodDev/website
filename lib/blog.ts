@@ -94,7 +94,6 @@ export function getAllPostIds(): string[] {
   const posts = getAllPosts();
 
   return posts.filter((post) => post.id).map((post) => post.id!);
-  
 }
 
 export function getPostById(id: string): Post {

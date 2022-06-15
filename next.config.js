@@ -1,5 +1,6 @@
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
+const redirects = require("./redirects");
 
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
@@ -11,10 +12,13 @@ module.exports = withPWA({
     dest: "public",
     runtimeCaching,
   },
+  redirects() {
+    return redirects;
+  },
   images: {
     domains: ["avatars1.githubusercontent.com", "github.com"],
   },
-  
+
   rules: [
     {
       test: /\.mdx?$/,

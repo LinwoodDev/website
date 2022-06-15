@@ -1,5 +1,3 @@
 const general = require("./general");
 
-module.exports = [
-    ...general,
-];
+module.exports = [...general];
