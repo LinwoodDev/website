@@ -17,6 +17,7 @@ type PostType = {
   };
   content: string;
   tags: string[];
+  id?: string;
 };
 
 export default PostType;

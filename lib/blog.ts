@@ -61,6 +61,7 @@ export function getPostBySlug(slug: string, compileContent?: boolean): Post {
     content,
     excerpt: data.excerpt ?? null,
     ogImage: data.ogImage ?? null,
+    id: data.id ?? null,
   };
 }
 
@@ -87,6 +88,19 @@ export function getAllPosts(): Post[] {
       : 1
   );
   return posts;
+}
+
+export function getAllPostIds(): string[] {
+  const posts = getAllPosts();
+
+  return posts.filter((post) => post.id).map((post) => post.id!);
+  
+}
+
+export function getPostById(id: string): Post {
+  const posts = getAllPosts();
+
+  return posts.find((post) => post.id === id)!;
 }
 
 export const generateRssFeed = async () => {

@@ -14,6 +14,7 @@ module.exports = withPWA({
   images: {
     domains: ["avatars1.githubusercontent.com", "github.com"],
   },
+  
   rules: [
     {
       test: /\.mdx?$/,

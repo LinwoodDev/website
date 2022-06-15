@@ -1,0 +1,14 @@
+[
+    {
+        "source": "/butterfly/crowdin",
+        "destination": "https://linwood.crowdin.com/butterfly"
+    },
+    {
+        "source": "/butterfly/license",
+        "destination": "https://github.com/LinwoodCloud/butterfly/blob/develop/LICENSE"
+    },
+    {
+        "source": "/butterfly/source",
+        "destination": "https://github.com/LinwoodCloud/Butterfly"
+    }
+]

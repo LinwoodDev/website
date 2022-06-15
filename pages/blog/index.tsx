@@ -61,11 +61,13 @@ export interface CardProps {
 }
 
 export function BlogEntryCard({ post }: CardProps) {
+  var link = `/blog/${post.date.year}/${("0" + post.date.month).slice(-2)}/${(
+    "0" + post.date.day
+  ).slice(-2)}/${post.slug}`;
+  if (post.id) link = `/${post.id}`;
   return (
     <Card
-      href={`/blog/${post.date.year}/${("0" + post.date.month).slice(-2)}/${(
-        "0" + post.date.day
-      ).slice(-2)}/${post.slug}`}
+      href={link}
       component={NextLink}
       withBorder
       style={{ cursor: "pointer" }}

@@ -1283,6 +1283,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/cache@npm:^11.9.3":
+  version: 11.9.3
+  resolution: "@emotion/cache@npm:11.9.3"
+  dependencies:
+    "@emotion/memoize": ^0.7.4
+    "@emotion/sheet": ^1.1.1
+    "@emotion/utils": ^1.0.0
+    "@emotion/weak-memoize": ^0.2.5
+    stylis: 4.0.13
+  checksum: 6e0aab2fa5b9b6b0b9bf66b5328ed44265c23ced16b46c13d2602c3497fabd95299f6cf2c87cbc02b630452aa3cff599c194c538125d744aa135824129698ccc
+  languageName: node
+  linkType: hard
+
 "@emotion/hash@npm:^0.8.0":
   version: 0.8.0
   resolution: "@emotion/hash@npm:0.8.0"
@@ -1299,12 +1312,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@emotion/is-prop-valid@npm:1.1.2"
+"@emotion/is-prop-valid@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@emotion/is-prop-valid@npm:1.1.3"
   dependencies:
     "@emotion/memoize": ^0.7.4
-  checksum: 58b1f2d429a589f8f5bc2c33a8732cbb7bbcb17131a103511ef9a94ac754d7eeb53d627f947da480cd977f9d419fd92e244991680292f3287204159652745707
+  checksum: 511997c3bbaab5a967db65b65a111afc46c4aac8b3b87a436fd9e3dc2891829a9ada1405b77326f407d93934ee3b831e62248b498c071089312c5be080af75dd
   languageName: node
   linkType: hard
 
@@ -1345,14 +1358,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.9.0":
-  version: 11.9.0
-  resolution: "@emotion/react@npm:11.9.0"
+"@emotion/react@npm:^11.9.3":
+  version: 11.9.3
+  resolution: "@emotion/react@npm:11.9.3"
   dependencies:
     "@babel/runtime": ^7.13.10
     "@emotion/babel-plugin": ^11.7.1
-    "@emotion/cache": ^11.7.1
-    "@emotion/serialize": ^1.0.3
+    "@emotion/cache": ^11.9.3
+    "@emotion/serialize": ^1.0.4
     "@emotion/utils": ^1.1.0
     "@emotion/weak-memoize": ^0.2.5
     hoist-non-react-statics: ^3.3.1
@@ -1364,7 +1377,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 4ceb004f942fb7557a55ea17aad2c48c4cd48ed5a780ccdc2993e4bded2f94d7c1764bd2f4fbe53f5b26059263599cec64ff66d29447e281a58c60b39c72e5cc
+  checksum: 19bc7205e85e87cadebbe5a926d45103b836af70ab6972ea4c333c8dd01b463fc9646d4e4097a36f145a05dd4bc388739667437b990f8cf7f7f925f9610d1aa8
   languageName: node
   linkType: hard
 
@@ -1381,16 +1394,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/serialize@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@emotion/serialize@npm:1.0.3"
+"@emotion/serialize@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@emotion/serialize@npm:1.0.4"
   dependencies:
     "@emotion/hash": ^0.8.0
     "@emotion/memoize": ^0.7.4
     "@emotion/unitless": ^0.7.5
     "@emotion/utils": ^1.0.0
     csstype: ^3.0.2
-  checksum: 99a9053bd98c99d63af542ebee029281eeaf653e3a12e97ee79bad7330c68408104c30be6fc07a528e38bb69aba680655181744b76ec6c6f459c121cb805fac2
+  checksum: e8cc342056734e176ea837fe44035126dea174962db40852a7ced499d258c0056b0fd3c298743c446f9ba0f2647cb42dfb623b8e5783c265deb9eb20138d68e7
   languageName: node
   linkType: hard
 
@@ -1418,14 +1431,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.8.1":
-  version: 11.8.1
-  resolution: "@emotion/styled@npm:11.8.1"
+"@emotion/sheet@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@emotion/sheet@npm:1.1.1"
+  checksum: b916ac665735ef6dfda26b09f2d3493789d432d649733db9da18c4db0115e7fdadeb8d45f6490320248916bb13d978bba74c914b711ac96f659b76a5e52d5cd2
+  languageName: node
+  linkType: hard
+
+"@emotion/styled@npm:^11.9.3":
+  version: 11.9.3
+  resolution: "@emotion/styled@npm:11.9.3"
   dependencies:
     "@babel/runtime": ^7.13.10
     "@emotion/babel-plugin": ^11.7.1
-    "@emotion/is-prop-valid": ^1.1.2
-    "@emotion/serialize": ^1.0.2
+    "@emotion/is-prop-valid": ^1.1.3
+    "@emotion/serialize": ^1.0.4
     "@emotion/utils": ^1.1.0
   peerDependencies:
     "@babel/core": ^7.0.0
@@ -1436,7 +1456,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 67150fa788785c34e285b90acecc91fe7a63babceaefbeffd053bed0fa31f72a05bfeeb9d15620766e543e007b9ccac2e836812eec2e791f962ec4e52731ae4c
+  checksum: 16d9ef8c5840b13ec47f91f9963b64ec8a94197fe99bb3bd4e9f7404a09bb65a333e9ab6590af97c0090360816db70e8c920731198c3a30fbb2c2cfd5e8d8a65
   languageName: node
   linkType: hard
 
@@ -1534,67 +1554,67 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^4.2.8":
-  version: 4.2.8
-  resolution: "@mantine/core@npm:4.2.8"
+"@mantine/core@npm:^4.2.9":
+  version: 4.2.9
+  resolution: "@mantine/core@npm:4.2.9"
   dependencies:
-    "@mantine/styles": 4.2.8
+    "@mantine/styles": 4.2.9
     "@popperjs/core": ^2.9.3
     "@radix-ui/react-scroll-area": ^0.1.1
     react-popper: ^2.2.5
     react-textarea-autosize: ^8.3.2
   peerDependencies:
-    "@mantine/hooks": 4.2.8
+    "@mantine/hooks": 4.2.9
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: a7434d542657e5b196dc795503f667a4eff0cc4eed3870c3bd3ae1f645e01bc9c9e3dd32387907700cb96a41a70b836c0003756f5f488e7db7f61dee175386e6
+  checksum: 96553eba1fb297343d15fc76cd853ab2d40c899db006ea4ace874bfe9ca1b50e9a3f6665bdb572577bb4850f9ac94ff2c1b104b5cee0b093ba3d30b32815cfa0
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^4.2.8":
-  version: 4.2.8
-  resolution: "@mantine/hooks@npm:4.2.8"
+"@mantine/hooks@npm:^4.2.9":
+  version: 4.2.9
+  resolution: "@mantine/hooks@npm:4.2.9"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 371bc3fa19130838d1a53454291b84c41390f9e8d4d89166c3ba36b60e5e671502b221a98834a42be3de0c6ab878eb0a950a58f8770e44ad6d9cba1468ef0aae
+  checksum: 881da518dae42b3e2db579833df09fd6d3b565fab12cc28fa64d2a39ea630a09c902eba5ce0a2e5c14370852654013230737237620fe4320f12d7fb3e0287bf8
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^4.2.8":
-  version: 4.2.8
-  resolution: "@mantine/next@npm:4.2.8"
+"@mantine/next@npm:^4.2.9":
+  version: 4.2.9
+  resolution: "@mantine/next@npm:4.2.9"
   dependencies:
-    "@mantine/ssr": 4.2.8
+    "@mantine/ssr": 4.2.9
   peerDependencies:
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 48d658a6c1954a30906c34602a37da4b00ca3712819ba1cc1719045a95d412d1f3c6d847116b85f37c34dfdbac84929c525fdb20b4b93734f6016e1988924bfa
+  checksum: 5f89d13a4e09928c57a00d53092b8b18a3b786198fda2007e760b2de57b5a0b6043341d4276f8d568c320b9247fb131f1524cb9d11d9c92b01fd93064ad91fa1
   languageName: node
   linkType: hard
 
-"@mantine/ssr@npm:4.2.8":
-  version: 4.2.8
-  resolution: "@mantine/ssr@npm:4.2.8"
+"@mantine/ssr@npm:4.2.9":
+  version: 4.2.9
+  resolution: "@mantine/ssr@npm:4.2.9"
   dependencies:
     "@emotion/cache": 11.7.1
     "@emotion/react": 11.7.1
     "@emotion/serialize": 1.0.2
     "@emotion/server": 11.4.0
     "@emotion/utils": 1.0.0
-    "@mantine/styles": 4.2.8
+    "@mantine/styles": 4.2.9
     csstype: 3.0.9
     html-react-parser: 1.3.0
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: f2588004ffa65890e4e88ff23aae54124ccc96edda8fcdf4fee9ec93219e156a9862ce6c8473c8096b4944858c56cd8268cd8451118ce55c8358f8c569699a54
+  checksum: 301c9613f31ae45b92f6426cc80333879eb166e9997e482beba2ae95efa891918b875eb79575292b850227a3900797b099fd649174c64a670e00abd8371df91d
   languageName: node
   linkType: hard
 
-"@mantine/styles@npm:4.2.8":
-  version: 4.2.8
-  resolution: "@mantine/styles@npm:4.2.8"
+"@mantine/styles@npm:4.2.9":
+  version: 4.2.9
+  resolution: "@mantine/styles@npm:4.2.9"
   dependencies:
     "@emotion/cache": 11.7.1
     "@emotion/react": 11.7.1
@@ -1605,7 +1625,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 03bbddecb1837bca42e2667cb548d821adfb758c66d71c7719390b3921483d3d4997a03b1aaceccc4e557160522000e68978aa3c8b38f2ae3e4a9d85927e519d
+  checksum: b67b78d6c803df327667cd108c8a8473c1666008aafdade02d66e4c6e0de90df070fa6893d35a64fb68db4e8ea9da86ab434f05cd401f2df134eefc31fb554e7
   languageName: node
   linkType: hard
 
@@ -6332,12 +6352,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.6.2":
-  version: 2.6.2
-  resolution: "prettier@npm:2.6.2"
+"prettier@npm:2.7.0":
+  version: 2.7.0
+  resolution: "prettier@npm:2.7.0"
   bin:
     prettier: bin-prettier.js
-  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
+  checksum: 5b55bb1dced9d16635b83229df8e670d150890fdb343f19e8a66e610094a108e960c0f57352b3e5cdbc4eff4ef00a834406047ffcd9f20bd22a6497ba143c81f
   languageName: node
   linkType: hard
 
@@ -6413,15 +6433,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.1.0":
-  version: 18.1.0
-  resolution: "react-dom@npm:18.1.0"
+"react-dom@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react-dom@npm:18.2.0"
   dependencies:
     loose-envify: ^1.1.0
-    scheduler: ^0.22.0
+    scheduler: ^0.23.0
   peerDependencies:
-    react: ^18.1.0
-  checksum: bb0d48eeb0b297c79c2a03978baa29f5b3ff7ba3d070b21e34c9af1a6e7fdf0ca8b8d73e41f9214d91ad40eeb6d1f3559f884cbbc338713374a51320637c23df
+    react: ^18.2.0
+  checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
   languageName: node
   linkType: hard
 
@@ -6472,12 +6492,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react@npm:18.1.0":
-  version: 18.1.0
-  resolution: "react@npm:18.1.0"
+"react@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 5bb296b561b43ef2220395da4faac86c14a087c8c80e1a7598a5740f01ee605c11eaf249985c1e2000971c4cd32ccb46d40f00479bbd9fb6b1c7cf857393b7d4
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
   languageName: node
   linkType: hard
 
@@ -6812,12 +6832,12 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.22.0":
-  version: 0.22.0
-  resolution: "scheduler@npm:0.22.0"
+"scheduler@npm:^0.23.0":
+  version: 0.23.0
+  resolution: "scheduler@npm:0.23.0"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: a8ef5cab769c020cd6382ad9ecc3f72dbde56a50a36639b3a42ad9c11f7724f03700bcad373044059b8067d4a6365154dc7c0ca8027ef20ff4900cf58a0fc2c5
+  checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
   languageName: node
   linkType: hard
 
@@ -7842,11 +7862,11 @@ resolve@^2.0.0-next.3:
   version: 0.0.0-use.local
   resolution: "website@workspace:."
   dependencies:
-    "@emotion/react": ^11.9.0
-    "@emotion/styled": ^11.8.1
-    "@mantine/core": ^4.2.8
-    "@mantine/hooks": ^4.2.8
-    "@mantine/next": ^4.2.8
+    "@emotion/react": ^11.9.3
+    "@emotion/styled": ^11.9.3
+    "@mantine/core": ^4.2.9
+    "@mantine/hooks": ^4.2.9
+    "@mantine/next": ^4.2.9
     "@mdx-js/loader": ^2.1.1
     "@mdx-js/mdx": ^2.1.1
     "@types/mdx": ^2.0.2
@@ -7863,9 +7883,9 @@ resolve@^2.0.0-next.3:
     next-mdx-remote: ^4.0.3
     next-pwa: ^5.5.4
     phosphor-react: ^1.4.1
-    prettier: 2.6.2
-    react: 18.1.0
-    react-dom: 18.1.0
+    prettier: 2.7.0
+    react: 18.2.0
+    react-dom: 18.2.0
     typescript: ^4.7.3
   languageName: unknown
   linkType: soft

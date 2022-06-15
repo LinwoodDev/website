@@ -27,7 +27,7 @@ type Props = {
   mdxSource: MDXRemoteSerializeResult;
 };
 
-const Post = ({ post, mdxSource }: Props) => {
+const PostPage = ({ post, mdxSource }: Props) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -85,7 +85,7 @@ const Post = ({ post, mdxSource }: Props) => {
   );
 };
 
-export default Post;
+export default PostPage;
 
 type Params = {
   params: {
