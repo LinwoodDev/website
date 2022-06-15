@@ -1,18 +1,22 @@
 [
   {
     "source": "/discord",
-    "destination": "https://discord.gg/97zFtYN"
+    "destination": "https://discord.gg/97zFtYN",
+    "permanent": true
   },
   {
     "source": "/impress",
-    "destination": "/imprint"
+    "destination": "/imprint",
+    "permanent": true
   },
   {
     "source": "/invite",
-    "destination": "https://discord.com/api/oauth2/authorize?client_id=680346829489307726&permissions=260381732439&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23%2Fcallback&scope=bot"
+    "destination": "https://discord.com/api/oauth2/authorize?client_id=680346829489307726&permissions=260381732439&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23%2Fcallback&scope=bot",
+    "permanent": true
   },
   {
     "source": "/itemmods-discord",
-    "destination": "https://discord.gg/WzcRNGF"
+    "destination": "https://discord.gg/WzcRNGF",
+    "permanent": true
   }
 ]
