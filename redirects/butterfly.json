@@ -13,5 +13,9 @@
     "source": "/butterfly/source",
     "destination": "https://github.com/LinwoodCloud/Butterfly",
     "permanent": true
+  },
+  {
+    "source": "/butterfly/1-4",
+    "destination": "/soon"
   }
 ]
