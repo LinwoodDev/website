@@ -16,6 +16,7 @@
   },
   {
     "source": "/butterfly/1-4",
-    "destination": "/soon"
+    "destination": "/soon",
+    "permanent": true
   }
 ]
