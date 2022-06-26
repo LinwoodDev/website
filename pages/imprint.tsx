@@ -1,8 +1,6 @@
 import { Container, Text, TypographyStylesProvider } from "@mantine/core";
 import Head from "next/head";
 import React from "react";
-import Footer from "../components/Footer";
-import LinwoodHeader from "../components/LinwoodHeader";
 
 type Props = {};
 
@@ -12,7 +10,6 @@ export default function ImpressPage({}: Props) {
       <Head>
         <title>Impress</title>
       </Head>
-      <LinwoodHeader />
       <main>
         <Container size="lg" style={{ minHeight: "100vh" }}>
           <TypographyStylesProvider>
@@ -102,7 +99,6 @@ export default function ImpressPage({}: Props) {
           </TypographyStylesProvider>
         </Container>
       </main>
-      <Footer />
     </>
   );
 }

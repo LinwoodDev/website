@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { ReactElement } from "react";
-import LinwoodHeader from "../components/LinwoodHeader";
 import { GithubLogo, TwitterLogo } from "phosphor-react";
-import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import Image, { StaticImageData } from "next/image";
 import botPic from "../public/Bot.png";
@@ -34,8 +32,6 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <LinwoodHeader />
 
       <main>
         <Container size={"lg"} style={{ minHeight: "100vh" }}>
@@ -148,7 +144,6 @@ const Home: NextPage = () => {
           </Box>
         </Container>
       </main>
-      <Footer />
     </>
   );
 };

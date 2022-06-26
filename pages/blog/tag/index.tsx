@@ -1,6 +1,4 @@
 import { Card, Container, Group, Space, Text, Title } from "@mantine/core";
-import Footer from "../../../components/Footer";
-import Navbar from "../../../components/LinwoodHeader";
 import React from "react";
 import Head from "next/head";
 import NextLink from "next/link";
@@ -17,9 +15,6 @@ export default function TagsPage({ tags }: Props) {
         <title>Linwood Blog</title>
       </Head>
 
-      <Navbar />
-      <Space h={"xl"} />
-
       <main>
         <Container size="sm">
           <Title order={1}>Tags</Title>
@@ -35,7 +30,6 @@ export default function TagsPage({ tags }: Props) {
           </Group>
         </Container>
       </main>
-      <Footer />
     </>
   );
 }

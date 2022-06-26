@@ -10,8 +10,6 @@ import {
 import { NextLink } from "@mantine/next";
 import Head from "next/head";
 import React from "react";
-import Footer from "../components/Footer";
-import LinwoodHeader from "../components/LinwoodHeader";
 
 const useStyles = createStyles((theme) => ({
   label: {
@@ -42,8 +40,6 @@ export default function NotFoundPage({}: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LinwoodHeader />
-
       <main>
         <Container size={"lg"} style={{ minHeight: "100vh" }}>
           <Box sx={{ marginTop: "10em" }}>
@@ -61,7 +57,6 @@ export default function NotFoundPage({}: Props) {
           </Box>
         </Container>
       </main>
-      <Footer />
     </>
   );
 }

@@ -4,8 +4,6 @@ import Head from "next/head";
 import PostType from "../../../../../types/post";
 import { getAllPosts, getPostBySlug } from "../../../../../lib/blog";
 import React from "react";
-import Navbar from "../../../../../components/LinwoodHeader";
-import Footer from "../../../../../components/Footer";
 import AuthorDisplay from "../../../../../components/AuthorDisplay";
 import {
   Badge,
@@ -37,15 +35,13 @@ const PostPage = ({ post, mdxSource }: Props) => {
   const day = ("0" + post.date.day).slice(-2);
   return (
     <div>
-      <Navbar />
-      <Space h={"xl"} />
       {router.isFallback ? (
         <Title>Loading…</Title>
       ) : (
         <>
           <article className="mb-32">
             <Head>
-              <title>{post.title} | Linwood Blog</title>
+              <title>{`${post.title} | Linwood Blog`}</title>
               <meta property="og:image" content={post.ogImage?.url} />
             </Head>
             <Container size="md" style={{ minHeight: "100vh" }}>
@@ -80,7 +76,6 @@ const PostPage = ({ post, mdxSource }: Props) => {
           </article>
         </>
       )}
-      <Footer />
     </div>
   );
 };

@@ -1,13 +1,10 @@
 import { Container, Group, Space, Title } from "@mantine/core";
 import Head from "next/head";
-import Footer from "../../../../components/Footer";
-import Navbar from "../../../../components/LinwoodHeader";
 import React from "react";
 import { BlogEntryCard } from "../..";
 import { useRouter } from "next/router";
 import { generateRssFeed, getAllPosts } from "../../../../lib/blog";
 import PostType from "../../../../types/post";
-import { GetStaticProps } from "next";
 
 export default function BlogMonthPage({ allPosts }: { allPosts: PostType[] }) {
   const router = useRouter();
@@ -17,9 +14,6 @@ export default function BlogMonthPage({ allPosts }: { allPosts: PostType[] }) {
       <Head>
         <title>Linwood Blog</title>
       </Head>
-
-      <Navbar />
-      <Space h={"xl"} />
 
       <main>
         <Container size="sm">
@@ -34,7 +28,6 @@ export default function BlogMonthPage({ allPosts }: { allPosts: PostType[] }) {
           </Group>
         </Container>
       </main>
-      <Footer />
     </>
   );
 }

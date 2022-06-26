@@ -4,13 +4,15 @@ import {
   ColorScheme,
   ColorSchemeProvider,
   MantineProvider,
+  Space,
 } from "@mantine/core";
-import { useState } from "react";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import "../styles/globals.css";
+import { AnimatePresence, motion } from "framer-motion";
+import LinwoodHeader from "../components/LinwoodHeader";
+import Footer from "../components/Footer";
 
-export default function App(props: AppProps) {
-  const { Component, pageProps } = props;
+export default function App({ Component, pageProps, router }: AppProps) {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
@@ -21,7 +23,12 @@ export default function App(props: AppProps) {
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
   useHotkeys([["mod+J", () => toggleColorScheme()]]);
-
+  const spring = {
+    type: "spring",
+    damping: 20,
+    stiffness: 100,
+    when: "afterChildren",
+  };
   return (
     <>
       <Head>
@@ -44,7 +51,27 @@ export default function App(props: AppProps) {
             colorScheme,
           }}
         >
-          <Component {...pageProps} />
+          <LinwoodHeader />
+          <Space h={"xl"} />
+
+          <AnimatePresence>
+            <div
+              className="page-transition-wrapper"
+              style={{ overflow: "hidden" }}
+            >
+              <motion.div
+                transition={spring}
+                key={router.pathname}
+                initial={{ x: -300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 300, opacity: 0 }}
+                id="page-transition-container"
+              >
+                <Component {...pageProps} />
+              </motion.div>
+            </div>
+          </AnimatePresence>
+          <Footer />
         </MantineProvider>
       </ColorSchemeProvider>
     </>

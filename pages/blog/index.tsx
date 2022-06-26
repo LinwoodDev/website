@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/LinwoodHeader";
 import { getAllPosts, generateRssFeed } from "../../lib/blog";
 import PostType from "../../types/post";
 import {
@@ -25,9 +23,6 @@ const Index = ({ allPosts }: Props) => {
         <title>Linwood Blog</title>
       </Head>
 
-      <Navbar />
-      <Space h={"xl"} />
-
       <main>
         <Container size="sm">
           <Group position="apart">
@@ -42,7 +37,6 @@ const Index = ({ allPosts }: Props) => {
           </Group>
         </Container>
       </main>
-      <Footer />
     </>
   );
 };
