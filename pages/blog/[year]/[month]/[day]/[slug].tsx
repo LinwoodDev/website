@@ -6,12 +6,15 @@ import { getAllPosts, getPostBySlug } from "../../../../../lib/blog";
 import React from "react";
 import AuthorDisplay from "../../../../../components/AuthorDisplay";
 import {
+  Affix,
   Badge,
+  Button,
   Container,
   Group,
   Image,
   Space,
   Title,
+  Transition,
   TypographyStylesProvider,
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
@@ -19,6 +22,8 @@ import Link from "../../../../../components/Link";
 import { GetStaticProps } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { ArrowUp as ArrowUpIcon } from "phosphor-react";
+import { useWindowScroll } from "@mantine/hooks";
 
 type Props = {
   post: PostType;
@@ -27,12 +32,13 @@ type Props = {
 
 const PostPage = ({ post, mdxSource }: Props) => {
   const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
+  const [scroll, scrollTo] = useWindowScroll();
   const year = post.date.year;
   const month = ("0" + post.date.month).slice(-2);
   const day = ("0" + post.date.day).slice(-2);
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
     <div>
       {router.isFallback ? (
@@ -74,6 +80,19 @@ const PostPage = ({ post, mdxSource }: Props) => {
               </TypographyStylesProvider>
             </Container>
           </article>
+          <Affix position={{ bottom: 20, right: 20 }}>
+            <Transition transition="slide-up" mounted={scroll.y > 0}>
+              {(transitionStyles) => (
+                <Button
+                  leftIcon={<ArrowUpIcon />}
+                  style={transitionStyles}
+                  onClick={() => scrollTo({ y: 0 })}
+                >
+                  Scroll to top
+                </Button>
+              )}
+            </Transition>
+          </Affix>
         </>
       )}
     </div>
