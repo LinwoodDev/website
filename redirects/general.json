@@ -5,6 +5,11 @@
     "permanent": true
   },
   {
+    "source": "/matrix",
+    "destination": "https://matrix.to/#/#linwood:matrix.org",
+    "permanent": true
+  },
+  {
     "source": "/impress",
     "destination": "/imprint",
     "permanent": true
