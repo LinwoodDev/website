@@ -12,7 +12,7 @@ import {
   Transition,
   Paper,
 } from "@mantine/core";
-import { useBooleanToggle } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
 import { CaretDown } from "phosphor-react";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitch";
 import Link from "./Link";
@@ -130,7 +130,7 @@ interface HeaderActionProps {
 export function HeaderAction({ links }: HeaderActionProps) {
   const { classes } = useStyles();
   const router = useRouter();
-  const [opened, toggleOpened] = useBooleanToggle(false);
+  const [opened, setOpened] = useDisclosure(false);
   const items = links.map((link) => {
     const active = link.link === router.pathname;
     const menuItems = link.links?.map((item) => (
@@ -142,21 +142,19 @@ export function HeaderAction({ links }: HeaderActionProps) {
         <Menu
           key={link.label}
           trigger="hover"
-          delay={0}
           transitionDuration={0}
-          placement="end"
-          gutter={1}
+          position="bottom-end"
           opened={opened}
-          control={
+        >
+          <Menu.Target>
             <Link href={link.link} className={classes.link}>
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
-                <CaretDown onClick={() => toggleOpened()} size={12} />
+                <CaretDown onClick={() => setOpened.toggle()} size={12} />
               </Center>
             </Link>
-          }
-        >
-          {menuItems}
+          </Menu.Target>
+          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
       );
     }
@@ -178,7 +176,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
         <Group className={classes.headerItem}>
           <Burger
             opened={opened}
-            onClick={() => toggleOpened()}
+            onClick={() => setOpened.toggle()}
             className={classes.burger}
             size="sm"
           />

@@ -5,6 +5,7 @@ import {
   Group,
   Image,
   SimpleGrid,
+  Stack,
   Text,
 } from "@mantine/core";
 
@@ -29,20 +30,20 @@ export default function Footer() {
           breakpoints={[{ minWidth: "md", cols: 2 }]}
           spacing={8}
         >
-          <Group direction="column" align="center">
+          <Stack align="center">
             <Text align="center">Support</Text>
             <Link href={"https://status.linwood.dev"}>Status</Link>
             <Link href={"/imprint"}>Imprint/Impressum</Link>
             <Link href={"/privacypolicy"}>
               Privacy Policy/Datenschutzerklärung
             </Link>
-          </Group>
-          <Group direction="column" align="center">
+          </Stack>
+          <Stack align="center">
             <Text align="center">Follow Us</Text>
             <Link href={"https://github.com/LinwoodCloud"}>GitHub</Link>
             <Link href={"https://twitter.com/LinwoodCloud"}>Twitter</Link>
             <Link href={"https://discord.linwood.dev"}>Discord</Link>
-          </Group>
+          </Stack>
         </SimpleGrid>
       </Container>
       <Box>

@@ -1,4 +1,4 @@
-import { Container, Group, Space, Title } from "@mantine/core";
+import { Container, Group, Space, Stack, Title } from "@mantine/core";
 import Head from "next/head";
 import React from "react";
 import { BlogEntryCard } from "..";
@@ -19,11 +19,11 @@ export default function BlogYearPage({ allPosts }: { allPosts: PostType[] }) {
         <Container size="sm">
           <Title order={1}>Blog {year}</Title>
           <Space h={"xl"} />
-          <Group direction="column" spacing={16} align="stretch">
+          <Stack spacing={16} align="stretch">
             {allPosts.map((post) => (
               <BlogEntryCard key={post.fileName} post={post} />
             ))}
-          </Group>
+          </Stack>
         </Container>
       </main>
     </>

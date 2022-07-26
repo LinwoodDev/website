@@ -1,4 +1,4 @@
-import { Container, Group, Space, Title } from "@mantine/core";
+import { Container, Group, Space, Stack, Title } from "@mantine/core";
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -24,11 +24,11 @@ export default function TagPage({ posts }: Props) {
         <Container size="sm">
           <Title order={1}>Tag {tag}</Title>
           <Space h={"xl"} />
-          <Group direction="column" spacing={16} align="stretch">
+          <Stack spacing={16} align="stretch">
             {posts.map((post) => (
               <BlogEntryCard post={post} key={post.fileName} />
             ))}
-          </Group>
+          </Stack>
         </Container>
       </main>
     </>

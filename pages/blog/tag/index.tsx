@@ -1,4 +1,4 @@
-import { Card, Container, Group, Space, Text, Title } from "@mantine/core";
+import { Card, Container, Group, Space, Stack, Text, Title } from "@mantine/core";
 import React from "react";
 import Head from "next/head";
 import NextLink from "next/link";
@@ -19,7 +19,7 @@ export default function TagsPage({ tags }: Props) {
         <Container size="sm">
           <Title order={1}>Tags</Title>
           <Space h={"xl"} />
-          <Group direction="column" spacing={16} align="stretch">
+          <Stack spacing={16} align="stretch">
             {tags.map((tag) => (
               <NextLink key={tag} href={`/blog/tag/${tag}`} passHref>
                 <Card withBorder style={{ cursor: "pointer" }}>
@@ -27,7 +27,7 @@ export default function TagsPage({ tags }: Props) {
                 </Card>
               </NextLink>
             ))}
-          </Group>
+          </Stack>
         </Container>
       </main>
     </>

@@ -1,4 +1,4 @@
-import { Container, Group, Space, Title } from "@mantine/core";
+import { Container, Group, Space, Stack, Title } from "@mantine/core";
 import Head from "next/head";
 import React from "react";
 import { BlogEntryCard } from "../../..";
@@ -22,11 +22,11 @@ export default function BlogDayPage({ allPosts }: { allPosts: PostType[] }) {
             Blog {year}-{("0" + month).slice(-2)}-{("0" + day).slice(-2)}
           </Title>
           <Space h={"xl"} />
-          <Group direction="column" spacing={16} align="stretch">
+          <Stack spacing={16} align="stretch">
             {allPosts.map((post) => (
               <BlogEntryCard key={post.fileName} post={post} />
             ))}
-          </Group>
+          </Stack>
         </Container>
       </main>
     </>

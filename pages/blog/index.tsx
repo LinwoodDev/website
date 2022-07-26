@@ -2,16 +2,19 @@ import Head from "next/head";
 import { getAllPosts, generateRssFeed } from "../../lib/blog";
 import PostType from "../../types/post";
 import {
+  ActionIcon,
   Card,
   Container,
   Group,
   Menu,
   Space,
+  Stack,
   Text,
   Title,
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
 import { useRouter } from "next/router";
+import { List as ListIcon } from "phosphor-react";
 
 type Props = {
   allPosts: PostType[];
@@ -30,11 +33,11 @@ const Index = ({ allPosts }: Props) => {
             <BlogMenu />
           </Group>
           <Space h={"xl"} />
-          <Group direction="column" spacing={16} align="stretch">
+          <Stack spacing={16} align="stretch">
             {allPosts.map((post) => (
               <BlogEntryCard key={post.fileName} post={post} />
             ))}
-          </Group>
+          </Stack>
         </Container>
       </main>
     </>
@@ -67,7 +70,7 @@ export function BlogEntryCard({ post }: CardProps) {
       style={{ cursor: "pointer" }}
     >
       <Text size="md">{post.title}</Text>
-      <Text color="gray">
+      <Text color="dimmed">
         {post.date.year}-{("0" + post.date.month).slice(-2)}-
         {("0" + post.date.day).slice(-2)} - {post.author.name}
       </Text>
@@ -82,10 +85,17 @@ export function BlogMenu() {
   const openGitHub = () => router.push("https://github.com/LinwoodCloud");
   const openRSS = () => router.push("https://www.linwood.dev/blog/atom.xml");
   return (
-    <Menu placement="end" position="top" withArrow>
-      <Menu.Item onClick={openRSS}>RSS-Blog</Menu.Item>
-      <Menu.Item onClick={openDiscord}>Discord</Menu.Item>
-      <Menu.Item onClick={openGitHub}>GitHub</Menu.Item>
+    <Menu position="top-end" withArrow>
+      <Menu.Target>
+        <ActionIcon>
+          <ListIcon />
+        </ActionIcon>
+      </Menu.Target>
+      <Menu.Dropdown>
+        <Menu.Item onClick={openRSS}>RSS-Blog</Menu.Item>
+        <Menu.Item onClick={openDiscord}>Discord</Menu.Item>
+        <Menu.Item onClick={openGitHub}>GitHub</Menu.Item>
+      </Menu.Dropdown>
     </Menu>
   );
 }
