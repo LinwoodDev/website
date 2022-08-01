@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import React, { ReactElement } from "react";
+import React from "react";
 import { GithubLogo, TwitterLogo } from "phosphor-react";
 import { useRouter } from "next/router";
-import Image, { StaticImageData } from "next/image";
 import botPic from "../public/Bot.png";
 import devDoctorPic from "../public/Dev-Doctor.png";
 import launcherPic from "../public/Launcher.png";
@@ -19,6 +18,7 @@ import {
   Title,
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
+import ProjectCard from "../components/Project";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -148,94 +148,5 @@ const Home: NextPage = () => {
   );
 };
 
-interface ProjectCardProps {
-  name: string;
-  description: string;
-  website?: string;
-  source?: string;
-  big?: boolean;
-  blog?: string;
-  banner?: StaticImageData;
-}
-
-export function ProjectCard({
-  name,
-  description,
-  website,
-  source,
-  big,
-  banner,
-  blog,
-}: ProjectCardProps): ReactElement {
-  return (
-    <Card
-      radius={18}
-      shadow="sm"
-      style={{
-        maxWidth: big ? "" : "20em",
-        minHeight: "20em",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {banner && (
-        <>
-          <Card.Section>
-            <Image
-              objectPosition={"50% 50%"}
-              layout="responsive"
-              src={banner}
-              alt="Banner"
-            />
-          </Card.Section>
-          <Space h="sm" />
-        </>
-      )}
-      <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        <Text weight={700} mt={"xs"} size="lg">
-          {name}
-        </Text>
-        <Text>{description}</Text>
-      </Box>
-      <Space h="md" />
-      {(website || source) && (
-        <Group>
-          {website && (
-            <Button
-              sx={{ flex: 1 }}
-              fullWidth
-              color="green"
-              component={NextLink}
-              href={website}
-            >
-              Website
-            </Button>
-          )}
-          {source && (
-            <Button
-              sx={{ flex: 1 }}
-              fullWidth
-              component={NextLink}
-              href={source}
-            >
-              Source
-            </Button>
-          )}
-          {blog && (
-            <Button
-              sx={{ flex: 1 }}
-              fullWidth
-              component={NextLink}
-              href={`/blog/tag/${blog}`}
-              color="orange"
-            >
-              Blog
-            </Button>
-          )}
-        </Group>
-      )}
-    </Card>
-  );
-}
 
 export default Home;
