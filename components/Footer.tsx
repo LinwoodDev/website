@@ -8,12 +8,12 @@ import {
   Stack,
   Text,
 } from "@mantine/core";
-
 import { ReactNode } from "react";
 import Link from "./Link";
+import NextLink from "next/link";
 
 const Logo = (props: any) => {
-  return <Image alt="Logo" src="/logo.svg" />;
+  return <Image alt="Logo" src="/logo.svg" style={{ maxWidth: "10em" }} />;
 };
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
@@ -48,7 +48,9 @@ export default function Footer() {
       </Container>
       <Box>
         <Center>
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
         </Center>
         <Text size={"sm"} align={"center"}>
           © {date.getFullYear()} Linwood Development
