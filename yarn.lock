@@ -1596,64 +1596,64 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@mantine/core@npm:5.1.0"
+"@mantine/core@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@mantine/core@npm:5.1.1"
   dependencies:
     "@floating-ui/react-dom-interactions": 0.6.6
-    "@mantine/styles": 5.1.0
-    "@mantine/utils": 5.1.0
+    "@mantine/styles": 5.1.1
+    "@mantine/utils": 5.1.1
     "@radix-ui/react-scroll-area": 1.0.0
     react-textarea-autosize: 8.3.4
   peerDependencies:
-    "@mantine/hooks": 5.1.0
+    "@mantine/hooks": 5.1.1
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: a170d3a97c66fc78ade98a4ec01ff854e998d5af3acca46275c241bb74ed8e3980cdb71e40fed6b9ce1d210d3ec6dfc8bb71cd591b359d10f194dac3faa6f4b9
+  checksum: 6506b2e43e6ea82a37922c4c1fb49e1f7dd51d0eefa7000d4d78f74f001415f2ce98027e78ec734492bb37660deb5388562b2666634b292e74c0869acb27d4f2
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@mantine/hooks@npm:5.1.0"
+"@mantine/hooks@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@mantine/hooks@npm:5.1.1"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: de4c2c1fe408efddeda88c331242c14e6aa44f65a0d78fc9ca2812e07f9593f27dbc593afd4f320bc36e618bbb7d3cbe5869aebe6d7f2a8b9af8f342f1913a5a
+  checksum: c99ffcd1e5827d8922e60ecf2471eb7c5ed500c54b520f40fb6fa0b0a31a3650c1ab754c415d73af485d1e152a63742f675ff7cb714158da5735bd86a7b47d09
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@mantine/next@npm:5.1.0"
+"@mantine/next@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@mantine/next@npm:5.1.1"
   dependencies:
-    "@mantine/ssr": 5.1.0
-    "@mantine/styles": 5.1.0
+    "@mantine/ssr": 5.1.1
+    "@mantine/styles": 5.1.1
   peerDependencies:
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 422f53fa3b18525b2baf95988260782c0b4321fdb6d004f611830b456d492feaa53c40fb5f2ba8f546701ed8b608c8a01ff129d7f76c5dabacb164bf3af20529
+  checksum: 87e15d898582a5b2d22fa16484582fae5418b59e031fce562e15981535e703cc4280c24116a44e5057c92c743e707faaab26e503f7db55e76487107280926299
   languageName: node
   linkType: hard
 
-"@mantine/ssr@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@mantine/ssr@npm:5.1.0"
+"@mantine/ssr@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@mantine/ssr@npm:5.1.1"
   dependencies:
-    "@mantine/styles": 5.1.0
+    "@mantine/styles": 5.1.1
     html-react-parser: 1.4.12
   peerDependencies:
     "@emotion/react": ">=11.9.0"
     "@emotion/server": ">=11.4.0"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 1b3f9d81eaccd7a43db21b496b2cb6e5ba019e96e05faf8109577330a54b6eb28b393204c1eb01639bde3c04ae503491b7913e4573806803388ed91947a0bfb0
+  checksum: 66938cd5dd8bfbfda37567202db90e42db8ff071b46b7ea35324d1c98f16a10742dce25c9e962418f7dba70893adcd1962e66cfcc7909f51052b13035678da17
   languageName: node
   linkType: hard
 
-"@mantine/styles@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@mantine/styles@npm:5.1.0"
+"@mantine/styles@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@mantine/styles@npm:5.1.1"
   dependencies:
     clsx: 1.1.1
     csstype: 3.0.9
@@ -1661,16 +1661,16 @@ __metadata:
     "@emotion/react": ">=11.9.0"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 9d7dc4d55eeea09f86e205a33051d397da45c06ce213860d4f013b9770dde34256bd8056d76ceceb6993828f864df103b1967b2a9d9b0cbe29d7334ec2c30318
+  checksum: b213fb03bf04c4a9e5c9b863be6b5333eb52bc00a9159d156d74a951e2395e42e24d3b475780556cb11c5fb3e9cabe4cbe7674c16bafe5e0bb4646d577f6bd36
   languageName: node
   linkType: hard
 
-"@mantine/utils@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@mantine/utils@npm:5.1.0"
+"@mantine/utils@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@mantine/utils@npm:5.1.1"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: f6d2dd28f97d9e2d09eea3db7d1f2e0a82c451bd7a0c80f9a38c421c7003052b822917d4128a055e39c5822c6de61ecb53728aa86ab726bf4dcda911ab47f650
+  checksum: 0b8790e50ca534eb47a4997962582c5943a64fb8577b91f7c0d66800408adb7a678d615eb6dd7cd25240287c33a1731ed85c448a65e7714f9f890153223ee0c0
   languageName: node
   linkType: hard
 
@@ -2364,14 +2364,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.16":
-  version: 18.0.16
-  resolution: "@types/react@npm:18.0.16"
+"@types/react@npm:^18.0.17":
+  version: 18.0.17
+  resolution: "@types/react@npm:18.0.17"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 47853419adbf7f35f302cd4ef804c5a50498a0917a34e696caa693fc60b9c52c644ca2ecf64cbba4a5efd963771167d241906f117d16d59e20e84b882215b6bd
+  checksum: 18cae64f5bfd6bb58fbd8ee2ba52ec82de844f114254e26de7b513e4b86621f643f9b71d7066958cd571b0d78cb86cbceda449c5289f9349ca573df29ab69252
   languageName: node
   linkType: hard
 
@@ -4152,16 +4152,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "framer-motion@npm:7.0.0"
+"framer-motion@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "framer-motion@npm:7.0.2"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": 10.13.1
-    framesync: 6.0.1
+    framesync: 6.1.1
     hey-listen: ^1.0.8
-    popmotion: 11.0.3
-    style-value-types: 5.1.0
+    popmotion: 11.0.4
+    style-value-types: 5.1.1
     tslib: ^2.1.0
   peerDependencies:
     react: ^18.0.0
@@ -4169,16 +4169,16 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 13d4f1e0a74025404fc09665f5e54ed99a7f0a33a89accdd9f96be1686725620b73a92f922ecb2a48618529aca61b0a95be1de06f823ee784442caba88c38064
+  checksum: 6dc4e6547b00ffdce1c8068955b5e461fa467e87b927a6c71499687246b35531e45476b261ad8d38aad89264151877fda9d9bf7882687b7f7d269f2e092fc271
   languageName: node
   linkType: hard
 
-"framesync@npm:6.0.1":
-  version: 6.0.1
-  resolution: "framesync@npm:6.0.1"
+"framesync@npm:6.1.1":
+  version: 6.1.1
+  resolution: "framesync@npm:6.1.1"
   dependencies:
-    tslib: ^2.1.0
-  checksum: a23ebe8f7e20a32c0b99c2f8175b6f07af3ec6316aad52a2316316a6d011d717af8d2175dcc2827031c59fabb30232ed3e19a720a373caba7f070e1eae436325
+    tslib: ^2.3.1
+  checksum: f75f77bb3fcb1874fd05e5d254c075c97f431cb74e1d11982661a77248bba442f7d2f251e0c4a019ba9293336bc941b42c7f760b926bd1ff3d3c269c0c7f1a8a
   languageName: node
   linkType: hard
 
@@ -6576,15 +6576,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"popmotion@npm:11.0.3":
-  version: 11.0.3
-  resolution: "popmotion@npm:11.0.3"
+"popmotion@npm:11.0.4":
+  version: 11.0.4
+  resolution: "popmotion@npm:11.0.4"
   dependencies:
-    framesync: 6.0.1
+    framesync: 6.1.1
     hey-listen: ^1.0.8
-    style-value-types: 5.0.0
+    style-value-types: 5.1.1
     tslib: ^2.1.0
-  checksum: 9fe7d03b4ec0e85bfb9dadc23b745147bfe42e16f466ba06e6327197d0e38b72015afc2f918a8051dedc3680310417f346ffdc463be6518e2e92e98f48e30268
+  checksum: ecfa6fbfcbb418386ddab7ee10b52b848c163586bcc8c31a322d09c3b897d1833415729567b0ee252f5c23007382a6d6cfe3458b9af1f2367a3389cccb7bc65f
   languageName: node
   linkType: hard
 
@@ -7481,23 +7481,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"style-value-types@npm:5.0.0":
-  version: 5.0.0
-  resolution: "style-value-types@npm:5.0.0"
-  dependencies:
-    hey-listen: ^1.0.8
-    tslib: ^2.1.0
-  checksum: 16d198302cd102edf9dba94e7752a2364c93b1eaa5cc7c32b42b28eef4af4ccb5149a3f16bc2a256adc02616a2404f4612bd15f3081c1e8ca06132cae78be6c0
-  languageName: node
-  linkType: hard
-
-"style-value-types@npm:5.1.0":
-  version: 5.1.0
-  resolution: "style-value-types@npm:5.1.0"
+"style-value-types@npm:5.1.1":
+  version: 5.1.1
+  resolution: "style-value-types@npm:5.1.1"
   dependencies:
     hey-listen: ^1.0.8
     tslib: ^2.3.1
-  checksum: 25af60d2ea8e2c64a405f377e3208fe3cad672a115417748d72c3d515809655d8468b3ee2dbdef19bade4aa0dc4a07086c63faa2b10ef39673a2ab01a35b9cfa
+  checksum: 108ff80c7b94e7345b708cdb4870efb9286c89ceb17398f157dd797b1ccb3252476517a10b43c4ad4136401946a190b1f50ea9b31c01ccce20a04542a14a2c3f
   languageName: node
   linkType: hard
 
@@ -8119,19 +8109,19 @@ resolve@^2.0.0-next.3:
     "@emotion/server": ^11.10.0
     "@emotion/styled": ^11.10.0
     "@emotion/utils": ^1.2.0
-    "@mantine/core": ^5.1.0
-    "@mantine/hooks": ^5.1.0
-    "@mantine/next": ^5.1.0
+    "@mantine/core": ^5.1.1
+    "@mantine/hooks": ^5.1.1
+    "@mantine/next": ^5.1.1
     "@mdx-js/loader": ^2.1.2
     "@mdx-js/mdx": ^2.1.2
     "@types/mdx": ^2.0.2
     "@types/node": ^16
-    "@types/react": ^18.0.16
+    "@types/react": ^18.0.17
     eslint: ^8.21.0
     eslint-config-next: ^12.2.4
     eslint-config-prettier: ^8.5.0
     feed: ^4.2.2
-    framer-motion: ^7.0.0
+    framer-motion: ^7.0.2
     gray-matter: ^4.0.3
     husky: ^8.0.1
     next: ^12.2.4

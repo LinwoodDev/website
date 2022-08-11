@@ -67,7 +67,14 @@ export function BlogEntryCard({ post }: CardProps) {
       href={link}
       component={NextLink}
       withBorder
-      style={{ cursor: "pointer" }}
+      radius="lg"
+      p="md"
+      sx={(theme) => ({
+        cursor: "pointer",
+        "&:hover": {
+          backgroundColor: theme.colorScheme === "dark" ? theme.colors.gray[8] : theme.colors.gray[2],
+        },
+      })}
     >
       <Text size="md">{post.title}</Text>
       <Text color="dimmed">
@@ -82,6 +89,7 @@ export function BlogEntryCard({ post }: CardProps) {
 export function BlogMenu() {
   const router = useRouter();
   const openDiscord = () => router.push("https://go.linwood.dev/discord");
+  const openMatrix = () => router.push("https://go.linwood.dev/matrix");
   const openGitHub = () => router.push("https://github.com/LinwoodCloud");
   const openRSS = () => router.push("https://www.linwood.dev/blog/atom.xml");
   return (
@@ -93,6 +101,7 @@ export function BlogMenu() {
       </Menu.Target>
       <Menu.Dropdown>
         <Menu.Item onClick={openRSS}>RSS-Blog</Menu.Item>
+        <Menu.Item onClick={openMatrix}>Matrix</Menu.Item>
         <Menu.Item onClick={openDiscord}>Discord</Menu.Item>
         <Menu.Item onClick={openGitHub}>GitHub</Menu.Item>
       </Menu.Dropdown>
