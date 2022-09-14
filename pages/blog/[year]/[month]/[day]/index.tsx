@@ -13,7 +13,7 @@ export default function BlogDayPage({ allPosts }: { allPosts: PostType[] }) {
   return (
     <>
       <Head>
-        <title>Linwood Blog</title>
+        <title>{`Linwood Blog - ${year}-${month}-${day}`}</title>
       </Head>
 
       <main>

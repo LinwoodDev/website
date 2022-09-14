@@ -72,7 +72,10 @@ export function BlogEntryCard({ post }: CardProps) {
       sx={(theme) => ({
         cursor: "pointer",
         "&:hover": {
-          backgroundColor: theme.colorScheme === "dark" ? theme.colors.gray[8] : theme.colors.gray[2],
+          backgroundColor:
+            theme.colorScheme === "dark"
+              ? theme.colors.gray[8]
+              : theme.colors.gray[2],
         },
       })}
     >

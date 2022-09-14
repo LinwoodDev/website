@@ -12,7 +12,7 @@ export default function BlogYearPage({ allPosts }: { allPosts: PostType[] }) {
   return (
     <>
       <Head>
-        <title>Linwood Blog</title>
+        <title>{`Linwood Blog - ${year}`}</title>
       </Head>
 
       <main>

@@ -12,7 +12,7 @@ export default function BlogMonthPage({ allPosts }: { allPosts: PostType[] }) {
   return (
     <>
       <Head>
-        <title>Linwood Blog</title>
+        <title>{`Linwood Blog - ${year}-${month}`}</title>
       </Head>
 
       <main>

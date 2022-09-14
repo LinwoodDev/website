@@ -17,7 +17,7 @@ export default function TagPage({ posts }: Props) {
   return (
     <>
       <Head>
-        <title>Linwood Blog - Tag {tag}</title>
+        <title>{`Linwood Blog - Tag ${tag}`}</title>
       </Head>
 
       <main>
