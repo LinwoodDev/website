@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
@@ -44,3 +43,4 @@ yarn-error.log*
 .vscode
 *.iml
 .idea
+.yarn/cache/
