@@ -43,4 +43,3 @@ yarn-error.log*
 .vscode
 *.iml
 .idea
-.yarn/cache/
