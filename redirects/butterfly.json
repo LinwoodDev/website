@@ -15,6 +15,10 @@
     "permanent": true
   },
   {
+    "source": "/butterfly/report",
+    "destination": "https://github.com/LinwoodCloud/Butterfly/issues/new"
+  },
+  {
     "source": "/butterfly/1-6",
     "destination": "/soon",
     "permanent": true

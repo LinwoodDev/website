@@ -6,7 +6,7 @@ export default function Link(
   props: PropsWithChildren<React.ComponentPropsWithoutRef<"a"> & AnchorProps>
 ) {
   return (
-    <NextLink href={props.href ?? ""} passHref>
+    <NextLink href={props.href ?? ""} passHref legacyBehavior>
       <MantineAnchor {...props} component="a" />
     </NextLink>
   );

@@ -21,7 +21,6 @@ import { NextLink } from "@mantine/next";
 import ProjectCard from "../components/Project";
 
 const Home: NextPage = () => {
-  const router = useRouter();
   return (
     <>
       <Head>
@@ -42,13 +41,14 @@ const Home: NextPage = () => {
             <Group spacing={3} position="center">
               <Button
                 component={NextLink}
+                legacyBehavior
                 href="#projects"
                 color="green"
                 size="lg"
               >
                 Projects
               </Button>
-              <Button component={NextLink} href="#contact" size="lg">
+              <Button component={NextLink} legacyBehavior href="#contact" size="lg">
                 Contact
               </Button>
             </Group>
@@ -112,12 +112,14 @@ const Home: NextPage = () => {
                 href="https://github.com/LinwoodCloud"
                 color="green"
                 size="lg"
+                legacyBehavior
                 leftIcon={<GithubLogo size={24} />}
               >
                 GitHub
               </Button>
               <Button
                 component={NextLink}
+                legacyBehavior
                 href="https://twitter.com/LinwoodCloud"
                 styles={(theme) => ({
                   root: {

@@ -58,6 +58,7 @@ const PostPage = ({ post, mdxSource }: Props) => {
               <Group noWrap={false} mt={8} mb={16}>
                 {post.tags.map((tag) => (
                   <Badge
+                    legacyBehavior
                     component={NextLink}
                     href={`/blog/tag/${tag}`}
                     variant="outline"

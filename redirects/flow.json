@@ -1,0 +1,22 @@
+[
+  {
+    "source": "/flow/crowdin",
+    "destination": "https://linwood.crowdin.com/flow",
+    "permanent": true
+  },
+  {
+    "source": "/flow/license",
+    "destination": "https://github.com/LinwoodCloud/Flow/blob/develop/LICENSE",
+    "permanent": true
+  },
+  {
+    "source": "/flow/source",
+    "destination": "https://github.com/LinwoodCloud/Flow",
+    "permanent": true
+  },
+  {
+    "source": "/flow/1.0",
+    "destination": "/soon",
+    "permanent": true
+  }
+]

@@ -69,6 +69,7 @@ export function BlogEntryCard({ post }: CardProps) {
       withBorder
       radius="lg"
       p="md"
+      legacyBehavior
       sx={(theme) => ({
         cursor: "pointer",
         "&:hover": {

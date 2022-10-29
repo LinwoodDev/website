@@ -1,5 +1,5 @@
 import { Box, Button, Card, Group, Space, Text } from "@mantine/core";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import { NextLink } from "@mantine/next";
 import { ReactElement } from "react";
 
@@ -37,7 +37,7 @@ export default function ProjectCard({
         <>
           <Card.Section>
             <Image
-              objectPosition={"50% 50%"}
+              objectPosition="50% 50%"
               layout="responsive"
               src={banner}
               alt="Banner"
@@ -62,6 +62,7 @@ export default function ProjectCard({
               color="green"
               component={NextLink}
               href={website}
+              legacyBehavior
             >
               Website
             </Button>
@@ -72,6 +73,7 @@ export default function ProjectCard({
               fullWidth
               component={NextLink}
               href={source}
+              legacyBehavior
             >
               Source
             </Button>
@@ -83,6 +85,7 @@ export default function ProjectCard({
               component={NextLink}
               href={`/blog/tag/${blog}`}
               color="orange"
+              legacyBehavior
             >
               Blog
             </Button>
