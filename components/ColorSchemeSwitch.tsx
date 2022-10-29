@@ -13,13 +13,11 @@ export function ColorSchemeSwitcher() {
   return (
     <Group position="center" my={30}>
       <Switch
-        checked={colorScheme === 'dark'}
+        checked={colorScheme === "dark"}
         onChange={() => toggleColorScheme()}
         size="md"
-        onLabel={
-          <Sun size={18} />}
-        offLabel={
-          <MoonStars size={18} />}
+        onLabel={<Sun size={18} />}
+        offLabel={<MoonStars size={18} />}
       />
     </Group>
   );

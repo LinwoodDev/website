@@ -48,7 +48,12 @@ const Home: NextPage = () => {
               >
                 Projects
               </Button>
-              <Button component={NextLink} legacyBehavior href="#contact" size="lg">
+              <Button
+                component={NextLink}
+                legacyBehavior
+                href="#contact"
+                size="lg"
+              >
                 Contact
               </Button>
             </Group>

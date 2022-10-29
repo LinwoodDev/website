@@ -29,7 +29,12 @@ export default function TagsPage({ tags }: Props) {
           <Space h={"xl"} />
           <Stack spacing={16} align="stretch">
             {tags.map((tag) => (
-              <NextLink key={tag} href={`/blog/tag/${tag}`} passHref legacyBehavior>
+              <NextLink
+                key={tag}
+                href={`/blog/tag/${tag}`}
+                passHref
+                legacyBehavior
+              >
                 <Card withBorder style={{ cursor: "pointer" }}>
                   <Text size="md">{tag}</Text>
                 </Card>

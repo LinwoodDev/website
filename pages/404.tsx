@@ -50,7 +50,12 @@ export default function NotFoundPage({}: Props) {
               The link you clicked does not exist.
             </Text>
             <Group spacing={3} position="center" mt={16}>
-              <Button component={NextLink} href="/" color="green" legacyBehavior>
+              <Button
+                component={NextLink}
+                href="/"
+                color="green"
+                legacyBehavior
+              >
                 Back to home
               </Button>
             </Group>

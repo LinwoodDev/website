@@ -16,7 +16,8 @@
   },
   {
     "source": "/butterfly/report",
-    "destination": "https://github.com/LinwoodCloud/Butterfly/issues/new"
+    "destination": "https://github.com/LinwoodCloud/Butterfly/issues/new",
+    "permanent": true
   },
   {
     "source": "/butterfly/1-6",
