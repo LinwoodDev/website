@@ -110,7 +110,6 @@ type Params = {
     slug: string;
   };
 };
-
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const { year, month, day, slug } = params!;
   const post = getPostBySlug(
