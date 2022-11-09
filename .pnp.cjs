@@ -4293,7 +4293,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__core", null],\
             ["@types/webpack", null],\
             ["find-cache-dir", "npm:3.3.2"],\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.3"],\
             ["make-dir", "npm:3.1.0"],\
             ["schema-utils", "npm:2.7.1"],\
             ["webpack", null]\
@@ -7209,10 +7209,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["loader-utils", [\
-        ["npm:2.0.2", {\
-          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.2-c693411911-9078d1ed47.zip/node_modules/loader-utils/",\
+        ["npm:2.0.3", {\
+          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.3-4d761d6a51-d055c61ce5.zip/node_modules/loader-utils/",\
           "packageDependencies": [\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.3"],\
             ["big.js", "npm:5.2.2"],\
             ["emojis-list", "npm:3.0.0"],\
             ["json5", "npm:2.2.1"]\
