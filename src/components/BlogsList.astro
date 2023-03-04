@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEntryUrl } from "../blog";
+import BaseHead from "./BaseHead.astro";
+import FormattedDate from "./FormattedDate.astro";
+import Link from "./Link.astro";
+
+export interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props as Props;
+---
+
+<section>
+  <style lang="scss">
+    .blog-list {
+      list-style-type: none;
+      padding: unset;
+      max-width: 50rem;
+      margin: 5rem auto;
+    }
+    .item {
+      display: flex;
+      gap: 5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .item-date {
+      color: #aaa;
+      min-width: 7rem;
+    }
+    .item-title {
+      min-width: 15rem;
+    }
+  </style>
+  <ul class="blog-list">
+    {
+      posts.map((post) => (
+        <li>
+          <Link variant="secondary" href={`/${getEntryUrl(post)}`} class="item">
+            <div class="item-date">
+              <FormattedDate date={post.data.date} />
+            </div>
+            <p class="item-title">{post.data.title}</p>
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+</section>

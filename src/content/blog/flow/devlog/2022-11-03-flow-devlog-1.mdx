@@ -1,0 +1,49 @@
+---
+title: Flow Devlog 1
+date: "2022-11-03"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [flow, devlog]
+slug: "1"
+---
+
+![Flow Devlog 1](/blog/flow/devlog/1.png)
+
+Welcome to the first devlog of Flow! In this devlog I will talk about the current state of the project and what I have planned for the future.
+
+## The idea behind Flow
+
+Flow should be a feature-rich calendar and time and event management software.
+In the current calendar software, you can only create simple events and reminders. You can only repeat events if it has a fixed interval.
+For example, you can only create an event that repeats every 2 days, but not every 2nd and 4th day of the month.
+Flow should be able to do that. You can group every event and share it with other people.
+Add a description, a location, a time and to-do lists to your events and write a backlog after the event.
+
+## Storage
+
+The app uses an embedded SQLite database to store all the data. The database is created when the app is started for the first time.
+Currently, only the local storage is supported, but I plan to add support for cloud storage in the future.
+You will be able to sync your data with WebDAV (Nextcloud, ownCloud, etc.), host your own flow server or use a decentralized storage.
+
+## UI
+
+Material 3 is used as the UI framework. Everything should be responsive and looks good on both desktop and mobile platforms.
+
+## Events
+
+The basic operations create, edit, query and delete are implemented.
+You can see all events in a list with the current date. Filtering and big calendar views are planned for the future.
+
+## Web Preview
+
+You can preview the app in your browser by clicking [here](https://flow-e78cel8pz-linwood.vercel.app). Please note that the app is in development and the database schema may change in the future. That means that you may lose your data when the app is updated. Use it only for testing.
+
+## Notes
+
+Thanks for reading this devlog. I hope you are as excited as I am about this project.
+If you have any questions or suggestions, feel free to contact me on [Discord](https://linwood.dev/discord), [Matrix](https://linwood.dev/matrix) or [Twitter](https://twitter.com/LinwoodCloud).
+Source code is available on [GitHub](https://github.com/LinwoodCloud/Flow). Please give feedback and star the project if you like it.
+
+This devlog is based on commit `dd00bdf33725edeb947cb121364f4da73fc9111c`.

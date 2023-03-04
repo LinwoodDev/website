@@ -1,0 +1,97 @@
+---
+title: Butterfly 1.3 released
+date: "2022-05-26"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "1-3"
+---
+
+Two months ago, I released the last stable 1.2.1.
+Since then, a lot has changed.
+Download the latest version from [GitHub](https://github.com/LinwoodCloud/Butterfly/releases/v1.3.0).
+
+## New features
+
+### Areas
+
+![Area screenshot](https://raw.githubusercontent.com/LinwoodCloud/Butterfly/develop/docs/docs/area.png)
+
+Areas are a way to restrict the infinite canvas to a strict region.
+You can create areas by using the area painter.
+If you click on the background, you can open the area list dialog using the context menu.
+
+Read more about areas in the [documentation](https://docs.butterfly.linwood.dev/docs/1.3/area).
+
+### PDF Import
+
+A new feature is the PDF import.
+Open the insert dialog and select your PDF file.
+After that, you can select the page you want to import.
+
+### Layout
+
+The corner menu was moved to the top left corner and has the Butterfly logo.
+Zoom and undo/redo can now be found in this corner menu to have more space for the canvas.
+
+### SVG Export
+
+Now you can export your canvas to SVG.
+You can do this by opening the menu in the top left corner and selecting "Export" and "SVG".
+
+### Embed mode
+
+The web version of Butterfly can now be embedded in websites.
+You can load documents, edit and export them using a simple API.
+Read more about this in the [documentation](https://docs.butterfly.linwood.dev/embed/intro).
+
+### Dialogs
+
+The app has three new dialogs:
+
+- Welcome dialog
+  - This dialog is shown when you first start the app.
+  - It contains a short introduction to the app.
+- Update dialog
+  - This dialog is shown when you update the app.
+- Start dialog
+  - This dialog is shown when you start the app.
+  - Open recent documents or create a new document with one click.
+  - This dialog can be disabled in the settings.
+
+### New design
+
+The new design is based on the [Material Design 3](https://m3.material.io/) guidelines.
+You can change the colors in the personalization settings.
+
+### Constraints
+
+Images and labels can now be constrained to an exact or a dynamic size.
+Open the context menu and click on the "Constraints" button.
+
+### Refactoring
+
+The logic is now separated from the visual representation.
+This helps to add more painters and element types in the future.
+
+### Minor changes
+
+- Full screen mode (Open the menu in the top left corner and select "Full screen")
+- Undo/redo works again (Open the menu in the top left corner and select "Undo/redo" or use ctrl+z and ctrl+y)
+- Add responsive slider (The slider can now be used on mobile devices with a bigger zoom level)
+- Improve layout on bigger screens
+- Redesigned settings dialog (The settings dialog is now more user-friendly on the desktop)
+- Enable share of data for all platforms
+- Round zoom level
+- Remove autosave on web
+- Add autocompletion to layer name
+
+## Notes
+
+Thanks to all people who helped me with reporting bugs and recommend the app to other people!
+This gives me a lot of motivation to improve the app.
+My first intention was to make a note-taking app for the school for me, but I decided to make it for everyone.
+We reached the 100 stars on GitHub and 2,000 downloads on GitHub.
+On GitHub there are now more than 1,000 commits, thank you for all your support!

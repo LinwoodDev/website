@@ -1,0 +1,40 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description ?? ""} />
+  </head>
+
+  <body>
+    <div id="swup" class="transition-fade">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+	<script src="../scripts/swup.js"></script>
+  </body>
+</html>
+<style>
+	.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+</style>

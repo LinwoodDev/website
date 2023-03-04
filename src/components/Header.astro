@@ -1,0 +1,37 @@
+---
+import Link from './Link.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<h2>
+		<img src="/logos/logo.png" height="32" width="32" alt="Astro Logo" />
+		{' '}
+		{SITE_TITLE}
+	</h2>
+	<nav>
+		<Link variant="primary" href="/">Home</Link>
+		<Link variant="primary" href="/blog">Blog</Link>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0em 0 2em;
+		display: flex;
+		margin: auto;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	h2 {
+		margin: 0.5em 0;
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		min-width: 7em;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+	}
+</style>

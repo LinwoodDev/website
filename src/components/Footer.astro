@@ -1,0 +1,28 @@
+---
+import Link from "./Link.astro";
+
+const today = new Date();
+---
+
+<footer>
+	<div>
+		<div>
+			<Link variant="secondary" href="https://twitter.com/@LinwoodCloud" target="_blank">Twitter</Link>
+			<Link variant="secondary" href="https://floss.social/@Linwood" target="_blank">Mastadon</Link>
+			<Link variant="secondary" href="https://linwood.dev/matrix" target="_blank">Matrix</Link>
+			<Link variant="secondary" href="https://linwood.dev/discord" target="_blank">Discord</Link>
+			<Link variant="secondary" href="https://github.com/LinwoodCloud" target="_blank">GitHub</Link>
+		</div>
+		<div>
+			<Link variant="secondary" href="/imprint">Impressum</Link>
+			<Link variant="secondary" href="/privacypolicy">Datenschutzerklärung</Link>
+		</div>
+	</div>
+	&copy; {today.getFullYear()} Linwood. All rights reserved.
+</footer>
+<style>
+	footer {
+		padding: 25px;
+		text-align: center;
+	}
+</style>
