@@ -3,7 +3,8 @@
     "title": "Linwood Butterfly",
     "source": "https://github.com/LinwoodCloud/butterfly",
     "description": "🎨 Powerful, minimalistic, cross-platform, opensource note-taking app",
-    "website": "https://docs.butterfly.linwood.dev"
+    "website": "https://docs.butterfly.linwood.dev",
+    "translation": "https://translate.linwood.dev/butterfly/"
   },
   "dev-doctor": {
     "title": "Dev-Doctor",

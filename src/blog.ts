@@ -7,6 +7,7 @@ export type Project = {
     description: string;
     source: string;
     website: string;
+    translation?: string;
 };
 export const getEntryProject = (entry : CollectionEntry<"blog">) => {
     return entry.id.substring(0, entry.id.indexOf("/"));

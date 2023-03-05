@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/DefaultLayout.astro
+title: Datenschutzerklärung
 ---
 
 Datenschutz­erklärung

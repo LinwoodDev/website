@@ -40,6 +40,11 @@ const posts = (await getCollection("blog"))
       <Link variant="primary" href={project.source} target="_blank">
         GitHub
       </Link>
+      {project.translation && (
+        <Link variant="primary" href={project.translation} target="_blank">
+          Translation
+        </Link>
+      )}
     </div>
   </section>
   <section>

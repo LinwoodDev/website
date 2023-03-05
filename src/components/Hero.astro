@@ -1,0 +1,31 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description} = Astro.props;
+---
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    h1 {
+        font-size: 10rem;
+        font-weight: 900;
+        margin: 0;
+    }
+    p {
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 0;
+    }
+</style>
+<div class="container">
+    <h1>{title}</h1>
+    <p>{description}</p>
+</div>
