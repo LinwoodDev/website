@@ -1,0 +1,75 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/flow/crowdin",
+      "destination": "https://linwood.crowdin.com/flow",
+      "permanent": true
+    },
+    {
+      "source": "/flow/license",
+      "destination": "https://github.com/LinwoodCloud/Flow/blob/develop/LICENSE",
+      "permanent": true
+    },
+    {
+      "source": "/flow/source",
+      "destination": "https://github.com/LinwoodCloud/Flow",
+      "permanent": true
+    },
+    {
+      "source": "/flow/1.0",
+      "destination": "/soon",
+      "permanent": true
+    },
+    {
+      "source": "/butterfly/crowdin",
+      "destination": "https://linwood.crowdin.com/butterfly",
+      "permanent": true
+    },
+    {
+      "source": "/butterfly/license",
+      "destination": "https://github.com/LinwoodCloud/butterfly/blob/develop/LICENSE",
+      "permanent": true
+    },
+    {
+      "source": "/butterfly/source",
+      "destination": "https://github.com/LinwoodCloud/Butterfly",
+      "permanent": true
+    },
+    {
+      "source": "/butterfly/report",
+      "destination": "https://github.com/LinwoodCloud/Butterfly/issues/new",
+      "permanent": true
+    },
+    {
+      "source": "/butterfly/2.0",
+      "destination": "/soon",
+      "permanent": true
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/97zFtYN",
+      "permanent": true
+    },
+    {
+      "source": "/matrix",
+      "destination": "https://matrix.to/#/#linwood:matrix.org",
+      "permanent": true
+    },
+    {
+      "source": "/impress",
+      "destination": "/imprint",
+      "permanent": true
+    },
+    {
+      "source": "/invite",
+      "destination": "https://discord.com/api/oauth2/authorize?client_id=680346829489307726&permissions=260381732439&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F%23%2Fcallback&scope=bot",
+      "permanent": true
+    },
+    {
+      "source": "/itemmods-discord",
+      "destination": "https://discord.gg/WzcRNGF",
+      "permanent": true
+    }
+  ]
+}
