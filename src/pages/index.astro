@@ -14,7 +14,15 @@ import Link from "../components/Link.astro";
       font-size: 5rem;
     }
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+      .title {
+        font-size: 3rem;
+      }
+      .subtitle {
+        font-size: 2rem;
+      }
     }
     .section-title {
       font-size: 3rem;
@@ -22,7 +30,7 @@ import Link from "../components/Link.astro";
     }
     .big-section {
       padding: 2rem;
-      min-height: 50vh;
+      min-height: 25vh;
     }
     .project-list {
       display: flex;

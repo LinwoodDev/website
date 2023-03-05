@@ -26,10 +26,13 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 	a.primary, a.secondary {
 		background: transparent;
 		padding: 0.5rem 1rem;
-		&.active, &:hover {
-			color: colors.$background;
-			background: colors.$primary;
-		}
+	}
+	a.primary:hover {
+		background: colors.$panel;
+	}
+	a.primary.active, a.secondary.active, a.secondary:hover {
+		color: colors.$background;
+		background: colors.$primary;
 	}
 	a.primary {
 		color: colors.$primary;

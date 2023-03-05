@@ -38,7 +38,7 @@ const { posts } = Astro.props as Props;
     {
       posts.map((post) => (
         <li>
-          <Link variant="secondary" href={`/${getEntryUrl(post)}`} class="item">
+          <Link variant="primary" href={`/${getEntryUrl(post)}`} class="item">
             <div class="item-date">
               <FormattedDate date={post.data.date} />
             </div>
