@@ -1,8 +1,8 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogsList from "../components/BlogsList.astro";
+import BlogsList from "@components/BlogsList.astro";
 import { getProjects, Project } from "../blog";
-import Link from "../components/Link.astro";
+import Link from "@components/Link.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 export async function getStaticPaths() {
