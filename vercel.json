@@ -42,11 +42,6 @@
       "permanent": true
     },
     {
-      "source": "/butterfly/2.0",
-      "destination": "/soon",
-      "permanent": true
-    },
-    {
       "source": "/discord",
       "destination": "https://discord.gg/97zFtYN",
       "permanent": true
