@@ -1,0 +1,131 @@
+---
+title: First alpha of Butterfly 2.0 released
+date: "2023-04-09"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "2.0"
+---
+
+Happy Easter everyone!
+Today, I am happy to announce the first alpha of Butterfly 2.0. This is a major update with a lot of new features and improvements. The new version is also based on a new file format. This means that the old file format is not compatible with the new version. The new file format is also not compatible with the old version. The file format will be changed in the next alpha, that is based on an archive to improve the performance on large documents with many images.
+Furthermore, the eraser layer has been removed to improve performance. This means that on old documents, the eraser layer will be removed.
+Please note that this is an alpha version and there are still a lot of bugs and missing features. If you find any bugs or have any suggestions, please open an issue on GitHub.
+
+## New features
+
+### Rich text
+
+Rich text is now supported in Butterfly. Use the new painter to add texts that can be formatted with different styles, colors and fonts. The text can also be aligned and indented. Furthermore, the text can be copied and pasted into other applications.
+Please note that the text tool is still in development and there are still a lot of bugs and missing features. For example, mouse selection is not yet supported and formatting currently has many bugs.
+
+### Packs
+
+Packs has now styles for rich text and color palettes. The styles can be used to format text in the text tool. The color palettes can be used to quickly select colors in the color toolbar. The color toolbar is now also saved in the pack. This means that the color toolbar can be simply exported and imported to share the color toolbar with others using packs.
+Furthermore, the core pack has been added. This pack contains the default styles and color palettes. The core pack is automatically installed with the new templates.
+
+### Painters
+
+The eraser layer has been removed to improve performance. This means that on old documents, the eraser layer will be removed.
+Furthermore, the waypoint painter has been added. This painter can be used to add waypoints to the document. The waypoints can be used to navigate through the document. The right click menu in the hand dialog was removed in favor of this painter.
+The add dialog has been rebuilt. The add dialog now contains the insert system and all painters grouped by their category.
+The pen renderer has now a more natural look and feel. It also supports thinning, smoothing and streamline.
+Additionally, the transparency property has been moved out of the color into an extra slider on all painters that support transparency.
+The presentation mode has been added. This mode can be used to present the document. The presentation mode supports animations and a timeline to key frame animations. More over, the presentation mode has a new mode for running a presentation. Stay tuned for a guide on how to use the presentation mode.
+The image element has been changed. The pixel property has been removed and replaced with the source URL as base64 data URL. This is a start to support more image features in the future.
+
+## Tools
+
+All project settings have been moved to the tools. This means that the project settings can now be accessed from the tools menu in the top right corner. The old project settings dialog has been removed in favor of this change. The background can also be changed in this menu.
+
+## Templates
+
+Templates now have thumbnails. Furthermore, templates will be created in the selected connection. This means that the templates can be created in the local file system or in the cloud.
+Additionally, templates has now a different background and a different name (Light, dark instead of Plain and Plain dark).
+
+## UI Improvements
+
+The home page has been added. This page can be used to open a document or create a new document.
+It contains a quick start menu to quickly create a new document and a file browser to open a document. Additionally, there is a banner on the top to notify about a new version.
+The open dialog has been removed in favor of this page.
+The classic, yaru and adwaita theme has been removed in favor of the default theme. The default theme now uses the device accent color. This will give the application a unique look and feel on every device.
+The zoom slider has been added to the main draw page. This slider can be used to zoom in and out of the document.
+Many more UI improvements have been made to improve the user experience. Try it out and let me know what you think.
+
+## Notes
+
+Thank you for reading this blog post. I hope you like the new features and improvements. If you have any suggestions or found any bugs, please open an issue on GitHub. Stay tuned for the next alpha. The next alpha will be based on an archive to improve the performance on large documents with many images and will improve the text tool. Join the [Discord server](https://linwood.dev/discord) or the [Matrix room](https://linwood.dev/matrix) to get the latest news and updates, to get help or to discuss with other users. You can also follow me on [Twitter](https://twitter.com/LinwoodCloud) or [Mastadon](https://mastodon.social/@Linwood) to get the latest news and updates.
+
+Please note that this is an alpha version and there are still a lot of bugs and missing features. If you find any bugs or have any suggestions, please [open an issue on GitHub](https://github.com/LinwoodCloud/butterfly/issues/new/choose).
+
+## Full changelog
+
+* Add rich text
+* Pack changes
+  * Add styles to pack
+  * Add color palette to pack
+    * Improve color toolbar to reflect that color palettes are now saved in the pack
+  * Add core pack
+* Painter changes
+  * Remove eraser element to improve performance (Breaking change)
+  * Add waypoint painter
+  * Rebuild add dialog
+    * Add inserts of assets in add dialog
+  * Remove right click menu from hand dialog
+  * Rebuild pen renderer
+  * Add new properties to pen painter
+    * Thinning
+    * Smoothing
+    * Streamline
+  * Move transparency property out of color into an extra slider
+  * Rich text
+    * Add label toolbar to support rich text
+    * Add text cursor
+  * Add presentation mode
+    * Add animations
+    * Add presentation toolbar with timeline
+    * Add new mode for running a presentation
+  * Replace pixel property in image element with source url as base64 data url
+* Tool changes
+  * Add check if ruler size is greater than 0
+  * Move project settings in tools
+* Template changes
+  * Templates have now thumbnails
+  * Templates will be created in the selected connection
+* UI Improvements
+  * Add home page
+  * Remove open dialog in flavor of the home page
+  * Rebuild top corner menu
+  * Remove classic, yaru and adwaita theme
+  * Use device accent color for default theme
+  * Add zoom slider to the main draw page
+  * Rename remote translations to connection
+  * Replace listtiles in context menus to menuitembuttons
+  * Add search at the top to search for text elements, areas and waypoints
+  * Title is now smaller aligned in the top left corner to look better
+  * Improve title bar to look more material 3 like
+* Middle mouse behavior is now move as default
+* Rebuild file format and add note for breaking changes
+* Remove date format setting, documents have no name by default
+* Add new butterfly logo
+* Improve web file system
+* Improve pdf export
+* Restructure basic classes in api project
+* Downloads
+  * Add start scripts ([#304](https://github.com/LinwoodCloud/Butterfly/issues/304))
+* Bug fixes
+  * Fix unicode characters in file path, fixes ([#336](https://github.com/LinwoodCloud/Butterfly/issues/336))
+  * Fix after Undo, Hand tool will be selected
+  * Fix blank page after entering or exiting area mode
+  * Fix global shortcuts
+
+Things that need to be improved:
+
+* Text tool
+* Presentation tool
+* Packs in general
+* File format (there will be an automatic migration)
+
+View all changes in the blog: https://linwood.dev/butterfly/2.0
