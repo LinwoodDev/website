@@ -8,12 +8,12 @@
     },
     {
       "source": "/flow/license",
-      "destination": "https://github.com/LinwoodCloud/Flow/blob/develop/LICENSE",
+      "destination": "https://github.com/LinwoodDev/Flow/blob/develop/LICENSE",
       "permanent": true
     },
     {
       "source": "/flow/source",
-      "destination": "https://github.com/LinwoodCloud/Flow",
+      "destination": "https://github.com/LinwoodDev/Flow",
       "permanent": true
     },
     {
@@ -28,17 +28,17 @@
     },
     {
       "source": "/butterfly/license",
-      "destination": "https://github.com/LinwoodCloud/butterfly/blob/develop/LICENSE",
+      "destination": "https://github.com/LinwoodDev/butterfly/blob/develop/LICENSE",
       "permanent": true
     },
     {
       "source": "/butterfly/source",
-      "destination": "https://github.com/LinwoodCloud/Butterfly",
+      "destination": "https://github.com/LinwoodDev/Butterfly",
       "permanent": true
     },
     {
       "source": "/butterfly/report",
-      "destination": "https://github.com/LinwoodCloud/Butterfly/issues/new",
+      "destination": "https://github.com/LinwoodDev/Butterfly/issues/new",
       "permanent": true
     },
     {

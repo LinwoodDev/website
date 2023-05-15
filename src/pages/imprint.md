@@ -6,7 +6,7 @@ title: Impressum
 Impressum
 =========
 
-Diese Privacy Policy gilt für die Seiten linwood.dev und die Subdomains und den Twitter Accounts (@LinwoodCloud und @CodeDoctorDE)
+Diese Privacy Policy gilt für die Seiten linwood.dev und die Subdomains und den Twitter Accounts (@LinwoodDev und @CodeDoctorDE)
 
 Angaben gemäß § 5 TMG
 ---------------------
