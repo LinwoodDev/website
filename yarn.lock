@@ -2098,6 +2098,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swup/scripts-plugin@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@swup/scripts-plugin@npm:1.1.0"
+  dependencies:
+    "@swup/plugin": ^1.0.1
+  checksum: fcc8fda5a8d84dd9d6deeeb7e7f34ae7a4947598ea330a85b46579a32158900e7b2cc9c630080702daf8625d81336ffa7a0f856ba3676b711764794724816609
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -5454,6 +5463,7 @@ __metadata:
     "@astrojs/sitemap": ^1.3.1
     "@swup/head-plugin": ^1.3.0
     "@swup/progress-plugin": ^2.0.0
+    "@swup/scripts-plugin": ^1.1.0
     "@vite-pwa/astro": ^0.0.5
     astro: ^2.4.5
     sass: ^1.62.1
