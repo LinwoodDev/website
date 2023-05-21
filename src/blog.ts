@@ -1,12 +1,15 @@
 import { CollectionEntry, getCollection } from "astro:content";
 
 export const getEntryProject = (entry: CollectionEntry<"blog">) => {
+  return getProject(getEntryProjectName(entry));
+};
+export const getEntryProjectName = (entry: CollectionEntry<"blog">) => {
   const projectName = entry.id.substring(0, entry.id.indexOf("/"));
-  return getProject(projectName);
+  return projectName;
 };
 
 export const getEntryUrl = (entry: CollectionEntry<"blog">) => {
-  const first = getEntryProject(entry);
+  const first = getEntryProjectName(entry);
   const folder = entry.id.substring(
     entry.id.indexOf("/"),
     entry.id.lastIndexOf("/")
