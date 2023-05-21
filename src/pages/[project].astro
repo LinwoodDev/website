@@ -1,47 +1,47 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import BlogsList from "@components/BlogsList.astro";
-import { getProjects, Project } from "../blog";
+import { getProjects } from "../blog";
 import Link from "@components/Link.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 export async function getStaticPaths() {
-  return getProjects().map((project) => ({
-    params: { projects: project.name },
+  return (await getProjects()).map((project) => ({
+    params: { project: project.id },
     props: project,
   }));
 }
 
-export type Props = Project;
+export type Props = CollectionEntry<"projects">;
 
-const project = Astro.props;
+const current = Astro.props;
 const posts = (await getCollection("blog"))
-  .filter((post) => post.id.startsWith(project.name))
+  .filter((post) => post.id.startsWith(current.id))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<DefaultLayout title={project.title}>
+<DefaultLayout title={current.data.title}>
   <section>
     <div class="thumbnail">
       <img
         class="thumbnail-image"
-        src={`/logos/${project.name}.svg`}
-        alt={project.title}
+        src={`/logos/${current.id}.svg`}
+        alt={current.data.title}
       />
       <div class="thumbnail-body">
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+        <h1>{current.data.title}</h1>
+        <p>{current.data.description}</p>
       </div>
     </div>
     <div>
-      <Link variant="primary" href={project.website} target="_blank">
+      <Link variant="primary" href={current.data.website} target="_blank">
         Website
       </Link>
-      <Link variant="primary" href={project.source} target="_blank">
+      <Link variant="primary" href={current.data.source} target="_blank">
         GitHub
       </Link>
-      {project.translation && (
-        <Link variant="primary" href={project.translation} target="_blank">
+      {current.data.translation && (
+        <Link variant="primary" href={current.data.translation} target="_blank">
           Translation
         </Link>
       )}

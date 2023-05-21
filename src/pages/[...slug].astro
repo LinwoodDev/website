@@ -5,22 +5,20 @@ import { getEntryProject, getEntryUrl, getProject } from '../blog';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
+	return Promise.all(posts.map(async (post) => ({
 		params: { slug: getEntryUrl(post) },
-		props: post,
-	}));
+		props: {post, project: await getEntryProject(post)},
+	})));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = {post: CollectionEntry<'blog'>, project: CollectionEntry<'projects'> | undefined};
 
-const post = Astro.props;
+const {post, project} = Astro.props;
 const { Content } = await post.render();
-const projectName = getEntryProject(post);
-const projectTitle = getProject(projectName)?.title;
 ---
 
-<BlogPost {...post.data} project={projectTitle ? {
-	title: projectTitle,
-	name: projectName,
+<BlogPost {...post.data} project={project ? {
+	title: project?.data.title,
+	id: project!.id,
 } : undefined}>
 	<Content />
 </BlogPost>

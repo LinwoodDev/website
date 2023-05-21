@@ -7,7 +7,7 @@ import DefaultLayout from "./DefaultLayout.astro";
 type Props = CollectionEntry<"blog">["data"] & {
   project?: {
     title: string;
-    name: string;
+    id: string;
   };
 };
 
@@ -22,7 +22,7 @@ const { title, description, date, heroImage, project } = Astro.props;
     {
       project && (
         <p>
-          <Link variant="secondary" href={`/${project.name}`}>
+          <Link variant="secondary" href={`/${project.id}`}>
             {project.title}
           </Link>
         </p>

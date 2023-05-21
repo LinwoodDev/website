@@ -1,34 +1,29 @@
-import type { CollectionEntry } from "astro:content";
-import projects from "./content/_projects.json";
+import { CollectionEntry, getCollection } from "astro:content";
 
-export type Project = {
-    name: string;
-    title: string;
-    description: string;
-    source: string;
-    website: string;
-    translation?: string;
+export const getEntryProject = (entry: CollectionEntry<"blog">) => {
+  const projectName = entry.id.substring(0, entry.id.indexOf("/"));
+  return getProject(projectName);
 };
-export const getEntryProject = (entry : CollectionEntry<"blog">) => {
-    return entry.id.substring(0, entry.id.indexOf("/"));
-}
 
-export const getEntryUrl = (entry : CollectionEntry<"blog">) => {
-    const first = getEntryProject(entry);
-    const folder = entry.id.substring(entry.id.indexOf("/"), entry.id.lastIndexOf("/"));
-    const last = entry.slug;
-    return `${first}${folder}/${last}`;
-}
+export const getEntryUrl = (entry: CollectionEntry<"blog">) => {
+  const first = getEntryProject(entry);
+  const folder = entry.id.substring(
+    entry.id.indexOf("/"),
+    entry.id.lastIndexOf("/")
+  );
+  const last = entry.slug;
+  return `${first}${folder}/${last}`;
+};
 
-export const getProjects = () : Project[] => {
-    return Object.entries(projects).map(([key, value]) => {
-        return {
-            name: key,
-            ...value
-        };
-    });
-}
+export const getProjects = async (): Promise<CollectionEntry<"projects">[]> => {
+  const projects = await getCollection("projects");
+  return projects;
+};
 
-export const getProject = (name : string) : Project | undefined => {
-    return getProjects().find((project) => project.name === name);
-}
+export const getProject = async (
+  name: string
+): Promise<CollectionEntry<"projects"> | undefined> => {
+  const projects = await getProjects();
+  const project = projects.find((project) => project.id === name);
+  return project;
+};
