@@ -38,7 +38,7 @@
     },
     {
       "source": "/butterfly/report",
-      "destination": "https://github.com/LinwoodDev/Butterfly/issues/new",
+      "destination": "https://github.com/LinwoodDev/Butterfly/issues/new/choose",
       "permanent": true
     },
     {
