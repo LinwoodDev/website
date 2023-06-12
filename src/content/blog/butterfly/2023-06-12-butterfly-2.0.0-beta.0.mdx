@@ -1,0 +1,88 @@
+---
+title: Butterfly 2.0 goes beta
+date: "2023-06-12"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0"
+---
+
+After 5 alpha releases, we are happy to announce the first beta of Butterfly 2.0. This release contains a lot of new features and bug fixes. Read the old 2.0 alpha posts here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+## Navigation bar
+
+The navigation bar is a new feature in Butterfly 2.0. It is a bar at the left side of the window that contains many useful features:
+
+* Waypoints
+* Layers
+* Pages
+* Files
+
+Waypoints are previously there as painters. They are now moved to the navigation bar. Waypoints are a way to navigate in your document. You can create waypoints and jump to them. This can be useful if you have a big document and want to navigate to a specific part of it.
+Layers was already available in Butterfly 1.0 but not in the redesign of Butterfly 2.0. We added it back in this release.
+Pages is a new feature that allows you to create multiple pages in one document. This can help you to organize your document better. Painters and tool options will be shared between all pages.
+The files section allows you to quickly change between your documents. You can also create new documents from there.
+
+## Painters
+
+I recoded the area painter and it now allows you to create areas inside of other areas.
+Additionally toolbars have now dynamic sizes. With this the color toolbar is now smaller while the other toolbars have the same size as before.
+Some painters now have an outline. This is an indicator that you can change to them with the shortcut feature that you can change in the behavior settings.
+
+## Full changelog
+
+* Rebuild area painter handler
+  * Areas can now intersect
+* Add version to pack metadata
+* Add navigator ([#391](https://github.com/LinwoodDev/Butterfly/issues/391))
+  * Waypoints view
+  * Layers view
+  * Pages view
+  * Files view
+* Add pages
+* Add alpha to grid
+* Add alpha to label
+* Add dynamic height to toolbar
+* Add shortcut indication to painters
+* Add layers ui
+* Add quality to image export dialog
+* Add asset service to manage disposing of images
+* Add more space for edit toolbar
+* Add settings menu item button in top left corner
+* Bump file version
+  * Painters, export presets and tool are now global instead of page specific and was moved to a info.json file
+  * Remove waypoint painter in favor of the navigator
+* Migrate more components to material 3
+* Rename native window title bar to native title bar
+* Fix clearing history after navigating in behavior settings
+* Fix moving of elements
+* Fix migrating old documents
+* Fix exporting documents on android
+* Fix offset when selecting painters
+* Fix alpha in color toolbar
+* Fix creating default templates if directory doesn't exist
+* Fix temporary handler
+* Fix moving shapes
+* Fix default template
+* Fix changing color palette in color toolbar
+* Fix duplicating core pack because of case sensitivity
+* Fix opening of non butterfly files
+* Fix position when moving of imported elements
+* Fix snapping in grid when zoomed
+* Fix label created empty text elements
+* Fix backwards compatibility with stamp painter
+
+## What's next?
+
+It's not over yet. We will continue to improve Butterfly 2.0 and add new features. There will be many more beta releases before the final release but we are getting closer to the final release. Stay tuned for more updates.
+Feel free to report bugs and feature requests on [GitHub](https://linwood.dev/butterfly/report) and join our [Discord server](https://linwood.dev/discord) or [Matrix room](https://linwood.dev/matrix) to get in touch with us.

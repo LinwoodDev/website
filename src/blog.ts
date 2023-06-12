@@ -9,13 +9,7 @@ export const getEntryProjectName = (entry: CollectionEntry<"blog">) => {
 };
 
 export const getEntryUrl = (entry: CollectionEntry<"blog">) => {
-  const first = getEntryProjectName(entry);
-  const folder = entry.id.substring(
-    entry.id.indexOf("/"),
-    entry.id.lastIndexOf("/")
-  );
-  const last = entry.slug;
-  return `${first}${folder}/${last}`;
+  return entry.slug;
 };
 
 export const getProjects = async (): Promise<CollectionEntry<"projects">[]> => {
