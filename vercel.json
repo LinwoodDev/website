@@ -17,6 +17,11 @@
       "permanent": true
     },
     {
+      "source": "/flow/report",
+      "destination": "https://github.com/LinwoodDev/Flow/issues/new/choose",
+      "permanent": true
+    },
+    {
       "source": "/flow/1.0",
       "destination": "/soon",
       "permanent": true
@@ -38,7 +43,7 @@
     },
     {
       "source": "/butterfly/report",
-      "destination": "https://github.com/LinwoodDev/Butterfly/issues/new",
+      "destination": "https://github.com/LinwoodDev/Butterfly/issues/new/choose",
       "permanent": true
     },
     {
