@@ -1,0 +1,73 @@
+---
+import { getProject } from "src/blog";
+import Link from "./Link.astro";
+export interface Props {
+    project?: string;
+}
+
+const { project } = Astro.props;
+const current = project && await getProject(project);
+---
+
+{
+    current && (
+        <section>
+            <div class="thumbnail">
+                <img
+                    class="thumbnail-image"
+                    src={`/logos/${current.id}.svg`}
+                    alt={current.data.title}
+                />
+                <div class="thumbnail-body">
+                    <h1><a href={`/${current.id}`} class="thumbnail-link">{current.data.title}</a></h1>
+                    <p>{current.data.description}</p>
+                </div>
+            </div>
+            <div>
+                <Link
+                    variant="primary"
+                    href={current.data.website}
+                    target="_blank"
+                >
+                    Website
+                </Link>
+                <Link
+                    variant="primary"
+                    href={current.data.source}
+                    target="_blank"
+                >
+                    GitHub
+                </Link>
+                {current.data.translation && (
+                    <Link
+                        variant="primary"
+                        href={current.data.translation}
+                        target="_blank"
+                    >
+                        Translation
+                    </Link>
+                )}
+            </div>
+        </section>
+    )
+}
+<style lang="scss">
+    .thumbnail {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .thumbnail-link {
+        color: inherit;
+        text-decoration: none;
+    }
+    .thumbnail-image {
+        width: 5rem;
+        height: 5rem;
+        margin-right: 1rem;
+    }
+    .thumbnail-body {
+        flex: 1;
+    }
+</style>

@@ -4,6 +4,7 @@ import BlogsList from "@components/BlogsList.astro";
 import { getProjects } from "../blog";
 import Link from "@components/Link.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import ProjectHero from "@components/ProjectHero.astro";
 
 export async function getStaticPaths() {
   return (await getProjects()).map((project) => ({
@@ -22,49 +23,10 @@ const posts = (await getCollection("blog"))
 
 <DefaultLayout title={current.data.title}>
   <section>
-    <div class="thumbnail">
-      <img
-        class="thumbnail-image"
-        src={`/logos/${current.id}.svg`}
-        alt={current.data.title}
-      />
-      <div class="thumbnail-body">
-        <h1>{current.data.title}</h1>
-        <p>{current.data.description}</p>
-      </div>
-    </div>
-    <div>
-      <Link variant="primary" href={current.data.website} target="_blank">
-        Website
-      </Link>
-      <Link variant="primary" href={current.data.source} target="_blank">
-        GitHub
-      </Link>
-      {current.data.translation && (
-        <Link variant="primary" href={current.data.translation} target="_blank">
-          Translation
-        </Link>
-      )}
-    </div>
+    <ProjectHero project={current.id} />
   </section>
   <section>
     <h2>Blogs</h2>
     <BlogsList posts={posts} />
-  </section>
-  <style>
-    .thumbnail {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .thumbnail-image {
-      width: 5rem;
-      height: 5rem;
-      margin-right: 1rem;
-    }
-    .thumbnail-body {
-      flex: 1;
-    }
-  </style>  
+  </section>  
 </DefaultLayout>

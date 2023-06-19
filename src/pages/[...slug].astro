@@ -16,9 +16,6 @@ const {post, project} = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data} project={project ? {
-	title: project?.data.title,
-	id: project!.id,
-} : undefined}>
+<BlogPost {...post.data} project={project?.id}>
 	<Content />
 </BlogPost>

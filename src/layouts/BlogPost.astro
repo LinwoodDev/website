@@ -3,12 +3,10 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import Link from "@components/Link.astro";
 import DefaultLayout from "./DefaultLayout.astro";
+import ProjectHero from "@components/ProjectHero.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
-  project?: {
-    title: string;
-    id: string;
-  };
+  project?: string,
 };
 
 const { title, description, date, heroImage, project } = Astro.props;
@@ -19,15 +17,7 @@ const { title, description, date, heroImage, project } = Astro.props;
     {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
     <h1 class="title">{title}</h1>
     <FormattedDate date={date} />
-    {
-      project && (
-        <p>
-          <Link variant="secondary" href={`/${project.id}`}>
-            {project.title}
-          </Link>
-        </p>
-      )
-    }
+    <ProjectHero project={project} />
     <hr />
     <slot />
   </article>
