@@ -1,0 +1,61 @@
+---
+title: Fourth beta of Butterfly 2.0 released
+date: "2023-07-07"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0"
+---
+
+The fourth beta release it out. If you didn't read the last versions, click here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+This release contains a lot of bug fixes and ui improvements.
+
+## UI
+
+The UI has been improved a lot. The toolbar is now customizable and you can change the position of it. 
+The title text field is now smaller too.
+Additionally the delete painter has been removed.
+Instead you can now delete elements with the delete button in the properties or move the painter to the right of the add button.
+
+A new pages button has been added to the toolbar. It allows you to switch between pages and add new pages quickly.
+You won't be asked for a name when adding a new page. Instead you can now change the page name in the navigator.
+
+Full screen mode has been improved too. It is now a real full screen mode and not just a maximized window.
+The appbar is now hidden in full screen mode.
+
+## Background
+
+You can now add a background image to your document.
+The scale can be changed in the new properties tab in the background dialog.
+
+## Full changelog
+
+* Add image background ([#419](https://github.com/LinwoodDev/Butterfly/issues/419))
+* Add ability to customize position of the toolbar ([#408](https://github.com/LinwoodDev/Butterfly/issues/408))
+* Add option to rename page
+* Add changing of page after adding a new page
+* Add pages button to the toolbar ([#411](https://github.com/LinwoodDev/Butterfly/issues/411))
+* Add real fullscreen mode ([#421](https://github.com/LinwoodDev/Butterfly/issues/421))
+* Don't ask for name when adding a page (single click) ([#411](https://github.com/LinwoodDev/Butterfly/issues/411))
+* Fix many properties (background, animations, ...) missing when opening a document
+* Fix name check not allowing spaces, - and _
+* Fix zoom enable setting will be ignored
+* Fix setting navigation clears page history
+* Fix elements can't be moved on import ([#423](https://github.com/LinwoodDev/Butterfly/issues/423))
+* Reduce size of title text field
+* Reduce size of window buttons
+* Remove delete painter. Use the delete button in the properties instead or move the painter to the right of the add button
