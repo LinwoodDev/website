@@ -1,0 +1,88 @@
+---
+title: Fifth beta of Butterfly 2.0 released
+date: "2023-07-14"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0"
+---
+
+The fifth beta release it out. If you didn't read the last versions, click here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+- [Fourth beta](/butterfly/2.0.0-beta.3)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+This release contains a lot of bug fixes and ui improvements.
+
+## Painters
+
+In this beta release of Butterfly 2.0, several exciting features have been introduced to enhance the painting experience. Let's take a closer look at the changes related to painters:
+
+### Custom Mouse Cursors for Painters
+
+Working with different painting tools is now more intuitive, thanks to the addition of custom mouse cursors for painters. 
+Each painting tool now has its own cursor icon, making it easier to what you can do with it. ([#426](https://github.com/LinwoodDev/Butterfly/issues/426))
+
+### Spacer Painter
+
+With the new spacer painter, you can add empty spaces or gaps within your creations.
+This is useful for people who want to write text or draw something in a specific place that are already filled with other elements.
+
+### Full-Screen Painter
+
+Addressing user feedback, the full-screen painter has been introduced in this beta release.
+This feature allows easier switching between the full screen mode and the normal mode. ([#432](https://github.com/LinwoodDev/Butterfly/issues/432))
+
+### Recoded Hand Tool
+
+The hand tool has been recoded to enable real-time transformations, allowing users to manipulate and adjust elements on the canvas with greater fluidity.
+You can now transform elements in real time.
+All the transformations were moved out of the context menu into the view.
+
+## UI
+
+In Butterfly 2.0's fifth beta release, significant improvements have been made to the user interface, enhancing usability and overall aesthetics. Let's explore the UI-related updates in more detail:
+
+### Floating Toolbar
+
+Instead of a big toolbar, the toolbar space is now responsive from the contents in it. If the toolbar is small enough, you can see the canvas on the remaining space. ([#445](https://github.com/LinwoodDev/Butterfly/issues/445))
+
+### Settings Animation and Blur
+
+The beta release introduces animation and blur effects to the settings panel, adding a touch of visual polish to the overall experience.
+
+### Responsive Main View UI
+
+With the goal of providing a seamless experience across different screen sizes, the main view UI is now more responsive.
+If you select the pen painter the zoom view moves up if the toolbar is not on top.
+The window title bar has been improved to provide a more intuitive experience. The title bar now only allows dragging the window when the cursor is on a free space, making it easier to interact with the window controls.
+
+## Full changelog
+
+* Add custom mouse cursors for painters ([#426](https://github.com/LinwoodDev/Butterfly/issues/426))
+* Add spacer painter ([#424](https://github.com/LinwoodDev/Butterfly/issues/424))
+* Add full screen painter ([#432](https://github.com/LinwoodDev/Butterfly/issues/432))
+* Add move by dragging selection, add rotate button ([#410](https://github.com/LinwoodDev/Butterfly/issues/410))
+* Add floating toolbar ([#445](https://github.com/LinwoodDev/Butterfly/issues/445))
+* Add settings animation and blur
+* Add responsive main view ui
+* Recode hand tool to allow realtime transformation
+* Improve window title bar
+* Fix window does not open with start in fullscreen mode enabled ([#430](https://github.com/LinwoodDev/Butterfly/issues/430))
+* Fix resizing with multiple elements ([#434](https://github.com/LinwoodDev/Butterfly/issues/434))
+* Fix resizing with rotated elements
+* Fix not waiting for creating default templates on native platforms
+* Fix native title bar setting not saved
+* Fix home page not refreshing
+* Fix save indicator on web
