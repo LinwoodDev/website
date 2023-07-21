@@ -1,0 +1,77 @@
+---
+title: Sixth beta of Butterfly 2.0 released
+date: "2023-07-21"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0"
+---
+
+The sixth beta release it out. This is the 69th release of butterfly. If you didn't read the last versions, click here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+- [Fourth beta](/butterfly/2.0.0-beta.3)
+- [Fifth beta](/butterfly/2.0.0-beta.4)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+This release contains a lot of bug fixes (inclusive many mobile bugs added in the last beta) and ui improvements.
+
+## UI
+
+### Redesigned navigator
+
+The navigator was recoded to a navigation rail.
+You can find all pages on the left of your screen instead of a tab view. Click on them to open the page.
+It is now responsive to the rest of the ui. To disable the navigation rail, navigate to the personalisation settings of the app.
+On mobile you can find all pages in the top left corner menu.
+
+
+## Painters
+
+### Hand
+
+The hand tool has now shortcuts to select all elements on the page.
+You can now cut, copy and paste your elements with the context menu or the shortcuts ctrl+x, ctrl+c and ctrl+v.
+Additionally you can delete selected elements by clicking on the delete button.
+A mobile problem with selecting corners was fixed.
+
+### Asset
+
+A new asset painter was added. To add them, click on the pin icon on the import types in the add dialog.
+To add assets click in the view on any point and select your asset. The asset will appear on this position.
+
+### Markdown
+
+The markdown elements can now be moved.
+
+## Full changelog
+* Add navigation rail to large ui ([#444](https://github.com/LinwoodDev/Butterfly/issues/444))
+* Add specific navigator pages to menu in mobile ui ([#442](https://github.com/LinwoodDev/Butterfly/issues/442))
+* Add keyboard shortcuts
+  * Add ctrl + a to select all to hand painter ([#436](https://github.com/LinwoodDev/Butterfly/issues/436))
+  * Add del to delete selected to hand painter ([#435](https://github.com/LinwoodDev/Butterfly/issues/435))
+* Add svg icon to asset file type svg
+* Add asset painter ([#431](https://github.com/LinwoodDev/Butterfly/issues/431))
+* Add clipboard (cut, copy, paste) ([#422](https://github.com/LinwoodDev/Butterfly/issues/422))
+* Add transformation functions for markdown renderer
+* Fix move transformation on image renderer
+* Fix mobile ui
+* Fix hand tool corner selection not working on mobile
+* Fix waypoints not updating in navigator
+* Fix background won't be loaded
+* Fix position when scaling elements
+* Fix window when native title bar is enabled
+* Fix full screen and maximize window ([#449](https://github.com/LinwoodDev/Butterfly/issues/449))
+* Fix add asset dialog not working
+* Fix baking not working on presentation mode
+* Fix painters not updated in selection property view
