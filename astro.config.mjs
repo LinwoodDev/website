@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import AstroPWA from "@vite-pwa/astro";
+import swup from '@swup/astro';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,6 +10,7 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
+    swup({ theme: false, containers: ['#swup'] }),
     AstroPWA({
       workbox: { navigateFallback: "/404" },
       manifest: {
