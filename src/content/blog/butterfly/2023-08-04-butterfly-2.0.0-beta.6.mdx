@@ -1,0 +1,72 @@
+---
+title: Seventh beta of Butterfly 2.0 released
+date: "2023-08-04"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0.0-beta.6"
+---
+
+The seventh beta release it out. This is the 70th release of butterfly. If you didn't read the last versions, click here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+- [Fourth beta](/butterfly/2.0.0-beta.3)
+- [Fifth beta](/butterfly/2.0.0-beta.4)
+- [Sixth beta](/butterfly/2.0.0-beta.5)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+We have multiple new features and many bug fixed including performance improvements on the homepage on mobile.
+
+## Page
+
+You can now sort pages and create pages on the selected position.
+
+## Painter
+
+### Move
+
+There is now a new move painter. With this you can freely move on the page without any extra features like with the hand painter.
+
+### Hand
+
+If you transform your selection, it won't be deselected anymore after that.
+
+### Shape
+
+The shape painter was recoded to allow keybindings like shift and ctrl to center or keep the aspect ratio.
+
+## Full changelog
+
+* Add sort order ([#469](https://github.com/LinwoodDev/Butterfly/issues/469))
+* Add move painter ([#473](https://github.com/LinwoodDev/Butterfly/issues/473))
+* Save sort state ([#469](https://github.com/LinwoodDev/Butterfly/issues/469))
+* Save deleted images in cache
+  * Fix pasting images not working ([#465](https://github.com/LinwoodDev/Butterfly/issues/465))
+* Add to selected after transformed ([#478](https://github.com/LinwoodDev/Butterfly/issues/478))
+* Recode shape painter
+  * Add center, 1:1 features ([#476](https://github.com/LinwoodDev/Butterfly/issues/476))
+* Improve save state icons
+* Improve import painter position
+* Improve hit calculation on single point pen elements
+* Improve performance of quick start view in home page ([#459](https://github.com/LinwoodDev/Butterfly/issues/459))
+* Improve context menu position ([#468](https://github.com/LinwoodDev/Butterfly/issues/468))
+* Align source and sort by in home page
+* Set position to clicked when pasting ([#468](https://github.com/LinwoodDev/Butterfly/issues/468))
+* Fix selection not updated if deleted
+* Fix native title bar error on mobile devices
+* Fix internet problems on android ([#457](https://github.com/LinwoodDev/Butterfly/issues/457))
+* Fix position when pasting elements ([#468](https://github.com/LinwoodDev/Butterfly/issues/468))
+* Fix corner hit detection on hand tool when zoomed
+* Fix rotation when selecting multiple elements ([#472](https://github.com/LinwoodDev/Butterfly/issues/472))
+* Fix ruler moving speed when zoomed ([#480](https://github.com/LinwoodDev/Butterfly/issues/480))
+* Fix path selection rect when rotated ([#475](https://github.com/LinwoodDev/Butterfly/issues/475))
