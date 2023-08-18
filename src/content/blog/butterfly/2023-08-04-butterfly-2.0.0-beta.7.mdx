@@ -1,0 +1,82 @@
+---
+title: Eigth beta of Butterfly 2.0 released
+date: "2023-08-18"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0.0-beta.7"
+---
+
+The sixth beta release it out. Thanks for 500 stars! We achieved a new milestone!
+Feel free to recommend this app to other people.
+If you didn't read the last versions, click here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+- [Fourth beta](/butterfly/2.0.0-beta.3)
+- [Fifth beta](/butterfly/2.0.0-beta.4)
+- [Sixth beta](/butterfly/2.0.0-beta.5)
+- [Seventh beta](/butterfly/2.0.0-beta.6)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+We have polished many features for a better user experience.
+
+## Painter
+
+On all painters you can now use `ctrl+a` to open the hand painter and select all.
+
+### Pen
+
+You can now customize the icon of the painter. To do this open the property view of this painter and click on the icon.
+This change is only visually for the property view and the toolbar.
+
+### Stamp
+
+You can now scale the stamp and can use ctrl and shift to scale from center or keep the aspect ratio. The stamp painter now has a toolbar to make this easier to find your component easier.
+
+## UI
+
+Moving and zooming can now be locked using the lock button in the toolbar.
+
+Additionally you can find a new component tab in the navigator. This tab shows all components of packs and you can paste them easily into your document.
+Components have a thumbnail now to make it easier to find the right one.
+
+The waypoint and layer tab can now be used to rename.
+Renaming of things in the app is now possible by double clicking on the name.
+
+## Settings
+
+On android you can now change the data directory. This is useful if you want to use a sd card or wants to sync the data directory with a cloud service.
+For this to work the app needs to have the permission to write to external storage.
+When pasting an image the scale of it will be determined by the image scale setting and your screen.
+
+## Full changelog
+
+* Add pen painter icon customisation ([#467](https://github.com/LinwoodDev/Butterfly/issues/467))
+* Add locking for transformation ([#455](https://github.com/LinwoodDev/Butterfly/issues/455))
+* Add data directory setting for android ([#482](https://github.com/LinwoodDev/Butterfly/issues/482))
+* Add image scale setting ([#454](https://github.com/LinwoodDev/Butterfly/issues/454))
+* Add double click to rename ([#452](https://github.com/LinwoodDev/Butterfly/issues/452))
+* Add ability to rename waypoint
+* Add ability to rename layers from navigator
+* Add thumbnail for components ([#474](https://github.com/LinwoodDev/Butterfly/issues/474))
+* Add toolbar for stamp painter ([#474](https://github.com/LinwoodDev/Butterfly/issues/474))
+* Add components navigator page ([#474](https://github.com/LinwoodDev/Butterfly/issues/474))
+* Add scaling functionality for stamp painter ([#474](https://github.com/LinwoodDev/Butterfly/issues/474))
+* Add ctrl+a shortcut on all painters to open the hand painter and select all ([#450](https://github.com/LinwoodDev/Butterfly/issues/450))
+* Rename Export > Data to Export > Document
+* Fix portable linux build
+  * Fix script.sh
+  * Set executable permission on script.sh and butterfly binary
+* Fix deleting pages
+* Fix duplicated name on sync mode bottom sheet
+* Upgrade to flutter 3.13
