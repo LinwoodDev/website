@@ -11,14 +11,14 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^0.19.7",
-		"@astrojs/rss": "^2.4.3",
-		"@astrojs/sitemap": "^2.0.1",
-		"@swup/astro": "^0.2.0",
-		"astro": "^2.9.5"
+		"@astrojs/rss": "^2.4.4",
+		"@astrojs/sitemap": "^2.0.2",
+		"@swup/astro": "^1.1.1",
+		"astro": "^2.10.11"
 	},
-	"packageManager": "yarn@3.6.1",
+	"packageManager": "yarn@3.6.2",
 	"devDependencies": {
 		"@vite-pwa/astro": "^0.1.1",
-		"sass": "^1.64.1"
+		"sass": "^1.66.0"
 	}
 }
