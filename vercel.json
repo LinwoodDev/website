@@ -48,8 +48,8 @@
     },
     {
       "source": "/butterfly/2.0",
-      "destination": "/butterfly/2.0.0-beta.7",
-      "permanent": true
+      "destination": "/butterfly/2.0.0-beta.8",
+      "permanent": false
     },
     {
       "source": "/discord",

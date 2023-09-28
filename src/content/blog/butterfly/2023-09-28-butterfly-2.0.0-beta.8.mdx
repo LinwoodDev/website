@@ -1,0 +1,218 @@
+---
+title: Ninth beta of Butterfly 2.0 released
+date: "2023-09-28"
+author:
+  name: CodeDoctorDE
+  url: https://github.com/CodeDoctorDE
+  image: https://avatars1.githubusercontent.com/u/20452814?v=4
+tags: [butterfly]
+slug: "butterfly/2.0.0-beta.8"
+---
+
+After 1 monthand 100 commits the ninth beta release it out.
+We hit 3000 commits in total. Thanks for your support.
+Feel free to recommend this app to other people.
+If you didn't read the last versions, click here:
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+- [Fourth beta](/butterfly/2.0.0-beta.3)
+- [Fifth beta](/butterfly/2.0.0-beta.4)
+- [Sixth beta](/butterfly/2.0.0-beta.5)
+- [Seventh beta](/butterfly/2.0.0-beta.6)
+- [Eigth beta](/butterfly/2.0.0-beta.7)
+
+Please note that this is still a beta release and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+The file format has changed, there are many new ui improvements like animations, new release builds and many bug fixes.
+
+**Please make a backup of your files before using this version. The file format has changed and you can't open files created with this version in older versions.**
+
+## Release builds
+
+There are now official macos builds. You can either download the zip file or use the dmg file to install it.
+Additionally there is now a rpm package for redhat based linux distributions.
+
+## Renames
+
+Many things have been renamed to make it easier to understand.
+Painter is now called tool, tools are now called utilities and hand painter is now called select tool.
+
+## Internal
+
+The event system has been rewritten to support collaboration in the future.
+Additionally the file version has been bumped to 10 due to the renaming of many things.
+
+## Elements
+
+### Texture
+
+There is now a new texture element. This element can be used to add a background to your document on a specific part of the page.
+
+
+## Tools
+
+### Texture
+
+A new texture tool has been added to allow you to add texture elementss to your document.
+To change the texture, open the property view of the texture tool.
+
+### Label
+
+The label tool now has a new scale property to change the scale of the text.
+It is useful if you don't want to change the style of the text.
+
+## UI
+
+### Home Page
+
+The home page now loads thumbnails in a different thread to improve performance.
+Additionally the switch view button is now translated.
+
+### Window
+
+The window will now prevent closing if there are unsaved changes and ask you if you really want to close the window.
+Additionally you can now go to full screen by pressing f11.
+
+### Hide UI
+
+There is now a mode to hide the ui ([#458](https://github.com/LinwoodDev/Butterfly/issues/458)). Click on the top left corner button and click on hide ui or press the f12 button.
+To exit, click the bottom right exit button or press f12 again.
+
+### Animations
+
+Many animations have been added to make the ui more fluid.
+The property view now has a transition when the height changes.
+When changing the tool, the bottom arrow now smoothly appears.
+Additionally the open animation of the search dialog has been improved.
+If you now open the utilities, you will now see that this button is selected.
+All selected icon buttons now use the fill variant.
+
+### Document Properties
+
+The old tools property view has been replaced with a new document properties view.
+Many options were moved into new tabs. There are now tabs for: Document, Page, View and Camera.
+
+### Color Operation
+
+The color operation bottom sheet has been redesigned to make it easier to use.
+The hex code for the current color will be now displayed right to the color.
+
+### Add Dialog
+
+The add dialog now has a search bar to make it easier to find the right element.
+Additionally you can now import markdown files.
+
+### Context Menu
+
+A new mobile version of the context menu has been added. It is now horizontally and has a new design.
+The context menu is available on mobile by long pressing on an element.
+
+### Settings
+
+A new default pdf quality setting has been added. This setting can be used to change the default pdf quality when importing pdf files.
+
+### Selection
+
+To easily add elements to a pack, there is now a new add to pack button in the selection view instead of only in the area context menu.
+Images, SVGs and markdown elements can now be exported from this context menu.
+Additionally there is now a lasso selection mode to allow to quickly select your elements.
+
+### Templates
+
+The templates dialog now supports showing a thumbnail of the template.
+
+## Full changelog
+
+* Bump file version to 10
+  * Move box background properties to own Texture.pattern class
+  * Rename box background to pattern background
+  * Change page.background to page.backgrounds and allow a list of backgrounds
+  * Rename painters to tools
+  * Rename hand painter to select tool
+  * Rename move painter to hand tool
+  * Rename tool to utilities
+* Recode event system to include collaboration in the future
+* Redesign document properties
+* Redesign color operation bottom sheet
+* Add texture tool ([#406](https://github.com/LinwoodDev/Butterfly/issues/406))
+* Add search to add dialog
+* Add mobile context menu ([#410](https://github.com/LinwoodDev/Butterfly/issues/410))
+* Add setting to set default pdf quality
+* Add texture element ([#406](https://github.com/LinwoodDev/Butterfly/issues/406))
+* Add add to pack for selection
+* Add svg export for text elements ([#488](https://github.com/LinwoodDev/Butterfly/issues/488))
+* Add thumbnail to templates dialog
+* Add markdown importing
+* Add export functionality to markdown elements
+* Add animation to search dialog
+* Add scale property to label tool
+* Add alpha slider to shape element
+* Add delete buttons in pack dialog
+* Add size transition to property view
+* Add animation for tool change
+* Add selected state to utilities button
+* Add lasso selection mode to select tool ([#409](https://github.com/LinwoodDev/Butterfly/issues/409))
+* Add share to label context menu
+* Add animation when changing homepage header
+* Add hide ui ([#458](https://github.com/LinwoodDev/Butterfly/issues/458))
+* Add ability to teleport to area in search
+* Add setting to configure visual density
+* Add export to elements context menu
+* Add full screen f11 shortcut
+* Add play button to add dialog for action tools
+* Add tool status to add dialog
+* Fallback to first stylesheet if no stylesheet is selected
+* Move export button from selection view to context menu
+* Replace most dropdown buttons (material 2) with dropdown menus (material 3)
+* Improve performance on home page ([#459](https://github.com/LinwoodDev/Butterfly/issues/459))
+* Improve clipboard system to include image and svg source as data uri
+* Improve export system
+* Improve version info in setting if not connected to the internet
+* Improve spacing in background dialog
+* Improve icon buttons to match material 3
+* Improve export menu in area context menu
+* Prevent window of closing when there are unsaved changes ([#403](https://github.com/LinwoodDev/Butterfly/issues/403))
+* Change file search to not case sensitive
+* Change expansion panels in background dialog to tabs
+* Change selected icons to fill variant
+* Change image and svg export dialog position and size to row
+* Fix expansion panel list in corner radius shape, texture property, shapes and constraints view
+* Fix bfly mimetype
+* Fix property view playing open animation when opening navigator
+* Fix colors in svg export
+* Fix grid not updating when changing values
+* Fix pack dialog version text field
+* Fix changing styles of label in selection
+* Fix open with for bfly documents on android
+* Fix insert first and last tooltip in pages navigator view
+* Fix background not changed after page change
+* Fix missing localization for switch view
+* Fix transforming shape element
+* Fix duplication position issues
+* Fix template creation message text
+* Fix page ordering
+* Fix page index when renaming
+* Fix packs dialog closes after action
+* Fix layer remove button not working
+* Fix line shape transforming
+* Fix hit calculation on rotation in shape element
+* Fix importing of assets
+* Fix teleport position of text element in search
+* Disable gestures on mouse input
+* Remove view options from undo
+* Remove reload after clicking on star
+* Upgrade to agp 8
+* Upgrade to flutter 3.15
+
+* Add macos zip and dmg release builds
+* Add linux rpm release build
+
+Please make a backup of your documents before opening them with this version.
+This version is not compatible with older versions of Butterfly.
