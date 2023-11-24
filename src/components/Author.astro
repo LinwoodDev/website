@@ -1,0 +1,35 @@
+---
+import { getProject } from "src/blog";
+import Link from "./Link.astro";
+import { getCollection, getEntry } from "astro:content";
+export interface Props {
+    author?: string;
+}
+
+const { author } = Astro.props;
+const current = author && await getEntry("authors", author);
+---
+
+{
+    current && (
+        <a href={current.data.url} class="author">
+            <img class="author-avatar" src={current.data.avatar} />
+            <p class="author-name">{current.data.name}</p>
+        </a>
+    )
+}
+<style lang="scss">
+    .author {
+        text-decoration: none;
+        color: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 1em;
+        font-weight: 500;
+    }
+    .author-avatar {
+        border-radius: 100%;
+        width: 2em;
+        height: 2em;
+    }
+</style>
