@@ -1,12 +1,12 @@
 ---
-title: First release candidate of Butterfly 2.0 released
-date: "2023-12-01"
+title: Second release candidate of Butterfly 2.0 released
+date: "2023-12-08"
 author: codedoctor
 tags: [butterfly]
-slug: "butterfly/2.0.0-rc.0"
+slug: "butterfly/2.0.0-rc.1"
 ---
 
-The first release candidate of Butterfly 2.0 is now available. This release improves the connection system.
+The second release candidate of Butterfly 2.0 is now available. This release improves the right click behavior and fixes some bugs.
 
 - [First alpha](/butterfly/2.0.0-alpha.0)
 - [Second alpha](/butterfly/2.0.0-alpha.1)
@@ -30,21 +30,22 @@ The first release candidate of Butterfly 2.0 is now available. This release impr
 - [Fifteenth beta](/butterfly/2.0.0-beta.14)
 - [Sixteenth beta](/butterfly/2.0.0-beta.15)
 - [Seventeenth beta](/butterfly/2.0.0-beta.16)
+- [First release candidate](/butterfly/2.0.0-rc.0)
 
 We are now in the release candidate phase. This means that we will only fix bugs and not add new features. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
 
-## Connection system
+## Input
 
-The connection system has been improved. You can now connect to a server with a self-signed certificate. This is useful if you want to use Butterfly on a local server. You can also add names to your connections to make it easier to identify them.
-Additionally you can also disable certain directories types in the local storage.
+You can now right click as alternative to long click to open the properties of the tools in the toolbar or edit the color in the color toolbar.
 
 ## Full changelog
 
-* Add files action to file navigator
-* Add function to disable certain directory in local storage
-* Add name to local storage
-* Add extra properties for models to implement further import/export features
-* Add option to connect to a self-signed server ([#531](https://github.com/LinwoodDev/Butterfly/issues/531))
-* Improve web loading experience
-* Fix changing current tool when adding in collaboration mode
-* Fix remote connection requests
+* Add right click as alternative to long press
+* Change default scale of label to 5
+* Improve documentation of shortcuts ([#534](https://github.com/LinwoodDev/Butterfly/issues/534))
+* Fix closing of settings on click on mobile ([#537](https://github.com/LinwoodDev/Butterfly/issues/537))
+* Fix zoom usable if hidden ([#538](https://github.com/LinwoodDev/Butterfly/issues/538))
+* Fix full screen menu item ([#535](https://github.com/LinwoodDev/Butterfly/issues/535))
+* Fix selecting small areas ([#543](https://github.com/LinwoodDev/Butterfly/issues/543))
+* Fix areas not refreshing after deleting ([#541](https://github.com/LinwoodDev/Butterfly/issues/541))
+* Fix tool not selected when added
