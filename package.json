@@ -10,15 +10,15 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^1.1.5",
-		"@astrojs/rss": "^3.0.0",
+		"@astrojs/mdx": "^2.0.0",
+		"@astrojs/rss": "^4.0.1",
 		"@astrojs/sitemap": "^3.0.3",
 		"@swup/astro": "^1.4.0",
-		"astro": "^3.6.4"
+		"astro": "^4.0.3"
 	},
 	"packageManager": "pnpm@8.11.0",
 	"devDependencies": {
-		"@vite-pwa/astro": "^0.1.6",
+		"@vite-pwa/astro": "^0.2.0",
 		"sass": "^1.69.5"
 	}
 }
