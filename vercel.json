@@ -48,7 +48,7 @@
     },
     {
       "source": "/butterfly/2.0",
-      "destination": "/butterfly/2.0.0-rc.2",
+      "destination": "/butterfly/2.0.0-rc.3",
       "permanent": false
     },
     {
