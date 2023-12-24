@@ -10,11 +10,11 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^2.0.0",
+		"@astrojs/mdx": "^2.0.2",
 		"@astrojs/rss": "^4.0.1",
 		"@astrojs/sitemap": "^3.0.3",
 		"@swup/astro": "^1.4.0",
-		"astro": "^4.0.3"
+		"astro": "^4.0.7"
 	},
 	"packageManager": "pnpm@8.11.0",
 	"devDependencies": {

@@ -1,0 +1,166 @@
+---
+title: Butterfly 2.0.0 stable released
+date: "2023-12-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.0"
+---
+
+Merry Christmas! 🎄
+The stable version of Butterfly 2.0 is now available. Try it out and tell me what you think!
+Thank you to everyone that helped reporting bugs and testing the preview releases.
+We reached 600 stars on GitHub!
+
+- [First alpha](/butterfly/2.0.0-alpha.0)
+- [Second alpha](/butterfly/2.0.0-alpha.1)
+- [Third alpha](/butterfly/2.0.0-alpha.2)
+- [Fourth alpha](/butterfly/2.0.0-alpha.3)
+- [Fifth alpha](/butterfly/2.0.0-alpha.4)
+- [First beta](/butterfly/2.0.0-beta.0)
+- [Second beta](/butterfly/2.0.0-beta.1)
+- [Third beta](/butterfly/2.0.0-beta.2)
+- [Fourth beta](/butterfly/2.0.0-beta.3)
+- [Fifth beta](/butterfly/2.0.0-beta.4)
+- [Sixth beta](/butterfly/2.0.0-beta.5)
+- [Seventh beta](/butterfly/2.0.0-beta.6)
+- [Eigth beta](/butterfly/2.0.0-beta.7)
+- [Ninth beta](/butterfly/2.0.0-beta.8)
+- [Tenth beta](/butterfly/2.0.0-beta.9)
+- [Eleventh beta](/butterfly/2.0.0-beta.10)
+- [Twelfth beta](/butterfly/2.0.0-beta.11)
+- [Thirdteenth beta](/butterfly/2.0.0-beta.12)
+- [Fourteenth beta](/butterfly/2.0.0-beta.13)
+- [Fifteenth beta](/butterfly/2.0.0-beta.14)
+- [Sixteenth beta](/butterfly/2.0.0-beta.15)
+- [Seventeenth beta](/butterfly/2.0.0-beta.16)
+- [First release candidate](/butterfly/2.0.0-rc.0)
+- [Second release candidate](/butterfly/2.0.0-rc.1)
+- [Third release candidate](/butterfly/2.0.0-rc.2)
+
+This release does not contain any new features compared to the 2.0.0-rc.3 preview release. The only change is that the app is now stable. The experimental features are not available in the stable version. If you want to use them, you have to use the preview version.
+
+## Highlights
+
+These are only the highlights of the release. For a full list of changes, see the several preview releases.
+
+### Breaking changes
+
+The file format has been changed. The old json file format was replaced with a new archive file format. This change was necessary to improve the performance on large documents with many images. If you open an old document, it will be converted to the new file format.
+
+Additionally the eraser layer has been removed. This means that on old documents, the eraser layer will be removed. The eraser layer was removed to improve performance and because butterfly is vector based.
+
+### New design
+
+The design of Butterfly has been completely redesigned. The new design is more modern and more consistent based on the Material You design language and the old adwaita and yaru themes were removed.
+There is also a new icon and font for Butterfly and a new home page.
+Additionally templates and files have thumbnails.
+The new navigator allows you to navigate in your document. It contains waypoints, layers, pages and files.
+A new full screen mode has been added and the toolbar can now be moved in the settings.
+For a better mobile experience, on mobile the context menu is now a row instead of a column.
+You can also lock the transformation and zooming of the canvas on the top right corner.
+The hide mode allows you to hide the toolbar and the navigator to have more space for your document.
+Additionally the document properties dialog was removed and replaced by the new document view.
+
+### Renaming
+
+- Painters -> Tools
+- Tools -> Utilities
+- Hand painter -> Select tool
+
+### Packs
+
+Packs is a new way to share styles and color palettes with others. You can share them by exporting and importing packs. The core pack contains the default styles and color palettes.
+
+### Animations
+
+Butterfly now allows you to create animations. Use the new presentation tool to create animations. The presentation tool supports animations and a timeline to key frame animations. To present the document, use the new presentation mode.
+
+### Pages
+
+Pages is a new feature that allows you to create multiple pages in one document. This can help you to organize your document better. Tools and packs will be shared between all pages.
+
+### Elements
+
+#### Texture element
+
+There is now a new texture element that allows you to have a background locally on a specfic part of the page.
+
+#### Markdown and text element
+
+Rich text and markdown are now supported in Butterfly. Use the new text tool to add texts that can be formatted with different styles, colors and fonts.
+
+### Tools
+
+In general, many tools have now a custom cursor for a better user experience.
+The stamp and the shape tool now accept ctrl and shift to scale from center or keep the aspect ratio.
+
+#### Label tool
+
+There is now a new label tool that allows you to add text and markdown to your document.
+
+#### Select tool
+
+You can now move elements in the z-axis with the select tool or can transform them withóut opening the context menu and it works in real time.
+
+#### Spacer tool
+
+This is a new tool that allows you to add empty spaces or gaps within your creations. This is useful for people who want to write text or draw something in a specific place that are already filled with other elements.
+
+#### Full-Screen tool
+
+To allow more customisation, the full-screen painter has been introduced in release and allows easier switching between the full screen mode and the normal mode.
+
+#### Asset tool
+
+You can now pin importers to your toolbar to quickly add assets to your document.
+
+#### Hand tool
+
+This new tool allows you to move freely on the canvas without editing anything.
+
+#### Pen tool
+
+The pen tool icon can now be changed in the properties. This change is only visually and does not change the behavior of the tool.
+
+#### Texture tool
+
+The texture tool works like the shape tool and allows you to add texture elements to your document.
+
+#### Presentation tool
+
+This tool allows you to create presentations with animations and a timeline.
+
+### Background
+
+An image can now be set as background. The scale can be changed in the new properties tab in the background dialog.
+
+### Printing
+
+Printing directly from Butterfly is now possible. It uses pdf as export format and uses the native print dialog of your system.
+
+### Connections
+
+A new local connection type was added. This allows you to store files on your local device outside of the notes folder.
+
+### Other
+
+On mobile you can now change the data directory. This is useful if you want to use a sd card or wants to sync the data directory with a cloud service.
+Additionally macos support has been added.
+You can now set the default quality when importing in the settings.
+Xopp files can now be imported. Xopp is a file format used by Xournal++.
+
+## Accessing v1
+
+The official webapp at [butterfly.linwood.dev](https://butterfly.linwood.dev) now uses the new v2 version of Butterfly. To access the v1 visit [v1.butterfly.linwood.dev](https://v1.butterfly.linwood.dev).
+
+The stable links on the download site were also replaced by the 2.0 version. All v1 native versions can now be found in [the last v1 github release](https://github.com/LinwoodDev/Butterfly/releases/tag/v1.6.1).
+
+## Notes
+
+These are only the highlights of the release. Try the new version out and tell me what you think!
+If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+If you download butterfly from a store, please rate it. This helps me reach more people. Thank you!
+
+After this release I will try to stabilize the app and fix bugs.
+Next year the development of Butterfly 2.1 will start. There will be no big breaking changes in the near future and there will be a shorter release cycle.
