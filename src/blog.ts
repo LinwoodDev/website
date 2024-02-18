@@ -24,3 +24,10 @@ export const getProject = async (
   const project = projects.find((project) => project.id === name);
   return project;
 };
+
+export const PAGE_SIZE = 20;
+
+export const getPosts = async () =>
+  (await getCollection("blog")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );

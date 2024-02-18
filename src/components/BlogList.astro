@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEntryUrl } from "../blog";
+import BaseHead from "./BaseHead.astro";
+import FormattedDate from "./FormattedDate.astro";
+import Link from "./Link.astro";
+import type { Page } from "astro";
+
+export interface Props {
+  page: Page<CollectionEntry<"blog">>;
+}
+
+const { page } = Astro.props as Props;
+const posts = page.data;
+---
+
+<section>
+  <ul class="col gap-md align-stretch pv-md ph-xs">
+    {
+      posts.map((post) => (
+        <li>
+          <Link variant="secondary" href={`/${getEntryUrl(post)}`} class="row align-center wrap w-full p-sm">
+            <div class="w-md h-full">
+              <FormattedDate date={post.data.date} />
+            </div>
+            <p class="highlight">{post.data.title}</p>
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="col align-center">
+  <p class="text-center">
+    Page {page.currentPage} of {page.lastPage} ({page.total} posts in total)
+  </p>
+  <div class="row wrap justify-center gap-xs">
+    {page.url.prev && (
+      <Link
+        variant="secondary"
+        href={page.url.prev}
+        class="btn"
+      >
+        Previous
+      </Link>
+    )}
+    {page.url.next && (
+      <Link
+        variant="secondary"
+        href={page.url.next}
+        class="btn"
+      >
+        Next
+      </Link>
+    )}
+  </div>
+</div>
+</section>

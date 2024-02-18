@@ -1,0 +1,34 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import BlogsList from "@components/BlogList.astro";
+import { getPosts, getProjects } from "../../blog";
+import Link from "@components/Link.astro";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ProjectHero from "@components/ProjectHero.astro";
+import { PaginateFunction } from "astro/dist/@types/astro";
+import { PAGE_SIZE } from "../blog/[...page].astro";
+
+export async function getStaticPaths({ paginate } : { paginate : PaginateFunction }) {
+  const projects = await getProjects();
+  var returned : any[] = [];
+  for (const project of projects) {
+    const posts = (await getPosts()).filter((post) => post.id.startsWith(project.id));
+    returned.push(...paginate(posts, { pageSize: PAGE_SIZE, params: { project: project.id }, props: {project: project} }));
+  }
+  return returned;
+}
+
+export type Props = CollectionEntry<"projects">;
+
+const { page, project } = Astro.props;
+---
+
+<DefaultLayout title={project.data.title}>
+  <section>
+    <ProjectHero project={project.id} />
+  </section>
+  <section>
+    <h2>Blogs</h2>
+    <BlogsList page={page} />
+  </section>  
+</DefaultLayout>
