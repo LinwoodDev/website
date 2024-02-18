@@ -20,7 +20,7 @@ const { posts } = Astro.props as Props;
             <div class="w-sm">
               <FormattedDate date={post.data.date} />
             </div>
-            <p>{post.data.title}</p>
+            <p class="highlight">{post.data.title}</p>
           </Link>
         </li>
       ))

@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.0.5
     version: 3.0.5
   '@linwooddev/style':
-    specifier: ^0.2.3
-    version: 0.2.3
+    specifier: ^0.2.4
+    version: 0.2.4
   '@swup/astro':
     specifier: ^1.4.0
     version: 1.4.0
@@ -1723,8 +1723,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@linwooddev/style@0.2.3:
-    resolution: {integrity: sha512-NjBC2797fYigCxux+yhcjNcuK+oZwJzw41/BI0G/qk/yWuVQkJKW58UTh6HbU5g+1i67BYOHFJUnGP8+X+U41g==}
+  /@linwooddev/style@0.2.4:
+    resolution: {integrity: sha512-8EhdA1LOGjH4cUzyewGx0bGAG9nB6bKF+dvDSC6vzH914oiHw0+7AMZd4XYxwGIhbdGrpPCxhgGeIiHkZ3RMlg==}
     dev: false
 
   /@mdx-js/mdx@3.0.1:
