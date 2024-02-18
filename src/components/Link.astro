@@ -11,40 +11,6 @@ const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 ---
 
-<a href={href} class:list={[className, { active: isActive }, variant ]} {...props}>
+<a href={href} class:list={["btn", className, { active: isActive }, variant ]} {...props}>
 	<slot />
 </a>
-<style lang="scss">
-	@use "../styles/colors";
-	a {
-		display: inline-block;
-		text-decoration: none;
-		transition: all 0.2s ease-in-out;
-		font-weight: bolder;
-		border-radius: 0.5rem;
-	}
-	a.primary, a.secondary {
-		background: transparent;
-		padding: 0.5rem 1rem;
-	}
-	a.primary:hover {
-		background: colors.$panel;
-	}
-	a.primary.active, a.secondary.active, a.secondary:hover {
-		color: colors.$background;
-		background: colors.$primary;
-	}
-	a.primary {
-		color: colors.$primary;
-	}
-	a.secondary {
-		color: colors.$background-text;
-	}
-	a.default {
-		color: colors.$background-text;
-		&.active, &:hover {
-			color: colors.$primary;
-			text-decoration: underline;
-		}
-	}
-</style>

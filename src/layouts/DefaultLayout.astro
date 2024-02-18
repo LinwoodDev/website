@@ -21,7 +21,7 @@ const frontmatterTitle = Astro.props.frontmatter?.title;
   </head>
 
   <body>
-    <div id="swup" class="transition-fade">
+    <div id="swup" class="transition-fade container-md">
       <Header />
       <main>
         <slot />
@@ -31,7 +31,7 @@ const frontmatterTitle = Astro.props.frontmatter?.title;
   </body>
 </html>
 <style>
-	.transition-fade {
+.transition-fade {
   transition: 0.4s;
   opacity: 1;
 }

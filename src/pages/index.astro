@@ -11,56 +11,19 @@ const projects = await getProjects();
 ---
 
 <DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <style lang="scss">
-    .title {
-      font-size: 5rem;
-    }
-    .subtitle {
-      font-size: 3rem;
-    }
-    @media (max-width: 768px) {
-      .title {
-        font-size: 3rem;
-      }
-      .subtitle {
-        font-size: 2rem;
-      }
-    }
-    .section-title {
-      font-size: 3rem;
-      text-align: center;
-    }
-    .big-section {
-      padding: 2rem;
-      min-height: 25vh;
-    }
-    .project-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      gap: 1rem;
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  </style>
   <section class="big-section">
     <h1 class="title">{SITE_TITLE}</h1>
     <p class="subtitle">Simple to use software for everyone</p>
   </section>
   <section class="big-section">
     <h2 class="section-title">Projects</h2>
-    <ul class="project-list">
+    <ul class="row justify-center align-stretch gap-sm">
       {
         projects.map((e) => (
           <li>
-            <Link variant={"secondary"} href={`/${e.id}`} class="card">
+            <Link variant="primary" href={`/${e.id}`} class="col align-center justify-center h-full" style={{width: "150px"}}>
               <img src={`/logos/${e.id}.svg`} alt={e.data.title} width="100" height="100" />
-              <p>{e.data.title}</p>
+              <p class="text-center">{e.data.title}</p>
             </Link>
           </li>
         ))

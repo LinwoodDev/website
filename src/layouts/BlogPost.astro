@@ -16,11 +16,11 @@ const { title, description, date, heroImage, project, author } = Astro.props;
 <DefaultLayout title={title} description={description ?? ""}>
   <article>
     {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-    <h1 class="title">{title}</h1>
+    <h1>{title}</h1>
     <FormattedDate date={date} />
     <ProjectHero project={project} />
     <Author author={author.id} />
-    <hr />
+    <hr class="v-divider" />
     <slot />
   </article>
   <script
@@ -41,17 +41,3 @@ const { title, description, date, heroImage, project, author } = Astro.props;
     crossorigin="anonymous"
     async
   ></script>
-  <style>
-    .title {
-      font-size: 2em;
-      margin: 0.25em 0 0;
-    }
-    hr {
-      border-top: 1px solid #ddd;
-      margin: 1rem 0;
-    }
-    .last-updated-on {
-      font-style: italic;
-    }
-  </style>
-</DefaultLayout>
