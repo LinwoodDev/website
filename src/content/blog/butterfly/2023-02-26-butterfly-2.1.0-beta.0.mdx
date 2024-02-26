@@ -1,0 +1,51 @@
+---
+title: Butterfly 2.1.0-beta.0 released
+date: "2024-02-19"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-beta.0"
+---
+
+The first beta of Butterfly 2.1 is out with many new features.
+Here are the most important ones:
+
+- 📏 Add line shape detection
+- 🟦 Area workflow improvements
+- 💾 Export improvements
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Line shape detection
+
+The line shape detection is a new feature that allows you to draw a line with the pen tool and Butterfly will detect it and convert it to a straight line. This is useful if you want to draw a straight line but you are not able to do it perfectly.
+To enable it open the properties of the pen tool and enable the Shape Detection option.
+There is more to come in the future like shape detection for circles and rectangles.
+
+## Area
+
+The area tool got some improvements. You can now resize and move the area with the new controls by tapping on it.
+Also there is now a new area navigator page where you can see all your areas, reorder and edit them.
+
+## Export
+
+The export system also got some improvements. You can now export the whole page by clicking on the file icon in the png and svg export dialog.
+When clicking on the new pin icon in the dialog title bar you can pin it to the toolbar for easier access.
+
+## Full changelog
+
+* Add shape detection for lines ([#578](https://github.com/LinwoodDev/Butterfly/issues/578))
+* Add area navigator page ([#574](https://github.com/LinwoodDev/Butterfly/issues/574))
+* Add resize and move controls to area tool ([#542](https://github.com/LinwoodDev/Butterfly/issues/542))
+* Add reorder controls to area tool
+* Add option to export whole page ([#594](https://github.com/LinwoodDev/Butterfly/issues/594))
+* Add export tool ([#590](https://github.com/LinwoodDev/Butterfly/issues/590))
+* Move rotation controls to the top ([#607](https://github.com/LinwoodDev/Butterfly/issues/607))
+* Improve area tool creation rect selection
+* Make selection system of select tool modular
+* Upgrade to flutter 3.19
+* Improve pdf import ([#612](https://github.com/LinwoodDev/Butterfly/issues/612))
+* Rename release assets ([#568](https://github.com/LinwoodDev/Butterfly/discussions/568))
+* Generalize svg and png dialog
+* Fix thumbnail shoot position
+* Fix png export
