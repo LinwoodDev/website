@@ -1,0 +1,42 @@
+---
+title: Butterfly 2.1.0-beta.1 released
+date: "2024-03-04"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-beta.1"
+---
+
+A new beta of Butterfly 2.1 is out now with small improvements.
+Highlights:
+
+- 🖼️ PDF import options
+- 🔨 Image editing
+- 🔄 Waypoint reordering
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## PDF import options
+
+Previously if you imported a PDF it was always imported with a transparent background. This makes it hard to see the content of the PDF if it has black text and you are working on a dark background. Now you can change the background color of the PDF import to white or black. Also you can invert the colors of the PDF import if you want to work in a dark mode.
+
+## Image editing
+
+The same options for the PDF import are now also available for images. You can now right click on an image and select the operation you want to apply.
+Currently there are two operations available: Invert and Background.
+
+## Waypoint reordering
+
+You can now reorder the waypoints in the waypoint navigator just like you can with the areas. Click on the handle of a waypoint and drag it to the new position.
+
+## Full changelog
+
+* Add setting for adding background to pdf import ([#606](https://github.com/LinwoodDev/Butterfly/issues/606))
+* Add setting for inverting to pdf import ([#606](https://github.com/LinwoodDev/Butterfly/issues/606))
+* Add image operations
+  * Invert
+  * Background
+* Add ability to reorder waypoints
+* Change waypoint identifier to the name instead of index
+* Fix transformation pushed to reference handle ([#615](https://github.com/LinwoodDev/Butterfly/issues/615))
+* Disable showing transform controls while transforming

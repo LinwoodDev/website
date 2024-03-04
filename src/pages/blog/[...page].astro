@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BlogsList from "@components/BlogList.astro";
+import BlogList from "@components/BlogList.astro";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import type { PaginateFunction } from "astro";
 import { getPosts } from "../../blog";
@@ -15,5 +15,5 @@ const {page} = Astro.props;
 ---
 
 <DefaultLayout title="Linwood Blog">
-  <BlogsList page={page} />
+  <BlogList page={page} />
 </DefaultLayout>

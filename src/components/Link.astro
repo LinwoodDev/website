@@ -2,15 +2,16 @@
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'> & {
-	variant?: 'primary' | 'secondary' | 'default'
+	variant?: 'primary' | 'secondary' | 'default',
+	look?: 'btn' | 'card',
 };
 
-const { href, class: className, variant, ...props } = Astro.props;
+const { href, class: className, variant, look, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 ---
 
-<a href={href} class:list={["btn", className, { active: isActive }, variant ]} {...props}>
+<a href={href} class:list={[look ?? "btn", className, { active: isActive }, variant ]} {...props}>
 	<slot />
 </a>

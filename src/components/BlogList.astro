@@ -19,8 +19,8 @@ const posts = page.data;
     {
       posts.map((post) => (
         <li>
-          <Link variant="secondary" href={`/${getEntryUrl(post)}`} class="row align-center wrap w-full p-sm">
-            <div class="w-md h-full">
+          <Link variant="secondary" href={`/${getEntryUrl(post)}`} look="card" class="row align-center wrap w-full p-sm no-decoration">
+            <div class="w-md h-full bold">
               <FormattedDate date={post.data.date} />
             </div>
             <p class="highlight">{post.data.title}</p>

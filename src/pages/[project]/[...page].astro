@@ -1,6 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogsList from "@components/BlogList.astro";
+import BlogList from "@components/BlogList.astro";
 import { getPosts, getProjects } from "../../blog";
 import Link from "@components/Link.astro";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
@@ -29,6 +29,6 @@ const { page, project } = Astro.props;
   </section>
   <section>
     <h2>Blogs</h2>
-    <BlogsList page={page} />
+    <BlogList page={page} />
   </section>  
 </DefaultLayout>
