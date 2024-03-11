@@ -1,0 +1,43 @@
+---
+title: Butterfly 2.1.0-beta.1 released
+date: "2024-03-11"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-beta.2"
+---
+
+The next beta of Butterfly 2.1 is out now with small improvements.
+Highlights:
+
+- 🖼️ Improved custom title ba
+- 🔄 Improved svg path export
+- 💾 Fix file creation
+
+There is currently a poll running to decide how the toolbar should be handled in the future. Click here to vote and discuss: <https://github.com/LinwoodDev/Butterfly/discussions/627>.
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Improved custom title bar
+
+The window buttons on the custom title bar are now in the top right corner instead of right centered. This allows you to close the window by navigating to the top right corner and clicking on the close button.
+
+## Improved svg path export
+
+The svg path export now exports one path for each element instead of one path for each two points and it uses the same rendering as the canvas.
+Additionally the precision of the path export is now 3 instead of the full double precision.
+
+This makes the svg export look the same as the canvas and improves the svg file size.
+
+## File creation
+
+There was a bug that overrided the file if the file path already exists. This is now fixed and the file creation works as expected.
+
+## Full changelog
+
+* Add icons to sort dropdown items
+* Improve window buttons on custom title bar
+* Improve svg path export ([#620](https://github.com/LinwoodDev/Butterfly/issues/620))
+* Fix svg export preview shows nothing
+* Fix exporting on web
+* Fix file creation if the file path already exists
