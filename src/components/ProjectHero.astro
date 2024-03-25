@@ -19,7 +19,7 @@ const current = project && await getProject(project);
                     alt={current.data.title}
                 />
                 <div class="col gap-md">
-                    <a href={`/${current.id}`} class="btn p-none"><h2 class="m-none">{current.data.title}</h2></a>
+                    <a href={`/${current.id}`} class="btn p-none justify-start"><h2 class="m-none">{current.data.title}</h2></a>
                     <p class="m-none">{current.data.description}</p>
                 </div>
             </div>
