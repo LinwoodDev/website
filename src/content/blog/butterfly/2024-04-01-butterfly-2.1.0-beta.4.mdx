@@ -1,0 +1,48 @@
+---
+title: Butterfly 2.1.0-beta.4 released
+date: "2024-04-01"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-beta.4"
+---
+
+Butterfly 2.1.0-beta.4 is out with some big improvements.
+Highlights:
+
+- 🟦 Enhanced area user experience
+- 💻 More UI customizability
+- 🐞 Bugfixes
+
+There is currently a poll running to decide how the toolbar should be handled in the future. Click here to vote and discuss: [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627).
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Enhanced area user experience
+
+The areas navigator page now supports auto creating areas and navigating between them. This makes it easier to create areas and navigate between them. Additionally you can now switch areas more easily.
+
+## More UI customizability
+
+You can now have multiple toolbar columns and set the toolbar size in the settings. This makes it easier to customize the UI to your liking.
+Additionally you will find a pointer test in the behavior settings to test if the app detects your pointer correctly.
+
+## Full changelog
+
+* Add auto create areas functionality in areas navigator page
+* Add top toolbar setting that isn't integrated with the appbar
+* Add option to have multiple toolbar columns
+* Add multi columns for toolbar ([#589](https://github.com/LinwoodDev/Butterfly/issues/589))
+* Add pointer test to behavior settings
+* Change area enter and exit to the left of the area name in areas navigator page
+* Change current area on area click in areas navigator page if the current area is not the clicked area
+* Improve friction
+* Use percents for zoom in document properties
+* Readd drawing outside of window ([#521](https://github.com/LinwoodDev/Butterfly/pull/521))
+* Fix baking when animating smooth navigation
+* Fix eraser
+* Fix crash and size when loading pdf or big butterfly files ([#645](https://github.com/LinwoodDev/Butterfly/pull/645))
+* Fix toolbar size setting saving
+* Fix template dialog loading failed
+* Fix grid x position negation
+* Update linux appdata
