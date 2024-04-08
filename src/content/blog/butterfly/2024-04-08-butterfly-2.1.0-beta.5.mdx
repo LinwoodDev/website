@@ -1,0 +1,91 @@
+---
+title: Butterfly 2.1.0-beta.5 released
+date: "2024-04-08"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-beta.5"
+---
+
+Butterfly 2.1.0-beta.5 is out with some big improvements.
+Highlights:
+
+- 💻 Native clipboard
+- 📦 Import zip archives
+- 🛠️ Improve temporary tools
+- 🎨 More customizing
+- 🖊️ Fix pressure path rendering
+- 🤖 Platform specific android apks
+- 🐞 Bugfixes
+
+There is currently a poll running to decide how the toolbar should be handled in the future. Click here to vote and discuss: [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627).
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Native clipboard
+
+Butterfly now supports the native clipboard. You can copy images from your system clipboard and paste them into Butterfly.
+
+## Import zip archives
+
+You can now import zip archives into Butterfly. This makes it easier to import multiple files at once.
+
+For example if you backup your Butterfly files you can now import them back into Butterfly.
+
+## Improve temporary tools
+
+In the last versions some tools handled the secondary mouse button themselfs and doesn't allow using them as temporary tools. This is now fixed and you can now use every tool as temporary tool.
+
+Additionally temporary tools will be changed if there isn't any touch devices interacting and you touch the screen at the first time.
+
+Please report if you have other tools that doesn't work as temporary tools.
+
+## More customizing
+
+You can now set the toolbar size to small, tiny or compact. This makes it easier to customize the UI to your liking.
+Additionally there are new density settings named maximize and desktop.
+
+These settings allow you to maximize the canvas when you have a mouse connected.
+
+## Platform specific android apks
+
+Butterfly now has platform specific android apks. This means that you can now download an apk for your specific architecture.
+This makes the download smaller and faster.
+The universal apk is still the recommended one if you don't know which architecture your device has.
+
+## Fix pressure path rendering
+
+Previously the app simulates the pressure always regardless of the input.
+Now it checks the values and only start simulating if every pressure value is 0.
+The fix should also change existing documents.
+
+## Full changelog
+
+* Add native clipboard ([#605](https://github.com/LinwoodDev/Butterfly/issues/605))
+* Add option to import zip archive
+* Allow using these tools as temporary tool ([#656](https://github.com/LinwoodDev/Butterfly/issues/656))
+  * Select
+  * Area
+  * Laser
+* Add small, tiny and compact toolbar size option
+* Add maximize and desktop density personalization setting
+* Allow pasting packs inside documents
+* Remove navigating to canvas view if no document was imported
+* Use correct remote for importing
+* Rename toolbar columns to rows
+* Change size of quickstart to be smaller
+* Change size of recent files card
+* Improve home page header to be more responsive
+* Improve size of add button
+* Force top instead of inline if multiple rows in toolbar
+* Fix linux metainfo again
+* Fix template infinite loading on initial load
+* Fix size of temporary tool and lock and tools button if toolbar columns count is bigger than 1
+* Fix snackbar will be shown twice when copying to clipboard in settings
+* Fix null check in area handler
+* Fix pen renderer doesn't use the real pressure value ([#650](https://github.com/LinwoodDev/Butterfly/issues/650))
+* Don't allow importing templates when document is opened
+
+* Use nightly flavor for nightly builds to allow installing both stable and nightly builds on the same device
+* Add architecture specific apk builds ([#657](https://github.com/LinwoodDev/Butterfly/issues/657))
+* Upgrade path rendering api
