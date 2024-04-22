@@ -1,0 +1,59 @@
+---
+title: Butterfly 2.1.0-rc.0 released
+date: "2024-04-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-rc.0"
+---
+
+The 100thst butterfly release is here: Butterfly 2.1.0-rc.0 🎉
+Highlights:
+
+- 🖼️ Image background svg support
+- 📐 A new triangle shape
+- 📄 Templates improvements
+- 📁 New android open with intents
+- 🐞 Bugfixes
+
+There is currently a poll running to decide how the toolbar should be handled in the future. Click here to vote and discuss: [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627).
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Image background svg support
+
+Image background support was added in 2.0.0-beta.3 but had no svg function for it.
+Now it was added by using the pattern feature in svg.
+
+## A new triangle shape
+
+The triangle shape was added in 2.0.0-beta.3 too but only to be used in the shape detection in the pen tool.
+Now you can find the triangle shape in the shape tool and in the add dialog.
+
+## Templates improvements
+
+The templates dialog was redesigned and now supports overriding the tools for selected templates. Additionally if you add a new template you can now give it a name.
+
+## New android open with intents
+
+You can now open zip, pdf and images with Butterfly on android by opening the file with Butterfly. Previously you can only open `.bfly` files.
+
+## Full changelog
+
+* Add image background svg support
+* Add triangle to shape tool and add dialog ([#664](https://github.com/LinwoodDev/Butterfly/pull/664))
+* Add name field to create template dialog
+* Add button to invert selection in templates dialog
+* Add option to override tools for selected templates ([#613](https://github.com/LinwoodDev/Butterfly/issues/613))
+* Add intents to open zip, pdf and images with this app on android
+* Redesign templates dialog
+* Fix linux metainfo again
+* Fix label is not being created when unfocussing
+* Fix area preview rendering
+* Fix recent history not removed when deleting the document
+* Fix editable input not being updated
+* Fix baking when using smooth navigation
+* Fix locale displayed as system language if there is no translation for this
+* Fix missing translations for locales
+* Fix render background gets ignored ([#670](https://github.com/LinwoodDev/Butterfly/issues/670))
+* Remove old unused code
