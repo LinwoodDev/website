@@ -1,0 +1,44 @@
+---
+title: Butterfly 2.1.0-rc.1 released
+date: "2024-04-30"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-rc.1"
+---
+
+A new bugfix release is here: Butterfly 2.1.0-rc.1 🐞
+Highlights:
+
+- 📐 Fix triangle rendering
+- 🛠️ Fix temporary tool
+- 🔧 Fix select all
+- 📄 Fix import error
+
+There is currently a poll running to decide how the toolbar should be handled in the future. Click here to vote and discuss: [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627).
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Fix triangle rendering
+
+The last release introduced a new manual triangle shape. Previously the triangle didn't get sized correctly. This is now fixed.
+
+## Fix temporary tool
+
+In the last releases the temporary tool was changed to support select tool and more. To do this, the tool wasn't removed when the pointer gets released.
+The problem was that the tool was still active when using a not configured input. This is now fixed.
+
+## Fix select all
+
+The select all feature was broken a long time ago. It's now finally fixed.
+
+## Fix import error
+
+The last release introduced more import intents for android. The problem was that the import system still assumed that the file is a `.bfly` file. This is now fixed.
+
+## Full changelog
+
+* Fix triangle rendering
+* Fix temporary tool won't be removed when using not configured input
+* Fix select all
+* Fix import error when using open with on android
