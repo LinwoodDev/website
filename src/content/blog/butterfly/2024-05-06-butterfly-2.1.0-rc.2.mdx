@@ -1,0 +1,51 @@
+---
+title: Butterfly 2.1.0-rc.2 released
+date: "2024-05-06"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.0-rc.2"
+---
+
+Butterfly 2.1.0-rc.2 was released with many important android bug fixes.
+Highlights:
+
+- 📁 Reenable changing data directory on android
+- ➕ Fix unknown import type
+- 🖼️ Fix changing background removes all elements
+
+There are two opened discussions where you can help shape the future:
+
+- [LinwoodDev/Butterfly#686](https://github.com/LinwoodDev/Butterfly/discussions/686) - How should the documentation look like? **(new)**
+- [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627) - How should the toolbar be handled in the future?
+
+Don't forget that this is a beta version and there might be some bugs. Please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+If you have an automatic script to update Butterfly, please adjust it to the new naming of the release assets. Read more about it [here](https://github.com/LinwoodDev/Butterfly/discussions/568).
+
+## Reenable changing data directory on android
+
+Butterfly 1.x allowed changing the data directory on android. This feature was removed in Butterfly 2.0.0 since Butterfly uses a different file system library.
+This feature is now reenabled on android.
+
+## Fix unknown import type shows euler number
+
+This only affects the android version.
+I changed the import system in the last release to support more file types.
+Here I forgot to change the error message to show `Unknown import type` instead of the variable `e` which corresponds to the euler number.s
+
+## Fix unknown import type on images
+
+This also only affects the android version.
+The new import system on android didn't recognized images as an import type (technically I checked for the exact `image/*` mime type instead of using regex). Now it should work again.
+
+## Fix changing background removes all elements from the canvas
+
+This affects all platforms.
+When changing the background, the app removed all elements from the canvas. This is now fixed.
+
+## Full changelog
+
+* Reenable changing data directory on android ([#569](https://github.com/LinwoodDev/Butterfly/issues/569))
+* Fix unknown import type shows euler number
+* Fix unknown import type on images ([#679](https://github.com/LinwoodDev/Butterfly/issues/679))
+* Fix changing background removes all elements from the canvas ([#681](https://github.com/LinwoodDev/Butterfly/issues/681))
+* Fix unnessesary rerender dialogs and views
