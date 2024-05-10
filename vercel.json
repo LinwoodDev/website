@@ -47,8 +47,8 @@
       "permanent": true
     },
     {
-      "source": "/butterfly/2.1",
-      "destination": "/butterfly/2.1.0-rc.0",
+      "source": "/butterfly/2.2",
+      "destination": "/soon",
       "permanent": false
     },
     {
