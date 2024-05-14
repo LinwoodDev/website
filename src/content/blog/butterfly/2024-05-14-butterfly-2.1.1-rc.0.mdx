@@ -1,0 +1,50 @@
+---
+title: Butterfly 2.1.1-rc.0 released
+date: "2024-05-14"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.1-rc.0"
+---
+
+After a big release, there are always some bugs that need to be fixed. This is the first release candidate for the 2.1.1 release.
+Highlights:
+
+- 🔄 WebDAV improvements
+- 📱 Enhance mobile home page
+- 🖼️ Fix image editing
+- 📁 Fix layers
+
+There are two opened discussions where you can help shape the future:
+
+- [LinwoodDev/Butterfly#686](https://github.com/LinwoodDev/Butterfly/discussions/686) - How should the documentation look like? **(new)**
+- [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627) - How should the toolbar be handled in the future?
+
+## WebDAV improvements
+
+Thanks to [@MrGumpIT](https://github.com/MrGumpIT) the WebDAV requests are now more performant and throw less errors. This should improve the overall experience with WebDAV.
+There is another pull request open that will be merged in the next release that will improve the WebDAV experience even more.
+
+## Enhance mobile home page
+
+The old mobile home page was very big and you need to scroll a lot. Now the mobile home page is more compact and you can see more at once.
+
+## Fix image editing
+
+There was a bug in the image editing that caused the image to not change. This is now fixed.
+
+## Fix layers
+
+In the last 2.1.0 release the rendering system was changed and this caused the layers visiblity is not working correctly. This is now fixed.
+
+## Full changelog
+
+* Make dav requests more performant ([#689](https://github.com/LinwoodDev/Butterfly/pull/689))
+* Add icons to platform theme setting
+* Enhance mobile home page
+* Change lasso select icon to a real lasso
+* Fix visible layers are not working correctly ([#692](https://github.com/LinwoodDev/Butterfly/issues/692))
+* Fix remote button if external storage is default
+* Fix linux metainfo
+* Fix image operations
+* Fix no element on fetch in dav requests ([#695](https://github.com/LinwoodDev/Butterfly/pull/695))
+* Fix context buttons in template dialog closes the dialog
