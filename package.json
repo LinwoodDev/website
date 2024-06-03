@@ -10,17 +10,17 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^3.0.0",
+		"@astrojs/mdx": "^3.0.1",
 		"@astrojs/rss": "^4.0.6",
-		"@astrojs/sitemap": "^3.1.4",
+		"@astrojs/sitemap": "^3.1.5",
 		"@linwooddev/style": "^0.3.9",
 		"@swup/astro": "^1.4.1",
-		"astro": "^4.8.6",
+		"astro": "^4.9.2",
 		"sharp": "^0.33.4"
 	},
 	"packageManager": "pnpm@9.0.6",
 	"devDependencies": {
 		"@vite-pwa/astro": "^0.4.0",
-		"sass": "^1.77.2"
+		"sass": "^1.77.4"
 	}
 }
