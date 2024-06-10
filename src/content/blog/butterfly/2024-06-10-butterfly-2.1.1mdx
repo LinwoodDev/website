@@ -1,0 +1,39 @@
+---
+title: Butterfly 2.1.1 released
+date: "2024-06-10"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.1.1"
+---
+
+Butterfly 2.1.1 is now available with many bug fixes.
+Highlights:
+
+- 🔄 WebDAV improvements
+- 📱 Enhance mobile home page
+- 🖼️ Fix images
+- 📁 Fix layers
+
+There are two opened discussions where you can help shape the future:
+
+- [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627) - How should the toolbar be handled in the future?
+
+## WebDAV improvements
+
+Thanks to [@MrGumpIT](https://github.com/MrGumpIT) the WebDAV requests are now more performant and throw less errors especially when using the root folder.
+
+## Enhance mobile home page
+
+Butterfly now has a better mobile home page. The home page is now more responsive and looks better on mobile devices.
+
+## Fix images
+
+Image operations like background and invert now work as expected and the rendering now have a better quality.
+
+## Fix layers
+
+The layers were not rendered correctly in the past. This is now fixed and the layer visibility option is now working as expected.
+
+## Future plans
+
+The first butterfly 2.2 nightly builds will be available in two weeks. Stay tuned!
