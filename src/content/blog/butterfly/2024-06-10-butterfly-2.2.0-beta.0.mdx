@@ -1,0 +1,44 @@
+---
+title: Butterfly 2.2.0-beta.0 released
+date: "2024-06-25"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.0-beta.0"
+---
+
+The first Butterfly 2.2 beta is available. This release is a bit smaller than usual but still contains some nice improvements and fixes. The next beta will contain more features and improvements and will share libraries with my upcoming project [Quokka](https://github.com/LinwoodDev/Quokka).
+Highlights:
+
+- 🧽 Eraser enhancements
+- 🔒 Lock layer
+- 📁 Pack UI improvements
+
+There are two opened discussions where you can help shape the future:
+
+- [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627) - How should the toolbar be handled in the future?
+
+## Eraser enhancements
+
+The eraser tool now has a new switch to erase elements. This allows you to disallow the eraser to erase other elements than paths. The normal eraser now also has a shape element to erase shapes. This allows erasing shapes that were created with the shape detection.
+
+## Lock layer
+
+You can now lock layers. This prevents you from accidentally removing elements from a different layer.
+
+## Pack UI improvements
+
+The local tab was renamed to installed to better reflect the content. You can also install packs from this tab with a single click.
+
+## Full changelog
+
+* Add erase elements property to eraser and patheraser ([#680](https://github.com/LinwoodDev/Butterfly/issues/680))
+* Add shape element to normal eraser([#683](https://github.com/LinwoodDev/Butterfly/issues/683))
+* Add lock layer ([#688](https://github.com/LinwoodDev/Butterfly/issues/688))
+* Add export button to templates dialog
+* Improve packs dialog
+* Fix spacer has no help page
+* Fix utilities state on undo/redo ([#721](https://github.com/LinwoodDev/Butterfly/issues/721))
+* Fix select and eye dropper temporary tool already gets removed before doing the action
+* Fix asset select dialog overflows on too many assets
+* Fix full screen button in top left corner menu doesn't work
+* Upgrade AGB to 8.5.0 in android
