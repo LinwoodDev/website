@@ -1,0 +1,52 @@
+---
+title: Butterfly 2.2.0-beta.1 released
+date: "2024-08-05"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.0-beta.1"
+---
+
+After a long break, here is a new Butterfly beta.
+Highlights:
+
+- ✋ Left hand improvements
+- 📁 Files view improvements
+- 💻 Refactoring
+
+There are two opened discussions where you can help shape the future:
+
+- [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627) - How should the toolbar be handled in the future?
+
+## Left hand improvements
+
+The navigator can now be positioned to the right. This is useful for left handed users. You can change the position in the settings.
+
+## Files view improvements
+
+The files view now has a basic multi file selection. You can now select multiple files and delete them. There is more to come in the future.
+
+Additionally the list and the grid view now has a more responsive design. Renaming now also looks better.
+
+## Refactoring
+
+The file system was refactored to include it as a library. This will make it easier to use the file system in other projects (see Current state).
+
+## Current state
+
+In the 2.2 release I also want to address the current state of layers. The layers in the current version are not as powerful as in other drawing applications. I want to change that and create a new layer system that allows changing the render order of layers and more.
+This also means, that these won't be compatible with the current layers. Because of this, I will rename the current layers to "groups" and the new layers will be called "layers".
+
+A more detailed explanation can be found in the issue [LinwoodDev/Butterfly#728](https://github.com/LinwoodDev/Butterfly/issues/728).
+
+The update cycle will be a bit slower in the future, because I'm working on a new project called [Quokka](https://github.com/LinwoodDev/Quokka/discussions/26). Stay tuned for more information.
+
+## Full changelog
+
+* Add navigator position to position it to the right (useful for left handed users)
+* Add option to change layer in select and area context menu
+* Start adding multi file selection ([#713](https://github.com/LinwoodDev/Butterfly/issues/713))
+* Improve renaming in files view
+* Improve grid view item
+* Improve navigator rail
+* Refactor file system to include it as library
+* Fix pinned properties view gets closed when switching tools
