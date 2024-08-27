@@ -1,0 +1,43 @@
+---
+title: Butterfly 2.2.0-beta.2 released
+date: "2024-08-27"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.0-beta.2"
+---
+
+After another long break, here is a new hotfix for the Butterfly beta.
+Highlights:
+
+- 🚀 WASM support
+- 📁 Change default file name
+- 🛠 Improve build ci
+
+There are two opened discussions where you can help shape the future:
+
+- [LinwoodDev/Butterfly#627](https://github.com/LinwoodDev/Butterfly/discussions/627) - How should the toolbar be handled in the future?
+
+## WASM support
+
+Butterfly now uses WebAssembly on web for chromium based browsers. This should improve performance and reduce the size of the app.
+Firefox is not supported due to a bug in their engine, safari currently does not support WebAssembly GC. See [here](https://docs.flutter.dev/platform-integration/web/wasm#chrome-119-or-later) for more information.
+
+## Change default file name
+
+The default file name is now the current date. This should make it easier to find files instead of empty names.
+
+This is also a bugfix for unnamed files that got duplicated on save. Empty names should also work now without duplication.
+
+## Improve build ci
+
+The flutter version is now defined in the pubspec.yaml file. This should make it easier to update the version in the future and improve the general file structure.
+Please update your build scripts to read from `app/pubspec.yaml` (`environment.flutter`) instead of `FLUTTER_VERSION` if you build from source.
+
+## Full changelog
+
+* Add wasm support for chromium based browsers
+* Use date for default file name
+* Fix unnamed files gets duplicated on save
+* Upgrade to flutter 3.24
+* Update internal component library
+* Remove FLUTTER_VERSION file, use pubspec instead
