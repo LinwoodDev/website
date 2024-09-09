@@ -7,14 +7,19 @@ import Link from "./Link.astro";
 import type { Page } from "astro";
 
 export interface Props {
+  isMain?: boolean;
   page: Page<CollectionEntry<"blog">>;
 }
 
-const { page } = Astro.props as Props;
+const { page, isMain } = Astro.props as Props;
 const posts = page.data;
 ---
 
 <section>
+  {isMain && <div class="row justify-between align-center">
+    <h1>Blog</h1>
+    <a href="/rss.xml" class="btn">RSS</a>
+  </div>}
   <ul class="col gap-md align-stretch pv-md ph-xs">
     {
       posts.map((post) => (
