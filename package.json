@@ -10,14 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.5",
+    "@astrojs/mdx": "^3.1.6",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@linwooddev/style": "^0.3.9",
     "@swup/astro": "^1.4.1",
-    "astro": "^4.15.4",
+    "astro": "^4.15.6",
     "sharp": "^0.33.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "packageManager": "pnpm@9.10.0",
   "devDependencies": {

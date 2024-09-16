@@ -1,0 +1,96 @@
+---
+title: Butterfly 2.2.0-rc.0 released
+date: "2024-09-16"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.0-rc.0"
+---
+
+I'm happy to share you the biggest nightly release since the first 2.0 release.
+Feel free to test all things and give feedback!
+Highlights:
+
+- 📁 New layer system
+- ✅ Improved multi select in file view
+- 👆 Improved sensitivity
+- ⚙️ New on startup settings
+- 🐞 Bug fixes
+
+No new features should be added from now for the 2.2 release. If everything goes well, this will be the last nightly until the 2.2 release.
+
+## New layer system
+
+A new layer system has been implemented. The old layer system has been renamed to collections. The new layer system is more flexible and allows to reorder the elements in the canvas and will allow new features in the future.
+The old collections can now be found in the collection tool that was previously the layer tool.
+
+## Improved multi select in file view
+
+The multi select in the file view has been improved. You can now invert the selection and move/duplicate the selected elements. This will make it easier to manage your notes.
+
+## Improved sensitivity
+
+The sensitivity settings have been refactored to be more user friendly and more descriptive. The unused settings have been removed. Please check the new settings to make sure they are set to your liking.
+
+## New on startup settings
+
+The first version of butterfly started with a new note. Then it was changed to open a home screen to open a note.
+This version now readds the option to open a new note or the last note on startup.
+This will allow you to easily continue where you left off or simply write down your thoughts without any distractions.
+
+## Bug fixes
+
+This is one of the biggest releases with bug fixes. The most important ones are:
+
+The selection will now be reselected after transforming multiple elements. This was already the case but was broken in the last releases.
+
+The memory leaks have been fixed. This should improve the performance of butterfly.
+
+The remote file system has been fixed. This is a regression bug introduced in 2.2 that caused weird behavior in the webdav file system.
+
+The action tools will no longer be selected when added. This does not make sense and was a bug.
+
+The data directory will now update when selecting one. This was a bug that caused the data directory to not update when selecting one. Many users has reported this bug and it has now been fixed.
+
+There are plenty of other bug fixes. Please check the full changelog below.
+
+## Final words
+
+This is the biggest release since the first 2.0 release. I'm happy to see the progress and the community growing. I'm looking forward to the 2.2 release and the new features that will come with it.
+
+Please test this release and give feedback. If everything goes well, this will be the last nightly until the 2.2 release.
+
+Thank you for your support and happy testing!
+
+Stay tuned for next updates!
+
+## Full changelog
+
+* Refactor layer tool ([#728](https://github.com/LinwoodDev/Butterfly/issues/728))
+  * Renamed to collection tool
+  * Changed to action tool
+  * It now opens a menu with all collections and actions
+* Upgrade file version to 10 ([#728](https://github.com/LinwoodDev/Butterfly/issues/728))
+  * Refactor to new layer system
+  * Rename current layer implementation to collections
+* Change layer navigator page to new layer system ([#728](https://github.com/LinwoodDev/Butterfly/issues/728))
+* Improve action tool visualization in edit toolbar
+* Add eye dropper docs
+* Improve multi select in file view ([#713](https://github.com/LinwoodDev/Butterfly/issues/713))
+  * Add invert selection
+  * Add move
+* Add tolerance to area move in navigator page to fix duplicated areas
+* Add startup behavior settings to open last note or new note on startup
+* Update selection incorrect when transforming multiple elements
+* Refactor sensitivity settings to be more user friendly and more descriptive and remove unused settings
+* Move inputs from behaviors settings to own page
+* Make packs dialog responsive
+* Fix select all shortcut
+* Fix temporary tool is not the right size in the edit toolbar
+* Fix memory leaks
+* Fix regression bug introduced in 2.2 that caused weird behavior in webdav file system
+* Fix action tools gets selected when added
+* Fix data directory does not update when selecting one
+* Fix export pin icon in dialog
+* Fix export tool not recognized as action tool
+* Update pdfjs on web
+* Update to flutter 3.24.3
