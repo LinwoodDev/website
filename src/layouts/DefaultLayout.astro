@@ -1,4 +1,5 @@
 ---
+import "@phosphor-icons/web/bold";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -17,6 +18,8 @@ const frontmatterTitle = Astro.props.frontmatter?.title;
 
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <BaseHead title={title ?? frontmatterTitle} description={description ?? ""} />
   </head>
 
