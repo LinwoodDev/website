@@ -1,0 +1,81 @@
+---
+title: Butterfly 2.2.0 released
+date: "2024-09-28"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2"
+---
+
+After several months of nightly releases, here is the next stable release of Butterfly.
+The 2.2 update brings a lot of new features and improvements. Here are the highlights:
+
+- 📁 New layer system
+- ✅ Improved multi select in file view
+- 👆 Improved sensitivity
+- ⚙️ New on startup settings
+- 🔧 Restriction options for manipulating elements
+- 🧰 Improve toolbar
+- 💻 File system refactoring
+
+This release includes all changes from the previous beta and release candidates. The full changelog can be found here:
+
+- [2.2.0-beta.0](/blog/butterfly/2.2.0-beta.0)
+- [2.2.0-beta.1](/blog/butterfly/2.2.0-beta.1)
+- [2.2.0-beta.2](/blog/butterfly/2.2.0-beta.2)
+- [2.2.0-beta.3](/blog/butterfly/2.2.0-beta.3)
+- [2.2.0-rc.0](/blog/butterfly/2.2.0-rc.0)
+- [2.2.0-rc.1](/blog/butterfly/2.2.0-rc.1)
+- [2.2.0-rc.2](/blog/butterfly/2.2.0-rc.2)
+
+## New layer system
+
+A new layer system (like in other drawing applications) has been implemented. The old layer system has been renamed to collections and should be used for grouping elements. The new layer system is more flexible and allows to reorder the elements in the canvas and will allow new features in the future.
+
+Read more about the new layer system [in the documentation](https://butterfly.linwood.dev/docs/v2/layers).
+
+## Improved multi select in file view
+
+Dealing with multiple files in the file view wasn't easy in the past. With the new multi select feature, you can now move, duplicate or delete multiple files at once. This will make it easier to manage your notes.
+
+## Improved sensitivity
+
+The sensitivity settings have been refactored to be more user friendly and more descriptive. The unused settings have been removed. Please check the new settings to make sure they are set to your liking.
+
+## New on startup settings
+
+The first version of Butterfly started with a new note. Then it was changed to open a home screen to open a note. This version now readds the option to open a new note or the last note on startup. This will allow you to easily continue where you left off or simply write down your thoughts without any distractions.
+
+## Restriction options for manipulating elements
+
+Many users had a bad time dealing with elements that were moved or deleted by accident.
+There are now several new options to restrict the manipulation of elements. You can now lock elements, so they can't be moved or deleted.
+
+The first new option is the layer system that was mentioned above. Put your background in a separate layer and you can't move or delete it by accident.
+
+The second new option is the lock collection feature. You can now lock a collection and manipulate only the elements inside the collection.
+
+The third new option are the options inside the eraser. You can now restrict the eraser to only delete images or only delete strokes.
+
+## Improve toolbar
+
+The toolbar has been improved in several ways. The floating action button is now smaller to improve the rounded corners. The bottom icon in toolbar items has been changed to match the toolbar position and vertical mode is also improved.
+
+Additionally, the size of the add dialog has been improved and the lock and tools buttons in the vertical toolbar have been improved in the vertical mode.
+
+## File system refactoring
+
+The file system has been refactored to include it as a library. This will make it easier to use the file system in other projects. The file system refreshing on cancelling moving a file has been fixed and files are now saved in certain cases.
+
+## Notes
+
+These are only the highlights. Feel free to try out the new version and give feedback. If you find any issues, please report them on the [GitHub issue tracker](https://linwood.dev/butterfly/report).
+
+There is a new app coming soon. Check out the concept [here](https://github.com/LinwoodDev/Quokka/discussions/26)
+
+If you want to talk about Butterfly or need help, join the [Discord server](https://linwood.dev/discord) or the [Matrix channel](https://linwood.dev/matrix).
+
+If you download Butterfly from a store, please rate it. This helps me reach more people.
+
+Make sure to share the app with your friends and family if you like it.
+
+Thank you for your support and happy drawing!

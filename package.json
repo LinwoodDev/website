@@ -23,6 +23,6 @@
   "packageManager": "pnpm@9.11.0",
   "devDependencies": {
     "@vite-pwa/astro": "^0.4.3",
-    "sass": "^1.79.3"
+    "sass": "^1.79.4"
   }
 }
