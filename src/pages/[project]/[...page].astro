@@ -5,8 +5,8 @@ import { getPosts, getProjects } from "../../blog";
 import Link from "@components/Link.astro";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ProjectHero from "@components/ProjectHero.astro";
-import { PaginateFunction } from "astro/dist/@types/astro";
 import { PAGE_SIZE } from "../blog/[...page].astro";
+import type { PaginateFunction } from "astro";
 
 export async function getStaticPaths({ paginate } : { paginate : PaginateFunction }) {
   const projects = await getProjects();
