@@ -1,0 +1,64 @@
+---
+title: Butterfly 2.2.1-rc.0 released
+date: "2024-09-30"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.1-rc.0"
+---
+
+After a big 2.2 update, I am happy to announce the first release candidate for the 2.2.1 update. This update includes a lot of bug fixes and improvements. Here are the highlights:
+
+- 📂 Improved collection dialog
+- 🚩 Allow non-latin file names
+- ▶️ Use live icons in add dialog
+- 👆 Improved sensitivity settings
+- 🐞 Bug fixes
+
+Please test this release and give feedback.
+The full changelog can be found below.
+
+## Improved collection dialog
+
+The collection dialog has been improved to a better layout and now shows the current collection.
+The option to select a custom collection has been readded and a new convert to layer option has been added.
+
+## Allow non-latin file names
+
+> See [#743](https://github.com/LinwoodDev/Butterfly/issues/743)
+
+The file name now supports non-latin characters. Internally it was already supported, but the UI didn't allow it.
+
+## Use live icons in add dialog
+
+The add dialog now uses live icons for undo, redo and full screen tools.
+You can now see the current state of the tool in the icon.
+
+## Improved sensitivity settings
+
+The sensitivity settings have been refactored to be more user friendly and more descriptive.
+It now uses percent values and the minimum sensitivity of inputs has been changed to 10%.
+
+## Bug fixes
+
+There are several problems fixed with the new layer rendering system and the convert to layer feature.
+Additionally duplicating now works correctly and the selection is updated when elements are changed.
+
+## Full changelog
+
+* Add convert to layer to collection dialog
+* Readd option to select custom collection
+* Update button in name dialog to context specific action
+* Use live icon in add dialog (for example on undo, redo and full screen tools)
+* Improve layout of collection dialog
+* Improve copy to clipboard snackbar to show color
+* Change sensitivity settings to percent
+* Change min sensitivity of inputs to 10%
+* Rename context menu item name to rename in area context menu
+* Use search bar in areas navigator instead of normal text field
+* Fix select sensitivity slider in input settings changes scroll sensitivity
+* Fix current collection not being shown in collection dialog
+* Fix duplicating not working correctly
+* Fix layer rendering
+* Fix convert to layer not working before reopening the app
+* Fix file name only supports latin characters ([#743](https://github.com/LinwoodDev/Butterfly/issues/743))
+* Fix selection not updated when elements changed
