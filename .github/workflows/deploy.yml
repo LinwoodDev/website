@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Deploy to SFTP
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/main'
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
