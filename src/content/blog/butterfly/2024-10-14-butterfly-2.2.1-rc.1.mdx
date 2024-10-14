@@ -1,0 +1,44 @@
+---
+title: Butterfly 2.2.1-rc.1 released
+date: "2024-10-14"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.1-rc.1"
+---
+
+The second release candidate of Butterfly 2.2.1 is now available. This update includes a lot of bug fixes and improvements. Here are the highlights:
+
+- ✏️ Improve multi buttons
+- ➕ Improved add dialog
+- 🧰 Improved toolbar
+
+Stay tuned for next monday. There will be something big coming.
+
+## Improved multi buttons
+
+The input mapping now handles if multiple buttons are pressed at the same time.
+It has a priority system to handle the buttons correctly.
+This should also fixes some problems with stylus buttons not working correctly.
+
+## Improved add dialog
+
+The add dialog now has autofocus on the search bar and a transition when opening the dialog.
+Additionally, it now shows a text if the search term doesn't match any tool.
+
+## Improved toolbar
+
+The toolbar now has a size transition and the color toolbar doesn't have the full width anymore. This should make the toolbar look better and more consistent.
+
+## Full changelog
+
+* Add bit mapping of buttons in pointer test
+* Add autofocus to add dialog search bar
+* Add transition when opening add dialog
+* Add size transition to toolbar
+* Improve search and settings dialog transition
+* Change color toolbar to not have the full width
+* Fix pasting with label tool replaces text instead of appending
+* Fix unstable sort algorithm if layer is the same
+* Fix switching data directory not working
+* Fix input button mapping not working on multiple button presses ([#748](https://github.com/LinwoodDev/Butterfly/issues/748))
+* Fix app link in android
