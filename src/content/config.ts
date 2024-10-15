@@ -23,6 +23,7 @@ const projects = defineCollection({
     source: z.string().url(),
     website: z.string().url().optional(),
     translation: z.string().optional(),
+    unlisted: z.boolean().default(false),
   }),
 });
 const authors = defineCollection({
@@ -30,7 +31,7 @@ const authors = defineCollection({
   schema: z.object({
     name: z.string(),
     avatar: z.string().url(),
-	url: z.string().url()
+    url: z.string().url(),
   }),
 });
 

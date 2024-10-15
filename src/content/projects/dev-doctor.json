@@ -1,6 +1,7 @@
 {
-    "title": "Dev-Doctor",
-    "source": "https://github.com/LinwoodDev/dev_doctor",
-    "description":"Free, opensource, serverless learning platform",
-    "website": "https://docs.dev-doctor.linwood.dev"
+  "title": "Dev-Doctor",
+  "source": "https://github.com/LinwoodDev/dev_doctor",
+  "description": "Free, opensource, serverless learning platform",
+  "website": "https://docs.dev-doctor.linwood.dev",
+  "unlisted": true
 }

@@ -12,9 +12,11 @@ export const getEntryUrl = (entry: CollectionEntry<"blog">) => {
   return entry.slug;
 };
 
-export const getProjects = async (): Promise<CollectionEntry<"projects">[]> => {
+export const getProjects = async (
+  force?: boolean
+): Promise<CollectionEntry<"projects">[]> => {
   const projects = await getCollection("projects");
-  return projects;
+  return projects.filter((project) => !project.data.unlisted || force);
 };
 
 export const getProject = async (
