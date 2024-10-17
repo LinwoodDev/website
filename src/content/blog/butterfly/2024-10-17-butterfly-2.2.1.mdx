@@ -1,0 +1,55 @@
+---
+title: Butterfly 2.2.1 released
+date: "2024-10-17"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.1"
+---
+
+After two release candidates, Butterfly 2.2.1 is now available. This update includes a lot of bug fixes and improvements. Here are the highlights:
+
+- 📂 Improved collection dialog
+- 🚩 Allow non-latin file names
+- 👆 Improved sensitivity settings
+- ✏️ Improve multi buttons
+- ➕ Improved add dialog
+- 🧰 Improved toolbar
+
+We also reached 1000 stars on GitHub! Thank you for your support.
+
+This release includes all changes from the previous release candidates. The full changelog can be found here:
+
+- [2.2.1-rc.0](/blog/butterfly/2.2.1-rc.0)
+- [2.2.1-rc.1](/blog/butterfly/2.2.1-rc.1)
+
+## Improved collection dialog
+
+The collection dialog has been improved to a better layout and now shows the current collection.
+The option to select a custom collection has been readded and a new convert to layer option has been added.
+
+## Allow non-latin file names
+
+> See [#743](https://github.com/LinwoodDev/Butterfly/issues/743)
+
+The file name now supports non-latin characters. Internally it was already supported, but the UI didn't allow it.
+
+## Improved multi buttons
+
+The input mapping now handles if multiple buttons are pressed at the same time.
+It has a priority system to handle the buttons correctly.
+This should also fixes some problems with stylus buttons not working correctly.
+
+## Improved add dialog
+
+The add dialog now has autofocus on the search bar and a transition when opening the dialog.
+Additionally, it now shows a text if the search term doesn't match any tool.
+
+Additionally the add tool icons now shows the correct icon if they are actions like undo, redo or full screen.
+
+## Improved toolbar
+
+The toolbar now has a size transition and the color toolbar doesn't have the full width anymore. This should make the toolbar look better and more consistent.
+
+## Notes
+
+This release should fix the most problems with the new layer system. After this release, I will start working on the next minor release 2.3. If you have any feature requests or bug reports, please open an issue on GitHub.
