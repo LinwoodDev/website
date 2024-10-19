@@ -6,7 +6,7 @@ title: Impressum
 Impressum
 =========
 
-Diese Privacy Policy gilt für die Seiten linwood.dev und die Subdomains und den Twitter Accounts (@LinwoodDev und @CodeDoctorDE)
+Diese Privacy Policy gilt für die Seiten linwood.dev, setonix.world und die Subdomains, die Twitter Accounts (@LinwoodDev und @CodeDoctorDE) und die Mastodon Accounts (@codedoctor@alpaka.social und @linwood@floss.social).
 
 Angaben gemäß § 5 TMG
 ---------------------
