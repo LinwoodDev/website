@@ -7,7 +7,7 @@ import ProjectHero from "@components/ProjectHero.astro";
 import Author from "@components/Author.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
-  project?: string,
+  project?: string;
 };
 
 const { title, description, date, heroImage, project, author } = Astro.props;
@@ -18,18 +18,46 @@ const text = `Check out the post ${title} by the Linwood project: ${url}`;
 const encodedText = encodeURIComponent(text);
 // We need x (formally known as Twitter), Mastodon, Reddit, Email, Telegram, WhatsApp
 const platforms = [
-  { name: "Telegram", icon: "telegram-logo", link: `https://t.me/share/url?url=${encodedUrl}&text=${encodedText}` },
-  { name: "Email", icon: "envelope", link: `mailto:?subject=${title}&body=${text}` },
-  { name: "Reddit", icon: "reddit-logo", link: `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}` },
-  { name: "WhatsApp", icon: "whatsapp-logo", link: `https://wa.me/?text=${encodedText}` },
-  { name: "X (Twitter)", icon: "x-logo", link: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}&via=LinwoodDev` },
+  {
+    name: "Telegram",
+    icon: "telegram-logo",
+    link: `https://t.me/share/url?url=${encodedUrl}&text=${encodedText}`,
+  },
+  {
+    name: "Email",
+    icon: "envelope",
+    link: `mailto:?subject=${title}&body=${text}`,
+  },
+  {
+    name: "Reddit",
+    icon: "reddit-logo",
+    link: `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`,
+  },
+  {
+    name: "WhatsApp",
+    icon: "whatsapp-logo",
+    link: `https://wa.me/?text=${encodedText}`,
+  },
+  {
+    name: "X (Twitter)",
+    icon: "x-logo",
+    link: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}&via=LinwoodDev`,
+  },
 ];
 ---
+
 <DefaultLayout title={title} description={description ?? ""}>
   <dialog class="dialog" id="mastodon-dialog">
     <h1 class="dialog-title">Share to mastodon</h1>
     <div class="dialog-content col gap-sm">
-      <input id="mastodon-input" placeholder="mastodon.social" type="text" value={url} data-encoded-text={encodedText} data-encoded-url={encodedUrl} />
+      <input
+        id="mastodon-input"
+        placeholder="mastodon.social"
+        type="text"
+        value={url}
+        data-encoded-text={encodedText}
+        data-encoded-url={encodedUrl}
+      />
       <button id="mastodon-submit" class="primary">Submit</button>
     </div>
   </dialog>
@@ -41,22 +69,34 @@ const platforms = [
     <Author author={author.id} />
     <div class="row wrap gap-xs mv-xs">
       <button class="btn secondary icon-btn p-xs" id="mastodon-btn">
-        <span class="ph-bold ph-mastodon-logo" style={{fontSize: "1.5rem"}} aria-label="mastodon-logo"></span>
+        <span
+          class="ph-bold ph-mastodon-logo"
+          style={{ fontSize: "1.5rem" }}
+          aria-label="mastodon-logo"></span>
       </button>
-      {platforms.map((e) => (
-        <Link
-          href={e.link}
-          look="btn"
-          variant="secondary"
-          name={e.name}
-          target="_blank"
-          class="p-xs icon-btn"
-        >
-          <span class={`ph-bold ph-${e.icon}`} style={{fontSize: "1.5rem"}} aria-label={`${e.name}-logo`}></span>
-        </Link>
-      ))}
+      {
+        platforms.map((e) => (
+          <Link
+            href={e.link}
+            look="btn"
+            variant="secondary"
+            name={e.name}
+            target="_blank"
+            class="p-xs icon-btn"
+          >
+            <span
+              class={`ph-bold ph-${e.icon}`}
+              style={{ fontSize: "1.5rem" }}
+              aria-label={`${e.name}-logo`}
+            />
+          </Link>
+        ))
+      }
       <button class="btn secondary icon-btn p-xs" id="link-btn">
-        <span class="ph-bold ph-link" style={{fontSize: "1.5rem"}} aria-label="link-logo"></span>
+        <span
+          class="ph-bold ph-link"
+          style={{ fontSize: "1.5rem" }}
+          aria-label="link-logo"></span>
       </button>
     </div>
     <hr class="v-divider" />
@@ -65,7 +105,6 @@ const platforms = [
   <script
     is:inline
     src="https://giscus.app/client.js"
-    data-swup-reload-script
     data-repo="LinwoodDev/website"
     data-repo-id="MDEwOlJlcG9zaXRvcnkyODU3NjEwMzg="
     data-category="General"
@@ -79,13 +118,16 @@ const platforms = [
     data-lang="en"
     data-loading="lazy"
     crossorigin="anonymous"
-    async
-  ></script>
+    async></script>
 </DefaultLayout>
 <script>
   const element = document.getElementById("link-btn");
-  const mastodonInput= document.getElementById("mastodon-input") as HTMLInputElement;
-  const mastodonDialog = document.getElementById("mastodon-dialog") as HTMLDialogElement;
+  const mastodonInput = document.getElementById(
+    "mastodon-input"
+  ) as HTMLInputElement;
+  const mastodonDialog = document.getElementById(
+    "mastodon-dialog"
+  ) as HTMLDialogElement;
   element?.addEventListener("click", () => {
     navigator.clipboard.writeText(element.dataset.url ?? window.location.href);
   });
@@ -96,15 +138,14 @@ const platforms = [
 
   function submitMastodon() {
     const input = mastodonInput.value;
-    const {encodedText, encodedUrl} = mastodonInput.dataset;
+    const { encodedText, encodedUrl } = mastodonInput.dataset;
     const link = `https://${input}/share?text=${encodedText}&url=${encodedUrl}`;
     window.open(link, "_blank");
   }
   mastodonInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       submitMastodon();
-    }
-    else if (e.key === "Escape") {
+    } else if (e.key === "Escape") {
       mastodonDialog.close();
     }
   });
@@ -113,12 +154,18 @@ const platforms = [
   });
   mastodonDialog.addEventListener("click", (e) => {
     const rect = (e.target as HTMLElement).getBoundingClientRect();
-    if (e.target === mastodonDialog && e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+    if (
+      (e.target === mastodonDialog && e.clientX < rect.left) ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top ||
+      e.clientY > rect.bottom
+    ) {
       mastodonDialog.close();
     }
   });
-  document.getElementById("mastodon-submit")?.addEventListener("click", submitMastodon);
-
+  document
+    .getElementById("mastodon-submit")
+    ?.addEventListener("click", submitMastodon);
 </script>
 <style lang="scss">
   @use "@linwooddev/style/scss/main";
