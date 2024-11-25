@@ -11,12 +11,12 @@ const projects = await getProjects();
 ---
 
 <DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <section class="big-section">
+  <section class="long-section">
     <h1 class="title">{SITE_TITLE}</h1>
     <p class="subtitle">Simple to use software for everyone</p>
   </section>
-  <section class="big-section">
-    <h2 class="section-title">Projects</h2>
+  <section class="long-section">
+    <h2 class="section-title pb-md">Projects</h2>
     <ul class="row justify-center wrap align-stretch gap-sm">
       {
         projects.map((e) => (

@@ -16,15 +16,26 @@ const posts = page.data;
 ---
 
 <section>
-  {isMain && <div class="row justify-between align-center">
-    <h1>Blog</h1>
-    <a href="/rss.xml" class="btn">RSS</a>
-  </div>}
+  {
+    isMain && (
+      <div class="row justify-between align-center mv-md">
+        <h1>Blog</h1>
+        <a href="/rss.xml" class="btn">
+          RSS
+        </a>
+      </div>
+    )
+  }
   <ul class="col gap-md align-stretch pv-md ph-xs">
     {
       posts.map((post) => (
         <li>
-          <Link variant="secondary" href={`/${getEntryUrl(post)}`} look="card" class="row align-center wrap w-full p-sm no-decoration">
+          <Link
+            variant="secondary"
+            href={`/${getEntryUrl(post)}`}
+            look="card"
+            class="row align-center wrap w-full p-sm no-decoration"
+          >
             <div class="w-md h-full bold">
               <FormattedDate date={post.data.date} />
             </div>
@@ -35,28 +46,24 @@ const posts = page.data;
     }
   </ul>
   <div class="col align-center">
-  <p class="text-center">
-    Page {page.currentPage} of {page.lastPage} ({page.total} posts in total)
-  </p>
-  <div class="row wrap justify-center gap-xs">
-    {page.url.prev && (
-      <Link
-        variant="secondary"
-        href={page.url.prev}
-        class="btn"
-      >
-        Previous
-      </Link>
-    )}
-    {page.url.next && (
-      <Link
-        variant="secondary"
-        href={page.url.next}
-        class="btn"
-      >
-        Next
-      </Link>
-    )}
+    <p class="text-center">
+      Page {page.currentPage} of {page.lastPage} ({page.total} posts in total)
+    </p>
+    <div class="row wrap justify-center gap-xs">
+      {
+        page.url.prev && (
+          <Link variant="secondary" href={page.url.prev} class="btn">
+            Previous
+          </Link>
+        )
+      }
+      {
+        page.url.next && (
+          <Link variant="secondary" href={page.url.next} class="btn">
+            Next
+          </Link>
+        )
+      }
+    </div>
   </div>
-</div>
 </section>

@@ -1,0 +1,45 @@
+---
+title: Setonix 0.2 released!
+date: "2024-11-25"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.2"
+---
+
+Last month, I released the first version of Setonix. Today, I'm excited to announce the second big version of Setonix!
+
+Highlights:
+
+* 🔒 Cheat preventions
+* 📦 Pack downloads
+* 🖼️ Dialog images
+
+## Cheat preventions
+
+Previously when hiding a card, it was only hidden visually. Now, the card will be hidden by the server as well.
+This will prevent cheating by modifing the client.
+
+## Pack downloads
+
+Firstly, the pack id is now generated from the sha512-256 checksum of the pack archive.
+Secondly, the pack archive can now be downloaded from the server.
+
+When connecting to a server and you don't have the packs, the server can send you the download urls for the packs.
+Then you can download the packs from the kick screen and can reconnect to the server without any problems.
+
+## Dialog images
+
+Dialog images are now supported. You can now add images to your dialogs that appears as a banner.
+This is currently only supported if you have a custom server.
+
+## Full changelog
+
+* Add protection to cells if they are hidden
+* Add download for packs ([#39](https://github.com/LinwoodDev/Setonix/issues/39))
+* Add data metadata for packs
+* Use hash of archive for signature
+* Add dialog image support ([#40](https://github.com/LinwoodDev/Setonix/issues/40))
+* Fix multiple settings button on home page
+* Disable packs item if client is not a server
+* Use bolder monochrome icon for android
+* Make build reproducable
