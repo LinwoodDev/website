@@ -15,11 +15,11 @@
     "@astrojs/sitemap": "^3.2.1",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.1",
-    "astro": "^4.16.14",
+    "astro": "^4.16.16",
     "sharp": "^0.33.5",
     "typescript": "^5.7.2"
   },
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.14.4",
   "devDependencies": {
     "@vite-pwa/astro": "^0.4.3",
     "sass": "^1.81.0"
