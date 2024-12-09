@@ -35,4 +35,4 @@ const authors = defineCollection({
   }),
 });
 
-export const collections = { blog: blog, projects: projects, authors: authors };
+export const collections = { blog, projects, authors };
