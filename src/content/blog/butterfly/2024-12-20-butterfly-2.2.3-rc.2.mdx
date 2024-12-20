@@ -1,0 +1,45 @@
+---
+title: Butterfly 2.2.3-rc.2 released
+date: "2024-12-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.2.3-rc.2"
+---
+
+Before Christmas, I have another release candidate for Butterfly 2.2.3 for you.
+This is one of the largest nightlies I have ever released with a lot of improvements and many fixes.
+
+Highlights:
+
+- 🖼️ Add error image fallback
+- 🟦 Area options in navigator
+- 🐞 Bug fixes
+
+Please test this version and report any issues you find.
+This version gets released as stable version next week if no major issues are found.
+
+There is one open discussion about the web version of the app, feel free to take part in the discussion: [#767](https://github.com/LinwoodDev/Butterfly/discussions/767).
+
+## Add error image fallback
+
+If an image is not found, an error icon is shown instead of the broken image.
+
+## Area options in navigator
+
+All options you have with the area tool are now also available in the context menu of the area navigator.
+
+## Bug fixes
+
+Baking with the new resolution has caused some issues when zooming in, this is now fixed. Additionally, the docker image is now working correctly and the thumbnail in the files view is now displayed in the correct aspect ratio.
+
+## Full changelog
+
+* Add area options to context menu in area navigator page
+* Add error icon to asset card
+* Move create button to the top right of the template dialog
+* Improve mobile color picker
+* Align no elements text to the center
+* Fix thumbnail in files view
+* Fix spacing in home page
+* Fix baking not working correctly when zooming in
+* Fix docker image ([#769](https://github.com/LinwoodDev/Butterfly/pull/769))
