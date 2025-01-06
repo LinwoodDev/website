@@ -1,0 +1,85 @@
+---
+title: Butterfly 2.3.0-beta.0 released
+date: "2024-01-05"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.0-beta.0"
+---
+
+Happy new year! 🎉
+
+Starting the new year with a new beta version of Butterfly with big changes and improvements.
+
+Highlights:
+
+- 📱 Redesigned mobile home page
+- 🛠️ Toggleable tools (Grid, Ruler)
+- 🔒 Password protected notes
+- 🖼️ Import SVG as text
+- 🎨 Updated background ui
+
+Please test this version and report any issues you find.
+This version gets released as stable version next week if no major issues are found.
+
+There is one open discussion about the web version of the app, feel free to take part in the discussion: [#767](https://github.com/LinwoodDev/Butterfly/discussions/767).
+
+## Redesigned mobile home page
+
+The mobile home page has been redesigned to use tabs for easier navigation.
+This should make it easier to go to the selected view instead of scrolling through the whole page.
+
+## Toggleable tools
+
+Instead of having grid and ruler inside a tab in a submenu, they are now toggleable tools and can just be added like any other tool.
+
+To toggle them, simply click on the added tool. Configure them like any other tools by long pressing on them.
+
+They also have new properties.
+The ruler now has a color property and the grid has an offset property.
+
+## Password protected notes
+
+To protect your notes, you can now set a password for them.
+Click on the wrench icon and click on encrypt to set a password.
+When opening the note, you will be asked for the password. Please note that if you forget the password, the note is lost.
+
+You could unencrypt the note by clicking on the wrench icon and then unencrypt.
+
+## Import SVG as text
+
+There is now a new option in the import section to import an SVG as text.
+This can be useful if you use a icon library and copy the SVG code into your clipboard.
+
+## Updated background ui
+
+To cleanup the wrench view, the background button has been moved to the top left corner.
+
+Additionally you can now also set the stroke width for the pattern texture.
+
+## Full changelog
+
+* Redesign mobile home page
+  * Use tabs for easier navigation
+  * Dedicated files view
+  * Move settings into a tab
+* Add toggleable tools
+* Add palette name and pack to color picker dialog
+* Add stroke width slider to pattern texture
+* Move ruler into own tool
+  * Add color property
+  * Add size property
+* Move grid into own tool
+  * Add offset property
+* Move background button from project settings to top corner button
+* Add password protected notes ([#771](https://github.com/LinwoodDev/Butterfly/issues/771))
+* Add option to import svg as text ([#596](https://github.com/LinwoodDev/Butterfly/issues/596))
+* Improve grid files view
+* Improve slider and double input list tiles
+* Change aspect ratio to use 3 fraction digits for area
+* Fix undo/redo tools not showing status correctly
+* Fix grid not working correctly
+* Fix capture thumbnail uses wrong position
+* Fix zoom slider is not centered
+* Fix shape detection list tile not clickable
+* Fix svg export shows wrong initial preset
+* Fix default stroke width ([#779](https://github.com/LinwoodDev/Butterfly/issues/779))
