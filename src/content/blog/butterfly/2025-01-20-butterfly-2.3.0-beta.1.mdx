@@ -1,0 +1,64 @@
+---
+title: Butterfly 2.3.0-beta.1 released
+date: "2025-01-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.0-beta.1"
+---
+
+After a week with a hotfix, here is a new beta with big changes and improvements.
+
+Highlights:
+
+- ⚙️ Improved document settings
+- 🔍 Add search bar for components navigator page
+- 🖥️ Binary changes (New linux arm, min Android version 6.0)
+- 🐛 Many bug fixes
+
+## Improved document settings
+
+The document settings have been improved to make it easier to use.
+There are now only two tabs: General and Camera.
+The background button has been moved to the top left corner to make it easier to access.
+Inside the general tab, the name field has been removed and the description field only changes on submit. The name field is already on the top and causes confusion.
+
+## Add search bar for components navigator page
+
+The components navigator page now has a search bar to make it easier to find the component you are looking for. The pack selection has been moved to the right of the input field.
+
+## Binary changes
+
+The linux arm binaries have been added to the release. Please test them and report any issues.
+
+The minimum version of android has been changed to 6.0 (Marshmallow) instead of 5.0 (Lollipop). See [the discussion](https://github.com/LinwoodDev/Butterfly/discussions/780) for more information.
+
+## Many bug fixes
+
+There were also big bug fixes in the release. A few were added from the latest hotfix.
+
+Additionally thanks to [@timkrief](https://github.com/timkrief) the pen strokes now should look better if they have a big stroke width.
+
+Moreover the collaboration system was broken in the last releases. This has been fixed and should work now. Additionally it should now have a better performance when joining a room.
+
+## Full changelog
+
+* Add search bar for components navigator page
+* Improve document settings UI
+  * Remove duplicated name field in document settings
+  * Change description only on submit
+  * Improve encryption and thumbnail buttons
+* Add error boundaries for corrupted files
+* Fix export button in data settings not working
+* Fix export button for file view not visible
+* Fix file view showing wrong aspect ratio for thumbnails
+* Fix line transform changes rotation and scaling not working correctly ([#786](https://github.com/LinwoodDev/Butterfly/issues/786))
+* Fix lock collection wrongly labeled as Layer
+* Update secure storage dependency
+* Use minSdkVersion 23 instead of 21 (The minimum version of android is 6.0 (Marshmallow))
+* Improve collaboration system
+  * Use wss default if no protocol is provided
+  * Fix networking server/client not starting
+  * Fix initializaton not sent by server
+  * Improve performance when joining a room
+* Add linux arm binaries
+* Upgrade to agb 8.8
