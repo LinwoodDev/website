@@ -1,6 +1,6 @@
 ---
 import "@styles/global.scss";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { pwaInfo } from "virtual:pwa-info";
 
 export interface Props {
@@ -43,4 +43,4 @@ const { title, description, image } = Astro.props;
 {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 
-<ViewTransitions />
+<ClientRouter />

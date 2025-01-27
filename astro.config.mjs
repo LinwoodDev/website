@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import AstroPWA from "@vite-pwa/astro";
+import manifest from "./webmanifest.json";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,31 +11,21 @@ export default defineConfig({
     mdx(),
     sitemap(),
     AstroPWA({
-      workbox: { navigateFallback: "/404" },
-      manifest: {
-        name: "Linwood Development",
-        short_name: "Linwood",
-        description: "Simple to use software for everyone",
-        theme_color: "#35EF53",
-        icons: [
-          {
-            src: "android-chrome-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "android-chrome-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "android-chrome-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
-          },
+      workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
+        navigateFallback: "/404",
+        ignoreURLParametersMatching: [/./],
+        globPatterns: [
+          "**/*.{html,js,css,png,svg,json,ttf,pf_fragment,pf_index,pf_meta,pagefind,wasm}",
         ],
+        maximumFileSizeToCacheInBytes: 3000000
       },
+      experimental: {
+        directoryAndTrailingSlashHandler: true,
+      },
+      registerType: "autoUpdate",
+      manifest,
     }),
   ],
 });
