@@ -156,6 +156,6 @@ Cloudflare geht in ihrer Datenschutzerklärung darauf ein, dass sie für die Inh
 
 Cloudflare ist aktiver Teilnehmer beim EU-U.S. Privacy Shield Framework wodurch der korrekte und sichere Datentransfer persönlicher Daten geregelt wird. Mehr Informationen dazu finden Sie auf https://www.privacyshield.gov/participant?id=a2zt0000000GnZKAA0. Mehr Informationen zum Datenschutz bei Cloudflare finden Sie auf https://www.cloudflare.com/de-de/privacypolicy/
 
-Quelle: Erstellt mit dem Datenschutz Generator von AdSimple in Kooperation mit hashtagbeauty.de
+Quelle: Erstellt mit dem [Datenschutz Generator](https://www.adsimple.de/datenschutz-generator/) von AdSimple in Kooperation mit hashtagbeauty.de
 
 Quelle: [https://www.e-recht24.de/muster-datenschutzerklaerung.html](https://www.e-recht24.de/muster-datenschutzerklaerung.html)
