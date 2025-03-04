@@ -1,0 +1,146 @@
+---
+title: Butterfly 2.3.0-beta.1 released
+date: "2025-01-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.0-beta.1"
+---
+
+Two months after the last beta, we have the biggest release yet.
+The 2.3 update is now called Adonis Blue.
+Please test it and report any issues.
+
+Highlights:
+
+- 🎨 Add indicator for scale proportion
+- 🖼️ Multiple background + svg background support
+- ✨ New image operations
+- 🛠️ Reworked add dialog
+- 🧭 Improved grid and ruler tool
+- 🎯 Draw from center in shape tool
+- 📐 Improved hit calculations
+- 🗂️ Improved template dialog
+- 🪲 Bug fixes
+
+## Add indicator for scale proportion
+
+> [#616](https://github.com/LinwoodDev/Butterfly/issues/616)
+
+A new indicator has been added to the scale tool to show if the scale is proportional. This should help new users to understand the functionality better.
+
+## Multiple background + svg background support
+
+> [#778](https://github.com/LinwoodDev/Butterfly/issues/778)
+
+You can now add multiple backgrounds to your document.
+The file format supported this previously, but the app doesn't support it until now. Now you can layer multiple backgrounds on top of each other (if you have a transparent background).
+
+Additionally, you can now use svg files as a background.
+
+## New image operations
+
+> [#794](https://github.com/LinwoodDev/Butterfly/issues/794)
+
+Image operations should help changing image easy without the need of an external editor.
+You can now flip images horizontally, vertically and change them to grayscale.
+
+## Reworked add dialog
+
+The add dialog has been reworked to make it easier to use.
+In every release, new tools are added and the dialog was getting bigger and bigger.
+This update now adds filters to the dialog to make it easier to find the tool you are looking for.
+
+## Improved grid and ruler tool
+
+The grid and ruler tool has been improved in many ways.
+They now work with most of the tools and the grid now has a new option to make them position and zoom dependent.
+
+## Draw from center in shape tool
+
+> [#800](https://github.com/LinwoodDev/Butterfly/issues/800)
+
+Previously the shape tool had keyboard shortcuts to draw proportional and draw from center. There was no way to use it without the keyboard on a mobile device.
+This update adds a new setting to the shape tool to draw from the center.
+
+Additionally the old keyboard shortcuts now toggle the setting instead of conflicting with the aspect ratio setting in the tool.
+
+## Improved hit calculations
+
+> [#799](https://github.com/LinwoodDev/Butterfly/issues/799)
+
+The hit calculations have been improved in many tools.
+Previously the hit calculations were not working correctly in some cases.
+This lead to unexpected behavior when using the selection tool.
+
+This update fixes the hit calculations for shapes like circles, lines, rectangles and triangles.
+
+## Improved template dialog
+
+The template dialog has been improved to make it easier to use.
+You can now select all and deselect all templates with a single click.
+Additionally the create button has been changed to a floating action button to make it consistent with the rest of the app.
+
+## Notes
+
+This was the biggest beta release in the history of Butterfly and work from multiple months. Please test everything and report any issues you find.
+The next beta will probably take a bit longer since I'm currently not finished with studying and have to focus on that.
+However, I will try to release a hotfix if there are any critical issues.
+
+Thank you for your support and have fun with the new features.
+
+## Full changelog
+
+* Add indicator for scale proportion ([#616](https://github.com/LinwoodDev/Butterfly/issues/616))
+* Add release name to home page header, appbar and version (currently Adonis Blue)
+* Add multiple background support ([#778](https://github.com/LinwoodDev/Butterfly/issues/778))
+* Add transparent option for pattern texture
+* Add area property view
+* Add flip horizontal, vertical and gray scale operation on images ([#794](https://github.com/LinwoodDev/Butterfly/issues/794))
+* Add svg background support
+* Add element count to layer list
+* Add subtitle to property view for tools
+* Add warning to experiments settings page and allow using them on stable
+* Add move on gesture setting
+* Grid and ruler will now influence shape, stamp, area and texture tool
+* Add setting in shape tool to draw from center ([#800](https://github.com/LinwoodDev/Butterfly/issues/800))
+* Improve ctrl and shift functionality on pasting tools
+* Improve ruler rotation handling
+* Improve selection change animation
+* Improve responsiveness of file list view
+* Improve grid tool
+  * Add stroke width
+  * Add option for position and zoom dependent
+  * Fix snap if size is 0
+* Improve add dialog with filters
+* Improve hit calculations in rectangle and polygon mode ([#799](https://github.com/LinwoodDev/Butterfly/issues/799))
+  * Circle
+  * Lines
+  * Rectangle
+  * Triangles
+* Improve template dialog
+  * Add select all and deselect button
+  * Change create button to floating action button
+* Use random colors for cursors in collaboration mode
+* Change texture tool icon since it was the same as the grid tool
+* Add switch animation in navigator drawer
+* Move hide cursor while drawing to mouse settings
+* Fix unnecessary saving
+* Fix offset list tile
+* Fix resolution shift issues ([#793](https://github.com/LinwoodDev/Butterfly/issues/793))
+* Fix saving issues
+* Fix background assets not removed on delete
+* Fix asset svg exports
+* Fix pattern background position
+* Fix conversion to hex color on svg export and color pick
+* Fix some special-characters not working for file names
+* Fix file name validator missing on file rename
+* Fix flipped title and subtitle in search results
+* Fix windows portable archive
+* Fix hover in pattern texture view
+* Fix rectangle selection preview wrongly having a rotation handle line
+* Fix debian arm build ([#801](https://github.com/LinwoodDev/Butterfly/issues/801))
+* Fix zoom dependent not working on shape tool
+* Fix pressure if os wrongly gives 0 as input
+* Fix template override menu item wrongly labeled as delete
+* Remove http sources
+* Upgrade to flutter 3.29
