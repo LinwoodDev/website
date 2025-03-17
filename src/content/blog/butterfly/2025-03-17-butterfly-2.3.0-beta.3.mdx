@@ -1,0 +1,55 @@
+---
+title: Butterfly 2.3.0-beta.3 released
+date: "2025-03-17"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.0-beta.3"
+---
+
+The fourth beta of the Butterfly 2.3 update is now available with hotfixes to the previous big beta.
+Please test it and report any issues.
+
+Highlights:
+
+- 📄 Add file preview to files navigator
+- ⚙️ Option to import and export settings
+- 📝 Inline property name editing
+- 🪲 Bug fixes
+
+## Add file preview to files navigator
+
+> [#736](https://github.com/LinwoodDev/Butterfly/issues/736)
+
+You can now preview files in the files navigator by clicking on them.
+This will open now a read-only document viewer.
+
+## Option to import and export settings
+
+You can now import and export your settings.
+This should make it easier to share your settings between devices or with other users.
+
+## Inline property name editing
+
+> [#797](https://github.com/LinwoodDev/Butterfly/issues/797)
+
+You can now edit names inside the title bar by clicking on them.
+Previously every tool had a name field which could be confusing and take up space.
+
+## Bug fixes
+
+Previously on some linux devices, you couldn't draw correctly. This update should fix this issue ([#748](https://github.com/LinwoodDev/Butterfly/issues/748)).
+
+## Full changelog
+
+* Add file preview to files navigator ([#736](https://github.com/LinwoodDev/Butterfly/issues/736))
+* Add min and max pressure info to pointer test
+* Add option to import and export settings
+* Add inline property name editing ([#797](https://github.com/LinwoodDev/Butterfly/issues/797))
+* Only change file path on creating document, show indicator for creating document
+* Improve pressure simulation
+* Fix NaN values for pressure ([#748](https://github.com/LinwoodDev/Butterfly/issues/748))
+* Fix importing documents ([#807](https://github.com/LinwoodDev/Butterfly/issues/807))
+* Fix editable text submit button making it editable again
+* Fix selection menu in template dialog not showing without opening a document
+* Add version name on desktop if banner was hidden
+* Update to agb 8.9
