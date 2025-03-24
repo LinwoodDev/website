@@ -1,0 +1,50 @@
+---
+title: Linwood Flow 0.4 released
+date: "2024-03-24"
+author: codedoctor
+tags: [flow]
+slug: "flow/0.4"
+---
+
+After a long wait, another update for Flow is here.
+
+Highlights:
+
+- 👥 User/Group System
+- 📁 Replace places with resources
+- ⚒️ Modernize project setup (ARM Linux binaries)
+
+## User/Group System
+
+To prepare for a proper server system, the user and group system was reworked. Multiple users and groups can now be added to events and calendar items as owners. Users can also be part of multiple groups.
+Try it out and give feedback.
+
+## Replace places with resources
+
+Places were an idea to allow managing book times but were not flexible enough. They were replaced with resources. Resources can be anything and can be added to events and they can also have multiple resources. They can also have multiple owners.
+
+## Modernize project setup
+
+Because of the long time between updates, the project setup was outdated. This was modernized to the latest standards based on the Butterfly project. For example, arm linux binaries are now available.
+
+## Full changelog
+
+* Add color wheel
+* Add event notes
+* Add owner for notes, labels and notebooks
+* Change events and calendar items to have multiple users and groups
+* Change users to have multiple groups
+* Refactor places to resources
+  * Allow many-to-many relationship
+  * Add owner for resources
+* Fix color picker not using current color
+  * Rename places to resources and allow for multiple resources
+  * Add resources to events
+* Fix docker file
+* Users can now be added to events and calendar items
+* Convert data classes to dart_mappable
+* Upgrade to flutter 3.29
+* Use minSdkVersion 23 instead of 21 (The minimum version of android is 6.0 (Marshmallow))
+* Fix labels not filtering correctly
+* Update to agb 8.9
+* Update theme
