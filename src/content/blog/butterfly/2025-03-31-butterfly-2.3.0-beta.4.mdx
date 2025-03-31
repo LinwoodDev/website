@@ -1,0 +1,93 @@
+---
+title: Butterfly 2.3.0-beta.4 released  
+date: "2025-03-31"  
+author: codedoctor  
+tags: [butterfly]  
+slug: "butterfly/2.3.0-beta.4"  
+---
+
+The latest beta of the Butterfly 2.3 update is here, packed with UI improvements, collaboration experiments, and various bug fixes. Please test this release and report any issues you encounter.
+
+Highlights:
+
+- Barcode tool
+- Reworked waypoints
+- Reworked settings
+- Collaboration improvements
+
+Thanks to [@chriscavalluzzi](https://github.com/chriscavalluzzi) for contributing to this release!
+
+## Barcode tool
+
+> [#818](https://github.com/LinwoodDev/Butterfly/issues/818)
+
+You can now create qr codes, data matrix codes, and code 128 codes. This is useful for sharing links or other data with others.
+You can find the barcode tool in the tools menu.
+
+## Reworked waypoints
+
+> [#817](https://github.com/LinwoodDev/Butterfly/pull/817)
+
+As a note grows and you move elements around to reorganize your work, waypoints that you have defined may no longer have relevant positions or scales. If the center point of the elements related to a waypoint naturally starts to drift away from the waypoint's position, you may want to re-define the position of the waypoint. If the group of elements grows significantly, you may want to re-define the scale of a waypoint.
+
+This also applies to the Origin waypoint as well. As your note grows and the most important parts of your note are no longer at position (0,0), the Origin waypoint starts to become less and less relevant to the user. And because notes always load at position (0,0) with 100% scale, the first thing you see after the note loads may be a very small and unimportant part of your note, and you may need to reposition / re-scale your note after every load.
+
+This updates now includes:
+
+* Adds a new option in the waypoint item menu to "Replace" a waypoint, which overwrites the waypoint with the current position and (optionally) scale.
+* Adds an option to replace the Origin waypoint. After this waypoint has been replaced, a new option will be added called "Reset", which resets the waypoint's transform back to the default.
+* When a new note is loaded, teleport to the Origin waypoint. If a custom Origin waypoint has been defined, use that, otherwise use the default Origin waypoint.
+
+## Reworked settings
+
+> [#822](https://github.com/LinwoodDev/Butterfly/pull/822)
+
+The input settings were redesign for the input mapping settings UI, with the goal of making the settings more user-friendly and not requiring any additional knowledge to understand.
+
+Additionally the settings cards now has been tightened up to make them more compact and easier to read. The experiments settings page also now looks consistent with the rest of the settings.
+
+## Collaboration improvements
+
+Collaboration is a big topic for some people working in a team.
+The current web-socket based collaboration system is not the best solution for this, since you need to have a server running and making the server available to the public is not easy.
+
+This update introduces a new collaboration system based on my new development called Swamp. This system allows you to create a collaboration link that can be shared with others, and they can join the collaboration session without needing to set up a server for each session. When creating a new swamp session you need to enter a swamp server address, which is a public server that is running the swamp service. This server will be used to create the collaboration session and will handle all the communication between the clients. The last swamp server address will be saved in the settings, so you don't need to enter it every time.
+
+Read more about Swamp [here](https://swamp.linwood.dev/docs/v1/intro).
+
+The collaboration system is still in an experimental state and may not work as expected. Please report any issues you encounter.
+
+You can enable the collaboration system in the settings under `Experiments > Collaboration`.
+
+The connect string now starts with `https://launch.butterfly.linwood.dev` to allow cross-platform sharing of the link. When opening the link on a mobile device or pasting the link into the app under `Plus > Connect`, the app will automatically detect which collaboration system to use and open the correct page.
+
+## Full changelog
+
+* Add safe area around navigator
+* Add tooltips to the close icon button
+* Add swamp collaboration system in collaboration experiment
+* Add new material 3 slider
+* Add qr code for sharing collaboration link
+* Add barcode tool ([#818](https://github.com/LinwoodDev/Butterfly/issues/818))
+* Add ability to replace waypoints and customize origin ([#817](https://github.com/LinwoodDev/Butterfly/pull/817))
+* Rework settings cards ([#822](https://github.com/LinwoodDev/Butterfly/pull/822))
+* Rework input settings ui ([#822](https://github.com/LinwoodDev/Butterfly/pull/822))
+* Draw selection rect at the bounds of the canvas if it's outside the canvas
+* Use launch url as share link for collaboration
+* Rename xopp to Xournal++
+* Change ZIP export button label for clarity ([#810](https://github.com/LinwoodDev/Butterfly/pull/810))
+* Improve pattern background settings
+* Add search for term in caption in add dialog
+* Fix file list not refreshing when returning to home screen on desktop ([#813](https://github.com/LinwoodDev/Butterfly/issues/813))
+* Fix spacing in file preview on android ([#814](https://github.com/LinwoodDev/Butterfly/issues/814))
+* Fix temporary tool not being removed ([#809](https://github.com/LinwoodDev/Butterfly/issues/809))
+* Fix editable list tile subtitle not aligned with title
+* Fix svg images doesn't use the correct size
+* Fix opening a note from a recent files tile loads an outdated note and saves it ([#816](https://github.com/LinwoodDev/Butterfly/issues/816))
+* Fix filter chips in add dialog in comfortable ui
+* Fix editable list tile not having selected color
+* Fix setting the input mapping to a blank string would revert to the input's default setting after the app was restarted ([#822](https://github.com/LinwoodDev/Butterfly/pull/822))
+* Fix settings for "Pen only input" and "Input gestures" would be reverted after the app was restarted ([#822](https://github.com/LinwoodDev/Butterfly/pull/822))
+* Remove unsupported connections settings page on web
+
+Read more here: https://linwood.dev/butterfly/2.3.0-beta.4
