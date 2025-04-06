@@ -1,3 +1,4 @@
+import { file } from "astro/loaders";
 import { defineCollection, reference, z } from "astro:content";
 
 const blog = defineCollection({
@@ -24,6 +25,8 @@ const projects = defineCollection({
     website: z.string().url().optional(),
     translation: z.string().optional(),
     unlisted: z.boolean().default(false),
+    logo: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 const authors = defineCollection({
@@ -35,4 +38,14 @@ const authors = defineCollection({
   }),
 });
 
-export const collections = { blog, projects, authors };
+const libraries = defineCollection({
+  loader: file("src/content/libraries.json", {
+  }),
+  schema: z.object({
+    id: z.string(),
+    description: z.string(),
+    url: z.string().url(),
+  }),
+});
+
+export const collections = { blog, projects, authors, libraries };

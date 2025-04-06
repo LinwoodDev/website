@@ -16,7 +16,7 @@ export const getProjects = async (
   force?: boolean
 ): Promise<CollectionEntry<"projects">[]> => {
   const projects = await getCollection("projects");
-  return projects.filter((project) => !project.data.unlisted || force);
+  return projects.filter((project) => !project.data.unlisted || force).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 };
 
 export const getProject = async (

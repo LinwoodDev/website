@@ -15,7 +15,7 @@ const current = project && await getProject(project);
             <div class="row gap-md pv-sm align-center justify-stretch">
                 <img
                     class="thumbnail-image"
-                    src={`/logos/${current.id}.svg`}
+                    src={`/logos/${current.data.logo ?? current.id}.svg`}
                     alt={current.data.title}
                 />
                 <div class="col gap-md">

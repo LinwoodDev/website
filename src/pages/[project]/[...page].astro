@@ -5,7 +5,6 @@ import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ProjectHero from "@components/ProjectHero.astro";
 import { PAGE_SIZE } from "../blog/[...page].astro";
 import type { PaginateFunction } from "astro";
-import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths({
   paginate,
