@@ -10,6 +10,11 @@
     "url": "https://github.com/LinwoodDev/Style"
   },
   {
+    "id": "Linwood Website",
+    "description": "Official Linwood Website",
+    "url": "https://github.com/LinwoodDev/website"
+  },
+  {
     "id": "networker",
     "description": "Universal Networking library for dart/flutter",
     "url": "https://github.com/LinwoodDev/dart_pkgs/blob/main/packages/networker/networker"
@@ -68,5 +73,10 @@
     "id": "flutter_localizer",
     "description": "Flutter localization framework based on localizer",
     "url": "https://github.com/LinwoodDev/dart_pkgs/blob/main/packages/flutter_localizer"
+  },
+  {
+    "id": "App Tools",
+    "description": "AppTools is a collection of tools for simplifying the development of apps in Flutter",
+    "url": "https://github.com/LinwoodDev/dart_pkgs/tree/main/tools/app_tools"
   }
 ]
