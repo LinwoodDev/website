@@ -51,7 +51,7 @@ const libraries = await getCollection("libraries");
           <li>
             <Link
               variant="secondary"
-              href={`/${e.id}`}
+              href={e.data.url}
               class="col align-center justify-center h-full text-normal"
             >
               <p class="text-center mb-none">{e.data.id}</p>
