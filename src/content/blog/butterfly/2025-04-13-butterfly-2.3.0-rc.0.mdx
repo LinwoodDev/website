@@ -1,0 +1,50 @@
+---
+title: Butterfly 2.3.0-rc.0 released
+date: "2025-04-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.0-rc.0"
+---
+
+The latest beta of the Butterfly 2.3 update is here, packed with UI improvements, collaboration experiments, and various bug fixes. Please test this release and report any issues you encounter.
+
+Highlights:
+
+- 🔒 Lock layer
+- 🤝 Collaboration improvements
+- 🐛 Bug fixes
+
+Thanks to [@chriscavalluzzi](https://github.com/chriscavalluzzi) for contributing to this release!
+
+## Lock layer
+
+The lock layer option allows you to restrict editing to the current layer. This is useful for preventing accidental edits to other layers while working on a specific layer.
+You can enable this option in the lock menu on the toolbar.
+
+## Collaboration improvements
+
+I'm also continue working on collaboration improvements in this update.
+You can now add a custom user name for collaboration, which will be used to identify you in the collaboration session.
+Additionally the collaboration button was moved in the top left corner menu and disconnecting from a collaboration session will now be visualized.
+
+## Bug fixes
+
+On tablet devices, the layout has changed when opening the keyboard, which made it impossible to edit text in the navigation rail. This update fixes this issue.
+Additionally, the scroll sensitivity was improved and the thumbnail capture now uses the current viewport.
+
+## Full changelog
+
+* Add option to add custom user name for collaboration
+* Add lock layer option to restrict editing to current layer
+* Redesign collaboration dialog
+* Move collaboration button to popup menu
+* Add scroll to navigator ([#836](https://github.com/LinwoodDev/Butterfly/pull/836))
+* Improve disconnect with collaboration
+* Fix issue with editing text in the navigation rail on tablet ([#836](https://github.com/LinwoodDev/Butterfly/pull/836))
+* Fix importing non butterfly files result in error ([#829](https://github.com/LinwoodDev/Butterfly/issues/829))
+* Fix scroll sensitivity not changing move speed
+* Fix thumbnail capture not using the current viewport
+* Fix background dialog shows wrong content after deleting one layer
+* Fix local storage not using specified path ([#835](https://github.com/LinwoodDev/Butterfly/issues/835))
+* Fix performance drop after using path eraser or deleting elements ([#831](https://github.com/LinwoodDev/Butterfly/pull/831))
+* Fix resolution size not centered
