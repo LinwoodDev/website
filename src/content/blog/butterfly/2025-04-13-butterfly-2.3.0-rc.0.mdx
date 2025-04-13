@@ -11,6 +11,7 @@ The latest beta of the Butterfly 2.3 update is here, packed with UI improvements
 Highlights:
 
 - 🔒 Lock layer
+- 📁 File navigator improvements
 - 🤝 Collaboration improvements
 - 🐛 Bug fixes
 
@@ -20,6 +21,12 @@ Thanks to [@chriscavalluzzi](https://github.com/chriscavalluzzi) for contributin
 
 The lock layer option allows you to restrict editing to the current layer. This is useful for preventing accidental edits to other layers while working on a specific layer.
 You can enable this option in the lock menu on the toolbar.
+
+## File navigator improvements
+
+The current file navigator has been improved to use the parent directory of the opened document as the initial path. This makes it easier to navigate to related files without having to manually search for them.
+
+Additionally, a bug was fixed that caused the current opened document not to be highlighted in the file navigator.
 
 ## Collaboration improvements
 
@@ -39,6 +46,7 @@ Additionally, the scroll sensitivity was improved and the thumbnail capture now 
 * Redesign collaboration dialog
 * Move collaboration button to popup menu
 * Add scroll to navigator ([#836](https://github.com/LinwoodDev/Butterfly/pull/836))
+* Use opened document parent directory as initial path in file navigator
 * Improve disconnect with collaboration
 * Fix issue with editing text in the navigation rail on tablet ([#836](https://github.com/LinwoodDev/Butterfly/pull/836))
 * Fix importing non butterfly files result in error ([#829](https://github.com/LinwoodDev/Butterfly/issues/829))
@@ -48,3 +56,4 @@ Additionally, the scroll sensitivity was improved and the thumbnail capture now 
 * Fix local storage not using specified path ([#835](https://github.com/LinwoodDev/Butterfly/issues/835))
 * Fix performance drop after using path eraser or deleting elements ([#831](https://github.com/LinwoodDev/Butterfly/pull/831))
 * Fix resolution size not centered
+* Fix opened document not highlighted inside file navigator
