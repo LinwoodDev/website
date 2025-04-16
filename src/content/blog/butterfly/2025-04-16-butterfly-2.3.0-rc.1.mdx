@@ -1,0 +1,49 @@
+---
+title: Butterfly 2.3.0-rc.1 released
+date: "2025-04-16"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.0-rc.1"
+---
+
+Another release candidate of Butterfly Adonis Blue is here. The final version is expected to be released in the next week.
+
+Highlights:
+
+- 🚀 Reduce crashes during canvas movement
+- 🐳 Docker image
+- 📱 Android import improvements
+- 🐛 Bug fixes
+
+Please test this release candidate and report any issues you find.
+
+Thanks to [@chriscavalluzzi](https://github.com/chriscavalluzzi) for contributing to this release!
+
+## Reduce crashes during canvas movement
+
+> [#838](https://github.com/LinwoodDev/Butterfly/pull/838)
+
+This update reduces crashes during canvas movement. This was a common issue that many users experienced, and it should now be resolved.
+
+## Docker image
+
+The web version of Butterfly is now available as a Docker image. This makes it easier to deploy and run the application in a containerized environment.
+
+You can find the Docker image on the [Docker Hub](https://hub.docker.com/r/linwooddev/butterfly).
+
+The documentation can be found [here](https://butterfly.linwood.dev/downloads/selfhosting).
+
+## Android import improvements
+
+Opening butterfly with open with intent is now working on Android. This means you can now open butterfly files directly from other applications.
+
+## Full changelog
+
+* Reduce crashes during canvas movement ([#838](https://github.com/LinwoodDev/Butterfly/pull/838))
+* Upload the butterfly image file on the Docker website ([#756](https://github.com/LinwoodDev/Butterfly/issues/756))
+* Improve android file association
+* Improve error display page
+* Fix opening files with intent not working on android
+* Fix document was saved regardless if the file is up to date
+* Fix error not appearing after failed import
+* Fix bfly imports not working ([#839](https://github.com/LinwoodDev/Butterfly/issues/839))
