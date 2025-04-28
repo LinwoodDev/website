@@ -1,0 +1,45 @@
+---
+title: Linwood Flow 0.4.2 released
+date: "2025-04-28"
+author: codedoctor
+tags: [flow]
+slug: "flow/0.4.2"
+---
+
+Flow 0.4 had broken some things and was not working correctly. This release fixes those issues and adds some new features.
+
+Highlights:
+
+- 🔗 Finish linking entity system
+- 🛠️ Improve settings
+- 🔄 Rework paging system to a built in solution
+- 🐛 Bug fixes
+
+## Finish linking entity system
+
+In the last hotfix, linking was used instead of creating inside the relations tab views. This was now expanded to all entity types. You can now link to users, groups, resources and events. This should make it easier to manage relations between entities without creating new ones.
+
+## Improve settings
+
+Butterfly had improvements to the settings dialog like importing and exporting settings. This was now added to Flow. You can now import and export settings to a file. This should make it easier to transfer settings between devices.
+
+Additionally, a density personalization option was added. This allows you to change the density of the app. This is useful for devices with small screens or if you want to have more space between items.
+This is similar to the density option in Butterfly.
+
+## Rework paging system to a built in solution
+
+The previous paging system was not working correctly and was really hard to use. This was changed to a built in solution. This should make it easier to work in the future and more reliable for the user.
+
+## Full changelog
+
+* Add linking to users and groups tab view
+* Add import and exporting settings
+* Add more density options to settings
+* Reworking paging system to a built in solution
+* Fix user page alignment
+* Fix safe area of navigation drawer
+* Fix ical importer doesn't import calendar items ([#89](https://github.com/LinwoodDev/Flow/issues/89))
+* Fix event user connecting not working correctly
+* Fix dismissing removes items instead of disconnecting them
+* Fix butterfly is referenced instead of flow
+* Fix linux appdata
