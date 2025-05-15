@@ -45,7 +45,7 @@ const libraries = await getCollection("libraries");
   <section class="long-section">
     <h2 class="section-title">Libraries</h2>
     <p class="pb-md text-center">Useful libraries for developers that want to build their own software</p>
-    <ul class="libraries-grid">
+    <ul class="libraries-grid container-md">
       {
         libraries.map((e) => (
           <li>
@@ -69,7 +69,6 @@ const libraries = await getCollection("libraries");
       gap: 1rem;
       grid-auto-rows: 1fr;
       list-style-type: none;
-      margin: 0;
       padding: 0;
     }
 
