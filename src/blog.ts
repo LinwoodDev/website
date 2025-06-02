@@ -30,6 +30,6 @@ export const getProject = async (
 export const PAGE_SIZE = 20;
 
 export const getPosts = async () =>
-  (await getCollection("blog")).sort(
+  (await getCollection("blog")).filter((e) => !e.data.unlisted).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );

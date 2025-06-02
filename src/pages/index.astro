@@ -7,6 +7,8 @@ import { getProjects } from "../blog";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
+import Table from "@components/Table.astro";
+import TableItem from "@components/TableItem.astro";
 
 const projects = await getProjects();
 const libraries = await getCollection("libraries");
@@ -42,38 +44,18 @@ const libraries = await getCollection("libraries");
       }
     </ul>
   </section>
-  <section class="long-section">
+  <section class="long-section container-md">
     <h2 class="section-title">Libraries</h2>
     <p class="pb-md text-center">Useful libraries for developers that want to build their own software</p>
-    <ul class="libraries-grid container-md">
+    <Table>
       {
         libraries.map((e) => (
-          <li>
-            <Link
-              variant="secondary"
-              href={e.data.url}
-              class="col align-center justify-center h-full text-normal"
-            >
-              <p class="text-center mb-none">{e.data.id}</p>
-              <p class="normal text-center mt-none">{e.data.description}</p>
-            </Link>
-          </li>
+          <TableItem>
+            <p class="text-center mb-none">{e.data.id}</p>
+            <p class="normal text-center mt-none">{e.data.description}</p>
+          </TableItem>
         ))
       }
-    </ul>
+    </Table>
   </section>
-  <style>
-    .libraries-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      grid-auto-rows: 1fr;
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .libraries-grid li {
-      height: 100%;
-    }
-  </style>
 </DefaultLayout>

@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
 import { getEntryProject, getEntryUrl } from '../blog';
+import Table from '@components/Table.astro';
+import TableItem from '@components/TableItem.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -18,5 +20,5 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data} project={project?.id}>
-	<Content />
+	<Content components={{Table, TableItem}} />
 </BlogPost>

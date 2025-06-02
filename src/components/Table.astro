@@ -1,0 +1,15 @@
+<ul class="table">
+  <slot />
+</ul>
+
+<style>
+  .table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    grid-auto-rows: 1fr;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center; 
+  }
+</style>
