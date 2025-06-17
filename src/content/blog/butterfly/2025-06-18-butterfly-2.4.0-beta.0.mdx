@@ -1,0 +1,75 @@
+---
+title: Butterfly 2.4.0-beta.0 released  
+date: "2025-06-18"
+author: codedoctor  
+tags: [butterfly]  
+slug: "butterfly/2.4.0-beta.0"  
+---
+
+The first beta release of Butterfly Black Hairstreak (2.4.0-beta.0) is here with many big changes and improvements!
+
+Highlights:
+
+- 📝 New text based format
+- 🎨 Improved Label Tool
+- 📦 Reworked Pack System
+- 🖌️ Improved Pen Element
+- 🤝 Improved Collaboration
+
+This release also updates the Flutter SDK to version 3.32. Please test this release and report any issues you find.
+
+## New text based format
+
+> [#823](https://github.com/LinwoodDev/Butterfly/issues/823)
+
+Butterfly now supports a new text based file format. This format is designed to be human-readable and easy to edit, making it more accessible for users who prefer working with text files and working with version control systems.
+
+Please note that this format is still in beta. It is not yet the default format, but you can export your documents to this format by selecting "Export as Raw Document" in the export submenu.
+
+## Improved Label Tool
+
+> Part of [#802](https://github.com/LinwoodDev/Butterfly/issues/802)
+
+The Label Tool will be improved in Linwood Butterfly Black Hairstreak. This release includes the first part of the improvements, which includes a new ctrl + enter shortcut to create a new text element below the current text element. This makes it easier to create new text elements without having to use the mouse.
+
+Additionally an annoying bug with the label tool not allowing new lines has been fixed. Moving text elements after pasting them should now work correctly as well.
+
+## Reworked Pack System
+
+> [#805](https://github.com/LinwoodDev/Butterfly/issues/805)
+
+The previous pack system was difficult to use and had many problems regarding user experience. The new pack system is designed to be more user-friendly and easier to use.
+
+Instead of saving the pack inside the document, the pack is now saved globally and if used, the specific data is saved inside the document. This allows for better organization and management of packs.
+To have backwards compatibility, the packs inside documents will now be called `Bundled packs`. These packs can be imported globally to use.
+
+## Improved Pen Element
+
+> Part of [#802](https://github.com/LinwoodDev/Butterfly/issues/802)
+
+You can now select a specific fill color for the pen element. This allows having a stroke and a fill to a single pen element, which is useful for creating shapes.
+
+## Improved Collaboration
+
+To stabilize the collaboration system, a bug that caused the server to crash when an invalid request was made has been fixed. This should improve the overall stability of the collaboration system.
+
+## Notes
+
+With the new pack system and the fill color inside pen elements, the file version was incremented. The migration system will automatically migrate your documents to the new version when opening them. If you have any issues with the migration, please report them.
+
+This beta release also has many important bug fixes. Please test this release and report any issues you find.
+If there are no major issues, these bug fixes will be made to a hotfix release for Butterfly 2.3.
+
+## Full changelog
+
+* Add ctrl + enter to create new text element below current text element ([#858](https://github.com/LinwoodDev/Butterfly/issues/858))
+* Add text based file format ([#823](https://github.com/LinwoodDev/Butterfly/issues/823))
+* Add specific fill color ([#802](https://github.com/LinwoodDev/Butterfly/issues/802))
+* Redesign pack system ([#805](https://github.com/LinwoodDev/Butterfly/issues/805))
+* Improve error resistence in webdav file system ([#857](https://github.com/LinwoodDev/Butterfly/issues/857))
+* Fix temporary handler not working correctly
+* Fix text elements not correctly movable on pasting
+* Fix new line not working in label tool
+* Remove duplicated name property in pack items
+* Fix server crash when invalid request is made
+* Upgrade to flutter 3.32
