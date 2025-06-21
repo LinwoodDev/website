@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Link from "./Link.astro";
 import { SITE_TITLE } from "../consts";
+import logo from "../../public/logos/logo.png";
 ---
 
 <header class="navbar">
   <a href="/" class="navbar-title">
-    <img src="/logos/logo.png" height="32" width="32" alt="Astro Logo" />
+    <Image src={logo} height="32" width="32" alt="Linwood Logo" />
     {SITE_TITLE}
   </a>
   <nav class="navbar-items">

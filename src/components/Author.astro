@@ -1,7 +1,7 @@
 ---
-import { getProject } from "src/blog";
-import Link from "./Link.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
+import { Image } from 'astro:assets';
+
 export interface Props {
     author?: string;
 }
@@ -13,7 +13,7 @@ const current = author && await getEntry("authors", author);
 {
     current && (
         <a href={current.data.url} class="author">
-            <img class="author-avatar" src={current.data.avatar} />
+            <Image class="author-avatar" alt={`Avatar of ${current.data.name}`} src={current.data.avatar} width={64} height={64} />
             <p class="author-name">{current.data.name}</p>
         </a>
     )

@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^3.4.1",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "^5.9.4",
+    "astro": "^5.10.0",
     "sharp": "^0.34.2",
     "typescript": "^5.8.3"
   },

@@ -1,7 +1,5 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
+import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getProjects } from "../blog";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
@@ -31,7 +29,7 @@ const libraries = await getCollection("libraries");
               class="col align-center justify-between h-full"
               style={{ width: "150px" }}
             >
-              <img
+              <Image
                 src={`/logos/${e.data.logo ?? e.id}.svg`}
                 alt={e.data.title}
                 width="100"
@@ -50,7 +48,7 @@ const libraries = await getCollection("libraries");
     <Table>
       {
         libraries.map((e) => (
-          <TableItem>
+          <TableItem href={e.data.url}>
             <p class="text-center mb-none">{e.data.id}</p>
             <p class="normal text-center mt-none">{e.data.description}</p>
           </TableItem>

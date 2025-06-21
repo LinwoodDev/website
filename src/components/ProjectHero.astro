@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getProject } from "src/blog";
 import Link from "./Link.astro";
 export interface Props {
@@ -13,9 +14,11 @@ const current = project && await getProject(project);
     current && (
         <section>
             <div class="row gap-md pv-sm align-center justify-stretch">
-                <img
+                <Image
                     class="thumbnail-image"
                     src={`/logos/${current.data.logo ?? current.id}.svg`}
+                    height={100}
+                    width={100}
                     alt={current.data.title}
                 />
                 <div class="col gap-md">

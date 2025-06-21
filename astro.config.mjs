@@ -7,6 +7,11 @@ import manifest from "./webmanifest.json";
 // https://astro.build/config
 export default defineConfig({
   site: "https://linwood.dev",
+  image: {
+    responsiveStyles: true,
+    layout: "constrained",
+    domains: ["avatars1.githubusercontent.com"],
+  },
   integrations: [
     mdx(),
     sitemap(),
@@ -19,7 +24,7 @@ export default defineConfig({
         globPatterns: [
           "**/*.{html,js,css,png,svg,json,ttf,pf_fragment,pf_index,pf_meta,pagefind,wasm}",
         ],
-        maximumFileSizeToCacheInBytes: 3000000
+        maximumFileSizeToCacheInBytes: 3000000,
       },
       experimental: {
         directoryAndTrailingSlashHandler: true,
