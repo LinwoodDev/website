@@ -1,0 +1,73 @@
+---
+title: Butterfly Store updates and 2.3.3 released
+date: "2025-08-01"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.3.3"
+---
+
+After a releasing the second beta of Butterfly Black Hairstreak (2.4) last week, the hotfix 2.3.3 for Butterfly is now available.
+
+Highlights:
+
+- 🪟 Publish to Microsoft Store
+- 🐧 AppImage builds for ARM
+- 🐧 Snap builds
+- 🐧 Alternative linux builds
+- 🔄 Update Flutter to 3.32
+
+## Publish to Microsoft Store
+
+Butterfly is now available in the Microsoft Store. This allows you to install Butterfly on Windows 10 and 11 devices easily and have automatic updates.
+
+Download it now from the [Microsoft Store](https://www.microsoft.com/store/productId/9N6X3V5K7Z1T).
+
+This will become the recommended way to install Butterfly on Windows devices in the future.
+
+I'm also working on bringing the nightly builds to the Microsoft Store, so you can help test the latest features and fixes. Stay tuned for that!
+
+## AppImage builds for ARM
+
+The AppImage workflow has been rebuild to improve the produced AppImages.
+In the same time, ARM builds were added to the AppImage builds.
+
+## Alternative linux builds
+
+On debian devices, glibc has an older version than the one used to build Butterfly.
+To support these older glibc versions, Butterfly had an alternative build that used a ubuntu 22.04 base image. Previously only a portable archive was available.
+For this release, deb, rpm and appimage builds are now available for this alternative build.
+This allows you to install Butterfly on these devices more easily.
+
+## Snap builds
+
+The snap builds have been fixed to work with the latest butterfly release. The snap builds were broken since the second beta of Butterfly 2.2.0.
+You can now install Butterfly via snap again.
+
+Butterfly now also supports the release channels:
+
+* stable has the latest stable release
+* candidate tracks the commits in the main branch (that will become the next stable release)
+* beta tracks the latest nightly release
+* edge tracks the latest commit in the develop branch (that will become the next nightly release)
+
+The beta track currently currently has the current 2.3.3 release, but will be updated when the next nightly release is available.
+
+## Update flutter
+
+The flutter version has been updated to 3.32. This should improve the foundation of Butterfly to support the 2.3 release track a bit longer.
+
+## Full changelog
+
+* Upgrade to flutter 3.32
+* Add support for arm AppImage builds
+* Add more alternative linux builds
+* Publish app to microsoft store
+* Fix snap builds
+
+Cherry picks:
+* Fix navigator page dialogs not rounded
+* Fix directory not respected when creating a document from a template
+
+## Notes for nightly users
+
+All fixes are already available in the nightly builds. If you are using the nightly build, you can skip this update.
