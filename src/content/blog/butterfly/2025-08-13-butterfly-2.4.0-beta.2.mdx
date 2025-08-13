@@ -1,0 +1,68 @@
+---
+title: Butterfly 2.4.0-beta.2 released
+date: "2025-08-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.0-beta.2"
+---
+
+After a releasing the a hotfix of Butterfly Adonis Blue (2.3) last week, a new Black Hairstreak (2.4) beta is now available.
+
+Highlights:
+
+- ➗ Latex support for markdown
+- 🖌️ Stroke width in polygon tool toolbar
+- 🐞 Bug and performance fixes
+- 🌐 Translation updates
+
+## Latex support for markdown
+
+> [#725](https://github.com/LinwoodDev/Butterfly/issues/725)
+
+This is a long awaited feature that allows you to use latex in markdown elements. This allows you to write mathematical formulas and equations in your documents using the familiar latex syntax.
+This is the first step to support latex in Butterfly, with more features to come in the future releases and future addition to the rich text elements.
+
+## Stroke width in polygon tool toolbar
+
+A new stroke width toolbar item was added in the previous beta release, but it was not available in the polygon tool toolbar.
+This has been fixed and the stroke width is now available in the polygon tool toolbar as well.
+
+## Bug and performance fixes
+
+This release includes many bug fixes and performance improvements.
+
+The first one is the fix for the undo/redo functionality, which was not working correctly and could freeze the app. This has been fixed and the undo/redo functionality should now work as expected. There will be another hotfix release for the 2.3 release to fix this issue as well.
+
+The second one is the fix for the delete key not working in markdown mode. This has been fixed and you can now delete text in markdown mode using the delete key. This will also be backported to the 2.3 release.
+
+The third one is the fix for the export to multipage PDF leading to empty pages except the current one. This has been fixed and you can now export multipage PDFs without any issues. Read more in [#878](https://github.com/LinwoodDev/Butterfly/issues/878).
+
+To fix performance issues, the save files functionality has been moved to a separate thread. This should improve the performance of the app when saving files, especially for larger documents.
+
+## Translation updates
+
+I pretranslated missing languages to have initial translations for these languages. Feel free to contribute to the translations on [Crowdin](https://linwood.dev/butterfly/translate).
+
+## Notes
+
+Starting with Butterfly 2.4.0-beta.3, the minSdkVersion gets increased from 23 to 24 since Flutter 3.35 depend on this.
+This means, you need Android Nougat (Android 7) or higher to run the app.
+
+Read more here: <https://github.com/LinwoodDev/Butterfly/discussions/887>
+
+## Full changelog
+
+* Add stroke width to polygon tool toolbar
+* Add latex support for markdown ([#725](https://github.com/LinwoodDev/Butterfly/issues/725))
+* Add ignore pressure setting to fix pressure values on some devices
+* Save files in different thread ([#883](https://github.com/LinwoodDev/Butterfly/issues/883))
+* Fix delete key not working in markdown mode
+* Fix export to multipage PDF leads to empty pages except the current one ([#878](https://github.com/LinwoodDev/Butterfly/issues/878))
+* Fix undo/redo not working correctly and freezing the app
+* Big translation updates
+
+Upstreamed from 2.3.3:
+* Add support for arm AppImage builds
+* Add more alternative linux builds
+* Fix snap builds
+* Fix laser fade animation not smoothly fading out ([#877](https://github.com/LinwoodDev/Butterfly/issues/877))
