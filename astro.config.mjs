@@ -3,6 +3,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import AstroPWA from "@vite-pwa/astro";
 import manifest from "./webmanifest.json";
+import remarkCustomHeaderId from 'remark-custom-header-id';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +14,9 @@ export default defineConfig({
     domains: ["avatars1.githubusercontent.com"],
   },
   integrations: [
-    mdx(),
+    mdx({
+      remarkPlugins: [remarkCustomHeaderId],
+    }),
     sitemap(),
     AstroPWA({
       workbox: {

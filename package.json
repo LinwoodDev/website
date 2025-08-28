@@ -16,6 +16,7 @@
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
     "astro": "^5.13.4",
+    "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.3",
     "typescript": "^5.9.2"
   },

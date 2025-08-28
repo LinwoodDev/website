@@ -1,5 +1,5 @@
 ---
-title: Butterfly Black Hairstreak released
+title: Butterfly Black Hairstreak (2.4) released
 date: "2025-05-21"
 author: codedoctor
 tags: [butterfly] 
@@ -9,9 +9,12 @@ unlisted: true
 
 **Butterfly 2.4 Black Hairstreak is currently in beta!**
 
-Please visit the nightly versions here:
+Please visit the nightly version blog entries here:
 
 - [2.4.0-beta.0](/butterfly/2.4.0-beta.0)
+- [2.4.0-beta.1](/butterfly/2.4.0-beta.1)
+- [2.4.0-beta.2](/butterfly/2.4.0-beta.2)
+- [2.4.0-beta.3](/butterfly/2.4.0-beta.3)
 
 *This page is currently only a draft*
 
@@ -21,30 +24,108 @@ Please visit the nightly versions here:
 <TableItem href="#text-format">
   New Butterfly text format
 </TableItem>
-<TableItem href="#text-format">
+<TableItem href="#pack-system">
   Rebuild pack system
 </TableItem>
-<TableItem href="#text-format">
+<TableItem href="#label-tool">
   Improved Label Tool
 </TableItem>
-<TableItem href="#text-format">
+<TableItem href="#pen-element">
   Improved Pen Element
 </TableItem>
-<TableItem href="#text-format">
+<TableItem href="#collaboration">
   Improved Collaboration
 </TableItem>
-<TableItem href="#text-format">
+<TableItem href="#latex-support">
   LateX Support
 </TableItem>
-<TableItem href="#text-format">
+<TableItem href="#pen-toolbar">
   Improved Pen Toolbar
 </TableItem>
-<TableItem href="#text-format">
-  Coming Soon...
+<TableItem href="#polygon-tool">
+  Polygon Tool
 </TableItem>
-<TableItem href="#text-format">
-  Coming Soon...
+<TableItem href="#pdf-system">
+  Reworked PDF System
+</TableItem>
+<TableItem href="#version-upgrades">
+  Version Upgrades
 </TableItem>
 </Table>
 
-## Text format
+## New text based format \{#text-format\}
+
+> [#823](https://github.com/LinwoodDev/Butterfly/issues/823)
+
+Butterfly now supports a new text based file format. This format is designed to be human-readable and easy to edit, making it more accessible for users who prefer working with text files and working with version control systems.
+
+## Reworked Pack System \{#pack-system\}
+
+> [#805](https://github.com/LinwoodDev/Butterfly/issues/805)
+
+The previous pack system was difficult to use and had many problems regarding user experience. The new pack system is designed to be more user-friendly and easier to use.
+
+Instead of saving the pack inside the document, the pack is now saved globally and if used, the specific data is saved inside the document. This allows for better organization and management of packs.
+To have backwards compatibility, the packs inside documents will now be called `Bundled packs`. These packs can be imported globally to use.
+
+## Improved Label Tool \{#label-tool\}
+
+> Part of [#802](https://github.com/LinwoodDev/Butterfly/issues/802)
+
+The Label Tool will be improved in Linwood Butterfly Black Hairstreak. This release includes the first part of the improvements, which includes a new ctrl + enter shortcut to create a new text element below the current text element. This makes it easier to create new text elements without having to use the mouse.
+
+Additionally an annoying bug with the label tool not allowing new lines has been fixed. Moving text elements after pasting them should now work correctly as well.
+
+## Improved Pen Element \{#pen-element\}
+
+> Part of [#802](https://github.com/LinwoodDev/Butterfly/issues/802)
+
+You can now select a specific fill color for the pen element. This allows having a stroke and a fill to a single pen element, which is useful for creating shapes.
+
+## Improved Collaboration \{#collaboration\}
+
+To stabilize the collaboration system, a bug that caused the server to crash when an invalid request was made has been fixed. This should improve the overall stability of the collaboration system.
+
+## Latex support for markdown \{#latex-support\}
+
+> [#725](https://github.com/LinwoodDev/Butterfly/issues/725)
+
+This is a long awaited feature that allows you to use latex in markdown elements. This allows you to write mathematical formulas and equations in your documents using the familiar latex syntax.
+This is the first step to support latex in Butterfly, with more features to come in the future releases and future addition to the rich text elements.
+
+## Pen Toolbar Improvements \{#pen-toolbar\}
+
+> [#797](https://github.com/LinwoodDev/Butterfly/issues/797)
+
+The toolbar now includes a stroke width option, allowing you to easily adjust the stroke width of elements in your document without having to open the properties dialog.
+
+## New polygon tool and element \{#polygon-tool\}
+
+> [#399](https://github.com/LinwoodDev/Butterfly/issues/399)
+
+With the new polygon tool, you can now create custom polygons in your documents. This tool allows you to create polygons with any number of sides, making it a good choice for creating complex designs.
+
+Please test this tool and give feedback on its usability and functionality.
+
+## Rework PDF system \{#pdf-system\}
+
+Instead of converting PDF pages to images on import, there is now a dedicated PDF element. This should improve the quality of the imported PDFs and allow to edit the PDF elements in the future.
+
+Additionally this should improve the performance and file size of loading documents with many PDF pages.
+
+Already existing PDF elements remain unchanged.
+
+## Version upgrades \{#version-upgrades\}
+
+Flutter was upgraded to 3.35. This includes many performance improvements and bug fixes.
+
+Additionally the minimum Android version was increased from 6.0 (Marshmallow) to 7.0 (Nougat) since Flutter 3.35 requires this.
+Read more [here](https://github.com/LinwoodDev/Butterfly/discussions/887).
+
+## Notes
+
+Thanks to all the beta testers and translators for helping to make this release possible!
+This update will be available soon on the Play Store, Snap Store, F-Droid and Microsoft Store.
+Please report any bugs you find on [GitHub](https://github.com/LinwoodDev/Butterfly/issues) and share the app on social media to help the project grow!
+
+In the coming weeks, the 2.5 release cycle will start with a new codename.
