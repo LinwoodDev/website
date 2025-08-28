@@ -1,0 +1,53 @@
+---
+title: Butterfly 2.4.0-beta.3 released
+date: "2025-08-28"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.0-beta.3"
+---
+
+
+
+Highlights:
+
+- 🔍 Search bar in waypoint view
+- 📄 Rework PDF system
+- 🔄 Improved rotation based scaling
+- ⬆️ Flutter upgrade and Android min version bump to 7.0 (Nougat)
+- 🐞 Bug and performance fixes
+
+## Search bar in waypoint view
+
+To help finding waypoints in large documents, there is now a search bar in the waypoint view.
+
+## Rework PDF system
+
+Instead of converting PDF pages to images on import, there is now a dedicated PDF element. This should improve the quality of the imported PDFs and allow to edit the PDF elements in the future.
+
+Additionally this should improve the performance and file size of loading documents with many PDF pages.
+
+Already existing PDF elements remain unchanged.
+
+## Improved rotation based scaling
+
+> [#518](https://github.com/LinwoodDev/Butterfly/issues/518)
+
+The rotation based scaling was improved. This is not finished and there will be more improvements in the future.
+
+## Version upgrades
+
+Flutter was upgraded to 3.35. This includes many performance improvements and bug fixes.
+
+Additionally the minimum Android version was increased from 6.0 (Marshmallow) to 7.0 (Nougat) since Flutter 3.35 requires this.
+Read more [here](https://github.com/LinwoodDev/Butterfly/discussions/887).
+
+## Full changelog
+
+* Add search bar to waypoint view
+* Rework pdf system ([#327](https://github.com/LinwoodDev/Butterfly/issues/327))
+  * Add pdf element
+  * Add pdf elements on pdf import instead converting to image
+* Improve rotation based scaling ([#518](https://github.com/LinwoodDev/Butterfly/issues/518))
+* Improve performance of pdf and image loading by rendering only visible elements
+* Use minSdkVersion 24 instead of 23 (The minimum version of android is 7.0 (Nougat))
+* Upgrade to flutter 3.35
