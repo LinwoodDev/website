@@ -1,0 +1,50 @@
+---
+title: Butterfly 2.4.0-rc.0 released
+date: "2025-09-04"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.0-rc.0"
+---
+
+The first release candidate of Butterfly Black Hairstreak (2.4) is now available.
+
+Highlights:
+
+- 🔢 Support for math in rich text
+- 🐞 Bug fixes
+
+## Support for math in rich text
+
+> Finished [#725](https://github.com/LinwoodDev/Butterfly/issues/725)
+
+You can now add math formulas to rich text elements using LaTeX syntax by clicking on the math button in the toolbar.
+This was first added in [2.4.0-beta.2](/butterfly/2.4.0-beta.2) for markdown elements and is now also available for rich text elements.
+
+## Bug fixes
+
+This release includes many bug fixes and improvements.
+Latex rendering was fixed and the rendered math is now centered.
+
+Additionally, some UI issues were fixed, like the home page header not being aligned properly and having wrong colors.
+Templates are now editable in the template dialog again.
+More over UI fixes were done in the page navigator and navigator rail to look better on screens with notches and transparent navigation bars.
+Pixel ratio not being saved when unbaking the viewport was also fixed. This means that elements won't look pixelated anymore after erasing elements.
+These were also bugs being there for a long time and now finally fixed.
+
+## Notes
+
+Butterfly Black Hairstreak (2.4) is now feature completed and won't get any new big features anymore.
+Please test this release candidate and report any bugs you find.
+If no major bugs are found, the final 2.4.0 release will be available this month.
+
+## Full changelog
+
+* Add support for math in rich text ([#725](https://github.com/LinwoodDev/Butterfly/issues/725))
+* Fix latex not rendering and rendered centered
+* Fix no style sheet and palette not being selected
+* Fix templates not being editable in dialog ([#898](https://github.com/LinwoodDev/Butterfly/issues/898))
+* Fix home page header not aligned properly and has wrong colors
+* Fix safe area in navigator rail
+* Fix overflows in page navigator
+* Fix pixel ratio gets resetted when unbaking the viewport
+* Disable custom data directory selection on iOS
