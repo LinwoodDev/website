@@ -1,0 +1,44 @@
+---
+title: Butterfly 2.4.0-rc.1 released
+date: "2025-09-08"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.0-rc.1"
+---
+
+The first release candidate of Butterfly Black Hairstreak (2.4) is now available.
+
+Highlights:
+
+- ⚡ Optimize page events
+- ✏️ Update stroke rendering
+- 🐞 Bug fixes
+
+## Optimize page events
+
+Previously, pdf import and other operations that created many pages at once caused a lot of events to be created and processed. This could lead to performance issues and slowdowns.
+Now, these operations are optimized to create and process events at once, improving performance and responsiveness.
+
+## Update stroke rendering
+
+The stroke drawing algorithm dependency has been updated to improve the appearance and quality of hand-drawn strokes.
+This should make strokes look smoother and more natural on sharp curves.
+
+## Bug fixes
+
+Some bugs were fixed in this release.
+Loading overlay had problems that it could not be closed and pdf spread pages imports not being optimized were fixed.
+
+## Notes
+
+Butterfly Black Hairstreak (2.4) is now feature completed and won't get any new big features anymore.
+Please test this release candidate and report any bugs you find.
+If no major bugs are found, the final 2.4.0 release will be available this month.
+
+## Full changelog
+
+* Optimize pages events
+* Update stroke drawing algorithm
+* Improve stroke width controls in color toolbar
+* Fix loading overlay having error on multiple closes
+* Fix pdf spread pages import not being optimized
