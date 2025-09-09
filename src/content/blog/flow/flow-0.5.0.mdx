@@ -1,0 +1,54 @@
+---
+title: Linwood Flow 0.5.0 released
+date: "2025-04-28"
+author: codedoctor
+tags: [flow]
+slug: "flow/0.5.0"
+---
+
+## Alarm functionality
+
+Alarm functionality has been started. You can now set alarms for events. When the alarm time is reached, a notification will be shown. This is still a work in progress and more features will be added in the future.
+
+## Unlink button
+
+An unlink button has been added to the event and calendar item edit screens. This allows you to quickly remove the link between an event and a calendar item without having to delete the event or calendar item.
+
+## Saved calendar view
+
+> [#97](https://github.com/LinwoodDev/Flow/issues/97)
+
+The current calendar view is now saved. When you reopen the app, the last used calendar view will be shown. This makes it easier to continue working where you left off.
+
+## UI improvements
+
+The UI has been improved in several areas. The navigation drawer now uses the filled icon variant for the selected item. The dashboard has been improved to show notes and events in a better way and a new markdown renderer has been migrated.
+Additionally, the layout of dialogs has been fixed and icons for name text fields have been updated.
+
+Moreover an all day toggle has been added for calendar items to easily set an event as all day.
+
+## Platform updates
+
+The app has been updated to use the latest versions of dependencies and frameworks. The app now uses agb 8.10 and has been upgraded to flutter 3.32 and 3.35. The minimum SDK version for android has been increased to 24 (Android 7.0 Nougat) to improve compatibility and performance.
+
+Read more about the Android minimum requirements [in the Butterfly discussion](https://github.com/LinwoodDev/Butterfly/discussions/887).
+
+Additionally ci changes like adding legacy android builds has been migrated from Butterfly to Flow.
+
+## Full changelog
+
+* Start adding alarm functionality with notifications
+* Use fill icon variant for selected navigation item
+* Improve dashboard notes and events display
+* Fix linux appdata
+* Add unlink button
+* Add all day toggle for calendar items
+* Migrate away from flutter_markdown
+* Save current calendar view ([#97](https://github.com/LinwoodDev/Flow/issues/97))
+* Fix divider in appbar if native titlebar is enabled
+* Fix layout of dialogs
+* Fix icons for name text fields
+* Update to agb 8.10
+* Upgrade to flutter 3.32 and 3.35
+* Use minSdkVersion 24 instead of 23 (The minimum version of android is 7.0 (Nougat))
+* Add legacy android build
