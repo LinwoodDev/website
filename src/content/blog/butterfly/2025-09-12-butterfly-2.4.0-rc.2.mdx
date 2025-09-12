@@ -1,0 +1,46 @@
+---
+title: Butterfly 2.4.0-rc.2 released
+date: "2025-09-12"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.0-rc.2"
+---
+
+The third release candidate of Butterfly Black Hairstreak (2.4) is now available with hotfixes.
+
+Highlights:
+
+- Restoration support on Android
+- Performance improvements
+- Viewport bug fixes
+- Android binaries changes
+
+## Restoration support on Android
+
+When Butterfly is killed in the background on Android, it will now restore to the last opened state instead of starting a new session.
+
+## Performance improvements
+
+Removing elements performance has been improved, especially when removing many elements at once.
+
+## Viewport bug fixes
+
+The previous on-demand rendering had some issues where images and pdfs were not rendered when the viewport was set up.
+This has been fixed and should work correctly now.
+Additionally sometimes renderers were duplicated when baking, this has also been fixed.
+
+## Android binaries changes
+
+The legacy apk build has been added to have an option to have a smaller binary size. Read more in the [Android Documentation](https://developer.android.com/build/releases/past-releases/agp-4-2-0-release-notes#compress-native-libs-dsl). If you don't need smaller download sizes, it is recommended to use the default apk build.
+
+Also support for 16kb page size has been added on Android. This means it should run better for x64 devices.
+
+## Full changelog
+
+* Add restoration support for routes
+* Improve performance of elements removing
+* Fix baking sometimes duplicates renderers
+* Fix images and pdfs not being rendered on viewport setup
+* Fix eraser cursor size
+* Add apk legacy build
+* Add support for 16kb page size on android

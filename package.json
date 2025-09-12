@@ -10,17 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/mdx": "^4.3.5",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.5.1",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "^5.13.5",
+    "astro": "^5.13.7",
     "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.3",
     "typescript": "^5.9.2"
   },
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.16.0",
   "devDependencies": {
     "@vite-pwa/astro": "^1.1.0",
     "sass": "^1.92.1",
