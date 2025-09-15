@@ -20,7 +20,7 @@
     "sharp": "^0.34.3",
     "typescript": "^5.9.2"
   },
-  "packageManager": "pnpm@10.16.0",
+  "packageManager": "pnpm@10.16.1",
   "devDependencies": {
     "@vite-pwa/astro": "^1.1.0",
     "sass": "^1.92.1",

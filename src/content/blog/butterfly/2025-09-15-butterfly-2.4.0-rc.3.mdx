@@ -1,0 +1,42 @@
+---
+title: Butterfly 2.4.0-rc.3 released
+date: "2025-09-15"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.0-rc.3"
+---
+
+The fourth release candidate of Butterfly Black Hairstreak (2.4) is now available with hotfixes.
+
+Highlights:
+
+- 🔴 Laser improvements
+- 🚀 Performance improvements
+- 🐞 Bug fixes
+
+## Laser improvements
+
+The laser tool has been improved to allow a duration of 0 seconds.
+Additionally the color of the laser tool is now faded out, which was fixed in the 2.3 hotfixes but not yet in 2.4.
+
+## Performance improvements
+
+Performance of reloading documents has been improved, especially for large documents.
+This improves the undo and redo functionality.
+
+## Bug fixes
+
+Some bugs with images and pdfs being broken after undo and redo have been fixed.
+Additionally inside the template dialog the duplicate functionality showed wrongly a file extension in the name dialog, this has been fixed.
+Sometimes the template dialog was not correctly updated after creating or deleting templates, this has also been fixed.
+The core pack was not created on fetching packs at the first time, this has been fixed as well.
+
+## Full changelog
+
+* Allow duration of laser to be 0
+* Improve performance of document reloading
+* Fix broken images/pdfs after undo/redo
+* Fix duplicate has file extension in name dialog
+* Fix template dialog not being correctly updated sometimes
+* Fix core pack not being created on fetching packs
+* Fix laser tool color not being animated
