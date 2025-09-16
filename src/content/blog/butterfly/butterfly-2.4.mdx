@@ -16,6 +16,9 @@ Please visit the nightly version blog entries here:
 - [2.4.0-beta.2](/butterfly/2.4.0-beta.2)
 - [2.4.0-beta.3](/butterfly/2.4.0-beta.3)
 - [2.4.0-rc.0](/butterfly/2.4.0-rc.0)
+- [2.4.0-rc.1](/butterfly/2.4.0-rc.1)
+- [2.4.0-rc.2](/butterfly/2.4.0-rc.2)
+- [2.4.0-rc.3](/butterfly/2.4.0-rc.3)
 
 *This page is currently only a draft*
 
@@ -49,8 +52,8 @@ Please visit the nightly version blog entries here:
 <TableItem href="#pdf-system">
   📄 Reworked PDF System
 </TableItem>
-<TableItem href="#version-upgrades">
-  ⬆️ Version Upgrades
+<TableItem href="#binary-version-upgrades">
+  ⬆️ Binary and Version Upgrades
 </TableItem>
 </Table>
 
@@ -83,6 +86,9 @@ Additionally an annoying bug with the label tool not allowing new lines has been
 
 You can now select a specific fill color for the pen element. This allows having a stroke and a fill to a single pen element, which is useful for creating shapes.
 
+Additionally the stroke drawing algorithm dependency has been updated to improve the appearance and quality of hand-drawn strokes.
+This should make strokes look smoother and more natural on sharp curves.
+
 ## Improved Collaboration \{#collaboration\}
 
 To stabilize the collaboration system, a bug that caused the server to crash when an invalid request was made has been fixed. This should improve the overall stability of the collaboration system.
@@ -91,13 +97,18 @@ To stabilize the collaboration system, a bug that caused the server to crash whe
 
 > [#725](https://github.com/LinwoodDev/Butterfly/issues/725)
 
-This is a long awaited feature that allows you to use latex in markdown elements. This allows you to write mathematical formulas and equations in your documents using the familiar latex syntax.
+This is a long awaited feature that allows you to use latex in markdown elements and rich text elements. This allows you to write mathematical formulas and equations in your documents using the familiar latex syntax.
+
+You can now add math formulas to text elements using LaTeX syntax by clicking on the math button in the toolbar.
 
 ## Pen Toolbar Improvements \{#pen-toolbar\}
 
 > [#797](https://github.com/LinwoodDev/Butterfly/issues/797)
+> [#900](https://github.com/LinwoodDev/Butterfly/issues/900)
 
 The toolbar now includes a stroke width option, allowing you to easily adjust the stroke width of elements in your document without having to open the properties dialog.
+
+Additionally there is now an option in the settings to make the simple toolbars (like color toolbar) temporary visible. If you start drawing, the toolbar will disappear.
 
 ## New polygon tool and element \{#polygon-tool\}
 
@@ -119,12 +130,16 @@ Additionally PDF imports have now a name field to set a custom name for the impo
 
 More over page names are empty by default now instead of always being `default`. This will be shown inside the app in your localization as `Untitled` or similar instead of showing always `default`. For this to work you need to reset your templates to the new defaults or changing the page name to an empty name manually.
 
-## Version upgrades \{#version-upgrades\}
+## Binary and Version upgrades \{#binary-version-upgrades\}
 
 Flutter was upgraded to 3.35. This includes many performance improvements and bug fixes.
 
 Additionally the minimum Android version was increased from 6.0 (Marshmallow) to 7.0 (Nougat) since Flutter 3.35 requires this.
 Read more [here](https://github.com/LinwoodDev/Butterfly/discussions/887).
+
+With newer android versions, when Butterfly is killed in the background on Android, it will now restore to the last opened state instead of starting a new session.
+
+The legacy apk build has been added to have an option to have a smaller binary size. Read more in the [Android Documentation](https://developer.android.com/build/releases/past-releases/agp-4-2-0-release-notes#compress-native-libs-dsl). If you don't need smaller download sizes, it is recommended to use the default apk build. This will allow to add support for more app stores in the future which require smaller app sizes.
 
 ## Notes
 
