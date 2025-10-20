@@ -1,0 +1,57 @@
+---
+title: Butterfly 2.4.1-rc.0 released
+date: "2025-10-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.1-rc.0"
+---
+
+Butterfly 2.4.1-rc.0 is here with many bug fixes.
+
+Highlights:
+
+- 💾 Delayed autosave
+- ⚡ Performance improvements
+- 🐛 Bug fixes
+
+This is a release candidate for the upcoming Butterfly 2.4.1 stable release. Please test this release candidate and report any issues you find.
+
+This release is a step towards making Butterfly to have a stable ground to build upon for the next 2.5 release.
+
+## Delayed autosave
+
+> [#883](https://github.com/LinwoodDev/Butterfly/issues/883)
+
+A delayed autosave option has been added to the autosave settings. This allows you to set a delay time for the autosave to occur after the last change. The default value is 2 seconds but can be set between 1 and 10. This can help reduce the number of autosaves and improve performance when working on large documents.
+
+To improve user experience, the save state is now shown as a tooltip when hovering over the save icon in the appbar.
+
+## Performance improvements
+
+Memory leaks have been fixed and performance improvements have been made when importing large assets. This should help improve the overall performance of the app when working with large documents.
+
+Additionally the smoothness of element creation when releasing the pen has been improved. It should feel more natural now.
+
+## Bug fixes
+
+Several bugs have been fixed in this release like importing bfly files into existing documents, theme name display issues, metadata file version updates, cache settings editing, and element duplication on creation. These fixes should help improve the overall stability and usability of the app.
+
+Additionally on web you can't import or add elements anymore which was a regression in the last release. This has been fixed now.
+
+## Full changelog
+
+* Add delayed autosave ([#883](https://github.com/LinwoodDev/Butterfly/issues/883))
+* Add save state as tooltip
+* Improve memory usage and performance for importing large assets ([#917](https://github.com/LinwoodDev/Butterfly/issues/917))
+* Improve smoothness of elements creation for releasing pen
+* Fix bfly files cannot be imported into existing documents
+* Fix various memory leaks ([#925](https://github.com/LinwoodDev/Butterfly/issues/925))
+* Fix header text color on certain themes
+* Fix theme names not displaying correctly in personalization settings
+* Fix metadata file version not updating if file version is null
+* Fix cache settings not editable correctly
+* Fix elements are duplicated on creation
+* Fix importing does not respect current directory
+* Fix high render resolution description
+* Fix elements cannot be imported on web
+* Add 16kb page size support for android
