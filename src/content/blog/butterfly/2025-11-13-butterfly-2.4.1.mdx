@@ -1,0 +1,97 @@
+---
+title: Butterfly 2.4.1 released
+date: "2025-11-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.1"
+unlisted: true
+---
+
+**Announcing the Butterfly 2.4.1 release!**
+
+Butterfly 2.4.1 is here with the biggest set of bug fixes and improvements in a long time.
+
+## Highlights
+
+<Table>
+  <TableItem href="#delayed-autosave">
+    💾 Delayed autosave
+  </TableItem>
+  <TableItem href="#thumbnail-capture">
+    🖼️ Thumbnail capture improvements
+  </TableItem>
+  <TableItem href="#template-import-export">
+    🔁 Template import and export improvements
+  </TableItem>
+  <TableItem href="#pdf-rendering">
+    📄 Improved PDF handling
+  </TableItem>
+  <TableItem href="#drawing">
+    ✍️ Drawing improvements
+  </TableItem>
+  <TableItem href="#file-view">
+    🗂️ File view and UI improvements
+  </TableItem>
+  <TableItem href="#multi-input">
+    🖱️ Multi-input and tools improvements
+  </TableItem>
+  <TableItem href="#crash-fixes">
+    🛠️ Stability and performance for large files
+  </TableItem>
+</Table>
+
+Butterfly should be now stable for everyday use. Thanks to all testers for helping make this release stable.
+
+2.4 will be kept as a long-term stable version to make it as bug-free as possible. The next feature release (2.5) will take a bit longer while we focus on quality and stability.
+
+This update will be available soon on the Play Store, Snap Store, F-Droid, and Microsoft Store.
+Please report any issues on GitHub and share the app to help the project grow!
+
+We also reached 1,500 stars on GitHub—thank you for your support!
+
+To read all the changes, please visit the nightly version blog entries here:
+
+- [2.4.1-rc.0](/butterfly/2.4.1-rc.0)
+- [2.4.1-rc.1](/butterfly/2.4.1-rc.1)
+- [2.4.1-rc.2](/butterfly/2.4.1-rc.2)
+- [2.4.1-rc.3](/butterfly/2.4.1-rc.3)
+- [2.4.1-rc.4](/butterfly/2.4.1-rc.4)
+
+## Delayed autosave \{#delayed-autosave\}
+
+Delayed auto save means Butterfly waits 1–10 seconds (2 seconds by default) after your last change before saving, so devices with slow hardware can still enjoy auto saving without constant churn. Not only that, the saving process has been improved under the hood by running it in the background so you can draw without the app freezing.
+Additionally you can now see the current save state as a tooltip on the save icon. Issues around save ordering and state updates during autosave are also fixed.
+
+## Thumbnail capture improvements \{#thumbnail-capture\}
+
+You get better thumbnails: the app now captures the correct center of the viewport and a preview will be shown of your capture.
+
+## Template import and export improvements \{#template-import-export\}
+
+There are fixes for importing and exporting templates. You can export templates to the tbfly format and selectively choose which templates to export. Imports are more reliable, including when no document is open, and tbfly imports now work as expected. Absolute read-only file handling on save was also corrected. You can get some templates from here: https://github.com/LinwoodDev/Butterfly/issues/933.
+
+In this part, another bug affecting backgrounds with lines has been fixed—now they render the last row and column even when only partially visible.
+
+## Improved PDF handling \{#pdf-rendering\}
+
+PDF handling is more efficient. The PDF import dialog has clearer defaults and descriptions, and overall reliability around PDF-related flows has been improved as part of broader stability work.
+
+## Drawing improvements \{#drawing\}
+
+Element creation now feels smoother when you release the pen. We fixed flickering and eraser artifacts, including a bug where the eraser could produce duplicate IDs. Background lines render the last row and column even when they are only partially visible. We also corrected scaling behavior for multiple elements and for pen elements.
+
+## File view and UI improvements \{#file-view\}
+
+The grid view now has better spacing, and filenames wrap more gracefully on desktop. Theme names display correctly, including capitalization, and header text color is fixed on certain themes. Truncated texts now show helpful tooltips. Thumbnail positions and capture accuracy are improved.
+
+## Multi-input and tools improvements \{#multi-input\}
+
+Mouse double-click for the context menu now works reliably in the select tool. Temporary tool switching no longer resets in ways that break duplication or selection workflows. Search results correctly show pages as “Untitled” where appropriate.
+
+## Stability and performance for large files \{#crash-fixes\}
+
+HUGE files no longer crash as easily. In the previous stable, importing gigantic files could crash Butterfly (unless you had a NASA computer). Since not everyone has a NASA computer, handling for big files got improved. We addressed memory leaks and improved performance when importing large assets and saving large notes. Sequential operations no longer block on autosave where unnecessary, and state is reliably saved even while autosave is in progress.
+
+Additional:
+- Importing now respects the current directory.
+- Android now supports a 16KB page size.
