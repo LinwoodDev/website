@@ -74,7 +74,7 @@ In this part, another bug affecting backgrounds with lines has been fixed—now 
 
 ## Improved PDF handling \{#pdf-rendering\}
 
-PDF handling is more efficient. The PDF import dialog has clearer defaults and descriptions, and overall reliability around PDF-related flows has been improved as part of broader stability work.
+PDF handling is more efficient. The underlying PDF library was replaced, and the app no longer crashes in this area. The PDF import dialog has clearer defaults and descriptions, and overall reliability around PDF-related flows has been improved as part of broader stability work.
 
 ## Drawing improvements \{#drawing\}
 
@@ -83,6 +83,7 @@ Element creation now feels smoother when you release the pen. We fixed flickerin
 ## File view and UI improvements \{#file-view\}
 
 The grid view now has better spacing, and filenames wrap more gracefully on desktop. Theme names display correctly, including capitalization, and header text color is fixed on certain themes. Truncated texts now show helpful tooltips. Thumbnail positions and capture accuracy are improved.
+Moreover importing now respects the current directory.
 
 ## Multi-input and tools improvements \{#multi-input\}
 
@@ -92,6 +93,4 @@ Mouse double-click for the context menu now works reliably in the select tool. T
 
 HUGE files no longer crash as easily. In the previous stable, importing gigantic files could crash Butterfly (unless you had a NASA computer). Since not everyone has a NASA computer, handling for big files got improved. We addressed memory leaks and improved performance when importing large assets and saving large notes. Sequential operations no longer block on autosave where unnecessary, and state is reliably saved even while autosave is in progress.
 
-Additional:
-- Importing now respects the current directory.
-- Android now supports a 16KB page size.
+On Android, the app now support 16kb page sizes and have a larger heap size to better handle large files without crashing.
