@@ -1,0 +1,43 @@
+---
+title: Butterfly 2.4.2-rc.0 released
+date: "2025-11-21"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.2-rc.0"
+---
+
+Butterfly 2.4.2-rc.0 is here fixing most of the issues found in 2.4.1.
+
+Highlights:
+
+- ⚡ Performance improvements
+- 🐛 Bug fixes
+- 📱 UI improvements
+
+This is a release candidate for the upcoming Butterfly 2.4.2 stable release. Please test this release candidate and report any issues you find.
+
+## Performance improvements
+
+Memory usage has been improved when closing documents. This should help reduce the memory footprint of the app.
+
+## UI improvements
+
+The buttons in the Add dialog have been enlarged to make them easier to click. Additionally, right-to-left layout issues in the appbar have been fixed.
+
+## Bug fixes
+
+Several bugs have been fixed in this release like invisible layers being ignored on export, page rect not considering the whole content, and png images not loading or updating correctly.
+
+Also, issues with stylus buttons not working correctly on some devices and renaming, duplicating, and moving files on native platforms have been resolved.
+
+## Full changelog
+
+* Improve memory usage on closing documents
+* Ignore invisible layers on export
+* Enlarge buttons in the Add dialog
+* Fix page rect does not consider whole content
+* Fix png not loading after importing
+* Fix png not updating after doing operations like flip or invert
+* Fix buttons on stylus not working correctly on some devices ([#968](https://github.com/LinwoodDev/Butterfly/issues/968))
+* Fix right to left layout issues in appbar causing menu not to open and window buttons reverse order
+* Fix renaming, duplicating and moving on native and running on deep directories
