@@ -1,0 +1,47 @@
+---
+title: Butterfly 2.4.2-rc.1 released
+date: "2025-11-27"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.2-rc.1"
+---
+
+Butterfly 2.4.2-rc.1 is the second bug fix release candidate for the upcoming Butterfly 2.4.2 stable release.
+
+Highlights:
+
+- ⚡ Performance improvements
+- 🐛 Bug fixes
+- 📱 UI improvements
+
+This is a release candidate for the upcoming Butterfly 2.4.2 stable release. Please test this release candidate and report any issues you find.
+
+## Performance improvements
+
+Performance of WebDAV operations and the bake queue has been improved. Additionally, baking now looks better, has better performance and unnecessary bakes without changes have been prevented.
+
+## UI improvements
+
+RTL layout issues with icons have been fixed, and the pack name is now correctly shown in the select asset dialog and the components view.
+
+## Bug fixes
+
+Several bugs have been fixed in this release, including smooth navigation, stamp handler toolbar issues.
+Also, issues with saving pages when adding a new page and rotating the ruler in touch mode have been resolved.
+
+## Full changelog
+
+* Improve performance of webdav operations
+* Improve delay queue on bake
+* Prevent repeated bakes without changes
+* Improve bake queue
+* Improve bake image sizing ([#930](https://github.com/LinwoodDev/Butterfly/issues/930))
+* Fix smooth navigation ([#978](https://github.com/LinwoodDev/Butterfly/issues/978))
+* Fix stamp handler toolbar not working correctly
+* Fix temporary tool from components navigator not being removed after releasing
+* Fix full file name shown in components view and add to pack dialog
+* Fix rtl icons not displaying correctly
+* Fix pack name in select asset dialog
+* Fix adding to pack renders background in thumbnail
+* Fix page won't be saved when adding a new page ([#982](https://github.com/LinwoodDev/Butterfly/issues/982))
+* Fix ruler cannot be rotated in touch mode
