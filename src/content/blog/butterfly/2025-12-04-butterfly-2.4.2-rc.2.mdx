@@ -1,0 +1,43 @@
+---
+title: Butterfly 2.4.2-rc.2 released
+date: "2025-12-04"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.2-rc.2"
+---
+
+Butterfly 2.4.2-rc.2 is here with further improvements and bug fixes.
+
+Highlights:
+
+- ⚡ Performance improvements
+- 🐛 Bug fixes
+- 📱 UI improvements
+
+This is a release candidate for the upcoming Butterfly 2.4.2 stable release. Please test this release candidate and report any issues you find.
+
+## Performance improvements
+
+Performance of the pen tool, rendering, and tool switching has been improved.
+
+## UI improvements
+
+The navigation rail has been made smaller. Also, you can now restore the current palette.
+
+## Bug fixes
+
+Line shapes now have improved hit calculation for better interaction.
+
+Several bugs have been fixed, including issues with viewport rect, tool updates after undo/redo, and alpha resetting when changing color for the shape tool. Also, missing data in raw text file format has been fixed.
+
+## Full changelog
+
+* Add restore current palette
+* Change navigation rail to be smaller
+* Improve performance of pen tool
+* Improve performance of rendering and tool switching
+* Improve hit calculation for line shape ([#995](https://github.com/LinwoodDev/Butterfly/issues/995))
+* Fix viewport rect is off-centered if render resolution is not on performance
+* Fix current tools not being updated after undo/redo
+* Fix changing color for shape tool resets alpha ([#996](https://github.com/LinwoodDev/Butterfly/issues/996))
+* Fix missing data in raw text file format
