@@ -1,0 +1,50 @@
+---
+title: Butterfly 2.4.2-rc.3 released
+date: "2025-12-12"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.2-rc.3"
+---
+
+Butterfly 2.4.2-rc.3 is here with further improvements and bug fixes.
+
+Highlights:
+
+- ⚡ Performance improvements
+- 🐛 Bug fixes
+- 📱 UI improvements
+- 🌐 Translations
+
+This is a release candidate for the upcoming Butterfly 2.4.2 stable release. Please test this release candidate and report any issues you find.
+
+## UI improvements
+
+The UI of the PDF export dialog and the image export preview has been improved. Also, empty page names in the PDF select dialog now show "Untitled".
+
+## Performance improvements
+
+The performance of the eraser and path eraser tool has been improved. Also, baking on the pen tool is now skipped if a new element is started.
+
+## Translations
+
+Indonesian translation has been added. Also, style classes are now translated.
+
+## Bug fixes
+
+Several bugs have been fixed, including crashes when changing quality during PDF export, incorrect display of transformed images, and RTL text direction issues in the label and color toolbar. Also, the math button in the label toolbar now works correctly even if no text is selected.
+
+## Full changelog
+
+* Improve ui of pdf export dialog
+* Improve image export preview
+* Improve performance of eraser and path eraser tool
+* Skip baking on pen if new element is started
+* Show untitled for empty page names in pdf select dialog
+* Change area tool to open context with double tap
+* Translate style classes ([#1006](https://github.com/LinwoodDev/Butterfly/issues/1006))
+* Fix pdf export crashes when changing quality
+* Fix image transforming incorrectly displayed
+* Fix rtl text direction in label and color toolbar
+* Fix math button in label toolbar does nothing if no text is selected
+* Add indonesian translation
+* Add tbfly file association on Windows and iOS
