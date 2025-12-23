@@ -1,0 +1,112 @@
+---
+title: Butterfly 2.4.2 released
+date: "2025-12-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.4.2"
+---
+
+**Announcing the Butterfly 2.4.2 release!**
+
+Merry Christmas to everyone celebrating! 🎄
+
+As a special gift, I am releasing Butterfly 2.4.2 today. This release is a culmination of all the nightly builds and release candidates from the past month, bringing you a stable and polished experience.
+
+## Highlights
+
+<Table>
+  <TableItem href="#performance-optimizations">
+    🚀 Performance optimizations
+  </TableItem>
+  <TableItem href="#rtl-layout-fixes">
+    🌍 RTL layout fixes
+  </TableItem>
+  <TableItem href="#ui-improvements">
+    🎨 UI improvements
+  </TableItem>
+  <TableItem href="#bug-fixes">
+    🐛 Numerous bug fixes
+  </TableItem>
+  <TableItem href="#indonesian-translations">
+    🇮🇩 Indonesian translations
+  </TableItem>
+</Table>
+
+2.4 will be kept as a long-term stable version to make it as bug-free as possible. The next feature release (2.5) will take a bit longer while we focus on quality and stability.
+
+This update will be available soon on the Play Store, Snap Store, F-Droid, and Microsoft Store.
+Please report any issues on GitHub and share the app to help the project grow!
+
+We also reached 1,600 stars on GitHub—thank you for your support!
+
+To read all the changes, please visit the nightly version blog entries here:
+
+- [2.4.2-rc.0](/butterfly/2.4.2-rc.0)
+- [2.4.2-rc.1](/butterfly/2.4.2-rc.1)
+- [2.4.2-rc.2](/butterfly/2.4.2-rc.2)
+- [2.4.2-rc.3](/butterfly/2.4.2-rc.3)
+- [2.4.2-rc.4](/butterfly/2.4.2-rc.4)
+
+## Performance optimizations
+
+The app has been optimized for slower devices, usage will be faster without consuming too much memory.
+
+* **Memory usage**: Improved memory usage when closing documents.
+* **Rendering**: Faster pen tool, rendering, and tool switching.
+* **Eraser**: Improved performance of the eraser and path eraser tools.
+* **WebDAV**: WebDAV operations and bake queue have been optimized.
+
+## RTL layout fixes
+
+Previously, the RTL layout for right to left languages had many issues.
+All known issues have been fixed, with additional improvements.
+
+* Fixed appbar layout and menu opening.
+* Fixed icon display issues.
+* Fixed text direction in label and color toolbars.
+
+The RTL layout wont change the ordering of the toolbars, allowing anyone to easily switch languages, without worrying about re-adapting their muscle memory.
+
+## UI improvements
+
+There are more UX improvements, including:
+
+* **Add Menu**: Bigger buttons for easier interaction.
+* **PDF Export**: Improved dialog layout and image export preview.
+* **Navigation Rail**: It is now thinner and takes up less space.
+* **Feedback**: Progress bars are shown when exporting, and a processing indicator has been added.
+* **Ruler**: Added a center dot for better precision.
+* **Palette**: You can now restore the current palette.
+* **File Association**: Added `.tbfly` file association on Windows and iOS.
+
+## Improved SVG Export Compatibility
+
+The SVG export compatibility has been improved by using `fill-opacity` and `stroke-opacity` attributes.
+This change enhances the compatibility of exported SVG files with various applications and web browsers.
+
+## Bug fixes
+
+The **main** focus of this release is to fix the issues that weren't previously.
+
+* **Images**: Fixed issues where images would refuse to load or update (showing a gray square).
+* **Export**: Fixed invisible layers being ignored on export and PDF export crashes when changing quality.
+* **Input**: Fixed stylus buttons not working on some devices and improved line shape hit calculation.
+* **Navigation**: Fixed smooth navigation issues.
+* **Files**: Fixed renaming, duplicating, and moving files on native platforms.
+
+## Indonesian translations
+
+I have added support for Indonesian translation.
+Thanks to the translators for helping me make this app available for a broader audience.
+
+## What comes next?
+
+This release was a simple patch fixing multiple issues, the next version, 2.5, will bring new features!
+
+***But...***
+
+This app is being developed by **only** one person, all of these feature take time and effort.
+
+Please consider helping me by contributing to Butterfly.
+
+You don't *need to be a programmer* to help, translating the app, improving the docs, and reporting bugs are all means of contribution that don't require programming skills.
