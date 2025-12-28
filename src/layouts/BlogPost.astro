@@ -55,7 +55,6 @@ const platforms = [
         id="mastodon-input"
         placeholder="mastodon.social"
         type="text"
-        value={url}
         data-encoded-text={encodedText}
         data-encoded-url={encodedUrl}
       />
@@ -131,6 +130,15 @@ const platforms = [
   ) as HTMLDialogElement;
   element?.addEventListener("click", () => {
     navigator.clipboard.writeText(element.dataset.url ?? window.location.href);
+    const icon = element.querySelector("span");
+    if (icon) {
+      icon.classList.remove("ph-link");
+      icon.classList.add("ph-check");
+      setTimeout(() => {
+        icon.classList.remove("ph-check");
+        icon.classList.add("ph-link");
+      }, 1000);
+    }
   });
   document.getElementById("mastodon-btn")?.addEventListener("click", () => {
     mastodonDialog.showModal();
@@ -139,6 +147,7 @@ const platforms = [
 
   function submitMastodon() {
     const input = mastodonInput.value;
+    if (!input) return;
     const { encodedText, encodedUrl } = mastodonInput.dataset;
     const link = `https://${input}/share?text=${encodedText}&url=${encodedUrl}`;
     window.open(link, "_blank");
