@@ -78,5 +78,10 @@
     "id": "App Tools",
     "description": "AppTools is a collection of tools for simplifying the development of apps in Flutter",
     "url": "https://github.com/LinwoodDev/dart_pkgs/tree/main/tools/app_tools"
+  },
+  {
+    "id": "keybinder",
+    "description": "A Flutter package to easily manage and record custom keyboard shortcuts",
+    "url": "https://github.com/LinwoodDev/dart_pkgs/tree/main/packages/keybinder"
   }
 ]
