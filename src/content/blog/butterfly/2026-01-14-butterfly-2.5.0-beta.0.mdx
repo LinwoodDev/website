@@ -1,0 +1,130 @@
+---
+title: Butterfly 2.5.0-beta.0 released
+date: "2026-01-14"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.0-beta.0"
+---
+
+Welcome to 2026!
+
+The release track for Butterfly Crimson Red (2.5) has begun with the first big beta release today!
+
+Highlights:
+
+- 📝 Rebuild template system
+- 🪵 Logging view
+- 🛠️ Toolbar switching and UX improvements
+- ⌨️ Custom keybindings
+- 🖊️ Shape styles
+- ✨ New branding
+- 🐛 Bug fixes
+
+## Rebuild template system
+
+The template system has been completely rebuilt to provide a better organization. Templates are now categorized by directory in the dialog, making it easier to find what you are looking for.
+Core templates are now shown in a dedicated "Core" category instead of being created on start.
+
+New templates have been added directly to the application ([#933](https://github.com/LinwoodDev/Butterfly/issues/933)) including Dotted, Ruled simple, Quad simple, Red lined ruled and Red lined quad (all with dark variants).
+Additionally, current templates have been updated to use true black instead of dark gray and white instead of light gray backgrounds.
+
+Many of these templates which include Dotted, Ruled simple and Quad simple (also with dark variants) are also now background presets in the background dialog which also got a visual overhaul to match the new template dialog.
+
+Thanks to [@JerryMerweather](https://github.com/JerryMerweather) for the new templates and backgrounds!
+
+## Logging view
+
+A new logging view has been added to help with bugs and performance issues. You can now view internal logs directly within the application. This will be especially useful for reporting issues and understanding application behavior.
+
+## Toolbar switching and UX improvements
+
+Several improvements have been made to the toolbar and its customization.
+Toolbars can now be saved in packs and switched between different toolbar configurations in the document selection view. These can be managed in the toolbars tab in the pack dialog.
+
+The edit toolbar experience has been improved by optimizing the toolbar item size for better usability and improving the drag and drop experience while moving the tool.
+You can now use double tap to toggle selection.
+An issue where removing items by dragging behind the plus icon was not working has been fixed and the divider line on the toolbar has been removed for a cleaner look.
+
+Additionally, an icon has been added to the toolbar rows setting.
+
+## Custom keybindings
+
+Support for custom keybindings has been added. You can now configure shortcuts for various actions in the application settings to match your workflow. To do so, go to Settings -> Input -> Keyboard -> Shortcuts and customize the keybindings as desired.
+
+## Shape styles
+
+You can now choose between different stroke styles for shapes. Dotted and dashed lines are now supported ([#934](https://github.com/LinwoodDev/Butterfly/issues/934)).
+
+Thanks to [@tnswo561412](https://github.com/tnswo561412) for implementing this feature!
+
+## New branding
+
+The application features new branding elements. A new nightly icon has been introduced, and the stable icon on Android has been improved.
+Additionally, the web version has been updated to match the design of the nightly build, providing a more consistent visual experience.
+
+## Other improvements
+
+It is now possible to export all installed packs at once from the settings dialog, simplifying backups.
+The background dialog has been updated to look consistent with the template dialog.
+Also, long name handling and tooltips in recent files on other storages have been improved.
+
+## Bug fixes
+
+The color toolbar now correctly saves palette changes.
+An issue where text disappeared when closing the keyboard has been resolved ([#1014](https://github.com/LinwoodDev/Butterfly/issues/1014)).
+The plain dark template now has the correct name.
+Exporting is now working correctly on the web version.
+The initialization check on local storage has been fixed ([#1022](https://github.com/LinwoodDev/Butterfly/issues/1022)).
+Previously, entering an area outside the canvas had a white background in dark mode, which is now fixed.
+The company name on Windows builds has also been corrected. This may result in Butterfly resetting some settings on Windows after updating.
+
+## Notes
+
+This is a beta release and may contain bugs. Please report any issues you encounter on the [GitHub issue tracker](https://github.com/LinwoodDev/Butterfly/issues).
+
+Thank you to all contributors and testers who helped make this release possible! Feel free to share your feedback and suggestions for future improvements.
+
+Many of these bug fixes will also be backported to the stable 2.4.x release in the upcoming minor releases.
+
+## Full changelog
+
+* Rebuild template system
+  * Categorize templates in dialog by directory
+  * Core templates will be shown in core category instead of created on start
+  * Add new templates ([#933](https://github.com/LinwoodDev/Butterfly/issues/933))
+    * Dotted (+ dark)
+    * Ruled simple (+ dark)
+    * Quad simple (+ dark)
+    * Red lined ruled (+ dark)
+    * Red lined quad (+ dark)
+  * Add new background presets ([#933](https://github.com/LinwoodDev/Butterfly/issues/933))
+    * Dotted (+ dark)
+    * Ruled simple (+ dark)
+    * Quad simple (+ dark)
+  * Change current templates to have black instead of dark and white instead of light backgrounds
+* Add logging
+* Add toolbar pack items
+  * Add toolbar tab to document selection view
+  * Add toolbars tab in packs dialog
+* Add custom keybinding support
+* Add dotted and dashed stroke styles to shapes ([#934](https://github.com/LinwoodDev/Butterfly/issues/934))
+* Add new nightly icon
+* Add icon to toolbar rows setting
+* Add export all packs to dialog
+* Improve stable icon on android
+* Improve background dialog to look consistent with the template dialog
+* Improve long name and tooltip in recent files on other storages
+* Improve edit toolbar experience
+  * Improve toolbar item size
+  * Improve drag and drop experience
+  * Use double tap to toggle selection
+  * Fix removing by drag behind plus icon not working
+  * Remove divider line on toolbar
+* Reimplement nightly design in web version
+* Fix color toolbar does not save palette changes
+* Fix text disappear if closing keyboard ([#1014](https://github.com/LinwoodDev/Butterfly/issues/1014))
+* Fix plain dark has wrong name
+* Fix exporting not working on web
+* Fix initialize check on local storage ([#1022](https://github.com/LinwoodDev/Butterfly/issues/1022))
+* Fix on entering area outside has white background in dark mode
+* Fix company name on windows build
