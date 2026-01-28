@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^3.7.0",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "^5.16.15",
+    "astro": "^5.16.16",
     "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3"
