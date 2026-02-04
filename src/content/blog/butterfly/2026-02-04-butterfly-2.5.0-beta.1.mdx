@@ -1,0 +1,97 @@
+---
+title: Butterfly 2.5.0-beta.1 released
+date: "2026-02-04"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.0-beta.1"
+---
+
+The second beta for Butterfly Crimson Red (2.5) is now available!
+
+Highlights:
+
+- ⚡ Performance improvements
+- 🖊️ Pen input experience improvements
+- ⚙️ Settings and UI improvements
+- 🌐 WebDAV rewrite
+- 🐛 Bug fixes
+
+## Performance improvements
+
+Rendering performance on larger documents has been significantly improved. This includes caching paths in `PenRenderer` and `PolygonRenderer` during setup, using lightweight foreground refresh for handlers instead of full rebake, and removing redundant per-frame sorting in `ViewPainter`.
+Eraser performance has also been enhanced by replacing point interpolation with line segment intersection for hit testing and caching HitCalculator instances in `PenRenderer`.
+Additionally, the performance of pen hit testing has been improved.
+
+## Pen input experience
+
+The pen input experience has received a major update. A pen-only input toggle button now appears when a pen is detected.
+The pen-only input setting is now a tri-state option: Automatic, Always on, and Always off. In automatic mode, pen-only mode is auto-enabled for the current session when a stylus is detected.
+
+## Settings and UI improvements
+
+The settings design has been improved for better usability.
+You can now move the zoom view, and a reset zoom button has been added. The toolbar size setting has been moved to the view settings.
+Also, the sync button visibility on small screens has been fixed, and autofocus has been removed from the add dialog search to prevent the virtual keyboard from popping up on mobile devices.
+
+## WebDAV rewrite
+
+The remote WebDAV file system has been rewritten to be more robust and reliable.
+
+## Bug fixes
+
+Several important bugs have been fixed in this release:
+
+- Issues with Android intent handling causing empty documents on resume and not updating on new intent have been resolved.
+- Importing assets now correctly uses the default template and selected storage.
+- Fixed importing archives opening empty documents.
+- Fixed spread to pages breaking PDF import and removed borders for PDF pages.
+- Fixed an issue where tools sometimes lacked a unique ID.
+- Fixed path eraser and eraser not working correctly if full selection is enabled.
+- Fixed non-zero exit code when the app closes.
+- Fixed deleting characters not working in the label tool on some keyboards on Android.
+- Reintroduced white background if no background is set.
+
+## Hotfixes from 2.4.3
+
+This release also includes changes merged from the 2.4.3 hotfix:
+
+- Fixed toolbar position icon direction issue on RTL layouts.
+- Fixed foreground being reset if a temporary tool is added.
+
+## Full changelog
+
+* Rewrite remote webdav file system
+* Fix non-zero exit code when app closes
+* Improve settings design
+* Add option to move the zoom view and add reset zoom button
+* Move toolbar size setting to view settings
+* Fix deleting characters not working in label tool on some keyboards on android
+* Fix sync button not visible on small screens
+* Remove autofocus from add dialog search to prevent virtual keyboard on mobile
+* Improve rendering performance on larger documents
+  * Cache paths in PenRenderer and PolygonRenderer during setup
+  * Use lightweight foreground refresh for handlers instead of full rebake
+  * Remove redundant per-frame sorting in ViewPainter
+  * Add early returns for empty renderer lists
+* Improve eraser performance
+  * Replace point interpolation with line segment intersection for hit testing
+  * Cache HitCalculator instances in PenRenderer
+  * Use synchronous rayCast for small element counts
+* Improve pen input experience
+  * Add pen-only input toggle button that appears when a pen is detected
+  * Make pen-only input setting tri-state (Automatic, Always on, Always off)
+  * Auto-enable pen-only mode for the current session when a stylus is detected in automatic mode
+* Improve performance of pen hit testing
+* Reintroduce white background if no background is set
+* Fix Android intent handling causing empty documents on resume and not updating on new intent
+* Fix importing assets does not use default template
+* Fix importing does not use selected storage
+* Fix importing archives opening empty documents
+* Fix spread to pages breaks pdf import
+* Remove border for pdf pages
+* Fix an issue where tools sometimes lacked a unique ID
+* Fix path eraser and eraser not correctly working if full selection is enabled
+
+Changes merged from 2.4.3 hotfix:
+* Fix toolbar position icon direction issue on rtl layouts
+* Fix foreground will be reset if temporary tool is added
