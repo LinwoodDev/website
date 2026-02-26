@@ -1,0 +1,72 @@
+---
+title: Butterfly 2.5.0-beta.2 released
+date: "2026-02-26"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.0-beta.2"
+---
+
+The third beta for Butterfly Crimson Red (2.5) is now available!
+
+Highlights:
+
+- 🗺️ Area improvements
+- 🧠 Memory leak fixes
+- 📁 File management improvements
+- 🐛 Bug fixes
+
+Additionally flutter has been upgraded to 3.41 in this release, which should bring some performance improvements and bug fixes as well.
+
+Please note that some features on the roadmap for 2.5 have been moved to 2.6 to ensure the release can be released in a reasonable time frame.
+
+## Area improvements
+
+This release brings significant improvements to areas. You can now open an area as the initial view and create an initial area when creating a document inside the template dialog. If no areas exist, an area creation dialog is now available in the area navigator.
+Additionally, area teleportation has been added after entering an area, and other areas are now shown if you are inside an area. The bottom bar in the area and page navigator has also been improved.
+
+## Memory leak fixes
+
+We have addressed several memory leaks in this release to improve the overall stability and performance of the app. These fixes cover various areas, including the PDF and SVG renderers, importing elements, baking the viewport, the concurrent asset system, document closing, undoing and loading documents, and elements changed and removed events.
+
+## File management improvements
+
+> [#942](https://github.com/LinwoodDev/Butterfly/issues/942)
+
+You now have the option to hide file extensions. When importing documents, the import file name is now used as the default name, and you can now import multiple files at once.
+
+## Bug fixes
+
+Several important bugs have been fixed in this release:
+
+- Fixed file extension being hidden if the file name is too long.
+- Fixed area teleporting having an offset on render resolutions other than fast.
+- Fixed handwriting, suggestions, and emoji input not working for text fields.
+- Fixed spacing of the pen-only toggle if the zoom view is disabled.
+- Fixed importing a file inside a subdirectory having unexpected behavior.
+
+## Full changelog
+
+* Add support for opening an area as initial view
+* Add support for creating an initial area when creating a document inside the template dialog
+* Add area creation dialog in area navigator if no areas exist
+* Add area teleportion after entering area
+* Add option to hide file extension ([#942](https://github.com/LinwoodDev/Butterfly/issues/942))
+* Show other areas if inside an area
+* Improve label mode change
+* Improve bottom bar in area and page navigator
+* Improve what's new button styling and live update on the home page
+* Use import file name as default name when importing documents and add option to import multiple files
+* Fix file extension is being hidden if the file name is too long
+* Fix memory leaks
+  * PDF and SVG renderer
+  * Importing elements
+  * Baking viewport
+  * Concurrent asset system
+  * Document closing
+  * Undoing and loading documents
+  * Elements changed and removed events
+* Fix area teleporting has offset on render resolutions other than fast
+* Fix handwriting, suggestions and emoji input not working for text fields ([#936](https://github.com/LinwoodDev/Butterfly/issues/936))
+* Fix spacing of pen only toggle if zoom view is disabled ([#1043](https://github.com/LinwoodDev/Butterfly/issues/1043))
+* Fix importing a file inside a subdirectory having unexpected behavior
+* Upgrade to flutter 3.41
