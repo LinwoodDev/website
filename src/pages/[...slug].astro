@@ -5,6 +5,7 @@ import BlogPost from '../layouts/BlogPost.astro';
 import { getEntryProject, getEntryUrl } from '../blog';
 import Table from '@components/Table.astro';
 import TableItem from '@components/TableItem.astro';
+import { render } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 type Props = {post: CollectionEntry<'blog'>, project: CollectionEntry<'projects'> | undefined};
 
 const {post, project} = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data} project={project?.id}>

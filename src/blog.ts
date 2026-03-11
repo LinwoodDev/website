@@ -9,7 +9,7 @@ export const getEntryProjectName = (entry: CollectionEntry<"blog">) => {
 };
 
 export const getEntryUrl = (entry: CollectionEntry<"blog">) => {
-  return entry.slug;
+  return entry.id;
 };
 
 export const getProjects = async (

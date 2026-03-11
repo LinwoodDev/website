@@ -1,0 +1,75 @@
+---
+title: Butterfly 2.5.0-rc.0 released
+date: "2026-03-11"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.0-rc.0"
+---
+
+The first release candidate of Butterfly Crimson Red (2.5) is now available.
+
+Highlights:
+
+- 📤 Better export and data settings
+- 👆 New hold shortcuts
+- 🔺 Improved polygon workflow
+- ⚡ Rendering improvements
+- 🐛 Bug fixes
+
+Butterfly Crimson Red (2.5) is now close to the final stable release.
+Please test this release candidate and report any remaining bugs you find.
+
+## Better export and data settings
+
+The data settings are now more flexible with support for selective exporting.
+Favorite templates are now also included when exporting settings.
+
+This release also adds an option to enable or disable thumbnails for notes in the file viewer ([#984](https://github.com/LinwoodDev/Butterfly/issues/984)).
+
+## New hold shortcuts
+
+> [#992](https://github.com/LinwoodDev/Butterfly/issues/992)
+
+Touch shortcuts have been extended with support for hold actions.
+In addition to the existing double and triple touch shortcuts, you can now assign a long press action to make touch workflows more flexible.
+
+## Improved polygon workflow
+
+Working with polygons is now more seamless.
+The dedicated edit mode has been removed so creating and editing polygons feels like a single workflow.
+You can now long press a polygon to edit existing polygons quickly, the drag handle hitboxes have been improved on mobile devices, and hit calculation is now more reliable.
+
+The polygon toolbar has also been simplified if no polygon is currently edited.
+This release also fixes issues where closed polygons could not be closed correctly after editing and where the fill rendering was drawn over the stroke.
+
+## Rendering improvements
+
+Rendering performance on the unbaked viewport has been improved.
+The stamp handler was also fixed, including correct scaling on multiple elements and preventing the preview element from still being shown after submitting.
+
+## Bug fixes
+
+Opening local files now works correctly even when the default storage is set to cloud.
+The undo and redo state in the toolbar now updates correctly again.
+
+## Full changelog
+
+* Add selective exporting in data settings
+* Add hold shortcuts ([#992](https://github.com/LinwoodDev/Butterfly/issues/992))
+* Add option to enable/disable thumbnails for notes ([#984](https://github.com/LinwoodDev/Butterfly/issues/984))
+* Add favorite templates to settings export
+* Add long press action for double/triple touch shortcuts
+* Fix opening local files when default storage is set to cloud
+* Fix stamp handler
+  * Fix scaling on multiple elements
+  * Fix preview element will shown after submitting
+* Improve rendering performance on unbaked viewport
+* Improve polygons
+  * Remove edit mode to make creating and editing polygons more seamless
+  * Long press on a polygon to quickly start editing it
+  * Improve drag handle hitboxes on mobile devices
+  * Improve hit calculation
+  * Simplify polygon toolbar if no polygon is edited
+  * Fix an issue where closed polygons couldn't be correctly closed after editing
+  * Fix an issue where fill rendering was drawn over the stroke
+* Fix undo/redo state not updating in toolbar

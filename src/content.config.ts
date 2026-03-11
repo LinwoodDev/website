@@ -1,8 +1,9 @@
-import { file } from "astro/loaders";
-import { defineCollection, reference, z } from "astro:content";
+import { file, glob } from "astro/loaders";
+import { defineCollection, reference } from "astro:content";
+import { z } from 'astro/zod';
 
 const blog = defineCollection({
-  type: "content",
+  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
@@ -18,12 +19,12 @@ const blog = defineCollection({
   }),
 });
 const projects = defineCollection({
-  type: "data",
+  loader: glob({ base: './src/content/projects', pattern: '**/*.json' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    source: z.string().url(),
-    website: z.string().url().optional(),
+    source: z.url(),
+    website: z.url().optional(),
     translation: z.string().optional(),
     unlisted: z.boolean().default(false),
     logo: z.string().optional(),
@@ -31,11 +32,11 @@ const projects = defineCollection({
   }),
 });
 const authors = defineCollection({
-  type: "data",
+  loader: glob({ base: './src/content/authors', pattern: '**/*.json' }),
   schema: z.object({
     name: z.string(),
-    avatar: z.string().url(),
-    url: z.string().url(),
+    avatar: z.url(),
+    url: z.url(),
   }),
 });
 
@@ -45,7 +46,7 @@ const libraries = defineCollection({
   schema: z.object({
     id: z.string(),
     description: z.string(),
-    url: z.string().url(),
+    url: z.url(),
   }),
 });
 
