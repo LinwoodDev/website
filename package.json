@@ -10,12 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "5.0.0",
+    "@astrojs/mdx": "5.0.2",
     "@astrojs/rss": "4.0.17",
     "@astrojs/sitemap": "3.7.1",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "6.0.3",
+    "astro": "6.0.7",
     "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3"
