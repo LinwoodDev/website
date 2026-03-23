@@ -15,10 +15,10 @@
     "@astrojs/sitemap": "3.7.1",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "6.0.7",
+    "astro": "6.0.8",
     "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.5",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "packageManager": "pnpm@10.30.3",
   "devDependencies": {

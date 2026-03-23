@@ -1,0 +1,58 @@
+---
+title: Butterfly 2.5.0-rc.1 released
+date: "2026-03-23"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.0-rc.1"
+---
+
+The second release candidate of Butterfly Crimson Red (2.5) is now available.
+
+Highlights:
+
+- 📄 Improved pdf
+- 📋 Improved logs
+- 🔤 Better arabic font
+- 🐛 Bug fixes
+
+Butterfly Crimson Red (2.5) is now close to the final stable release.
+Please test this release candidate and report any remaining bugs you find.
+
+## Improved pdf
+
+The pdf export dialog has been redesigned with an improved layout and new features.
+It is now easier to delete export pressets and save new ones.
+Additionally the pdf import now also supports automatically adding an export preset to the imported pdf.
+
+## Improved logs
+
+The previous log system had been saving all logs in a single file, which made it difficult to find logs from previous sessions.
+
+The new logging system rotates logs and keeps the last 3 sessions, allowing you to easily access logs from previous sessions through a dropdown in the logs settings. Additionally, log noise from verbose rendering events has been reduced to make the logs more readable.
+
+## Better arabic font
+
+The arabic font has been improved by using Readex Pro, providing better rendering and readability for arabic text through the app.
+
+## Bug fixes
+
+This release also includes various bug fixes, such as fixing pdfs and images being gray on export if not inside the viewport, fixing untranslated reset on key recorder, fixing file 'updated at' date unexpectedly changing when just viewing files on the home page, improving performance when loading file lists on the home screen, fixing small corner menu on different configurations, and fixing elements not rendering when moving into view.
+
+## Full changelog
+
+* Redesign pdf export dialog
+  * Improve item layout
+  * Add delete button for export presets
+  * Add export preset save button
+* Improve logs
+  * Improve logging by rotating logs and keeping the last 3 sessions
+  * Provide a dropdown in the logs settings to view previous logs
+  * Reduce log noise from verbose rendering events
+* Add export preset to pdf import
+* Improve arabic app font by using Readex Pro
+* Fix pdfs and images being gray on export if not inside the viewport
+* Fix untranslated reset on key recorder
+* Fix file 'updated at' date unexpectedly changing when just viewing files on the home page
+* Improve performance when loading file lists on the home screen
+* Fix small corner menu on different configurations
+* Fix elements not rendering when moving into view
