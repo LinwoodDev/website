@@ -1,0 +1,132 @@
+---
+title: Butterfly 2.5 released
+date: "2026-01-14"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5"
+---
+
+Happy Easter to everyone!
+
+As a special treat for the holidays, I am incredibly excited to announce the release of Butterfly 2.5!
+
+Butterfly 2.5 brings many long-awaited features and improvements to the app. From a rebuilt template system to custom keybindings and new touch shortcuts, this release focuses on customization and stability.
+
+Help to spread the word and share Butterfly with your friends and colleagues!
+
+Please visit the nightly version blog entries here:
+
+- [2.5.0-beta.0](/butterfly/2.5.0-beta.0)
+- [2.5.0-beta.1](/butterfly/2.5.0-beta.1)
+- [2.5.0-beta.2](/butterfly/2.5.0-beta.2)
+- [2.5.0-beta.3](/butterfly/2.5.0-beta.3)
+- [2.5.0-rc.0](/butterfly/2.5.0-rc.0)
+- [2.5.0-rc.1](/butterfly/2.5.0-rc.1)
+- [2.5.0-rc.2](/butterfly/2.5.0-rc.2)
+
+## Highlights
+
+<Table>
+<TableItem href="#template-system">
+  📓 Rebuilt Template System
+</TableItem>
+<TableItem href="#shape-styles">
+  🎨 Shape Styles
+</TableItem>
+<TableItem href="#custom-keybindings">
+  ⌨️ Custom Keybindings
+</TableItem>
+<TableItem href="#touch-shortcuts">
+  👆 New Touch Shortcuts
+</TableItem>
+<TableItem href="#webdav-rewrite">
+  ☁️ WebDAV Rewrite
+</TableItem>
+<TableItem href="#pdf-rendering">
+  📄 Improved PDF Rendering
+</TableItem>
+<TableItem href="#polygon-workflow">
+  🔷 Improved Polygon Workflow
+</TableItem>
+<TableItem href="#file-management">
+  📁 File Management Improvements
+</TableItem>
+<TableItem href="#presentation-mode">
+  🖥️ Better Presentation Mode
+</TableItem>
+<TableItem href="#export-data">
+  💾 Better Export & Data Settings
+</TableItem>
+<TableItem href="#fonts">
+  🔤 Better Arabic Font
+</TableItem>
+<TableItem href="#logging-view">
+  📋 Logging View & Improved Logs
+</TableItem>
+</Table>
+
+## Rebuilt Template System \{#template-system\}
+
+> [#933](https://github.com/LinwoodDev/Butterfly/issues/933)
+
+The template system was completely overhauled to categorize templates by directory, with built-in templates now housed in a dedicated "Core" category. New templates (e.g., Dotted, Ruled simple, Quad simple, Red lined) and dark variants were added, while existing ones were updated to use true black and white backgrounds. Many of these templates were also added to the background presets. The background dialog received a visual update to match.
+
+## Shape Styles \{#shape-styles\}
+
+> [#934](https://github.com/LinwoodDev/Butterfly/issues/934)
+
+Support was added for different stroke styles on shapes, allowing you to draw dotted and dashed lines.
+
+## Custom Keybindings \{#custom-keybindings\}
+
+You can now personalize your workflow by configuring custom keyboard shortcuts for various app actions through the settings menu.
+
+Additionally you can now have `Hold Shortcuts` that allow you to hold a key to temporarily switch to a different tool, such as holding `E` to switch to the eraser tool while it's held down.
+
+## New Touch Shortcuts \{#touch-shortcuts\}
+
+> [#976](https://github.com/LinwoodDev/Butterfly/issues/976)
+
+The update introduced customizable double and triple-tap touch shortcuts that can be mapped directly to toolbar tools. To avoid input conflicts, the shortcut to open the context menu was changed from a double tap to a long press.
+
+## WebDAV Rewrite \{#webdav-rewrite\}
+
+The remote WebDAV file system was entirely rewritten to improve robustness and reliability for syncing and backing up files.
+
+## Improved PDF Rendering \{#pdf-rendering\}
+
+PDFs now render much more reliably. Additionally, bugs inside the PDF export dialog were fixed, including mobile UI overflow issues and missing thumbnails.
+
+## Improved Polygon Workflow \{#polygon-workflow\}
+
+The polygon tool's editing experience has been greatly refined by removing the dedicated edit mode and unifying creation and editing. You can now long-press a polygon to quickly edit it, and use the optimized drag handles that work much more reliably on mobile devices. The toolbar has been simplified, and various bugs related to closing edited polygons and fill-rendering overlapping strokes have been fixed.
+
+## File Management Improvements \{#file-management\}
+
+> [#942](https://github.com/LinwoodDev/Butterfly/issues/942)
+
+You can now optionally hide file extensions, and when importing documents, the original file's name is used as the document title. We also added support for importing multiple files at once.
+
+## Better Presentation Mode \{#presentation-mode\}
+
+The presentation mode received noticeable performance improvements by avoiding redundant viewport baking. It also fixes several lingering bugs related to interactions and shortcuts.
+
+## Better Export & Data Settings \{#export-data\}
+
+> [#984](https://github.com/LinwoodDev/Butterfly/issues/984)
+
+Data settings have been made more flexible with support for selective exporting, which now includes favorite templates. An option was also added to enable or disable thumbnails for notes in the file viewer. 
+
+## Better Arabic Font \{#fonts\}
+
+The app’s Arabic typography has been upgraded by switching to the Readex Pro font, offering cleaner rendering and better readability for Arabic text throughout Butterfly.
+
+## Logging View & Improved Logs \{#logging-view\}
+
+A new Logging View was added directly within the application to help users and developers track down bugs and monitor performance issues. The logging system also now rotates logs, storing the data for the last 3 sessions to make them easier to navigate. You can access logs from previous sessions via a new dropdown menu in the log settings, and unnecessary log noise from verbose rendering events has been greatly reduced.
+
+## Notes
+
+Thanks to all the beta testers and translators for helping to make this release possible!
+This update will be available soon on the Play Store, Snap Store, F-Droid and Microsoft Store.
+Please report any bugs you find on [GitHub](https://github.com/LinwoodDev/Butterfly/issues) and share the app on social media to help the project grow!
