@@ -18,7 +18,8 @@
     "astro": "6.1.2",
     "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.5",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "workbox-build": "^7.4.0"
   },
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
@@ -26,5 +27,10 @@
     "sass": "^1.98.0",
     "vite-plugin-pwa": "^1.2.0",
     "workbox-window": "^7.4.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "lodash": "4.17.21"
+    }
   }
 }
