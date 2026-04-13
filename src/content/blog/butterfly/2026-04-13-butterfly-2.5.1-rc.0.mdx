@@ -1,0 +1,85 @@
+---
+title: Butterfly 2.5.1-rc.0 released
+date: "2026-04-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.1-rc.0"
+---
+
+The first release candidate of Butterfly 2.5.1 is now available fixing many problems reported in the 2.5.0 release.
+
+Highlights:
+
+- ⚡ Improved rendering performance
+- 🎨 Content viewport and behavior settings
+- 🔧 Updated settings defaults
+- 🐛 Critical bug fixes and memory leak cleanup
+- 📱 Mobile experience improvements
+
+Butterfly 2.5.1 focuses on stability, performance, and core improvements.
+Please test this release candidate and report any remaining bugs you find.
+
+## Improved rendering performance
+
+Rendering performance has been significantly improved by reusing paint objects in grid rendering, reducing memory allocations and improving frame rates during editing. Additionally, significant work has been done to improve memory management and prevent resource leaks, including lifecycle cleanup in pen, path eraser, laser, label and select handlers, fixing the import handler renderer cache not being released on dispose, and cleaning up networking resources to avoid stale remote renderer buildup and service shutdown issues.
+
+## Content viewport and behavior settings
+
+New options have been added to behavior settings to give you more control over the viewport.
+The content viewport option allows you to limit the navigation to not get lost, and the limit viewport to positive coordinates option provides better boundary management. These settings has been added for users missing these options migrating from OneNote. They are disabled by default but can be enabled in the behavior settings.
+The view and behavior settings have been restructured for improved organization and clarity.
+
+## Updated settings defaults
+
+The settings have been reorganized and defaults have been changed for a better out-of-the-box experience. The `sort_by` is now set to `modified`, `sort_order` to `descending`, `delayed_autosave` is enabled by default with `autosave_delay_seconds` set to `3`, `hide_extension` is now enabled, and `show_thumbnails` is enabled by default.
+
+## Critical bug fixes and memory leak cleanup
+
+Multiple critical issues have been resolved in this release. The broken Android monochrome app icon in stable version has been fixed ([#1066](https://github.com/LinwoodDev/Butterfly/issues/1066)), as well as issues with capture thumbnail displaying an incorrect viewport and autosave not working for newly opened documents without a saved location. The problem where duplicated elements sometimes appeared after moving selections has been fixed, along with the issue where renaming a non-active page would cause page content to be overwritten ([#1064](https://github.com/LinwoodDev/Butterfly/issues/1064)). Page add/rename collisions that could potentially overwrite existing pages have also been prevented. Additionally, app crashes when having external storage with an icon have been resolved, collaboration URL validation and connection handling have been improved, and startup crashes caused by invalid persisted settings enum/JSON values have been fixed.
+
+## Mobile experience improvements
+
+The mobile experience has been significantly improved. Inline editing no longer closes immediately when double tapping on mobile devices, and the page rearranging option is now consistently shown on mobile devices. Drag-and-drop reordering has been unified and improved across pages, layers, waypoints, and PDF export for a more consistent experience.
+
+## Additional improvements
+
+Numeric text input parsing has been unified across dialogs and toolbars for consistency. Settings import error handling now properly handles invalid JSON files, and embed render/renderSVG parsing has been fixed for malformed payloads and integer values. Valid asset path reporting for text export/import compatibility has been corrected, and elements changing now preserves the original layer. Area properties have been improved with the initial area property replaced with a checkbox, and malformed asset source URIs that could cause import/render crashes have been fixed.
+
+## Full changelog
+
+* Add content viewport option to behavior settings
+* Add limit viewport to positive coordinates option to behavior settings
+* Restructure view and behavior settings
+* Improve rendering performance by reusing paint objects in grid rendering
+* Change settings defaults
+  * `sort_by` to `modified`
+  * `sort_order` to `descending`
+  * `delayed_autosave` to `true`
+  * `autosave_delay_seconds` to `3`
+  * `hide_extension` to `true`
+  * `show_thumbnails` to `true`
+* Fix broken Android monochrome app icon in stable version ([#1066](https://github.com/LinwoodDev/Butterfly/issues/1066))
+* Fix capture thumbnail displaying an incorrect viewport
+* Fix autosave not working if opened document has no location yet
+* Fix duplicated elements sometimes appearing after moving selections
+* Fix renderer replacement in ElementsChanged to preserve original layer
+* Fix memory leaks and stale state in tool handlers
+  * Fix lifecycle cleanup in pen, path eraser, laser, label and select handlers
+  * Fix import handler renderer cache not being released on dispose
+* Fix networking foreground cleanup to avoid stale remote renderer buildup
+* Fix networking service shutdown cleanup to release subscriptions and streams
+* Fix renaming a non-active page causing page content to be overwritten ([#1064](https://github.com/LinwoodDev/Butterfly/issues/1064))
+* Fix page add/rename collisions potentially overwriting existing pages
+* Fix valid asset path reporting for text export/import compatibility
+* Fix inline editing closing immediately when double tapping on mobile
+* Fix app crashing when having external storage with icon
+* Fix collaboration URL validation and connection handling for invalid URLs
+* Fix startup crashes caused by invalid persisted settings enum/JSON values
+* Fix malformed asset source URIs causing import/render crashes
+* Unify numeric text input parsing across dialogs and toolbars
+* Fix settings import error handling for invalid JSON files
+* Fix embed render/renderSVG parsing for malformed payloads and integer values
+* Fix area properties initial area property pulling back
+* Replace area properties initial area replacing it with a checkbox
+* Fix page rearranging option conditionally not shown on mobile devices
+* Unify and improve drag-and-drop reordering across pages, layers, waypoints, and PDF export
