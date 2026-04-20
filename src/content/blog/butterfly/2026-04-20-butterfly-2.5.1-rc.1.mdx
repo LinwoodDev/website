@@ -1,0 +1,49 @@
+---
+title: Butterfly 2.5.1-rc.1 released
+date: "2026-04-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.1-rc.1"
+---
+
+The second release candidate of Butterfly 2.5.1 is now available, bringing new experimental features and addressing several bugs reported in previous versions.
+
+Highlights:
+
+- 🗺️ Edge pan area switching
+- 📦 Navigation and selection improvements
+- ⚙️ Viewport and area fixes
+- 🐛 Bug fixes
+
+Butterfly 2.5.1 focuses on stability, performance, and core improvements.
+Please test this release candidate and report any remaining bugs you find.
+
+## Edge pan area switching
+
+An experimental feature has been added to allow edge panning for area switching, making navigation between areas more seamless when drawing or interacting near the borders of the viewport. You can activate this feature in the experimental settings by enabling "Edge pan area switching".
+
+## Navigation and selection improvements
+
+A new selection mode has been added to the areas, layers, and pages navigator view, making it easier to select multiple elements and manage them. I also improved the zoom control settings toggle.
+
+## Viewport and area improvements
+
+The current area is now automatically adopted on page creation, and there are now bounds for the viewport inside the current area to keep you focused on the active content. Additionally, the issue where the initial area was not opened on a page change has been fixed.
+
+## Bug fixes
+
+Several issues have been resolved to improve the overall stability of the application. Highlights include a fix for inline editing in the editable list tile on mobile (that was not fixed in the previous release candidate), solving an issue where documents would not save when changing documents in the file navigator, and fixing duplicate page creation when adding new pages.
+Finally, a rendering bug on the web platform where elements did not render initially without a window resize has been addressed which was a major issue for a long time.
+
+## Full changelog
+
+* Add edge pan area switching experimental feature
+* Add bounds for viewport inside current area
+* Add selection mode for areas, layers, and pages navigator view
+* Add current area on page creation
+* Improve zoom control settings
+* Fix inline editing in editable list tile on mobile
+* Fix document not saving when changing documents in file navigator
+* Fix duplicate page creation when adding new pages
+* Fix initial area not opened on page change
+* Fix elements not rendering initially without resizing on web
