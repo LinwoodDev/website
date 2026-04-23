@@ -1,0 +1,27 @@
+---
+title: Third release candidate of Butterfly 2.5.1 released
+date: "2026-04-23"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.1-rc.2"
+---
+
+The third release candidate for Butterfly 2.5.1 is now available. This release focuses heavily on bug fixes, general performance improvements, and enhancing overall app stability.
+
+Please note that this is a release candidate and may contain bugs. If you find a bug, please report it on [GitHub](https://linwood.dev/butterfly/report).
+
+## Performance and rendering improvements
+
+Significant optimizations were introduced to ensure smoother operation. Using `MediaQuery.XOf(context)` over `MediaQuery.of(context).X` gives a nice performance boost across the app. Rendering of partial content during panning or heavy scrolling, particularly with PDFs, has been fixed and optimized to prevent crashes and viewports not baking correctly.
+
+## Full changelog
+
+* Improve thumbnail cropping logic to better fit the viewport
+* Fix ghost pages creation when reordering current page
+* Fix number field text changes while inputting text
+* Fix bounds calculation when using areas and enabling positive coordinates
+* Only trigger bake when viewport size differs (fix always-bake bug)
+* Refactor `MediaQuery.of(context).X` usage to `MediaQuery.XOf(context)` for performance
+* Fix app crashes during heavy scrolling by optimizing PDF rendering lifecycle
+* Fix partial content rendering issues after panning by ensuring viewports bake correctly
+* Fix incorrect default values across settings pages and sliders to properly match their underlying models (e.g. delayed autosave, pen properties, fill alphas, and shape scales)
