@@ -1,0 +1,74 @@
+---
+title: Butterfly 2.5.1 released
+date: "2026-04-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.1"
+---
+
+I am excited to announce the release of Butterfly 2.5.1 focused on stability, performance, and improved user experience.
+
+This is a stable release, it includes all the changes from the 2.5.1 nightly releases.
+
+Please visit the nightly version blog entries here to see all the changes in detail:
+
+- [2.5.1-rc.0](/butterfly/2.5.1-rc.0)
+- [2.5.1-rc.1](/butterfly/2.5.1-rc.1)
+
+For reading the 2.5.0 release notes, please check the [2.5.0 release blog entry](/butterfly/2.5.0).
+
+## Highlights
+
+<Table>
+<TableItem href="#experimental-edge-pan">
+  🗺️ Edge Pan Area Switching
+</TableItem>
+<TableItem href="#multi-selection">
+  📦 Multi-Selection Navigator
+</TableItem>
+<TableItem href="#ghost-pages">
+  🐛 Ghost Pages Fix
+</TableItem>
+<TableItem href="#rendering-performance">
+  ⚡ Improved Rendering
+</TableItem>
+<TableItem href="#content-viewport">
+  🎨 Content Viewport Settings
+</TableItem>
+<TableItem href="#mobile-experience">
+  📱 Mobile Improvements
+</TableItem>
+</Table>
+
+## Edge Pan Area Switching \{#experimental-edge-pan\}
+
+A new experimental feature has been added to allow edge panning for area switching. This makes navigation between areas much more seamless when drawing or interacting near the borders of the viewport. You can activate this feature in the experimental settings by enabling "Edge pan area switching".
+
+## Multi-Selection Navigator \{#multi-selection\}
+
+I have added a new selection mode to the areas, layers, and pages navigator view. This multi-select capability makes it significantly easier to select multiple elements and manage them all at once.
+
+## Ghost Pages & Page Reordering Fixes \{#ghost-pages\}
+
+I have resolved several critical issues with page management to ensure stability. Duplicate page creation when adding new pages has been fixed, and I successfully addressed an issue causing ghost pages creation when reordering the current page. Additionally, renaming a non-active page no longer risks overwriting your content.
+
+## Improved Rendering & Memory Fixes \{#rendering-performance\}
+
+Rendering performance has been significantly improved by reusing paint objects in grid rendering, reducing memory allocations and boosting frame rates. Significant work was also done on memory management to prevent resource leaks, ensuring proper lifecycle cleanup across various drawing tools and networking handlers.
+
+## Content Viewport Settings \{#content-viewport\}
+
+New options in the behavior settings give you more control over your viewport experience. You can now enable a "content viewport" limit to keep you from wandering off, and an option to limit the viewport to positive coordinates for better boundary management. Additionally, the viewport now respects bounds inside the current area to keep you fully focused on active content.
+
+## Mobile Improvements \{#mobile-experience\}
+
+The mobile and touch experiences have been polished! Inline editing in lists no longer closes immediately when double-tapping, and the page rearranging option is now reliably shown. Drag-and-drop reordering has been unified and smoothed out across pages, layers, waypoints, and PDF export. Additionally, I fixed text changes while inputting text in number fields.
+
+## Full changelog
+
+Changes since 2.5.1-rc.1:
+* Fix ghost pages creation when reordering current page
+* Fix number field text changes while inputting text
+* Fix bounds calculation when using areas and enabling positive coordinates
+
+This is a stable release, it includes all the changes from the 2.5.1 nightly releases.
