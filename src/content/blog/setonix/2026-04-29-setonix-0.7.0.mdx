@@ -1,0 +1,78 @@
+---
+title: Setonix 0.7.0 released!
+date: "2026-04-29"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.7.0"
+---
+
+import Table from "../../../components/Table.astro";
+import TableItem from "../../../components/TableItem.astro";
+
+**Announcing the Setonix 0.7.0 release!**
+
+Setonix 0.7.0 is here with great new features and usability improvements!
+This release focuses on single-player scripting capabilities, templates, and UI polish.
+
+## Highlights
+
+<Table>
+<TableItem href="#zoom-gestures">
+  🔍 Zoom gestures
+</TableItem>
+<TableItem href="#templates">
+  📝 Create from template
+</TableItem>
+<TableItem href="#scripting-api">
+  📜 High level scripting API
+</TableItem>
+<TableItem href="#single-player-scripts">
+  🕹️ Single-player game modes and scripts
+</TableItem>
+<TableItem href="#hand-view-improvements">
+  🖐️ Hand view improvements
+</TableItem>
+</Table>
+
+## Zoom gestures \{#zoom-gestures\}
+
+You can now use zoom gestures in the client to inspect elements or navigate the environment more easily.
+
+## Create from template \{#templates\}
+
+The create dialog allows you to create new projects or configurations from a given template.
+
+## High level scripting API \{#scripting-api\}
+
+A new high-level scripting API for packs has been introduced, allowing you to build richer experiences with a simpler syntax.
+Previously you had to use low-level packet events to implement features, now you can use a more intuitive API to achieve the same results with less code and complexity. This is especially useful for game mode development, allowing you to focus on the gameplay rather than the underlying mechanics.
+
+Read more in the [in-progress documentation](https://www.setonix.world/docs/v1/scripting/luau/).
+
+## Single-player game modes and scripts \{#single-player-scripts\}
+
+We've extended the scripting engine to support game modes natively in single-player! This comes with an updated editor allowing you to write scripts and assign game modes directly to scenarios, complete with localized names and descriptions.
+
+## Hand view improvements \{#hand-view-improvements\}
+
+The hand view now features better UI animations and responsiveness. Mousing over and long-pressing items now provides immediate visual feedback. Item names are now more visible with a pill-shaped background, and we redesigned the background area. Jittering issues and world dragging conflicts from the hand view have also been resolved.
+
+## Full changelog
+
+* Add zoom gestures
+* Add create from template
+* Add high level scripting API for packs
+* Add support for game modes and scripts in single-player
+* Add game mode and scripts to editor
+* Add localized names and descriptions for game modes
+* Improve hand view UI animations and responsiveness
+* Improve mouse and long-press input feedback for hand items
+* Fix dragging on the hand view also moving the game world
+* Fix jittering when dragging items from hand
+* Fix spawning objects overwriting existing ones in a cell
+* Fix server state dropping hidden card variations before script evaluation
+* Fix server builds not created for released versions
+* Improve server docs by ignoring generated files
+* Improve hand view background design
+* Improve hand item name visibility with a pill background
+* Upgrade to flutter 3.41

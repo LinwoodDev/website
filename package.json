@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "5.0.3",
+    "@astrojs/mdx": "5.0.4",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@linwooddev/style": "^0.4.2",
@@ -21,7 +21,7 @@
     "typescript": "^6.0.3",
     "workbox-build": "^7.4.0"
   },
-  "packageManager": "pnpm@11.0.0-rc.5",
+  "packageManager": "pnpm@11.0.0",
   "devDependencies": {
     "@vite-pwa/astro": "^1.2.0",
     "sass": "^1.99.0",
