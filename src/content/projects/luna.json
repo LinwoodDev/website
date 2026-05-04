@@ -4,5 +4,6 @@
   "description": "WIP: Library for Universal Networking Assets",
   "website": "https://luna.linwood.dev",
   "logo": "luna",
+  "color": "#D9C38B",
   "order": 5
 }

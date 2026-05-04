@@ -4,5 +4,6 @@
   "description": "🎨 Powerful, minimalistic, cross-platform, opensource note-taking app",
   "website": "https://docs.butterfly.linwood.dev",
   "translation": "https://translate.linwood.dev/butterfly/",
+  "color": "#EBB733",
   "order": 1
 }

@@ -30,6 +30,10 @@ const projects = defineCollection({
     translation: z.string().optional(),
     unlisted: z.boolean().default(false),
     logo: z.string().optional(),
+    color: z
+      .string()
+      .regex(/^#[0-9A-Fa-f]{6}$/)
+      .optional(),
     order: z.number().optional(),
   }),
 });

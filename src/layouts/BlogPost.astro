@@ -18,10 +18,10 @@ const { title, description, date, heroImage, project, author, tags, url } =
 const currentAuthor = await getEntry("authors", author.id);
 const authorName = currentAuthor?.data.name;
 const absoluteUrl = new URL(url, Astro.site).toString();
+const ogImagePath = `/og${url}.png`;
 const imageUrl = heroImage
   ? new URL(heroImage, Astro.site).toString()
-  : new URL(project ? `/logos/${project}.png` : "/logos/logo.png", Astro.site)
-      .toString();
+  : new URL(ogImagePath, Astro.site).toString();
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",

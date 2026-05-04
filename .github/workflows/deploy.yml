@@ -19,6 +19,13 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+      - name: Restore generated image cache
+        uses: actions/cache@v4
+        with:
+          path: .astro/og-cache
+          key: ${{ runner.os }}-og-images-${{ hashFiles('src/pages/og/**', 'src/content/blog/**', 'src/content/authors/**', 'src/content/projects/**', 'public/logos/**', 'pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-og-images-
       - name: Install dependencies
         run: pnpm install
       - name: Build

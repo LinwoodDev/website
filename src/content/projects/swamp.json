@@ -3,5 +3,6 @@
   "source": "https://github.com/LinwoodDev/Swamp",
   "description": "WIP: Universal Secure Web-Socket Application Messaging Proxy for Linwood Apps",
   "website": "https://swamp.linwood.dev",
+  "color": "#4D55D8",
   "order": 4
 }

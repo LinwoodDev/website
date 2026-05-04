@@ -3,5 +3,6 @@
   "source": "https://github.com/LinwoodDev/dev_doctor",
   "description": "Free, opensource, serverless learning platform",
   "website": "https://docs.dev-doctor.linwood.dev",
+  "color": "#5C3070",
   "unlisted": true
 }

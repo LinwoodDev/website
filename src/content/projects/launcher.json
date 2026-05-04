@@ -3,5 +3,6 @@
   "source": "https://github.com/LinwoodDev/Launcher",
   "description": "WIP: 🚀 A simple, minimalistic, cross-platform, opensource launcher",
   "website": "https://docs.launch.linwood.dev",
+  "color": "#2196F3",
   "unlisted": true
 }
