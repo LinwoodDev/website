@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { getEntryUrl } from "../blog";
-import BaseHead from "./BaseHead.astro";
+import { getEntry } from "astro:content";
+import { getEntryDescription, getEntryUrl } from "../blog";
 import FormattedDate from "./FormattedDate.astro";
 import Link from "./Link.astro";
 import type { Page } from "astro";
@@ -13,6 +13,12 @@ export interface Props {
 
 const { page, isMain } = Astro.props as Props;
 const posts = page.data;
+const postsWithAuthors = await Promise.all(
+  posts.map(async (post) => ({
+    post,
+    author: await getEntry("authors", post.data.author.id),
+  }))
+);
 ---
 
 <section>
@@ -28,18 +34,42 @@ const posts = page.data;
   }
   <ul class="col gap-md align-stretch pv-md ph-xs">
     {
-      posts.map((post) => (
+      postsWithAuthors.map(({ post, author }) => (
         <li>
           <Link
             variant="secondary"
             href={`/${getEntryUrl(post)}`}
             look="card"
-            class="row align-center wrap w-full p-sm no-decoration"
+            class="blog-list-item w-full p-sm no-decoration"
           >
-            <div class="w-md h-full bold">
-              <FormattedDate date={post.data.date} />
+            <div class="blog-list-meta">
+              <div class="blog-list-date bold">
+                <FormattedDate date={post.data.date} />
+              </div>
+              {
+                author && (
+                  <p class="blog-list-author m-none">
+                    <span class="blog-list-avatar">
+                      <img
+                        src={author.data.avatar}
+                        width={32}
+                        height={32}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span>{author.data.name}</span>
+                  </p>
+                )
+              }
             </div>
-            <p class="highlight">{post.data.title}</p>
+            <div class="blog-list-content">
+              <p class="highlight m-none">{post.data.title}</p>
+              <p class="blog-list-description m-none">
+                {getEntryDescription(post)}
+              </p>
+            </div>
           </Link>
         </li>
       ))
@@ -67,3 +97,76 @@ const posts = page.data;
     </div>
   </div>
 </section>
+
+<style>
+  .blog-list-item {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 0.35rem;
+  }
+
+  .blog-list-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .blog-list-date {
+    white-space: nowrap;
+  }
+
+  .blog-list-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .blog-list-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ls-background-text);
+    font-size: 0.9rem;
+    opacity: 0.72;
+  }
+
+  .blog-list-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+
+  .blog-list-avatar img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none;
+    border-radius: inherit;
+    object-fit: cover;
+  }
+
+  .blog-list-description {
+    color: var(--ls-background-text);
+    opacity: 0.82;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .blog-list-item {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+  }
+</style>

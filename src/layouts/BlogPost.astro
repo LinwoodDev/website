@@ -6,16 +6,53 @@ import Link from "@components/Link.astro";
 import DefaultLayout from "./DefaultLayout.astro";
 import ProjectHero from "@components/ProjectHero.astro";
 import Author from "@components/Author.astro";
+import { getEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"] & {
   project?: string;
+  url: string;
 };
 
-const { title, description, date, heroImage, project, author } = Astro.props;
+const { title, description, date, heroImage, project, author, tags, url } =
+  Astro.props;
+const currentAuthor = await getEntry("authors", author.id);
+const authorName = currentAuthor?.data.name;
+const absoluteUrl = new URL(url, Astro.site).toString();
+const imageUrl = heroImage
+  ? new URL(heroImage, Astro.site).toString()
+  : new URL(project ? `/logos/${project}.png` : "/logos/logo.png", Astro.site)
+      .toString();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: date.toISOString(),
+  dateModified: date.toISOString(),
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": absoluteUrl,
+  },
+  author: currentAuthor && {
+    "@type": "Person",
+    name: currentAuthor.data.name,
+    url: currentAuthor.data.url,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Linwood",
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/logos/logo.png", Astro.site).toString(),
+    },
+  },
+  image: [imageUrl],
+  keywords: tags,
+};
 const encodedTitle = encodeURIComponent(title);
-const url = Astro.url.toString();
-const encodedUrl = encodeURIComponent(url);
-const text = `Check out the post ${title} by the Linwood project: ${url}`;
+const shareUrl = Astro.url.toString();
+const encodedUrl = encodeURIComponent(shareUrl);
+const text = `Check out the post ${title} by the Linwood project: ${shareUrl}`;
 const encodedText = encodeURIComponent(text);
 // We need x (formally known as Twitter), Mastodon, Reddit, Email, Telegram, WhatsApp
 const platforms = [
@@ -47,7 +84,16 @@ const platforms = [
 ];
 ---
 
-<DefaultLayout title={title} description={description ?? ""}>
+<DefaultLayout
+  title={title}
+  description={description ?? ""}
+  image={imageUrl}
+  type="article"
+  publishedTime={date}
+  modifiedTime={date}
+  author={authorName}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <dialog class="dialog" id="mastodon-dialog">
     <h1 class="dialog-title">Share to mastodon</h1>
     <div class="dialog-content col gap-sm">
@@ -62,7 +108,7 @@ const platforms = [
     </div>
   </dialog>
   <article class="col">
-    {heroImage && <Image fit="" width={720} height={360} src={heroImage} alt="" />}
+    {heroImage && <Image fit="cover" width={1200} height={675} src={heroImage} alt={title} />}
     <h1>{title}</h1>
     <FormattedDate date={date} />
     <ProjectHero project={project} />

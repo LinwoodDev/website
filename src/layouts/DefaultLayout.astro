@@ -7,12 +7,18 @@ import Footer from "@components/Footer.astro";
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: "website" | "article";
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
   frontmatter?: {
     title: string;
   };
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, type, publishedTime, modifiedTime, author } =
+  Astro.props;
 const frontmatterTitle = Astro.props.frontmatter?.title;
 ---
 
@@ -23,6 +29,11 @@ const frontmatterTitle = Astro.props.frontmatter?.title;
     <BaseHead
       title={title ?? frontmatterTitle}
       description={description ?? ""}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
     />
   </head>
 

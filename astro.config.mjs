@@ -7,7 +7,7 @@ import remarkCustomHeaderId from 'remark-custom-header-id';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://linwood.dev",
+  site: "https://www.linwood.dev",
   image: {
     responsiveStyles: true,
     layout: "constrained",

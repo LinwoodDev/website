@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
-import { getEntryProject, getEntryUrl } from '../blog';
+import { getEntryDescription, getEntryProject, getEntryUrl } from '../blog';
 import Table from '@components/Table.astro';
 import TableItem from '@components/TableItem.astro';
 import { render } from 'astro:content';
@@ -11,15 +11,23 @@ export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return Promise.all(posts.map(async (post) => ({
 		params: { slug: getEntryUrl(post) },
-		props: {post, project: await getEntryProject(post)},
+		props: {
+			post,
+			description: getEntryDescription(post),
+			project: await getEntryProject(post),
+		},
 	})));
 }
-type Props = {post: CollectionEntry<'blog'>, project: CollectionEntry<'projects'> | undefined};
+type Props = {
+	post: CollectionEntry<'blog'>,
+	description: string,
+	project: CollectionEntry<'projects'> | undefined,
+};
 
-const {post, project} = Astro.props;
+const {post, description, project} = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data} project={project?.id}>
+<BlogPost {...post.data} description={description} project={project?.id} url={`/${getEntryUrl(post)}`}>
 	<Content components={{Table, TableItem}} />
 </BlogPost>
