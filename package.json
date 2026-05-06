@@ -15,18 +15,18 @@
     "@astrojs/sitemap": "3.7.2",
     "@linwooddev/style": "^0.4.2",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "6.2.1",
+    "astro": "6.2.2",
     "remark-custom-header-id": "^1.0.0",
     "sharp": "^0.34.5",
     "typescript": "^6.0.3",
-    "workbox-build": "^7.4.0"
+    "workbox-build": "^7.4.1"
   },
-  "packageManager": "pnpm@11.0.5",
+  "packageManager": "pnpm@11.0.6",
   "devDependencies": {
     "@vite-pwa/astro": "^1.2.0",
     "sass": "^1.99.0",
     "vite-plugin-pwa": "^1.2.0",
-    "workbox-window": "^7.4.0"
+    "workbox-window": "^7.4.1"
   },
   "pnpm": {
     "overrides": {
