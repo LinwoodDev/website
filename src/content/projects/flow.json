@@ -1,8 +1,8 @@
 {
-  "title": "Linwood Flow",
+  "title": "Flow",
   "source": "https://github.com/LinwoodDev/Flow",
   "description": "WIP: Feature rich event, group and time managment system",
   "website": "https://docs.flow.linwood.dev",
   "color": "#35CDEF",
-  "order": 2
+  "order": 3
 }

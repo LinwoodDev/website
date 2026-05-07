@@ -1,8 +1,9 @@
 {
-  "title": "Linwood Vulpine",
+  "title": "Vulpine",
   "source": "https://github.com/LinwoodDev/Vulpine",
-  "description": "WIP: A user friendly gui for command line tools",
+  "description": "A user friendly gui for command line tools",
   "website": "https://vulpine.linwood.dev",
   "color": "#FBAC11",
-  "order": 6
+  "status": "paused",
+  "order": 1
 }

@@ -34,6 +34,7 @@ const projects = defineCollection({
       .string()
       .regex(/^#[0-9A-Fa-f]{6}$/)
       .optional(),
+    status: z.enum(["paused", "wip"]).optional(),
     order: z.number().optional(),
   }),
 });

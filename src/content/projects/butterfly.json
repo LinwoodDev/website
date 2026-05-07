@@ -1,9 +1,9 @@
 {
-  "title": "Linwood Butterfly",
+  "title": "Butterfly",
   "source": "https://github.com/LinwoodDev/butterfly",
   "description": "🎨 Powerful, minimalistic, cross-platform, opensource note-taking app",
   "website": "https://docs.butterfly.linwood.dev",
   "translation": "https://translate.linwood.dev/butterfly/",
   "color": "#EBB733",
-  "order": 1
+  "order": 2
 }

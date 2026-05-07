@@ -10,6 +10,10 @@ import TableItem from "@components/TableItem.astro";
 
 const projects = await getProjects();
 const libraries = await getCollection("libraries");
+const projectStatus = {
+  paused: { label: "Paused", icon: "ph-pause" },
+  wip: { label: "Work in progress", icon: "ph-hammer" },
+};
 ---
 
 <DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -19,23 +23,33 @@ const libraries = await getCollection("libraries");
   </section>
   <section class="long-section">
     <h2 class="section-title pb-md">Projects</h2>
-    <ul class="row justify-center wrap align-stretch gap-sm">
+    <ul class="project-grid">
       {
         projects.map((e) => (
           <li>
             <Link
               variant="secondary"
               href={`/${e.id}`}
-              class="col align-center justify-between h-full"
-              style={{ width: "150px" }}
+              look="card"
+              class="project-card h-full no-decoration"
+              style={`--project-color: ${e.data.color ?? "var(--ls-primary)"}`}
             >
-              <Image
-                src={`/logos/${e.data.logo ?? e.id}.svg`}
-                alt={e.data.title}
-                width="100"
-                height="100"
-              />
-              <p class="text-center">{e.data.title}</p>
+                <Image
+                  src={`/logos/${e.data.logo ?? e.id}.svg`}
+                  alt=""
+                  width="100"
+                  height="100"
+                />
+              <span class="project-card-title">{e.data.title}</span>
+              {e.data.status && (
+                <span
+                  class="project-status"
+                  title={projectStatus[e.data.status].label}
+                  aria-label={projectStatus[e.data.status].label}
+                >
+                  <i class={`ph-bold ${projectStatus[e.data.status].icon}`} aria-hidden="true" />
+                </span>
+              )}
             </Link>
           </li>
         ))
@@ -57,3 +71,67 @@ const libraries = await getCollection("libraries");
     </Table>
   </section>
 </DefaultLayout>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+  }
+
+  .project-card {
+    position: relative;
+    min-height: 10.5rem;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-color: color-mix(in srgb, var(--project-color), var(--ls-elevation) 60%);
+    background: var(--ls-elevation);
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.45rem;
+    background: var(--project-color);
+  }
+
+  .project-card:hover {
+    border-color: var(--project-color);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--project-color), transparent 76%);
+  }
+
+  .project-card-title {
+    color: var(--ls-background-text-light);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .project-status {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--project-color), transparent 82%);
+    color: var(--ls-background-text-light);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+
+  @media (max-width: 640px) {
+    .project-card {
+      min-height: 10rem;
+    }
+  }
+</style>

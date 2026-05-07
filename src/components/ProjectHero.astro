@@ -3,54 +3,175 @@ import { Image } from "astro:assets";
 import { getProject } from "src/blog";
 import Link from "./Link.astro";
 export interface Props {
-    project?: string;
+  project?: string;
 }
 
 const { project } = Astro.props;
-const current = project && await getProject(project);
+const current = project && (await getProject(project));
+const projectStatus = {
+  paused: { label: "Paused", icon: "ph-pause" },
+  wip: { label: "Work in progress", icon: "ph-hammer" },
+};
 ---
 
 {
-    current && (
-        <section>
-            <div class="row gap-md pv-sm align-center justify-stretch">
-                <Image
-                    class="thumbnail-image"
-                    src={`/logos/${current.data.logo ?? current.id}.svg`}
-                    height={100}
-                    width={100}
-                    alt={current.data.title}
+  current && (
+    <section
+      class="card fill project-hero"
+      style={`--project-color: ${current.data.color ?? "var(--ls-primary)"}`}
+    >
+      <div class="project-hero-layout row gap-md align-center">
+        <Image
+          class="project-logo"
+          src={`/logos/${current.data.logo ?? current.id}.svg`}
+          height={100}
+          width={100}
+          alt=""
+        />
+        <div class="project-copy col gap-sm">
+          <div class="project-title-row row gap-xs align-center wrap">
+            <a href={`/${current.id}`} class="btn p-none justify-start">
+              <h2 class="m-none">{current.data.title}</h2>
+            </a>
+            {current.data.status && (
+              <span
+                class="project-status"
+                title={projectStatus[current.data.status].label}
+                aria-label={projectStatus[current.data.status].label}
+              >
+                <i
+                  class={`ph-bold ${projectStatus[current.data.status].icon}`}
+                  aria-hidden="true"
                 />
-                <div class="col gap-md">
-                    <a href={`/${current.id}`} class="btn p-none justify-start"><h2 class="m-none">{current.data.title}</h2></a>
-                    <p class="m-none">{current.data.description}</p>
-                </div>
-            </div>
-            <div class="row wrap gap-xs pv-sm">
-                <Link
-                    variant="secondary"
-                    href={current.data.website}
-                    target="_blank"
-                >
-                    Website
-                </Link>
-                <Link
-                    variant="secondary"
-                    href={current.data.source}
-                    target="_blank"
-                >
-                    GitHub
-                </Link>
-                {current.data.translation && (
-                    <Link
-                        variant="secondary"
-                        href={current.data.translation}
-                        target="_blank"
-                    >
-                        Translation
-                    </Link>
-                )}
-            </div>
-        </section>
-    )
+              </span>
+            )}
+          </div>
+          <p class="project-description m-none">
+            {current.data.description}
+          </p>
+          <div class="project-actions row gap-xs wrap">
+            <Link
+              variant="secondary"
+              href={current.data.website}
+              target="_blank"
+            >
+              Website
+            </Link>
+            <Link
+              variant="secondary"
+              href={current.data.source}
+              target="_blank"
+            >
+              GitHub
+            </Link>
+            {current.data.translation && (
+              <Link
+                variant="secondary"
+                href={current.data.translation}
+                target="_blank"
+              >
+                Translation
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
+
+<style>
+  .project-hero {
+    container-type: inline-size;
+    position: relative;
+    overflow: hidden;
+    padding: clamp(1rem, 4cqi, 2rem) clamp(1rem, 3cqi, 1.5rem);
+    border-color: color-mix(
+      in srgb,
+      var(--project-color),
+      var(--ls-elevation) 58%
+    );
+    background: var(--ls-elevation);
+    margin: 1rem 0;
+  }
+
+  .project-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.3rem;
+    background: var(--project-color);
+  }
+
+  .project-hero-layout {
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .project-logo {
+    flex: 0 0 auto;
+    inline-size: clamp(4.5rem, 18cqi, 6.25rem);
+    block-size: auto;
+  }
+
+  .project-copy {
+    flex: 1 1 18rem;
+    min-inline-size: 0;
+  }
+
+  .project-title-row .btn {
+    min-inline-size: 0;
+    text-align: start;
+  }
+
+  .project-title-row h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .project-description {
+    max-inline-size: 62rem;
+    overflow-wrap: anywhere;
+  }
+
+  .project-actions {
+    max-inline-size: 100%;
+  }
+
+  .project-actions .btn {
+    min-inline-size: min(100%, 7.5rem);
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 1.55rem;
+    height: 1.55rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--project-color), transparent 82%);
+    color: var(--ls-background-text-light);
+    font-size: 0.95rem;
+  }
+
+  .project-hero .btn.secondary:hover {
+    background-color: var(--project-color);
+  }
+
+  @container (max-width: 34rem) {
+    .project-hero-layout {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .project-copy,
+    .project-actions,
+    .project-actions .btn {
+      inline-size: 100%;
+    }
+
+    .project-actions .btn {
+      justify-content: center;
+    }
+  }
+</style>
