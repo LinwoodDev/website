@@ -1,0 +1,57 @@
+---
+title: Butterfly 2.5.2-rc.1 released
+date: "2026-05-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.2-rc.1"
+---
+
+The second release candidate of Butterfly 2.5.2 is now available, focused on area creation, Android SAF reliability, navigation fixes, and smoother input and viewport behavior.
+
+We also reached 5000 commits in the Butterfly repository. Thank you for all your support!
+
+Highlights:
+
+- 🧭 Area creation and sizing fixes
+- 📁 Android SAF file handling fixes
+- 🗂️ Navigation and home page fixes
+- 🎯 Transform and viewport fixes
+- ✍️ Input and drawing fixes
+
+Butterfly 2.5.2 continues to focus on making connected workflows more reliable while polishing editing, navigation, and mobile behavior.
+Please test this release candidate and report any remaining bugs you find.
+
+## Area creation and sizing fixes
+
+Area creation has been improved when creating areas inside or overlapping other areas. The area tool now also correctly respects fixed width when an aspect ratio is set, and the width is saved correctly after selecting an aspect ratio.
+
+## Android SAF file handling fixes
+
+Android SAF support has received another round of fixes while the experimental feature is enabled. Migrating to a new directory now works correctly, and moving and saving documents should behave reliably.
+
+## Navigation and home page fixes
+
+The home page recently list no longer shows the same file twice ([#1084](https://github.com/LinwoodDev/Butterfly/issues/1084)). Moving pages into and out of folders in the pages navigator has also been fixed.
+
+## Transform and viewport fixes
+
+Transforming multiple objects at the same time now uses the correct offsets. Several viewport issues have also been resolved, including flickering after drawing pen strokes and content being hidden behind the navigation rail when zooming out with the positive coordinate viewport limit enabled.
+
+## Input and drawing fixes
+
+Multi-tap input shortcuts no longer delay regular pointer input. The pen only toggle also stays in the corner when zoom controls are disabled.
+
+## Full changelog
+
+* Improve area creation when creating areas inside or overlapping other areas
+* Fix area tool fixed width being ignored when an aspect ratio is set
+* Fix area tool width not being saved after selecting an aspect ratio
+* Fix home page recently shows the same File twice ([#1084](https://github.com/LinwoodDev/Butterfly/issues/1084))
+* Fix offsets on transforming multiple objects at the same time
+* Fix migrating to a new directory not working when android saf experimental feature is enabled
+* Fix moving and saving not correctly working when android saf experimental feature is enabled
+* Fix moving pages into and out of folders in the pages navigator
+* Fix viewport flickering after drawing pen strokes
+* Fix multi-tap input shortcuts delaying regular pointer input
+* Fix positive coordinate viewport limit hiding content behind the navigation rail when zooming out
+* Fix pen only toggle not being on the corner if zoom controls are disabled
