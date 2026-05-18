@@ -1,0 +1,51 @@
+---
+title: Butterfly 2.5.2-rc.2 released
+date: "2026-05-18"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.2-rc.2"
+---
+
+The third release candidate of Butterfly 2.5.2 is now available with more improvements and fixes.
+
+Highlights:
+
+- ☁️ Improved sync dialog and cached file handling
+- ⚡ Better performance and memory usage on large documents
+- 🛠️ Shape, selection, PDF, and file list fixes
+
+Butterfly 2.5.2-rc.2 focuses on reliability and polish.
+Please test this release candidate and report any remaining bugs you find.
+
+## Improved sync dialog and cached file handling
+
+A new not synced filter has been added to the sync dialog, making it easier to find files that still need attention.
+
+Nested synced file discovery has been fixed, and cached folders no longer stay stuck in a cache loading state forever. Exporting cached remote files while offline now works correctly as well.
+
+## Better performance and memory usage on large documents
+
+Drawing, erasing, and undo/redo performance has been improved on large documents.
+
+This release also fixes a major memory leak that could happen when opening and closing documents with many pages.
+
+## Shape, selection, PDF, and file list fixes
+
+Several shape and selection issues have been resolved. The spacer tool now affects circle shapes correctly, shape type dropdowns no longer keep the first opened shape selected, and shape tools now work correctly in all drawing directions.
+
+Rectangular selection has also been fixed, PDF pages now render correctly after switching pages or retrying failed PDF loads, and the file list now refreshes after changing the show thumbnails setting.
+
+## Full changelog
+
+* Add a not synced filter to the sync dialog ([#1087](https://github.com/LinwoodDev/Butterfly/issues/1087))
+* Fix nested synced file discovery
+* Fix cached folders showing cache loading forever ([#1087](https://github.com/LinwoodDev/Butterfly/issues/1087))
+* Fix spacer tool not affecting circle shapes correctly
+* Fix shape type dropdowns keeping the first opened shape selected
+* Fix shape tools only drawing constrained shapes from top left to bottom right
+* Fix rectangular selection only working reliably from top left to bottom right
+* Fix drawing, erasing, and undo/redo lag on large documents
+* Fix PDF pages failing to render after switching pages or retrying failed PDF loads
+* Fix exporting cached remote files while offline ([#1085](https://github.com/LinwoodDev/Butterfly/issues/1085))
+* Fix major memory leak when opening and closing documents with many pages
+* Fix file list not refreshing after changing show thumbnails setting
