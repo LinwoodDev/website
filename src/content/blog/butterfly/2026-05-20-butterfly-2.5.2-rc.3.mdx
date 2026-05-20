@@ -1,0 +1,43 @@
+---
+title: Butterfly 2.5.2-rc.3 released
+date: "2026-05-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.2-rc.3"
+---
+
+A hotfix release candidate of Butterfly 2.5.2 is now available with fixes for file sharing, sorting, page names, and erasing.
+
+Highlights:
+
+- 📤 Android sharing improvements
+- 🧭 Page navigator and file sorting fixes
+- 🧽 Eraser rendering fix
+
+Butterfly 2.5.2-rc.3 focuses on fixing regressions and improving reliability before the stable release.
+Please test this release candidate and report any remaining bugs you find.
+
+## Android sharing improvements
+
+Files can now be opened from the Android share menu. Previously, files could only be opened with Butterfly through the system open-with flow.
+
+Opening external files from absolute paths now works correctly as well, and imported files are no longer incorrectly treated as templates.
+
+## Page navigator and file sorting fixes
+
+Empty page names are now visible again in the page navigator.
+
+Sorting files by date now works correctly.
+
+## Eraser rendering fix
+
+Erasing elements no longer causes background layers to flash.
+
+## Full changelog
+
+* Fix empty page names are not visible in page navigator
+* Fix sorting files by date not working correctly
+* Improve opening files from the Android share menu
+* Fix opening external files from absolute paths
+* Fix imported files being treated as templates
+* Fix erasing elements flashing background layers
