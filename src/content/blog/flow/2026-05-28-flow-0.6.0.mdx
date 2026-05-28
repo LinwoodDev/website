@@ -1,0 +1,63 @@
+---
+title: Linwood Flow 0.6.0 released
+date: "2026-05-28"
+author: codedoctor
+tags: [flow]
+slug: "flow/0.6.0"
+---
+
+Flow 0.6.0 is here with big changes!
+
+## Highlights
+
+<Table>
+<TableItem href="#lua-scripting">
+  🤚 Calendar gestures
+</TableItem>
+<TableItem href="#waypoints">
+  📅 Repeated calendar items
+</TableItem>
+<TableItem href="#action-buttons">
+  🛜 Improved CalDAV
+</TableItem>
+<TableItem href="#dialog-improvements">
+  🐞 Bug fixes
+</TableItem>
+<TableItem href="#toolbar-options">
+  🛠️ Platform updates
+</TableItem>
+</Table>
+
+## Calendar gestures
+
+Day and week view have now gestures to edit the calendar items and move and resize them.
+
+## Repeated calendar items
+
+On calendar items you can now specify in which interval they repeat. This also allows you to see repeated items imported from ics.
+This is one of the efforts to support the whole ics format.
+
+## Improved CalDAV
+
+The interal CalDAV synchronization system has been overhauled and should now work better and better support the response format.
+
+Additionally offline support should work now.
+
+## Bug fixes
+
+Filter and list refresh should now work better on all views. Additionally source selection, paging should now work better and error handling and calendar boundary matching has been improved and memory problems with controller cleanups has been resolved.
+
+## Platform updates
+
+The app has been upgraded to Flutter 3.41 and web and snap build is now working again.
+
+## Full changelog
+
+* Add gestures in day and week view ([#32](https://github.com/LinwoodDev/Flow/issues/32))
+* Add repeated calendar items and iCal RRULE/EXDATE handling
+* Fix snap build
+* Improve CalDAV synchronization and offline editing support
+* Fix web build not loading ([#135](https://github.com/LinwoodDev/Flow/issues/135))
+* Upgrade to flutter 3.41
+* Fix stale filter and list refresh behavior in events, users, calendar, notes, and dashboard views
+* Fix source selection, paging, remote sync error handling, calendar boundary matching, and controller cleanup issues
