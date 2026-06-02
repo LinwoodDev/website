@@ -1,0 +1,67 @@
+---
+title: Butterfly 2.5.3-rc.0 released
+date: "2026-06-02"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.3-rc.0"
+---
+
+The first release candidate of Butterfly 2.5.3 is now available with Windows on ARM support, upgraded Flutter tooling, better stylus support on Windows, and many fixes for selection, tools, images, and dialogs.
+
+Highlights:
+
+- 🪟 Windows on ARM and Windows stylus support
+- 🛠️ Selection, layers, and tool improvements
+- 🐛 Rendering, image, PDF, and dialog fixes
+
+Butterfly 2.5.3-rc.0 focuses on platform support, smoother editing workflows, and fixing several regressions.
+Please test this release candidate and report any remaining bugs you find.
+
+## Windows on ARM and Windows stylus support
+
+Butterfly now supports Windows on ARM.
+
+This release also upgrades to Flutter 3.44, adding stylus support for Windows (with more coming in the future like stylus button support). The minimum iOS version has been changed to 14.0.
+
+If you want to see my contributions to Flutter, check out [here](https://github.com/flutter/flutter/pulls/CodeDoctorDE).
+
+## Selection, layers, and tool improvements
+
+Selection transforms now use the nearest corner hit, making small selections easier to work with.
+
+The layers navigator now includes a duplicate layer option for multi-select, and the duplicate layer button in the layers dialog works correctly again. Desktop users also get automatic first template selection.
+
+Several tool issues have been fixed as well, including temporary tools being cleared after canvas gestures, pressure not being used for inverted stylus input, and the stamp tool hover preview looking strange on touch.
+
+## Rendering, image, PDF, and dialog fixes
+
+Jagged rendering after changing orientation has been fixed, and image operations no longer temporarily show gray boxes.
+
+Image export quality changes no longer show stale previews, and moving PDFs with spacer tools no longer freezes the canvas.
+
+The close dialog now offers save, discard, and cancel actions. Title and description fields no longer clear when losing focus, and the top corner menu now correctly shows navigator menu buttons in full screen.
+
+## Full changelog
+
+* Add Windows on ARM support
+* Change min iOS version to 14.0
+* Upgrade to flutter 3.44 (Add stylus support for windows)
+* Use nearest corner hit for selection transforms
+* Add duplicate layer to multi select options in layers navigator
+* Add automatic first template selection on desktop
+* Fix jagged rendering after changing orientation ([#1094](https://github.com/LinwoodDev/Butterfly/issues/1094))
+* Fix texture tool configuration scrolling getting stuck ([#1092](https://github.com/LinwoodDev/Butterfly/issues/1092))
+* Fix temporary tools being cleared after canvas gestures ([#1093](https://github.com/LinwoodDev/Butterfly/issues/1093))
+* Fix image operations temporarily showing gray boxes ([#1097](https://github.com/LinwoodDev/Butterfly/issues/1097))
+* Fix title and description fields clearing on focus loss ([#1101](https://github.com/LinwoodDev/Butterfly/issues/1101))
+* Fix pressure not used for inverted stylus
+* Fix close dialog to offer save, discard, and cancel actions
+* Fix top corner menu doesn't have navigator menu buttons on full screen
+* Fix image export quality changes showing stale previews
+* Fix duplicate layer button in layers dialog not working ([#1105](https://github.com/LinwoodDev/Butterfly/issues/1105))
+* Fix moving PDFs with spacer tools freezing the canvas ([#1106](https://github.com/LinwoodDev/Butterfly/issues/1106))
+* Fix stamp tool hover preview looks strange on touch ([#1107](https://github.com/LinwoodDev/Butterfly/issues/1107))
+* Fix horizontal and vertical wrongly named in texture background dialog
+* Fix offset list tile refreshes on same value
+* Fix shapes with identical start and end points being created ([#1112](https://github.com/LinwoodDev/Butterfly/issues/1112))
+* Fix very small selections being hard to transform or open context menus for ([#1112](https://github.com/LinwoodDev/Butterfly/issues/1112))
