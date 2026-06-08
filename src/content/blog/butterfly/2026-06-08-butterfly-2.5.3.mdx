@@ -1,0 +1,146 @@
+---
+title: Butterfly 2.5.3 released
+date: "2026-06-08"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.3"
+---
+
+I am excited to announce the release of Butterfly 2.5.3 focused on platform support, stylus improvements, selection reliability, and PDF import fixes.
+
+This is a stable release, it includes all the changes from the 2.5.3 nightly releases.
+
+Please visit the nightly version blog entries here to see all the changes in detail:
+
+- [2.5.3-rc.0](/butterfly/2.5.3-rc.0)
+- [2.5.3-rc.1](/butterfly/2.5.3-rc.1)
+
+For reading the 2.5.2 release notes, please check the [2.5.2 release blog entry](/butterfly/2.5.2).
+
+## Highlights
+
+<Table>
+<TableItem href="#windows-arm">
+  🪟 Windows on ARM Support
+</TableItem>
+<TableItem href="#stylus-support">
+  ✏️ Better Stylus Support
+</TableItem>
+<TableItem href="#selection-improvements">
+  🎯 Selection Improvements
+</TableItem>
+<TableItem href="#pdf-import-fixes">
+  📄 PDF Import Fixes
+</TableItem>
+<TableItem href="#polygon-workflow">
+  🔷 Polygon Workflow Fixes
+</TableItem>
+<TableItem href="#tool-reliability">
+  🛠️ Tool Reliability Fixes
+</TableItem>
+<TableItem href="#image-rendering">
+  🖼️ Image and Rendering Fixes
+</TableItem>
+<TableItem href="#dialogs-file-handling">
+  💾 Dialog and File Handling Fixes
+</TableItem>
+</Table>
+
+## Windows on ARM Support \{#windows-arm\}
+
+Butterfly now supports Windows on ARM, making the app available on more Windows devices, including ARM-based laptops and tablets.
+
+This opens the door for a smoother Butterfly experience on newer Windows hardware and gives Windows users more flexibility when choosing their device.
+
+The minimum iOS version has been raised to 14.0.
+
+## Better Stylus Support \{#stylus-support\}
+
+Butterfly has been upgraded to Flutter 3.44, bringing stylus support improvements on Windows.
+
+Pen input also received more polish in this release. Pressure is now used correctly for inverted stylus input, making stylus workflows more consistent.
+
+## Selection Improvements \{#selection-improvements\}
+
+> [#1118](https://github.com/LinwoodDev/Butterfly/issues/1118)
+> [#1112](https://github.com/LinwoodDev/Butterfly/issues/1112)
+> [#1109](https://github.com/LinwoodDev/Butterfly/issues/1109)
+
+Selection should feel more predictable in this release.
+
+Selection transforms now use the nearest corner hit, making it easier to grab the right handle when editing. Raycasting on rotated elements has also been fixed, improving interaction with rotated content.
+
+Very small selections are now easier to transform or open context menus for, and the lasso selection tool now handles non-convex polygons correctly.
+
+## PDF Import Fixes \{#pdf-import-fixes\}
+
+> [#1123](https://github.com/LinwoodDev/Butterfly/issues/1123)
+> [#1124](https://github.com/LinwoodDev/Butterfly/issues/1124)
+> [#1106](https://github.com/LinwoodDev/Butterfly/issues/1106)
+
+PDF workflows received some important fixes.
+
+Spread-to-pages imports no longer render as gray placeholders, and PDF import now correctly uses the selected pages instead of importing the first pages.
+
+Moving PDFs with spacer tools no longer freezes the canvas, making PDF-based documents more reliable to edit.
+
+## Polygon Workflow Fixes \{#polygon-workflow\}
+
+> [#1121](https://github.com/LinwoodDev/Butterfly/issues/1121)
+
+Polygon editing has been cleaned up further.
+
+The polygon tool toolbar now correctly updates the element you are currently editing, and the polygon tool color picker now has the eyedropper button again.
+
+Shapes with identical start and end points are no longer created accidentally.
+
+## Tool Reliability Fixes \{#tool-reliability\}
+
+> [#1092](https://github.com/LinwoodDev/Butterfly/issues/1092)
+> [#1093](https://github.com/LinwoodDev/Butterfly/issues/1093)
+> [#1107](https://github.com/LinwoodDev/Butterfly/issues/1107)
+
+Several tools should now behave more consistently while editing.
+
+Temporary tools are no longer cleared after canvas gestures, the texture tool configuration no longer gets stuck while scrolling, and the stamp tool hover preview looks better on touch devices.
+
+## Image and Rendering Fixes \{#image-rendering\}
+
+> [#1094](https://github.com/LinwoodDev/Butterfly/issues/1094)
+> [#1097](https://github.com/LinwoodDev/Butterfly/issues/1097)
+
+Visual rendering has been improved in a few places.
+
+Jagged rendering after changing orientation has been fixed, and image operations no longer temporarily show gray boxes. Image export quality changes also no longer show stale previews.
+
+## Dialog and File Handling Fixes \{#dialogs-file-handling\}
+
+> [#1101](https://github.com/LinwoodDev/Butterfly/issues/1101)
+> [#1105](https://github.com/LinwoodDev/Butterfly/issues/1105)
+> [#1114](https://github.com/LinwoodDev/Butterfly/issues/1114)
+
+Dialogs and file handling received several quality-of-life fixes.
+
+The close dialog now clearly offers save, discard, and cancel actions. Title and description fields no longer clear themselves when losing focus, and the top corner menu now correctly shows navigator menu buttons in full screen.
+
+Layer workflows also received a small improvement: duplicate layer is now available in the multi-select options of the layers navigator, and the duplicate layer button in the layers dialog works again.
+
+Moved or renamed files no longer behave strangely in recent files, and embed message handling has been fixed.
+
+## Notes
+
+Thanks to everyone who tested the 2.5.3 release candidates and reported issues!
+In the coming weeks, the 2.6 development cycle will begin, which will include some exciting new features and improvements. Stay tuned for more updates!
+
+Please report any bugs you find on [GitHub](https://github.com/LinwoodDev/Butterfly/issues) and share the app with others to help the project grow.
+
+## Full changelog
+
+Changes since 2.5.3-rc.1:
+
+* Fix PDF spread-to-pages imports rendering as gray placeholders ([#1123](https://github.com/LinwoodDev/Butterfly/issues/1123))
+* Fix PDF import using the first pages instead of the selected pages ([#1124](https://github.com/LinwoodDev/Butterfly/issues/1124))
+* Fix polygon tool color picker has no eyedropper button ([#1121](https://github.com/LinwoodDev/Butterfly/issues/1121))
+* Fix embed message handling
+
+This is a stable release, it includes all the changes from the 2.5.3 nightly releases.
