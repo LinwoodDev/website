@@ -1,0 +1,104 @@
+---
+title: Setonix 0.8.0 released!
+date: "2026-06-15"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.8.0"
+---
+
+import Table from "../../../components/Table.astro";
+import TableItem from "../../../components/TableItem.astro";
+
+**Announcing the Setonix 0.8.0 release!**
+
+Setonix 0.8.0 is here with a redesigned home page, state restoration, better game mode organization, improved scripting events, and stronger multiplayer and server handling.
+
+This release focuses on making Setonix easier to navigate, more reliable when returning to games, and more powerful for pack and game mode creators.
+
+## Highlights
+
+<Table>
+<TableItem href="#home-page">
+  🏠 Redesigned home page
+</TableItem>
+<TableItem href="#state-restoration">
+  💾 State restoration
+</TableItem>
+<TableItem href="#game-mode-groups">
+  🕹️ Game mode groups
+</TableItem>
+<TableItem href="#scripting-events">
+  📜 New scripting events
+</TableItem>
+<TableItem href="#server-thumbnails">
+  🖼️ Server thumbnails
+</TableItem>
+<TableItem href="#security-reliability">
+  🔒 Security and reliability improvements
+</TableItem>
+</Table>
+
+## Redesigned home page \{#home-page\}
+
+The home page has been redesigned to be more user friendly and to make navigating through the different views simpler.
+
+This should make it easier to get started, find what you need, and move between the main parts of Setonix without getting lost.
+
+## State restoration \{#state-restoration\}
+
+Setonix now supports state restoration, allowing games to resume after the app restarts.
+
+If the app is closed or restarted, your game state can be restored more smoothly, making longer play sessions and interruptions easier to handle.
+
+## Game mode groups \{#game-mode-groups\}
+
+Game modes are now grouped in the play dialog, making it easier to find the right mode when starting a game.
+
+The Chess and Blackjack names in single-player game mode groups have also been fixed, and loading the Blackjack game mode now works correctly again.
+
+## New scripting events \{#scripting-events\}
+
+New scripting events have been added for game lifecycle handling.
+
+The world close event allows scripts to clean up resources when a game is closed, while the save event allows scripts to store game data when the game is saved.
+
+Luau script error messages have also been improved with game mode and script context, making it easier to understand where a problem happened.
+
+## Server thumbnails \{#server-thumbnails\}
+
+Server lists now support thumbnails.
+
+Public and in-app server lists can show server thumbnails, and server list thumbnail overrides can be configured. There is also support for bundled server list thumbnail asset paths.
+
+## Security and reliability improvements \{#security-reliability\}
+
+Setonix 0.8.0 improves app and server security checks and hardens multiplayer authentication and imported file names.
+
+Several smaller reliability fixes are included too. Creating games without a name is now prevented, playing a game without a selection no longer shows a missing route, overlapping tooltips in stacked hand view layouts have been fixed, and stopping the server from the command prompt no longer throws an exception.
+
+The native plugin build has been migrated from cargokit to Flutter native assets, and Setonix has been upgraded to Flutter 3.44.
+
+## Full changelog
+
+* Redesign home page to be more user friendly and simplify navigating through the views
+* Add state restoration to allow resuming games after app restarts
+* Add game mode groups in play dialog
+* Add world close event to allow cleaning up resources when a game is closed
+* Add save event to allow scripts to save game data when the game is saved
+* Add server thumbnails to public and in-app server lists
+* Add optional server list thumbnail overrides
+* Add bundled server list thumbnail asset path
+* Improve game page title to show the opened game
+* Improve Luau script error messages with game mode and script context
+* Improve app and server security checks
+* Swap custom and template tabs in create dialog
+* Harden multiplayer authentication and imported file names
+* Prevent creating games without a name
+* Fix loading the Blackjack game mode
+* Fix Chess and Blackjack names in singleplayer game mode groups
+* Fix Blackjack actions and card visibility
+* Fix playing a game without a selection showing a missing route
+* Fix overlapping tooltips in stacked hand view layouts
+* Fix stopping the server from the command prompt throwing an exception
+* Migrate the native plugin build from cargokit to Flutter native assets
+* Upgrade to flutter 3.44
