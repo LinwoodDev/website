@@ -1,0 +1,41 @@
+---
+title: Setonix 0.8.1 released!
+date: "2026-06-20"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.8.1"
+---
+
+Setonix 0.8.1 is here with important fixes for game modes, table state handling, and reproducible builds.
+
+This release focuses on making the 0.8 series more reliable, especially for Android users and scripted game modes.
+
+Read the [big 0.8.0 release announcement](https://linwood.dev/setonix/0.8.0) for more details on the major features added in the previous release.
+
+## Highlights
+
+- Android game mode fixes
+- More reliable scripted table state
+- Reproducible build fixes
+
+## Android game mode fixes \{#android-game-modes\}
+
+Game modes now work correctly on Android again.
+
+If you had trouble starting or using scripted game modes on Android in 0.8.0, please update to this version.
+
+## More reliable scripted table state \{#table-state\}
+
+This release fixes an issue where the table state could sometimes be replaced with a pre-script snapshot.
+
+Scripted game modes should now keep their state more reliably during gameplay.
+
+## Reproducible build fixes \{#reproducible-builds\}
+
+Reproducible builds have been fixed, improving release consistency and making builds easier to verify.
+
+## Full changelog
+
+* Fix game modes not working on android
+* Fix sometimes table state being replaced with pre-script snapshot
+* Fix reproducible builds
