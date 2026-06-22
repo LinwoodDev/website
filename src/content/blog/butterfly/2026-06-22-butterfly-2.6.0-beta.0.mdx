@@ -1,0 +1,236 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-beta.0) released
+date: "2026-06-22"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-beta.0"
+---
+
+The first beta of Butterfly 2.6, **Dreamy Duskywing**, is now available.
+
+This is one of the largest Butterfly updates in recent releases. It introduces a new paint system, tool presets and favorites, redesigned eraser and selection workflows, expanded area and layer management, better storage handling, improved ruler controls, and a long list of interface, performance, and reliability improvements.
+
+Many of the changes in this release affect fundamental editing workflows. Existing tools have been reorganized, several previously separate tools have been combined, and new options have been added throughout the app.
+
+Highlights:
+
+* 🧰 Tool presets and favorites
+* 🎨 A new element paint system
+* 🧽 Unified eraser and new selection modes
+* 🗂️ Expanded area and layer workflows
+* 📏 Better ruler controls
+* 📁 Storage, export, and file management improvements
+* ✨ Redesigned controls and editing experience
+* ⚡ Better performance on large documents
+
+Since this beta changes several core systems, please test your usual workflows carefully. Reports about tool behavior, imported documents, storage providers, and visual rendering are especially helpful.
+
+## Tool presets and favorites
+
+> [#1070](https://github.com/LinwoodDev/Butterfly/issues/1070)
+
+Tools can now be saved as presets.
+
+A preset stores a configured tool so it can be reused later without recreating all of its properties. This is especially useful when you regularly switch between several pen styles, shapes, colors, or other specialized configurations.
+
+Instead of keeping many nearly identical tools in the toolbar, you can create reusable presets and load the configuration when needed.
+
+Tools can also be marked as favorites. Favorites provide faster access to the tools and presets you use most often, reducing the time spent searching through longer tool lists.
+
+Together, presets and favorites provide a more flexible foundation for customizing Butterfly around your own workflow.
+
+## A new element paint system
+
+> [#1062](https://github.com/LinwoodDev/Butterfly/issues/1062)
+> [#93](https://github.com/LinwoodDev/Butterfly/issues/93)
+
+The previous color property has been replaced by a new element paint system.
+
+Previously, most elements used a single color value. Dreamy Duskywing expands this into a more flexible paint model that can represent different kinds of visual styling.
+
+Texture paints can now be applied to elements, allowing repeated visual patterns instead of only flat colors.
+
+Gradient paints have also been added. These allow colors to transition across an element and provide more expressive styling options for drawings, diagrams, and decorative content.
+
+Blur is now available as another paint option. It can be used to create softer visual effects or to distinguish content from surrounding elements.
+
+This is an important internal change as well as a visible feature. Replacing the old color property with paints creates a foundation for more advanced styling options in future releases.
+
+Because this affects how element appearances are stored and rendered, please pay close attention to colors and styles when opening existing documents.
+
+## Unified eraser and new selection modes
+
+> [#1130](https://github.com/LinwoodDev/Butterfly/issues/1130)
+> [#1111](https://github.com/LinwoodDev/Butterfly/issues/1111)
+> [#1122](https://github.com/LinwoodDev/Butterfly/issues/1122)
+
+The regular eraser and path eraser have been unified into a single tool.
+
+Instead of maintaining separate tools for closely related behaviors, the eraser now provides different modes. This reduces duplication in the toolbar while keeping the existing erasing workflows available.
+
+The selector also gains different modes. Selection behavior can now be changed inside the tool instead of requiring separate selector tools for every interaction type.
+
+Selection and spacer tools additionally support subtype switching. This makes it easier to move between related modes while staying inside the same tool.
+
+These changes are intended to simplify the toolbar and make tool behavior more consistent. They also make it easier to extend tools with additional modes in the future.
+
+Polygons are now represented as strokes as part of the underlying element changes. This means you can erase with the regular eraser without enabling an option.
+
+Since erasing and selection are used throughout almost every document, this is one of the most important areas to test in the beta.
+
+## Expanded area and layer workflows
+
+> [#1098](https://github.com/LinwoodDev/Butterfly/issues/1098)
+> [#1125](https://github.com/LinwoodDev/Butterfly/issues/1125)
+> [#1069](https://github.com/LinwoodDev/Butterfly/issues/1069)
+> [#1119](https://github.com/LinwoodDev/Butterfly/issues/1119)
+
+Areas have received several major improvements.
+
+Areas can now be assigned colors. This makes them easier to distinguish in documents containing many regions and can help organize complex pages visually.
+
+You can now move an area together with its contents. Previously, repositioning an area and repositioning the elements inside it was not possible. With the new option, the area and its associated content can be moved as one unit.
+
+Areas can also be duplicated to other pages. This makes it easier to reuse layouts, page regions, or repeated structures across a multi-page document.
+
+Moved elements can optionally be brought to the front. This helps in situations where repositioned content would otherwise remain behind other elements because of its previous stacking order. This is disable by default but can be enabled in the settings.
+
+Elements can now also be moved directly to another layer. This provides a more straightforward way to reorganize existing content without duplicating or recreating elements.
+
+Layer and page reordering has been fixed as well. Items should now be placed in the correct position when reordered instead of appearing one position away from the intended location.
+
+The template dialog now includes an option to override the background and a new action for replacing existing templates.
+
+Core pack items can now be overridden but cannot be removed, protecting required built-in resources while still allowing customized versions.
+
+The pack system also uses file names instead of display names for more reliable identification.
+
+## Better ruler controls
+
+> [#1074](https://github.com/LinwoodDev/Butterfly/issues/1074)
+
+Ruler rotation now supports snapping.
+
+This makes it easier to align the ruler to exact and commonly used angles instead of manually trying to reach a precise orientation.
+
+The ruler can also be rotated using the hand tool. You no longer need to switch to a separate interaction just to adjust the ruler while navigating the document.
+
+These changes should make the ruler more practical for geometry, diagrams, handwriting, and other workflows that require repeated angle adjustments.
+
+## Storage, export, and file management improvements
+
+> [#1082](https://github.com/LinwoodDev/Butterfly/issues/1082)
+> [#1018](https://github.com/LinwoodDev/Butterfly/issues/1018)
+> [#1103](https://github.com/LinwoodDev/Butterfly/issues/1103)
+> [#1133](https://github.com/LinwoodDev/Butterfly/issues/1133)
+> [#1132](https://github.com/LinwoodDev/Butterfly/issues/1132)
+
+The file move dialog now includes a storage destination selector.
+
+When moving a file, you can select the target storage location directly instead of being limited to the current provider or file system.
+
+Selected items in the file view can also be exported in bulk. Instead of opening and exporting documents one at a time, several files can now be selected and exported together.
+
+Local storage support has been added for mobile devices, giving mobile users another way to manage Butterfly documents directly on their device.
+
+Android now uses the Storage Access Framework by default. SAF provides a system file picker and gives users more control over which folders and storage providers Butterfly can access.
+
+An issue where enabling SAF could show incorrect file systems has also been fixed.
+
+Clipboard and import handling have been improved, and Butterfly has migrated to a new clipboard library. This provides a newer foundation for copying, pasting, and importing content across supported platforms.
+
+The recent files view now respects the option to hide file extensions, and renamed files no longer appear twice.
+
+Compatibility with some WebDAV implementations has also been improved.
+
+The setting controlling whether thumbnails are shown is now saved correctly instead of only applying for the current session.
+
+## Redesigned controls and editing experience
+
+> [#1100](https://github.com/LinwoodDev/Butterfly/issues/1100)
+> [#1079](https://github.com/LinwoodDev/Butterfly/issues/1079)
+> [#1135](https://github.com/LinwoodDev/Butterfly/issues/1135)
+> [#1139](https://github.com/LinwoodDev/Butterfly/issues/1139)
+> [#1144](https://github.com/LinwoodDev/Butterfly/issues/1144)
+
+The add dialog has been redesigned to improve how available elements, tools, and content types are presented.
+
+The toolbar and zoom controls have also been combined, reducing the number of separate interface areas and creating a more unified control layout.
+
+A new setting allows you to choose where the property view is displayed. This gives you more control over the workspace layout and lets you adapt the interface to different devices and screen sizes.
+
+Multi-tap input shortcuts are now enabled by default. Users no longer need to manually enable them before assigning or using double-tap and triple-tap actions.
+
+The stroke style option is hidden when the selected style is solid, removing a control that does not provide a meaningful setting in that situation.
+
+The texture view now displays the correct height label instead of showing a second width label.
+
+Text labels no longer disappear after switching to another element.
+
+The spacer tool now works with more element types, making it more reliable when rearranging mixed content.
+
+## Better performance on large documents
+
+Baking checks have been improved to increase performance on large documents.
+
+Butterfly uses baking to cache rendered content and avoid repeatedly drawing everything from scratch. More efficient checks reduce unnecessary work when deciding which parts of a document must be updated.
+
+Bake scheduling in the pen tool has also been improved.
+
+This should make drawing feel smoother in larger or more complex documents and reduce interruptions caused by expensive rendering operations.
+
+Performance can vary significantly depending on document size and device, so testing with large real-world notes and drawings will help identify remaining bottlenecks.
+
+## Backports to Butterfly 2.5
+
+The most important bug fixes discovered during the Butterfly 2.6 beta will also be backported to the 2.5 release series where possible.
+
+This means users who stay on Butterfly 2.5 will still receive critical stability and reliability fixes without having to adopt the larger workflow and file-format changes introduced in Dreamy Duskywing.
+
+## Full changelog
+
+* Add tool presets ([#1070](https://github.com/LinwoodDev/Butterfly/issues/1070))
+* Add tool favorites
+* Add element paints to replace current color property
+
+  * Add texture paint ([#1062](https://github.com/LinwoodDev/Butterfly/issues/1062))
+  * Add gradient paint ([#93](https://github.com/LinwoodDev/Butterfly/issues/93))
+  * Add blur
+* Unify path eraser and eraser in one tool ([#1130](https://github.com/LinwoodDev/Butterfly/issues/1130))
+* Add different eraser and selector modes ([#1111](https://github.com/LinwoodDev/Butterfly/issues/1111))
+* Add subtype tool switching for selection and spacer tools ([#1122](https://github.com/LinwoodDev/Butterfly/issues/1122))
+* Add property view position setting ([#1100](https://github.com/LinwoodDev/Butterfly/issues/1100))
+* Add bring moved elements to front option ([#1098](https://github.com/LinwoodDev/Butterfly/issues/1098))
+* Add ability to move areas together with their contents ([#1125](https://github.com/LinwoodDev/Butterfly/issues/1125))
+* Add move to layer ([#1069](https://github.com/LinwoodDev/Butterfly/issues/1069))
+* Add storage destination selector in file move dialog ([#1082](https://github.com/LinwoodDev/Butterfly/issues/1082))
+* Add area color ([#1119](https://github.com/LinwoodDev/Butterfly/issues/1119))
+* Add override background to template dialog ([#1119](https://github.com/LinwoodDev/Butterfly/issues/1119))
+* Add replace template action to template dialog
+* Add local storage support for mobile
+* Add area duplication to other pages
+* Add ruler rotation snapping ([#1074](https://github.com/LinwoodDev/Butterfly/issues/1074))
+* Add ruler rotation with hand tool
+* Add bulk export for selected file-view items ([#1018](https://github.com/LinwoodDev/Butterfly/issues/1018))
+* Change that core pack items can only be overridden but not removed
+* Improve pack system by using file names instead of display name
+* Redesign add dialog
+* Hide stroke style option when solid ([#1139](https://github.com/LinwoodDev/Butterfly/issues/1135))
+* Combine toolbar and zoom controls ([#1079](https://github.com/LinwoodDev/Butterfly/issues/1079))
+* Use Android SAF by default
+* Enable multi-tap input shortcuts by default
+* Improve clipboard and import handling ([#1103](https://github.com/LinwoodDev/Butterfly/issues/1103))
+* Define polygons as strokes ([#1111](https://github.com/LinwoodDev/Butterfly/pull/1111))
+* Fix file extension will be shown in recently file view if hide extension is enabled ([#1133](https://github.com/LinwoodDev/Butterfly/issues/1133))
+* Fix file shows up twice in recently if it was renamed ([#1132](https://github.com/LinwoodDev/Butterfly/issues/1132))
+* Fix text labels disappear after switching to another element ([#1139](https://github.com/LinwoodDev/Butterfly/issues/1139))
+* Fix show thumbnail not saved to settings
+* Fix texture view having width label instead of height
+* Fix spacer tool not working on multiple element types ([#1144](https://github.com/LinwoodDev/Butterfly/issues/1144))
+* Fix compability with some WebDAV implementations
+* Fix enabling saf giving wrong file systems
+* Fix layer and pages reordering placing it in wrong position
+* Improve baking checks to improve performance on large documents
+* Improve bake scheduling in pen tool to improve performance
+* Simplify android build files
+* Migrate to new clipboard library
