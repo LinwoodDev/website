@@ -1,0 +1,111 @@
+---
+
+title: Butterfly 2.6.0-beta.1 released
+date: "2026-07-06"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-beta.1"
+------------------------------
+
+The second beta of Butterfly 2.6 is now available.
+
+This release continues the Dreamy Duskywing beta cycle with improvements to pages, areas, Xournal++ compatibility, path editing, document state handling, and several important fixes.
+
+Highlights:
+
+* 📄 Page selector and page navigation improvements
+* 🗂️ Cross-page area selection
+* 🧩 Better template and area workflows
+* ✏️ Combine paths option
+* 📘 Xournal++ export and import improvements
+* 🪟 Refined window title bar
+* 🐛 Document state and synchronization fixes
+
+Please test this beta carefully and report any bugs or unexpected behavior you find.
+
+## Page selector and page navigation improvements
+
+> [#1151](https://github.com/LinwoodDev/Butterfly/issues/1151)
+> [#1143](https://github.com/LinwoodDev/Butterfly/issues/1143)
+
+The pages workflow has been improved with a new page selector that supports range input.
+
+This makes it easier to work with multiple pages at once, especially in larger documents where selecting pages one by one would be slow.
+
+The pages navigator now also shows internal page numbers. This should make it easier to understand page order, debug page-related behavior, and work with documents where page names alone are not enough.
+
+New shortcuts for moving to the next and previous page have also been added, making keyboard-based navigation faster.
+
+## Cross-page area selection
+
+> [#1143](https://github.com/LinwoodDev/Butterfly/issues/1143)
+
+Areas can now be selected and deleted across multiple pages.
+
+This is especially useful for documents that use repeated layouts or page structures. Instead of manually going through every page, you can now manage areas across pages more directly.
+
+Together with the new internal page numbers, this should make larger multi-page documents easier to organize.
+
+## Better template and area workflows
+
+> [#1151](https://github.com/LinwoodDev/Butterfly/issues/1151)
+
+Templates now include an option to apply areas.
+
+This makes templates more useful for documents where the page layout is not only defined by the background, but also by reusable areas.
+
+The area context menu and area selection context menu have also been unified. This should make area actions feel more consistent, regardless of how you opened the menu.
+
+## Combine paths option
+
+> [#1071](https://github.com/LinwoodDev/Butterfly/issues/1071)
+
+A new combine paths option has been added.
+
+This gives you another way to clean up or reorganize path-based content after drawing. It should be useful when working with strokes that belong together and should behave more like one connected path.
+
+## Xournal++ export and import improvements
+
+Butterfly can now export to Xournal++.
+
+This adds a new interoperability option for users who want to move notes or drawings between Butterfly and Xournal++.
+
+The Xournal++ importer has also been improved, making the import side of the workflow more reliable as well.
+
+## Refined window title bar
+
+The window title bar design has been improved to look more modern and feel more consistent with the rest of the UI.
+
+## Document state and synchronization fixes
+
+Several state handling issues have been fixed in this beta.
+
+State management has been improved to better link different systems together. This should make interactions between pages, areas, documents, and UI systems more reliable.
+
+Location synchronization issues have been fixed, and imported documents no longer incorrectly start as already saved.
+
+Saved documents should also no longer be saved again unnecessarily.
+
+A concurrency issue where foreground refreshing could run multiple times at once has been fixed.
+
+The zoom slider and reset button now work correctly even when zoom is locked, and an issue where polygons could disappear has also been fixed.
+
+## Full changelog
+
+* Add pages selector with range input ([#1151](https://github.com/LinwoodDev/Butterfly/issues/1151))
+* Add internal page numbers to the pages navigator ([#1143](https://github.com/LinwoodDev/Butterfly/issues/1143))
+* Add cross-page area selection and deletion ([#1143](https://github.com/LinwoodDev/Butterfly/issues/1143))
+* Add apply areas option to templates ([#1151](https://github.com/LinwoodDev/Butterfly/issues/1151))
+* Add combine paths option ([#1071](https://github.com/LinwoodDev/Butterfly/issues/1071))
+* Add xournal++ exporter
+* Add next and previous page shortcuts
+* Improve xournal++ importer
+* Improve state management for better linking different systems together
+* Improve window title bar design
+* Unify area context menu and area selection context menu ([#1151](https://github.com/LinwoodDev/Butterfly/issues/1151))
+* Fix refresh foregrounds can be run concurrently
+* Fix location synchronization issues
+* Fix saved documents being saved again
+* Fix imported documents starting as saved
+* Fix zoom slider and reset button not working if zoom is locked
+* Fix polygon disappears
