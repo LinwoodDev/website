@@ -1,0 +1,131 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-beta.2) released
+date: "2026-07-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-beta.2"
+---
+
+The third beta of Butterfly Dreamy Duskywing is now available.
+
+This release introduces persistent document states, completely rebuilt settings pages, improved navigation, and a major restructuring of the editor architecture. I also want to highlight the OneNote importer, which was already introduced in the previous beta but was accidentally missing from its release post.
+
+Highlights:
+
+* 📓 Import notes from OneNote
+* 💾 Persistent document states
+* 🔍 Searchable and redesigned settings
+* 🏠 More predictable corner menu navigation
+* 🧩 A more modular editor architecture
+* 🐛 Smaller reliability and Android improvements
+
+Please test this beta carefully and report any bugs or unexpected behavior you find.
+
+## Import notes from OneNote
+
+> [#427](https://github.com/LinwoodDev/Butterfly/issues/427)
+
+Butterfly now includes an importer for Microsoft OneNote files.
+
+This feature was already introduced in the previous beta, but it was accidentally left out of the corresponding release post. Since importing existing notes is an important part of switching to Butterfly, I want to give it a proper highlight here.
+
+The importer makes it possible to bring existing OneNote content into Butterfly instead of having to manually recreate every page. This is especially useful for users with older handwritten notes, drawings, or notebooks that have been stored in OneNote for a long time.
+
+OneNote uses a complex binary file format, so importing every possible type of content perfectly is difficult. The importer provides an initial migration path and converts supported content into editable Butterfly documents where possible.
+
+Because OneNote notebooks can contain many different types of content and structures, please report files that do not import correctly. Testing with different notebooks will help improve compatibility in future releases.
+
+## Persistent document states
+
+> [#1077](https://github.com/LinwoodDev/Butterfly/issues/1077)
+
+Butterfly can now remember how you left a document.
+
+Previously, temporary document states such as the selected page, viewport, active locks, or selected tool were reset after closing and reopening a document. With the new persistent document states system, Butterfly can restore this information the next time the document is opened.
+
+Persistent states can include:
+
+* The currently selected page
+* The viewport position and zoom
+* Active movement and editing locks
+* The currently selected tool
+* The navigator state
+* The current and hidden layers
+* Area navigator options
+
+You can decide which parts of the document state Butterfly should remember. For example, Butterfly can reopen a document on the last viewed page and position without restoring the previously selected tool.
+
+The persistence settings also allow you to limit the number and age of stored records. Old document states can be cleaned up for both local and connected storage locations.
+
+These states are stored separately from the actual document content. Changing the current page, viewport, locks, or selected tool therefore does not modify the document itself.
+
+## Searchable and redesigned settings
+
+> [#1158](https://github.com/LinwoodDev/Butterfly/issues/1158)
+
+The internal settings pages have been completely rebuilt.
+
+As the number of available options has grown, finding a specific setting has become more difficult. The new search bar lets you search through the settings and quickly navigate to the relevant page.
+
+Settings now also use a more consistent layout. Values are displayed on the right side where possible, making the pages easier to scan and reducing visual differences between the different settings categories.
+
+Descriptions have been added throughout the settings as well. These descriptions provide more context about what each option changes and make less obvious settings easier to understand.
+
+The rebuilt structure also provides a cleaner foundation for adding and organizing settings in future releases.
+
+## More predictable corner menu navigation
+
+> [#1161](https://github.com/LinwoodDev/Butterfly/issues/1161)
+
+The top corner menu has been reordered so that the home action appears at the top.
+
+Home is one of the most frequently used actions in this menu, especially when switching between a document and the file overview. Its new position should make navigation feel more predictable and reduce accidental selection of nearby actions.
+
+## A more modular editor architecture
+
+> [#1157](https://github.com/LinwoodDev/Butterfly/pull/1157)
+> [#830](https://github.com/LinwoodDev/Butterfly/issues/830)
+
+The editor's state structure has been reorganized into several smaller, specialized systems.
+
+Previously, rendering, tools, pointer input, saving, view options, selections, temporary handlers, networking state, and other editor behavior were managed together inside one very large state controller.
+
+This has now been split into dedicated components for:
+
+* Rendering and the current viewport
+* Active tools, selections, and temporary tools
+* Pointer and input handling
+* Saving and document locations
+* View options such as locks and navigator visibility
+* Persistent per-document session states
+
+An editor controller connects these systems and coordinates them with the document itself. This keeps the actual document data separate from temporary editor and interface states.
+
+The new structure also moves view options out of the saved document information. States that should be restored when reopening a document are now handled by the new persistent document state system instead.
+
+This refactor is an important step towards separating Butterfly's rendering and handler logic into a reusable engine package in the future. While most of the work is internal, it touches many parts of the editor, so please report regressions involving tools, selections, rendering, input, saving, navigation, or collaboration.
+
+## Smaller reliability and Android improvements
+
+> [#1148](https://github.com/LinwoodDev/Butterfly/issues/1148)
+> [#1162](https://github.com/LinwoodDev/Butterfly/pull/1162)
+
+This beta also fixes a crash when opening folders with many files through Android SAF, prevents blur values from resetting after changing a color, and improves collision detection for closed polygons.
+
+The Android build system has also been upgraded to Android Gradle Plugin 9.
+
+## Full changelog
+
+* Add OneNote importer ([#427](https://github.com/LinwoodDev/Butterfly/issues/427))
+* Add persistent document states ([#1077](https://github.com/LinwoodDev/Butterfly/issues/1077))
+* Reorder top corner menu to have home on top ([#1161](https://github.com/LinwoodDev/Butterfly/issues/1161))
+* Rebuild internal settings pages
+  * Add search bar to settings pages ([#1158](https://github.com/LinwoodDev/Butterfly/issues/1158))
+  * Always have settings value on the right side
+  * Add settings descriptions
+* Refactor whole state management structure ([#1157](https://github.com/LinwoodDev/Butterfly/pull/1157))
+* Remove unused view options
+* Fix crash with android saf on folders with many files
+* Fix blur resetting on color change
+* Fix polygon collision aabb tests if closed ([#1162](https://github.com/LinwoodDev/Butterfly/pull/1162))
+* Upgrade to agb 9
