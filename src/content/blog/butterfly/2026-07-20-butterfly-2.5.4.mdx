@@ -1,0 +1,63 @@
+---
+title: Butterfly 2.5.4 released
+date: "2026-07-20"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.4"
+---
+
+Butterfly 2.5.4 is now available as a hotfix release.
+
+This update brings important reliability fixes from the latest Butterfly 2.6 beta and nightly releases back to the stable 2.5 series.
+
+Highlights:
+
+* 📁 More reliable Android SAF and WebDAV storage
+* ✏️ Editing, spacer, and reordering fixes
+* 💾 Improved saving and Recent files behavior
+
+## More reliable Android SAF and WebDAV storage
+
+Butterfly should no longer crash when Android SAF handles large folders or files.
+
+WebDAV compatibility has also been improved, and Butterfly now selects the correct filesystem when the Android SAF experiment is enabled.
+
+## Editing, spacer, and reordering fixes
+
+Several editor issues have been backported from Butterfly 2.6.
+
+Text labels and polygons should no longer disappear while they are being edited. The spacer tool now also works more reliably with circles, shapes, polygons, and other supported elements.
+
+Layers and pages are now moved to the correct position when reordered, and locked zoom controls work correctly again.
+
+## Improved saving and Recent files behavior
+
+Imported documents are now correctly marked as unsaved, and Butterfly avoids unnecessarily saving documents repeatedly.
+
+Renaming a file should no longer cause it to appear twice in Recent files. Recent files also respect the setting for hidden file extensions.
+
+The thumbnail setting is now persisted correctly, and the incorrect height label in the texture dialog has been corrected.
+
+## Notes
+
+This is a hotfix release, so it is recommended to update if you are using an older stable version of Butterfly.
+If you are already using the 2.6 beta or nightly releases, you may not need to update, as these fixes are already included in those versions and the next nightly release will be released next week.
+
+## Full changelog
+
+This is a hotfix update, cherry-picking important fixes from the latest 2.6.0 beta and nightly releases.
+
+Cherry picks:
+
+* Prevent crashes when Android SAF handles large folders and files
+* Fix text labels disappearing while editing
+* Fix polygons disappearing while editing
+* Fix renamed files appearing twice in Recent files
+* Fix layers and pages being reordered to the wrong position
+* Improve WebDAV compatibility and select the correct filesystem with SAF enabled
+* Fix the spacer tool for circles, shapes, polygons, and other elements
+* Fix repeated saves and mark imported documents as unsaved
+* Fix locked zoom controls
+* Respect hidden file extensions in Recent files
+* Persist the thumbnail setting
+* Correct the texture height label
