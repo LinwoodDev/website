@@ -1,0 +1,123 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-beta.4) released
+date: "2026-08-03"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-beta.4"
+---
+
+The fifth beta of Butterfly Dreamy Duskywing is now available.
+
+This update expands what you can create in Butterfly and provides more control over how the editor behaves across touch, mouse, and keyboard devices. Please test the beta carefully and report any bugs or unexpected behavior you find.
+
+Highlights:
+
+* 📊 Tables on the canvas and in Markdown
+* 🖼️ Visual page and area navigation
+* 🖱️ More configurable input and canvas controls
+* 🎨 Better area, ruler, and gradient styling
+* ⚙️ Settings and embed improvements
+* 🐛 Selection, storage, and reliability fixes
+
+## Tables on the canvas and in Markdown
+
+> [#1155](https://github.com/LinwoodDev/Butterfly/issues/1155)
+
+Butterfly now supports tables as dedicated canvas elements.
+
+The new table tool provides a structured way to organize information directly on the canvas. Tables are useful for schedules, comparisons, worksheets, planning, and other content that does not fit naturally into individual text labels.
+
+Markdown labels can now parse and render Markdown table syntax as well. This means tables written using pipes and separator rows are displayed as formatted tables instead of plain text.
+
+Together, these options let you choose between dedicated visual table elements and tables written as part of a larger Markdown document.
+
+## Visual page and area navigation
+
+> [#1151](https://github.com/LinwoodDev/Butterfly/issues/1151)
+
+The pages and areas navigators can now display preview images.
+
+Previously, pages and areas were mainly identified through their names. This could make navigation difficult in larger documents, especially when several pages used similar names or when the relevant content was easier to recognize visually.
+
+The new previews provide a quick overview of the content inside each page or area. This makes it easier to find the correct destination without opening entries one by one.
+
+## More configurable input and canvas controls
+
+> [#976](https://github.com/LinwoodDev/Butterfly/issues/976)
+> [#1169](https://github.com/LinwoodDev/Butterfly/issues/1169)
+> [#1170](https://github.com/LinwoodDev/Butterfly/issues/1170)
+
+Touch shortcuts can now respond to two- and three-finger taps. These gestures can be mapped to actions such as undo and redo, allowing common commands to be triggered without interrupting a pen or touch workflow.
+
+Mouse users can now configure the back and forward buttons found on many desktop mice. Canvas rotation also has configurable keyboard shortcuts, making it easier to rotate the view without opening another menu.
+
+Zoom steps are now configurable as well, allowing you to choose how much Butterfly zooms with each shortcut or input action.
+
+For touch devices, a new setting can disable canvas rotation while keeping other touch gestures available. This is useful when accidental rotation is more distracting than helpful.
+
+## Better area, ruler, and gradient styling
+
+> [#1175](https://github.com/LinwoodDev/Butterfly/issues/1175)
+> [#1168](https://github.com/LinwoodDev/Butterfly/issues/1168)
+> [#1193](https://github.com/LinwoodDev/Butterfly/issues/1193)
+
+The area tool now includes a color option, so newly created areas can use the chosen color without requiring it to be changed afterwards.
+
+The ruler tool has gained a separate foreground color for its markings and labels. Automatic contrast can choose a readable foreground based on the ruler background, helping measurements remain visible with both light and dark colors.
+
+Radial gradients now support a focal point. Moving the focal point away from the center makes it possible to create directional lighting, highlights, and other less symmetrical gradient effects.
+
+## Settings and embed improvements
+
+> [#1190](https://github.com/LinwoodDev/Butterfly/issues/1190)
+> [#1128](https://github.com/LinwoodDev/Butterfly/issues/1128)
+
+Settings pages now include a reset action, making it easier to restore the options on a page without manually changing every value.
+
+Embeds have also been simplified for their more focused use case. They can use a visual-only file name, hide templates and the files navigator, and ignore the configured default template.
+
+An issue where an old element state could remain visible after changing its rotation in an embed has also been fixed.
+
+## Selection, storage, and reliability fixes
+
+> [#1196](https://github.com/LinwoodDev/Butterfly/issues/1196)
+> [#1200](https://github.com/LinwoodDev/Butterfly/issues/1200)
+> [#1201](https://github.com/LinwoodDev/Butterfly/issues/1201)
+
+Selection bounding boxes now update correctly after undo and redo, and dragging a transformation handle should no longer unexpectedly start a new selection.
+
+This beta also fixes hold shortcuts not restoring the active tool in time, prevents negative brush sizes, improves opening files through WebDAV connections, and avoids crashes when exporting all files from large libraries.
+
+Additional fixes cover document-version warnings, Quick Start template file names, right-to-left layouts, camera controls, and navigation from settings dialogs.
+
+## Full changelog
+
+* Add table tool and elements ([#1155](https://github.com/LinwoodDev/Butterfly/issues/1155))
+* Add Markdown table parsing and rendering
+* Add preview images to the pages and areas navigators ([#1151](https://github.com/LinwoodDev/Butterfly/issues/1151))
+* Add color option to the area tool ([#1175](https://github.com/LinwoodDev/Butterfly/issues/1175))
+* Add foreground color option to the ruler tool with automatic contrast ([#1168](https://github.com/LinwoodDev/Butterfly/issues/1168))
+* Add reset to setting pages ([#1190](https://github.com/LinwoodDev/Butterfly/issues/1190))
+* Add focal support to radial gradients ([#1193](https://github.com/LinwoodDev/Butterfly/issues/1193))
+* Add back and forward mouse button mappings ([#1169](https://github.com/LinwoodDev/Butterfly/issues/1169))
+* Add two- and three-finger touch shortcuts ([#976](https://github.com/LinwoodDev/Butterfly/issues/976))
+* Add configurable canvas rotation keyboard shortcuts ([#1170](https://github.com/LinwoodDev/Butterfly/issues/1170))
+* Add configurable zoom steps
+* Add visual-only file name option to embeds
+* Add rotate input touch setting to disable canvas rotation
+* Fix closing documents when navigating back from a settings page opened in the settings dialog
+* Fix camera controls not updating after external canvas transformations
+* Fix template file names not being applied to documents created from Quick Start
+* Fix newer document versions opening without a warning
+* Fix crashes when exporting all files if library is large
+* Fix file grid action menu overlapping the sync indicator in right-to-left layouts
+* Fix file move dialog indentation in right-to-left layouts
+* Fix old element state remaining visible after changing rotation in embeds ([#1128](https://github.com/LinwoodDev/Butterfly/issues/1128))
+* Fix object selection bounding boxes not updating after undo and redo ([#1196](https://github.com/LinwoodDev/Butterfly/issues/1196))
+* Fix dragging selection transform handles sometimes starting a new selection ([#1196](https://github.com/LinwoodDev/Butterfly/issues/1196))
+* Fix hold shortcuts not restoring the active tool before the next pointer input ([#1200](https://github.com/LinwoodDev/Butterfly/issues/1200))
+* Fix negative brush sizes ([#1201](https://github.com/LinwoodDev/Butterfly/issues/1201))
+* Fix opening files on WebDAV connections
+* Ignore last color when switching to svg or image paint kind
+* Improve embeds by hiding templates and the files navigator and ignoring configured default templates
+* Improve Linux app metadata
