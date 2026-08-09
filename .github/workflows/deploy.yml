@@ -16,16 +16,18 @@ jobs:
         uses: pnpm/setup@v2
         with:
           runtime: node@26
-          cache: true
+          cache: ${{ github.ref == 'refs/heads/main' }}
       - name: Restore generated image cache
-        uses: actions/cache@v4
+        if: github.ref == 'refs/heads/main'
+        uses: actions/cache@v6
         with:
           path: .astro/og-cache
           key: ${{ runner.os }}-og-images-${{ hashFiles('src/pages/og/**', 'src/content/blog/**', 'src/content/authors/**', 'src/content/projects/**', 'public/logos/**', 'pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-og-images-
       - name: Restore incremental build cache
-        uses: actions/cache@v4
+        if: github.ref == 'refs/heads/main'
+        uses: actions/cache@v6
         with:
           path: node_modules/.astro
           key: ${{ runner.os }}-astro-build-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
