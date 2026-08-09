@@ -3,13 +3,28 @@ import { getCollection } from "astro:content";
 import BlogList from "@components/BlogList.astro";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import type { PaginateFunction } from "astro";
-import { getPosts } from "../../blog";
+import { getEntriesCacheKey, getPosts } from "../../blog";
 
 export const PAGE_SIZE = 20;
 
 export async function getStaticPaths({ paginate } : {paginate : PaginateFunction}) {
   const posts = await getPosts();
-  return paginate(posts, { pageSize: PAGE_SIZE });
+  const authors = new Map(
+    (await getCollection("authors")).map((author) => [author.id, author])
+  );
+  return paginate(posts, { pageSize: PAGE_SIZE }).map((path) => {
+    const { page } = path.props;
+    const pageAuthors = page.data
+      .map((post) => authors.get(post.data.author.id))
+      .filter((author) => author !== undefined);
+    return {
+      ...path,
+      cacheKey: `${page.currentPage}/${page.lastPage}/${page.total}:${getEntriesCacheKey([
+        ...page.data,
+        ...pageAuthors,
+      ])}`,
+    };
+  });
 };
 const {page} = Astro.props;
 ---
