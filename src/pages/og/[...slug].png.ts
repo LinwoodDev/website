@@ -8,7 +8,11 @@ import {
   writeFileSync,
 } from "node:fs";
 import sharp from "sharp";
-import { getEntryProject, getEntryUrl } from "../../blog";
+import {
+  getEntriesCacheKey,
+  getEntryProject,
+  getEntryUrl,
+} from "../../blog";
 
 const WIDTH = 1200;
 const HEIGHT = 630;
@@ -159,12 +163,33 @@ const svg = ({
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  return posts
-    .filter((post) => !post.data.unlisted)
-    .map((post) => ({
-      params: { slug: getEntryUrl(post) },
-      props: { post },
-    }));
+  return Promise.all(
+    posts
+      .filter((post) => !post.data.unlisted)
+      .map(async (post) => {
+        const [author, project] = await Promise.all([
+          getEntry("authors", post.data.author.id),
+          getEntryProject(post),
+        ]);
+        const logo = project?.data.logo ?? project?.id ?? "logo";
+        const logoDigest = createHash("sha256")
+          .update(
+            readFileSync(
+              new URL(`../../../public/logos/${logo}.svg`, import.meta.url)
+            )
+          )
+          .digest("hex");
+        return {
+          params: { slug: getEntryUrl(post) },
+          props: { post },
+          cacheKey: `${getEntriesCacheKey([
+            post,
+            ...(author ? [author] : []),
+            ...(project ? [project] : []),
+          ])}|logo:${logoDigest}`,
+        };
+      })
+  );
 }
 
 export async function GET({ props }: APIContext) {

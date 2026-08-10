@@ -1,22 +1,33 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
-import { getEntryDescription, getEntryProject, getEntryUrl } from '../blog';
+import { getEntriesCacheKey, getEntryDescription, getEntryProject, getEntryUrl } from '../blog';
 import Table from '@components/Table.astro';
 import TableItem from '@components/TableItem.astro';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return Promise.all(posts.map(async (post) => ({
-		params: { slug: getEntryUrl(post) },
-		props: {
-			post,
-			description: getEntryDescription(post),
-			project: await getEntryProject(post),
-		},
-	})));
+	return Promise.all(posts.map(async (post) => {
+		const [author, project] = await Promise.all([
+			getEntry('authors', post.data.author.id),
+			getEntryProject(post),
+		]);
+		return {
+			params: { slug: getEntryUrl(post) },
+			props: {
+				post,
+				description: getEntryDescription(post),
+				project,
+			},
+			cacheKey: getEntriesCacheKey([
+				post,
+				...(author ? [author] : []),
+				...(project ? [project] : []),
+			]),
+		};
+	}));
 }
 type Props = {
 	post: CollectionEntry<'blog'>,

@@ -1,0 +1,77 @@
+---
+title: Butterfly 2.5.5 released
+date: "2026-08-10"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.5.5"
+---
+
+Butterfly 2.5.5 is now available as a hotfix release.
+
+This update brings another set of fixes from the latest Butterfly 2.6 betas back to the stable 2.5 series, with a focus on making everyday editing more reliable.
+
+Highlights:
+
+* ✂️ More reliable pasting and element reordering
+* 🎨 Palette, brush, and SVG fixes
+* 📚 Better compatibility and large library reliability
+* 🌍 Layout and interface improvements
+
+## More reliable pasting and element reordering
+
+> [#1202](https://github.com/LinwoodDev/Butterfly/issues/1202)
+> [#1211](https://github.com/LinwoodDev/Butterfly/issues/1211)
+
+Pasting multiple strokes now preserves their relative positions correctly instead of changing the layout of the pasted content.
+
+Reordering elements has also been fixed. Previously, a reorder operation could be applied internally but not become visible until the canvas was moved. The canvas now reflects these changes immediately.
+
+Several layout issues in reorderable lists have been fixed as well.
+
+## Palette, brush, and SVG fixes
+
+> [#1199](https://github.com/LinwoodDev/Butterfly/issues/1199)
+> [#1201](https://github.com/LinwoodDev/Butterfly/issues/1201)
+> [#1217](https://github.com/LinwoodDev/Butterfly/issues/1217)
+
+Core pack palettes can now be edited correctly again.
+
+Brush sizes are also prevented from becoming negative, avoiding invalid tool configurations and unexpected drawing behavior.
+
+A rendering issue with transformed SVG elements has been fixed as well. Shared SVG picture data is no longer incorrectly disposed when an element is transformed, improving reliability when working with SVG content.
+
+## Better compatibility and large library reliability
+
+Butterfly now handles incompatible document loading correctly, improving behavior when opening documents that cannot be loaded normally by the current version.
+
+Exporting all files should also no longer crash when the Butterfly library contains a large number of files.
+
+These fixes are especially useful for larger libraries and when moving documents between different Butterfly versions.
+
+## Layout and interface improvements
+
+The context menu background has been improved for better visual separation from the canvas and surrounding interface.
+
+This hotfix also fixes two issues affecting right-to-left layouts: the file grid action menu no longer overlaps the sync indicator, and the file move dialog now uses the correct indentation.
+
+## Notes
+
+This is a hotfix release, so it is recommended to update if you are using an older stable version of Butterfly.
+
+## Full changelog
+
+This is a hotfix update, cherry-picking important fixes from the latest 2.6.0 betas.
+
+Cherry picks:
+
+* Improve context menu background
+* Fix pasted strokes losing their relative positions ([#1202](https://github.com/LinwoodDev/Butterfly/issues/1202))
+* Fix core pack palettes not being editable ([#1199](https://github.com/LinwoodDev/Butterfly/issues/1199))
+* Fix incompatible document loading
+* Fix file grid action menu overlapping the sync indicator in right-to-left layouts
+* Fix file move dialog indentation in right-to-left layouts
+* Fix negative brush sizes ([#1201](https://github.com/LinwoodDev/Butterfly/issues/1201))
+* Fix crashes when exporting all files if the library is large
+* Fix reorder changes applied only visible after moving canvas ([#1211](https://github.com/LinwoodDev/Butterfly/issues/1211))
+* Fix transformed SVG elements disposing shared picture data ([#1217](https://github.com/LinwoodDev/Butterfly/issues/1217))
+* Fix layout issues in reorderable list views

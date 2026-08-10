@@ -1,5 +1,18 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 
+type CacheableEntry = {
+  id: string;
+  digest?: string | number;
+  data?: unknown;
+  body?: string;
+};
+
+export const getEntryCacheKey = (entry: CacheableEntry) =>
+  `${entry.id}:${entry.digest ?? JSON.stringify([entry.data, entry.body])}`;
+
+export const getEntriesCacheKey = (entries: CacheableEntry[]) =>
+  entries.map(getEntryCacheKey).join("|");
+
 const stripMarkdown = (value: string) =>
   value
     .replace(/^import\s.+$/gm, "")

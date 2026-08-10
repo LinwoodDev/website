@@ -1,6 +1,7 @@
 ---
 import BlogList from "@components/BlogList.astro";
-import { getPosts, getProjects } from "../../blog";
+import { getCollection } from "astro:content";
+import { getEntriesCacheKey, getPosts, getProjects } from "../../blog";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ProjectHero from "@components/ProjectHero.astro";
 import { PAGE_SIZE } from "../blog/[...page].astro";
@@ -12,6 +13,9 @@ export async function getStaticPaths({
   paginate: PaginateFunction;
 }) {
   const projects = await getProjects(true);
+  const authors = new Map(
+    (await getCollection("authors")).map((author) => [author.id, author])
+  );
   return (
     await Promise.all(
       projects.map(async (project) => {
@@ -22,6 +26,19 @@ export async function getStaticPaths({
           pageSize: PAGE_SIZE,
           params: { project: project.id },
           props: { project: project },
+        }).map((path) => {
+          const { page } = path.props;
+          const pageAuthors = page.data
+            .map((post) => authors.get(post.data.author.id))
+            .filter((author) => author !== undefined);
+          return {
+            ...path,
+            cacheKey: `${page.currentPage}/${page.lastPage}/${page.total}:${getEntriesCacheKey([
+              project,
+              ...page.data,
+              ...pageAuthors,
+            ])}`,
+          };
         });
       })
     )
