@@ -1,0 +1,107 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-beta.5) released
+date: "2026-08-17"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-beta.5"
+---
+
+The sixth beta of Butterfly Dreamy Duskywing is now available.
+
+This release focuses on making everyday work in Butterfly smoother and more reliable. Please test the beta carefully and report any bugs or unexpected behavior you find.
+
+Highlights:
+
+* ⚡ Large document performance restored and improved
+* 🖥️ Better desktop file and shortcut workflows
+* 🖱️ Refined context menus and personalization settings
+* 🧩 More reliable rendering and element placement
+* 🌐 WebDAV, embeds, and importer improvements
+
+## Large document performance restored and improved
+
+Recent 2.6 nightly builds had a performance regression that could make large documents slower than the current stable release.
+
+This was particularly noticeable during renderer refreshes and viewport baking. The regression could hide the benefits of several performance improvements that had already landed throughout the 2.6 development cycle, including optimizations for large-page rendering, viewport handling, and pen rendering.
+
+Beta 5 fixes this regression by avoiding unnecessary work when refreshing renderers and by retaining more of the existing viewport state when it can safely be reused.
+
+With the regression out of the way, the previous 2.6 performance improvements can finally show their effect. Large documents should therefore not only recover the performance lost in recent nightlies, but also perform better than the current stable version in these workloads.
+
+Settings search has received performance improvements as well, making it more responsive as the number of available settings continues to grow.
+
+## Better desktop file and shortcut workflows
+
+> [#1224](https://github.com/LinwoodDev/Butterfly/issues/1224)
+> [#1214](https://github.com/LinwoodDev/Butterfly/issues/1214)
+> [#1219](https://github.com/LinwoodDev/Butterfly/issues/1219)
+
+Several small additions make Butterfly easier to control from a desktop.
+
+A new reset zoom shortcut lets you quickly return the canvas zoom to its default value without using the zoom controls manually.
+
+The context menu can now also be opened through a keyboard shortcut. This is especially useful when working with a stylus or keyboard-driven workflow where reaching for the mouse just to right-click interrupts the editing flow.
+
+Files stored in the local filesystem now have a **Reveal in Explorer** action. This opens the system file manager at the document's location, making it easier to access Butterfly files outside the app.
+
+## Refined context menus and personalization settings
+
+> [#1220](https://github.com/LinwoodDev/Butterfly/issues/1220)
+> [#1208](https://github.com/LinwoodDev/Butterfly/issues/1208)
+> [#1210](https://github.com/LinwoodDev/Butterfly/issues/1210)
+
+Context menus have received another visual update. Their background now has clearer separation from the content underneath, and the item that opened the menu is easier to identify.
+
+The personalization settings also restore option icons and theme previews, making the available choices easier to scan visually.
+
+Help buttons are now aligned with their setting titles, settings search results scroll correctly again, and advanced switches can once again be toggled normally.
+
+## More reliable rendering and element placement
+
+> [#1211](https://github.com/LinwoodDev/Butterfly/issues/1211)
+> [#1209](https://github.com/LinwoodDev/Butterfly/issues/1209)
+> [#1217](https://github.com/LinwoodDev/Butterfly/issues/1217)
+> [#1174](https://github.com/LinwoodDev/Butterfly/issues/1174)
+> [#1179](https://github.com/LinwoodDev/Butterfly/issues/1179)
+
+Several rendering issues that could leave the canvas visually out of sync with the actual document have been fixed.
+
+Reordered elements now immediately appear in their new order instead of requiring the canvas to be moved first. Editing or deleting elements across different layers also updates the rendered result correctly.
+
+Transformed SVG elements no longer incorrectly dispose shared picture data, and drawing at fractional zoom levels should no longer cause existing document content to shift.
+
+Initial placement of barcodes and stamps has also been improved. Barcodes no longer flip unexpectedly, while stamps avoid unwanted flipping and near-zero scaling during placement.
+
+Temporary tools now correctly receive pointer release events, and several layout issues with reorderable lists have been fixed.
+
+## WebDAV, embeds, and importer improvements
+
+WebDAV error handling has been improved to make failures from remote storage connections behave more predictably.
+
+Embeds now hide recent files and keep configured display filenames separate from the actual document name. This provides a cleaner embedded experience without changing document metadata just to control what is shown by the embed.
+
+The OneNote parser has also been upgraded, bringing the importer up to date with the latest parser improvements.
+
+## Full changelog
+
+* Add reset zoom shortcut ([#1224](https://github.com/LinwoodDev/Butterfly/issues/1224))
+* Add context menu shortcut ([#1214](https://github.com/LinwoodDev/Butterfly/issues/1214))
+* Add Reveal in Explorer ([#1219](https://github.com/LinwoodDev/Butterfly/issues/1219))
+* Improve renderer refresh and viewport baking performance on large documents
+* Improve settings search performance
+* Improve context menu design ([#1220](https://github.com/LinwoodDev/Butterfly/issues/1220))
+* Restore option icons and theme previews in the personalization settings ([#1208](https://github.com/LinwoodDev/Butterfly/issues/1208))
+* Align settings help buttons with their titles
+* Fix reorder changes applied only visible after moving canvas ([#1211](https://github.com/LinwoodDev/Butterfly/issues/1211))
+* Fix rendering updates and ordering when editing elements across layers ([#1209](https://github.com/LinwoodDev/Butterfly/issues/1209))
+* Fix transformed SVG elements disposing shared picture data ([#1217](https://github.com/LinwoodDev/Butterfly/issues/1217))
+* Fix flipping during initial barcode placement ([#1174](https://github.com/LinwoodDev/Butterfly/issues/1174))
+* Fix flipping and near-zero scaling during initial stamp placement ([#1179](https://github.com/LinwoodDev/Butterfly/issues/1179))
+* Fix temporary tools not receiving pointer release events
+* Fix layout issues in reorderable list views
+* Fix document content shifting after drawing at fractional zoom
+* Fix settings search result scrolling
+* Fix cannot toggle advanced switches in settings ([#1210](https://github.com/LinwoodDev/Butterfly/issues/1210))
+* Fix webdav error handling
+* Improve embedding by hiding recent files and keeping configured filenames separate from document names
+* Upgrade onenote parser
