@@ -1,0 +1,92 @@
+---
+title: Linwood Flow 0.7.0 released
+date: "2026-08-22"
+author: codedoctor
+tags: [flow]
+slug: "flow/0.7.0"
+---
+
+After a long wait, Flow 0.7.0 is here!
+
+This release focuses on making Flow more dependable when working with calendars, alarms, and remote sources.
+
+## Highlights
+
+<Table>
+<TableItem href="#device-calendar-support">
+  📱 Device calendar support
+</TableItem>
+<TableItem href="#safer-alarms-and-calendar-editing">
+  ⏰ Safer alarms and calendar editing
+</TableItem>
+<TableItem href="#clearer-source-and-sync-feedback">
+  🔄 Clearer source and sync feedback
+</TableItem>
+<TableItem href="#dashboard-and-calendar-improvements">
+  📅 Dashboard and calendar improvements
+</TableItem>
+<TableItem href="#platform-updates">
+  🛠️ Platform updates
+</TableItem>
+</Table>
+
+## Device calendar support
+
+Flow can now use the calendars available directly on your Android or iOS device as a source.
+
+After granting calendar access, your device calendars and their events can be used inside Flow without setting up a separate CalDAV or iCalendar source. Changes can also be written back through the device calendar integration, allowing Flow to fit more naturally into an existing mobile calendar setup.
+
+This has been a long-standing feature request and makes it much easier to start using Flow with calendars that are already configured on your phone.
+
+## Safer alarms and calendar editing
+
+Calendar and alarm editing now has more validation to prevent invalid states.
+
+Calendar items can no longer end before they start. Active alarms will not be scheduled in the past, and expired alarms will no longer be accidentally re-enabled.
+
+If notification scheduling fails, Flow now shows an error and disables the affected alarm instead of silently leaving it in a state that cannot work.
+
+Save and delete failures also no longer close the editor, so your current changes remain available when something goes wrong. Deleting alarms, calendar items, and sources now asks for confirmation as well.
+
+## Clearer source and sync feedback
+
+Remote sources now provide much better feedback when something goes wrong.
+
+Flow shows synchronization errors together with the time of the last successful sync, making it easier to tell whether a remote calendar is currently up to date.
+
+When adding a source, invalid URLs are rejected earlier and the connection process now shows progress and failures instead of leaving it unclear whether the source was accepted.
+
+Public CalDAV and iCalendar sources can now be added without login credentials. Remote synchronization also continues working after a failed import, and sources remain visible when Flow cannot remove them so the error can be handled instead of making the source appear to have disappeared.
+
+## Dashboard and calendar improvements
+
+Dashboard items are now sorted consistently and the dashboard has refresh controls for manually updating its contents. Loading failures are also shown with friendlier error states.
+
+Pending calendar items no longer incorrectly appear in dated calendar views.
+
+Date and time fields have also been simplified by removing the clear button, while the new validation prevents accidentally creating impossible date ranges.
+
+## Platform updates
+
+Flow has been updated to Flutter 3.44 and later Flutter 3.47.
+
+The Android build system has also been upgraded to AGP 9, alongside the usual dependency updates.
+
+## Full changelog
+
+* Add device calendar support ([#34](https://github.com/LinwoodDev/Flow/issues/34))
+* Remove the clear button from date and time fields
+* Prevent calendar items from ending before they start
+* Prevent active alarms from being scheduled in the past or re-enabled after they expire
+* Show an error and disable alarms when notification scheduling fails
+* Show save and delete errors without closing the editor
+* Ask for confirmation before deleting alarms, calendar items, or sources
+* Keep sources visible when they cannot be removed
+* Show synchronization errors and the time of the last successful sync
+* Reject invalid source URLs and show connection progress and failures
+* Sort dashboard items, add refresh controls, and show friendly loading errors
+* Fix pending items appearing in dated calendar views
+* Allow public CalDAV and iCalendar sources without login credentials
+* Keep remote synchronization working after a failed import
+* Upgrade to flutter 3.44 and 3.47
+* upgrade to agp 9
