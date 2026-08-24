@@ -1,0 +1,142 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-beta.6) released
+date: "2026-08-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-beta.6"
+---
+
+The seventh beta of Butterfly Dreamy Duskywing is now available.
+
+Butterfly **2.6**, beta number **7**. Six... seven. We had no choice.
+
+This is one of the larger updates in the 2.6 beta series, bringing together several longer-running projects while also improving the foundations Butterfly uses on desktop. Please test the beta carefully and report any bugs or unexpected behavior you find.
+
+> 🗳️ **Should smooth navigation become the default?**
+>
+> Smooth navigation is moving out of experiments and becoming an official Butterfly feature. The remaining question is whether it should also become the **default navigation mode**.
+>
+> **[Join the discussion and vote →](https://github.com/LinwoodDev/Butterfly/discussions/1236)**
+
+Highlights:
+
+* 🔐 Whole-connection encryption for remote storage
+* ☁️ Automatic remote backups
+* 🌙 Consistent Nightly branding and side-by-side Windows installs
+* 🚀 Impeller on Windows and Linux with Flutter 3.47
+* 📐 More precise shapes, rulers, and transformations
+* 🖼️ Better image and SVG import and export
+* 🐛 Pen, touch, settings, and WebDAV fixes
+
+## Whole-connection encryption for remote storage
+
+> [#1050](https://github.com/LinwoodDev/Butterfly/issues/1050)
+
+Butterfly already allows individual documents to be protected with a password. Beta 6 extends this with encryption for an entire remote connection.
+
+You can now configure an encryption password for a remote connection. Butterfly will automatically encrypt documents, templates, and packs written through that connection and transparently decrypt them again when they are opened.
+
+This is particularly useful when you trust your own device but not necessarily the storage provider itself. For example, you can keep Butterfly data on a hosted WebDAV or Nextcloud server without storing the supported Butterfly files there unencrypted.
+
+The connection encryption password is stored using the platform's secure storage, so you do not need to enter it again for every document.
+
+## Automatic remote backups
+
+> [#1073](https://github.com/LinwoodDev/Butterfly/issues/1073)
+
+Remote synchronization is useful for working on the same files across devices, but synchronization is not a backup. Beta 6 now adds a separate backup system for that purpose.
+
+Butterfly can create a ZIP archive containing your local documents, packs, and templates and upload it to one of your configured remote connections. Backups are stored separately from the files you normally work with.
+
+You can create a backup manually with **Backup now** or enable automatic backups and choose an interval in hours, days, or weeks. Butterfly also shows when the last successful backup was created.
+
+This makes it possible to keep periodic snapshots of your Butterfly data on a remote such as a WebDAV server without having to work directly from that remote storage.
+
+## Consistent Nightly branding and side-by-side Windows installs
+
+Nightly builds now have consistent branding throughout Butterfly.
+
+Instead of Nightly builds sometimes appearing as the regular **Linwood Butterfly**, they now consistently use the **Linwood Butterfly Nightly** name and Nightly icon across the different build targets. The missing Nightly branding in web builds has also been fixed.
+
+There is an especially useful change on Windows: Stable and Nightly now use separate application identities.
+
+This means **Butterfly Stable and Butterfly Nightly can finally be installed side by side on Windows**. You can keep Stable for your normal work while testing the newest Nightly builds without one installation replacing the other.
+
+The different name and icon also make it immediately visible which version is currently running.
+
+## Impeller on Windows and Linux with Flutter 3.47
+
+Butterfly has been upgraded to Flutter 3.47, and this is a particularly important framework update for desktop users.
+
+Windows and Linux builds now use **Impeller**, Flutter's newer rendering engine. This provides significantly better rendering performance on desktop and should make drawing and navigating around documents feel smoother.
+
+This also builds on the large-document performance improvements from the previous beta, giving the desktop versions a much stronger rendering foundation going forward.
+
+Flutter 3.47 additionally brings improved stylus support on Windows and Linux. Pen input should now integrate better with both systems, which is especially important for Butterfly as a drawing and handwritten note-taking application.
+
+## More precise shapes, rulers, and transformations
+
+> [#1231](https://github.com/LinwoodDev/Butterfly/issues/1231)
+> [#1230](https://github.com/LinwoodDev/Butterfly/issues/1230)
+> [#1197](https://github.com/LinwoodDev/Butterfly/issues/1197)
+
+The shape toolbar now includes dedicated constraint and center toggles, making precise drawing easier without having to rely entirely on keyboard modifiers.
+
+Lines also get more useful constraint behavior: they can snap horizontally, vertically, or to 45° angles. This is especially helpful for diagrams, schematics, and technical drawings.
+
+The ruler can now be given an exact angle while it is being used. Its placement is also preserved when toggling ruler options instead of having to position it again.
+
+Transformation modifiers are more consistent too. Holding **Shift** while scaling preserves the aspect ratio, while **Alt** scales around the center. These modifiers are now available consistently across element transformations.
+
+## Better image and SVG import and export
+
+> [#1222](https://github.com/LinwoodDev/Butterfly/issues/1222)
+> [#1233](https://github.com/LinwoodDev/Butterfly/issues/1233)
+
+Imported images and SVGs now preserve their native on-screen size more accurately. This avoids graphics unexpectedly appearing at a different scale when they are added or pasted into a document.
+
+Image and SVG exports have also received several improvements. Exports can now include padding, and rendering better respects the current view transformation and canvas rotation.
+
+Polygon rendering during exports has been improved as well, and export preview sizing has been corrected.
+
+Together these changes make moving visual content into and out of Butterfly more predictable.
+
+## Pen, touch, settings, and WebDAV fixes
+
+> [#1210](https://github.com/LinwoodDev/Butterfly/issues/1210)
+> [#1221](https://github.com/LinwoodDev/Butterfly/issues/1221)
+> [#1234](https://github.com/LinwoodDev/Butterfly/issues/1234)
+> [#1207](https://github.com/LinwoodDev/Butterfly/issues/1207)
+
+Several pen-related issues have been fixed in this beta. Pen strokes should no longer change after releasing the pen, and previously drawn strokes should no longer temporarily disappear when drawing inside embeds.
+
+Selecting a file for import with a pen now correctly opens the import preview as well.
+
+Smooth touch navigation has also been improved when using the hand tool, especially when adding or releasing fingers during an active gesture.
+
+Settings opened from inside a document now update correctly again.
+
+Finally, WebDAV can now create missing parent directories when necessary. This fixes cases where creating a new connection, including some Nextcloud setups, could fail with a `404` unless the target directory had first been created manually.
+
+## Full changelog
+
+* Add whole connection encryption ([#1050](https://github.com/LinwoodDev/Butterfly/issues/1050))
+* Add backup support ([#1073](https://github.com/LinwoodDev/Butterfly/issues/1073))
+* Add constraint and center toggles to the shape toolbar, including horizontal, vertical, and 45° line snapping ([#1231](https://github.com/LinwoodDev/Butterfly/issues/1231))
+* Add runtime exact ruler angle control and preserve ruler placement while toggling ([#1230](https://github.com/LinwoodDev/Butterfly/issues/1230))
+* Add Shift aspect-ratio and Alt centered scaling modifiers everywhere ([#1197](https://github.com/LinwoodDev/Butterfly/issues/1197))
+* Add padding to image and svg export
+* Improve image and SVG import sizing by preserving their native on-screen size ([#1222](https://github.com/LinwoodDev/Butterfly/issues/1222))
+* Improve image and SVG exports with current view transforms, rotation, and polygon rendering ([#1233](https://github.com/LinwoodDev/Butterfly/issues/1233))
+* Use correct nightly branding
+* Fix settings not updating when opened from a document ([#1210](https://github.com/LinwoodDev/Butterfly/issues/1210))
+* Fix import preview not appearing after selecting a file with a pen ([#1221](https://github.com/LinwoodDev/Butterfly/issues/1221))
+* Fix pen stroke changing after release
+* Fix pen strokes temporarily disappearing in embeds ([#1234](https://github.com/LinwoodDev/Butterfly/issues/1234))
+* Fix smooth touch navigation with the hand tool and when adding or releasing fingers
+* Fix nightly branding missing from web builds
+* Fix export preview sizing
+* Fix WebDAV failing to create missing parent directories ([#1207](https://github.com/LinwoodDev/Butterfly/issues/1207))
+* Upgrade to Flutter 3.47
+  * Migrate to impeller for windows/linux
+  * Improve linux stylus support
