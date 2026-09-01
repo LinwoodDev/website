@@ -1,0 +1,175 @@
+---
+title: Setonix 0.9.0 released!
+date: "2026-09-01"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.9.0"
+---
+
+import Table from "../../../components/Table.astro";
+import TableItem from "../../../components/TableItem.astro";
+
+**Setonix 0.9.0 is here — and this is a big one!**
+
+With this release, all major features I originally wanted to have for Setonix 1.0 are now implemented. 0.9.0 lays much of the multiplayer and server foundation needed for more serious game servers, communities, and custom game modes.
+
+## Highlights
+
+<Table>
+<TableItem href="#roles-permissions">
+  🛡️ Roles and permissions
+</TableItem>
+<TableItem href="#game-roles">
+  🎭 Game roles
+</TableItem>
+<TableItem href="#player-names">
+  🪪 Player names and external identity services
+</TableItem>
+<TableItem href="#bans-moderation">
+  🚫 Bans and better moderation
+</TableItem>
+<TableItem href="#secure-authentication">
+  🔐 Phishing-resistant authentication
+</TableItem>
+<TableItem href="#protocol-security">
+  🌐 Protocol and network hardening
+</TableItem>
+</Table>
+
+## Roles and permissions \{#roles-permissions\}
+
+Setonix now has a proper **role and permission system** for multiplayer servers.
+
+Instead of every connected player having the same level of control, server actions can now be restricted using permissions. Setonix comes with roles such as **Spectator**, **Player**, **Moderator**, and **Owner**, covering everything from simply joining a server to managing worlds, kicking or banning players, and managing roles.
+
+Users can have multiple roles at the same time. Their permissions are combined, while role priorities provide a hierarchy for moderation and prevent lower-ranked users from managing users above them.
+
+Server owners can also define their own roles and permissions. Custom identifiers can be namespaced for packs or custom servers, making the system extensible instead of limiting servers to the built-in roles.
+
+Roles can be managed from the server console, while supported moderation actions are also available directly from the multiplayer dialog for users with the required permissions.
+
+This provides a much better foundation for public servers where not everyone who connects should immediately have full access to everything.
+
+## Game roles \{#game-roles\}
+
+Alongside server roles, Setonix now has a separate concept of **game roles**.
+
+Server roles answer questions such as *"Is this user allowed to moderate the server?"*, while game roles describe a player's role inside the currently running game.
+
+For example, a game mode could distinguish between dealers and regular players, teams with special responsibilities, or any other roles its rules need.
+
+The implementation is deliberately fairly basic for now, but game roles are part of the synchronized world state and are available to game systems and scripts. They provide another building block that custom game modes can use without mixing game-specific state with server administration permissions.
+
+## Player names and external identity services \{#player-names\}
+
+Multiplayer players now have proper display names.
+
+When someone joins without an existing name, Setonix automatically assigns names such as **Guest 1**, **Guest 2**, and so on. The guest prefix can also be configured by the server.
+
+Server administrators can rename connected users from the server console, and owners can manage player names directly from the multiplayer dialog.
+
+For servers that need something more persistent, Setonix can also use an **external REST API as its user backend**.
+
+The server can look up a player using the fingerprint of their Setonix account and retrieve persistent user information from your own service. This makes it possible to connect Setonix to an existing account or verification system and assign names, roles, whitelist state, bans, and other user information outside the Setonix server itself.
+
+Remote user API endpoints must use HTTPS, except when developing against localhost.
+
+## Bans and better moderation \{#bans-moderation\}
+
+Setonix servers can now ban players.
+
+Owners and other roles with the required permission can ban an authenticated user either permanently or until a specified time. A reason can be stored alongside the ban, and the new ban list makes it possible to inspect and remove existing bans later.
+
+The server console now includes commands for banning, unbanning, listing bans, changing names, managing roles, listing worlds and game modes, and several other administration tasks.
+
+There is one important detail here: Setonix accounts are decentralized and based on public/private key pairs. A user can technically generate another identity after being banned.
+
+For more controlled public servers, the new systems can therefore be combined. For example, new users could initially receive a spectator-style role and require approval before becoming a player, or a server could use an external REST API to verify accounts before allowing them to participate.
+
+The goal is to provide the building blocks and let server owners decide how strict their community should be.
+
+## Phishing-resistant authentication \{#secure-authentication\}
+
+The public-key account system has received a major security overhaul in 0.9.0.
+
+Authentication now uses **short-lived, origin-bound challenges**. Instead of signing something that could potentially be reused elsewhere, the signature is tied to the server the user intended to connect to, the individual connection, and an expiring challenge.
+
+This makes the authentication flow resistant against replay attacks and helps prevent a malicious server from obtaining a valid signature and reusing it to impersonate the user on another Setonix server.
+
+Public servers using account authentication now also need an explicitly configured public server address. This gives Setonix a canonical origin to bind authentication to instead of guessing which address the user intended to connect to.
+
+Authentication over the public internet requires a secure connection. Servers must use TLS/WSS directly or be placed behind a trusted TLS-terminating reverse proxy. Unencrypted authentication remains available for local development on loopback addresses.
+
+Authentication attempts are rate-limited, challenges expire, and unauthenticated connections are timed out instead of being allowed to remain open indefinitely.
+
+## Safer account backups
+
+Setonix account backups now protect the most sensitive part of your account: the private key.
+
+Backups are encrypted using a passphrase before being exported. When an account backup is imported, Setonix also validates that the included private and public keys really belong together instead of blindly accepting the data.
+
+This is especially important because the account key pair represents your decentralized Setonix identity.
+
+## Protocol and network hardening \{#protocol-security\}
+
+0.9.0 introduces explicit **Setonix protocol versions**.
+
+Clients and servers can now advertise their supported protocol versions and detect incompatible combinations instead of trying to communicate with an incompatible implementation and failing in less predictable ways.
+
+This becomes increasingly important as Setonix moves towards 1.0: the multiplayer protocol is becoming a defined interface rather than just an implementation detail of the current app and server.
+
+The server also rejects oversized network events before attempting to decode them, reducing unnecessary resource usage from invalid or malicious input.
+
+Together with the authentication changes, secure defaults, connection timeouts, and improved authorization checks, this release substantially strengthens the multiplayer server foundation.
+
+## Improved server management
+
+The standalone Setonix server has received a lot of work alongside the visible app changes.
+
+The console now provides commands for managing players, names, roles, permissions, bans, worlds, game modes, scripts, packs, whitelists, saves, resets, and more.
+
+Player references can use a connection ID, display name, or account fingerprint, making administration much more convenient once a server has more than a handful of connected players.
+
+World management has also been fixed to correctly respect the new role authorization system.
+
+## The road to Setonix 1.0 \{#road-to-1-0\}
+
+This release marks an important milestone for the project:
+
+**Setonix 0.9.0 now contains all of the features I originally wanted to have before 1.0.**
+
+That does **not** mean 1.0 is coming immediately.
+
+The next releases will focus much more on polishing what is already here: fixing bugs, improving the API and protocol, simplifying the UX, and making running and joining Setonix games as easy as possible. Expect versions such as 0.9.1, 0.9.2, 0.9.3, and potentially more while that work continues.
+
+Once I'm happy with the overall experience and the protocol and APIs are stable enough to commit to, Setonix can finally move to **1.0.0**. I currently plan to reach that point next year, although I haven't decided yet whether there will be a final beta release before 1.0.
+
+That would make Setonix my second app to reach 1.0.
+
+I'm really hyped to keep building Setonix into the **go-to game sandbox**: a place where you can throw objects onto a board and play around, or turn the same sandbox into a complete scripted multiplayer game.
+
+Stay tuned!
+
+## Platform updates
+
+Setonix has been upgraded to **Flutter 3.47** and the Android build now uses **AGP 9**.
+
+Alongside the release features, dependencies and build infrastructure have also received updates as the project continues moving towards 1.0.
+
+## Full changelog
+
+* Add protocol versions
+* Add role and permission system
+* Add support for multiple roles
+* Add ban list and unban functionality
+* Add player name functionality
+* Improve server commands
+* Fix role-authorized world management
+* Add phishing-resistant public-key authentication with expiring, origin-bound challenges
+* Add secure local defaults and simple public server address configuration
+* Require TLS for public-key authentication outside local development
+* Add authentication attempt limits and unauthenticated connection timeouts
+* Encrypt account backups with a passphrase and validate imported key pairs
+* Reject oversized network events before decoding
+* Upgrade to agb 9
+* Upgrade to flutter 3.47
