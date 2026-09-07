@@ -8,6 +8,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import sharp from "sharp";
+import { OG_TEMPLATE_HASH } from "../../og";
 import {
   getEntriesCacheKey,
   getEntryProject,
@@ -121,7 +122,7 @@ const svg = ({
   const midAccent = mix(accent, "#111820", 0.45);
   const softAccent = mix(accent, "#ffffff", 0.72);
   const logoUri = logoDataUri(logo);
-  const titleLines = wrapText(title, 18, 3);
+  const titleLines = wrapText(title, 18, 4);
   const projectName = (project ?? "Blog").replace(/^Linwood\s+/i, "");
   const titleSize = titleLines.length > 2 ? 58 : 66;
   const titleLineHeight = titleLines.length > 2 ? 66 : 74;
@@ -186,7 +187,7 @@ export async function getStaticPaths() {
             post,
             ...(author ? [author] : []),
             ...(project ? [project] : []),
-          ])}|logo:${logoDigest}`,
+          ])}|logo:${logoDigest}|template:${OG_TEMPLATE_HASH}`,
         };
       })
   );

@@ -7,6 +7,7 @@ import DefaultLayout from "./DefaultLayout.astro";
 import ProjectHero from "@components/ProjectHero.astro";
 import Author from "@components/Author.astro";
 import { getEntry } from "astro:content";
+import { OG_TEMPLATE_HASH } from "../og";
 
 type Props = CollectionEntry<"blog">["data"] & {
   project?: string;
@@ -18,7 +19,7 @@ const { title, description, date, heroImage, project, author, tags, url } =
 const currentAuthor = await getEntry("authors", author.id);
 const authorName = currentAuthor?.data.name;
 const absoluteUrl = new URL(url, Astro.site).toString();
-const ogImagePath = `/og${url}.png`;
+const ogImagePath = `/og${url}.png?v=${OG_TEMPLATE_HASH}`;
 const imageUrl = heroImage
   ? new URL(heroImage, Astro.site).toString()
   : new URL(ogImagePath, Astro.site).toString();

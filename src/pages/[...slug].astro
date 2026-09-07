@@ -6,6 +6,7 @@ import { getEntriesCacheKey, getEntryDescription, getEntryProject, getEntryUrl }
 import Table from '@components/Table.astro';
 import TableItem from '@components/TableItem.astro';
 import { render } from 'astro:content';
+import { OG_TEMPLATE_HASH } from '../og';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -21,11 +22,11 @@ export async function getStaticPaths() {
 				description: getEntryDescription(post),
 				project,
 			},
-			cacheKey: getEntriesCacheKey([
+			cacheKey: `${getEntriesCacheKey([
 				post,
 				...(author ? [author] : []),
 				...(project ? [project] : []),
-			]),
+			])}|og:${OG_TEMPLATE_HASH}`,
 		};
 	}));
 }
