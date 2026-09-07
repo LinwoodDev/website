@@ -1,0 +1,170 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-rc.0) released
+date: "2026-09-07"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-rc.0"
+---
+
+The first release candidate of Butterfly Dreamy Duskywing is now available.
+
+After seven beta releases, Butterfly 2.6 has reached its release candidate stage. This update focuses heavily on reliability and responsiveness across everyday workflows. Please test this release candidate carefully and report any remaining bugs or unexpected behavior you find.
+
+There is also something else worth celebrating: **Butterfly recently passed 2,000 stars on GitHub!** Thank you to everyone who has starred the project, contributed code or translations, reported bugs, helped other users, or simply followed Butterfly's development. 💚
+
+Highlights:
+
+* 💾 Safer document persistence and Android background saving
+* ⚡ Faster large-document navigation, baking, and erasing
+* 🤝 More reliable collaboration
+* 🖥️ Better embeds and fullscreen controls
+* 📥 Smoother importing, exporting, and connections
+* ⚙️ More responsive settings and paint controls
+* 📱 Mobile, touch, and web reliability fixes
+
+## Safer document persistence and Android background saving
+
+> [#1249](https://github.com/LinwoodDev/Butterfly/issues/1249)
+
+The persistent document state system introduced during the 2.6 development cycle has gained more control over its default behavior.
+
+You can now configure the default lock state used when a document does not already have saved lock information. This includes collection, layer, zoom, rotation, horizontal, and vertical locks.
+
+This is especially helpful on tablets where you may always want navigation locked while writing. Instead of repeatedly enabling the same locks whenever you start a new document, Butterfly can start with the configuration you prefer while still remembering individual document states.
+
+There is also an important Android reliability fix in this release candidate.
+
+When Butterfly is moved into the background, pending changes are now saved immediately instead of continuing to wait for a delayed autosave timer. Previously, Android could remove Butterfly from memory while that delayed save was still pending, which could result in recent document changes being lost.
+
+This is particularly important when using longer autosave delays or moving between many apps on a memory-constrained device.
+
+## Faster large-document navigation, baking, and erasing
+
+A considerable amount of work in this release went into reducing unnecessary processing while working with larger documents.
+
+Page switching has been optimized so that larger pages can be encoded and decoded away from the main interface work. This should make switching between content-heavy pages feel much more responsive instead of blocking the editor while the page is prepared.
+
+The pages and areas navigators have also been optimized. Page previews are loaded more lazily, and expensive page data no longer needs to be decoded immediately just because it appears in the navigator. Area lists now avoid preparing content from every page unless it is actually needed.
+
+Viewport baking has received another optimization as well. Butterfly now checks whether the relevant layers actually changed before doing additional baking work, avoiding rebuilds that would not change the rendered result.
+
+The eraser has seen a particularly substantial internal improvement. Previously, strokes could be densely resampled while the eraser moved across them. The new implementation instead calculates where the eraser boundary intersects a stroke and clips the path directly at those points.
+
+That means much less temporary geometry needs to be generated while erasing, especially for long strokes. Input handling has also been made more robust when pointer events overlap, fail, or finish while previous eraser work is still pending.
+
+The eraser cursor itself has also been improved so that its active area is clearer while working.
+
+Polygon hit testing now rejects clearly disjoint shapes earlier too, avoiding more expensive intersection calculations when the shapes cannot possibly overlap.
+
+Together, these changes continue the performance work from the previous 2.6 betas and should be especially noticeable in larger and more complex documents.
+
+## More reliable collaboration
+
+Collaboration has received a broad reliability and user experience pass.
+
+Joining a collaboration session now validates the entered address directly in the dialog, and starting a session provides proper loading and error feedback instead of leaving it unclear whether the connection succeeded.
+
+Starting and stopping collaboration is now handled asynchronously as well, preventing multiple operations from being triggered while the previous one is still running.
+
+The collaboration overview handles loading and errors when preparing the share address more gracefully, and changing your collaboration name now updates it for the active session immediately.
+
+Connection state handling has also been tightened up. Failed connections time out sooner, closed clients are cleaned up more reliably, and the displayed users stay in sync with the actual connected clients.
+
+These are mostly behind-the-scenes changes, but together they should make creating, joining, leaving, and managing collaborative sessions feel much more predictable.
+
+## Better embeds and fullscreen controls
+
+> [#1247](https://github.com/LinwoodDev/Butterfly/issues/1247)
+
+Embeds can now be configured to use fullscreen mode, providing more control over how Butterfly is presented when integrated into another application or website.
+
+Several menu items that had disappeared from embeds have also been restored, making the embedded editor more consistent with the regular Butterfly interface where those actions are available.
+
+Page switching inside embeds has been fixed as well. Multi-page documents should now correctly update when another page is selected instead of the embed remaining on the previous page.
+
+These changes continue the embed improvements from the recent beta releases and make embedded Butterfly instances more useful for integrations that need more than a minimal canvas.
+
+## Smoother importing, exporting, and connections
+
+> [#1240](https://github.com/LinwoodDev/Butterfly/issues/1240)
+> [#1242](https://github.com/LinwoodDev/Butterfly/issues/1242)
+
+Importing encrypted Butterfly documents no longer requires entering their password during the import itself.
+
+The document remains encrypted, and its password is still required when you actually open it. This is particularly useful when importing backups containing many encrypted notes, where asking for every individual password during the import process would make restoring the backup impractical.
+
+WebP image importing has also been fixed, and importing Butterfly files on Android now works correctly again.
+
+File copying and exporting have been made more efficient as well, reducing unnecessary work when moving or exporting larger amounts of data.
+
+The connection workflow has received some polish too. The **Add connection** dialog is now more responsive across different window sizes and includes additional helper text to make its options easier to understand.
+
+The sync dialog now initially opens the connection you are currently using instead of showing the wrong connection first.
+
+Backup configuration is clearer as well. Selecting the remote connection used for backups now uses an improved menu and explicitly shows when no connections are available.
+
+## More responsive settings and paint controls
+
+Several smaller interface improvements have landed since the first version of this release candidate changelog.
+
+The settings modal now switches to its more spacious layout earlier, making settings easier to navigate when Butterfly is opened in medium-sized windows or dialogs.
+
+Texture paint controls have also been improved for narrow layouts. The paint type selector can now expand underneath its label instead of being squeezed into the same row, making solid, image, SVG, and gradient paints easier to select on smaller screens.
+
+The pen paint field has also been renamed from the more generic **Color** label to **Stroke**, making it clearer which part of the pen is being configured.
+
+Finally, the diagnostic logging option in settings is now called **Verbose**, better reflecting that the switch enables additional detailed diagnostic output rather than the log viewer itself.
+
+## Mobile, touch, and web reliability fixes
+
+> [#1241](https://github.com/LinwoodDev/Butterfly/issues/1241)
+
+The home page layout has been improved for phones and other mobile devices used in landscape orientation, making better use of the limited vertical space.
+
+File thumbnails on mobile now refresh correctly after returning from a document. Previously, the home page could continue showing an outdated preview even after the document had changed.
+
+Pinch zoom has also been corrected so that the canvas no longer gradually drifts toward one of your fingers while zooming. The gesture should now remain centered more naturally between the active touch points.
+
+On the web, a freeze affecting document views in non-Wasm builds has been fixed.
+
+Finally, settings are no longer written every time without first checking whether they actually changed, reducing unnecessary persistence work.
+
+## What's next
+
+This is the first release candidate for Butterfly 2.6, so the focus from here is on finding and fixing the remaining issues rather than adding large new features.
+
+If testing goes well, **Butterfly 2.6.0 stable is planned for later this month**.
+
+Please keep testing the release candidate and report anything that still feels broken or unexpected. The feedback during these last weeks is especially valuable before the stable release.
+
+And once again, thank you for helping Butterfly reach **2,000 GitHub stars**. Seeing the community around the project continue to grow makes reaching this stage of Butterfly 2.6 even more special. 💚
+
+## Full changelog
+
+* Add full screen embed option and restore missing embed menu items
+* Add setting for default document persistence states ([#1249](https://github.com/LinwoodDev/Butterfly/issues/1249))
+* Improve landscape mobile home page
+* Improve collaboration reliability and user experience
+* Improve responsiveness and add helper text to the add connection dialog
+* Improve pages and areas navigator performance
+* Improve page switching performance for large documents
+* Improve efficiency of file coping and exporting
+* Improve baking performance by testing layer changes before baking
+* Improve eraser performance by clipping strokes directly at the eraser boundary
+* Improve eraser cursor display
+* Improve polygon hit testing performance for disjoint shapes
+* Improve responsiveness and clarity of texture paint fields
+* Improve settings modal responsiveness
+* Improve backup connection selection
+* Rename the logs setting to verbose
+* Fix sync dialog not opening current connection initially
+* Fix switching pages in embeds ([#1247](https://github.com/LinwoodDev/Butterfly/issues/1247))
+* Fix importing WebP images ([#1240](https://github.com/LinwoodDev/Butterfly/issues/1240))
+* Fix file thumbnails not refreshing after returning from documents on mobile ([#1241](https://github.com/LinwoodDev/Butterfly/issues/1241))
+* Fix importing encrypted notes requiring their password ([#1242](https://github.com/LinwoodDev/Butterfly/issues/1242))
+* Fix importing Butterfly files on Android
+* Fix pinch zoom drifting toward one finger
+* Fix document view freezing on non-Wasm web builds
+* Fix documents got lost after app is moved to background on Android
+* Fix always saving settings without checking if they changed
+* Fix eraser input handling when pointer events overlap, fail, or finish while work is pending
