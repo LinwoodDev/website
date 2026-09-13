@@ -1,0 +1,105 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-rc.1) released
+date: "2026-09-13"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-rc.1"
+---
+
+The second release candidate of Butterfly Dreamy Duskywing is now available.
+
+RC 1 continues polishing the everyday editing experience with better tables, more consistent behavior on rotated canvases, improved document state persistence, and several desktop navigation fixes. Please test this release candidate carefully and report any remaining bugs or unexpected behavior you find.
+
+Highlights:
+
+* 📍 Per-page viewport persistence
+* 📊 Better table selection and formatting
+* 🔄 Rotation-aware editing and improved hit testing
+* 🖥️ Better desktop fullscreen navigation
+* 🗂️ More predictable connections and collections
+* 🐛 Template and toolbar fixes
+
+## Per-page viewport persistence
+
+Butterfly can now remember a separate viewport for every page in a document.
+
+Previously, viewport persistence primarily remembered one camera position for the document. RC 1 extends this so each page can retain its own position, zoom, and rotation.
+
+This is especially useful for larger multi-page notes where different pages contain content in very different places. You can work on one area of one page, switch somewhere completely different on another page, and then return without having to navigate back to where you were.
+
+The saved viewport information follows pages when they are renamed and is cleaned up when pages are removed.
+
+## Better table selection and formatting
+
+Tables get another substantial usability improvement in this release candidate.
+
+You can now select a **range of table cells** instead of being limited to working with an individual cell, row, or column. Dragging across cells creates a range selection that can then use the shared formatting controls, making it much faster to style several related cells at once.
+
+Table interactions have also been refined more generally. Selecting another part of a table, clicking outside a table to deselect it, and resizing borders should now behave more predictably.
+
+Border resizing also avoids treating the outer edges like regular internal dividers where that would not make sense, and table selections stay valid when the table structure changes.
+
+Together, these changes make tables feel much closer to a normal editable table instead of a collection of individually configured cells.
+
+## Rotation-aware editing and improved hit testing
+
+Working on a rotated canvas is now much more consistent.
+
+Element creation now respects the current viewport rotation. When you rotate the canvas and create elements, Butterfly keeps the tools aligned with the orientation you are actually looking at rather than behaving as if the canvas were still unrotated.
+
+Selection has received the same treatment. Rectangle selections and transformation handles now take viewport rotation into account, and the spacer tool also uses rotation-aware selection regions.
+
+Text and Markdown creation follows the rotated viewport as well, so newly created labels use the expected orientation.
+
+Hit testing has also been improved for **rotated, curved, and zero-size elements**. This makes selecting and interacting with unusual element geometries more reliable, particularly when rotation or very small dimensions previously made their clickable area difficult to determine.
+
+## Better desktop fullscreen navigation
+
+> [#1256](https://github.com/LinwoodDev/Butterfly/issues/1256)
+
+Desktop navigation behaves more naturally when Butterfly is in fullscreen mode or when the regular navigation rail is disabled.
+
+Opening pages, areas, files, or the other navigator views now uses a **sidebar** instead of replacing the interface with a fullscreen navigation view.
+
+This keeps the canvas visible and makes fullscreen workflows less disruptive, especially when you only want to quickly switch a page, area, or file and then continue working.
+
+## More predictable connections and collections
+
+> [#1256](https://github.com/LinwoodDev/Butterfly/issues/1256)
+
+Switching between storage connections now takes you back to the root directory.
+
+Different connections can have completely different folder structures, so keeping the previous directory after switching could leave Butterfly trying to display a path that does not exist on the newly selected connection. Starting at the root makes the result predictable regardless of which local or remote storage you switch to.
+
+There is also a small but important consistency fix for collections: newly created **text and Markdown elements now inherit the current collection**, just like other newly created elements.
+
+This means collection locking and organization continue to work as expected when adding written content.
+
+## Template and toolbar fixes
+
+Applying backgrounds from custom templates now works correctly again.
+
+This fixes cases where selecting a custom template did not properly transfer its background configuration to the document.
+
+Butterfly also now correctly updates the current tool after the toolbar changes. This prevents the selected tool state from becoming out of sync with what the toolbar is actually showing.
+
+## What's next
+
+Butterfly 2.6 is now on its second release candidate, and the focus remains on fixing the remaining issues and polishing the experience rather than adding large new features.
+
+If testing continues to go well, **Butterfly 2.6.0 stable is still planned for later this month**.
+
+Please keep testing RC 1 and report anything that still behaves unexpectedly. Every issue found now helps make the stable Dreamy Duskywing release better. 💚
+
+## Full changelog
+
+* Add per-page viewport persistence
+* Add table cell range selection with shared formatting controls
+* Respect viewport rotation in element creation, selection, and spacer tools
+* Assign new text and markdown elements to the current collection
+* Improve hit testing for rotated, curved, and zero-size elements
+* Improve table selection, deselection, and border resizing behavior
+* Use sidebar for full screen and disabled navigation rail on desktop ([#1256](https://github.com/LinwoodDev/Butterfly/issues/1256))
+* Navigate to root directory after connection change ([#1256](https://github.com/LinwoodDev/Butterfly/issues/1256))
+* Fix applying backgrounds from custom templates
+* Fix current tool not updated after toolbar change
