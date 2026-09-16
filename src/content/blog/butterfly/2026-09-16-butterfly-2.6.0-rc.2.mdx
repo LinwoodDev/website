@@ -1,0 +1,64 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.0-rc.2) released
+date: "2026-09-16"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-rc.2"
+---
+
+The third release candidate of Butterfly Dreamy Duskywing is now available.
+
+RC 2 is a smaller reliability update focused mainly on PDF rendering, importing, and asset handling. Please keep testing and report any remaining issues you find.
+
+Highlights:
+
+* 📄 More reliable PDF rendering
+* 📥 More reliable PDF importing
+* 🔄 Improved PDF and asset lifecycle handling
+* ↔️ RTL icon fixes
+
+## More reliable PDF rendering
+
+> [#1259](https://github.com/LinwoodDev/Butterfly/issues/1259)
+
+Butterfly now shows the initial document content while PDFs are still loading and repaints once the visible batch has finished loading.
+
+The renderer state is also published before waiting for visible elements to initialize. This fixes newer strokes being lost while a slower PDF rendering operation is still running.
+
+Viewport updates are handled in the same order, preventing an older visibility update from replacing a newer viewport state after navigation.
+
+## More reliable PDF importing
+
+> [#1260](https://github.com/LinwoodDev/Butterfly/issues/1260)
+
+PDF initialization is now awaited before the rest of the application setup continues.
+
+The PDF import workflow now shows its loading state earlier and cleans it up correctly when opening or rendering a PDF preview fails.
+
+Page-selection previews are also rendered at a reduced size instead of using the full page resolution, and their temporary images are disposed after the import workflow finishes.
+
+## Improved PDF and asset lifecycle handling
+
+> [#1261](https://github.com/LinwoodDev/Butterfly/issues/1261)
+
+Butterfly now tracks the asset sources used by pages more completely, including sources referenced by elements, backgrounds, strokes, fills, and other paints.
+
+When changing pages, cached sources that are still used by the new page are kept while unused sources can be released.
+
+Failed data and PDF loads are also removed from their caches so a later request can try loading them again instead of reusing the failed result.
+
+The PDF cache cleanup and disposal logic has been adjusted as part of this work as well.
+
+## RTL icon fixes
+
+Icons that should keep a fixed orientation are now explicitly kept left-to-right instead of being automatically mirrored in right-to-left layouts.
+
+This change applies across multiple views and controls throughout Butterfly.
+
+## Full changelog
+
+* Show initial document content while PDFs load and repaint once the visible batch is ready
+* Fix strokes disappearing during PDF rendering and stale viewport updates after navigation ([#1259](https://github.com/LinwoodDev/Butterfly/issues/1259))
+* Fix PDF import initialization and loading dialog cleanup after preview failures ([#1260](https://github.com/LinwoodDev/Butterfly/issues/1260))
+* Preserve shared PDFs across page changes, release unused sources, and retry failed asset loads ([#1261](https://github.com/LinwoodDev/Butterfly/issues/1261))
+* Fix rtl icon mirroring on multiple views

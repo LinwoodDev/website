@@ -21,7 +21,7 @@
     "typescript": "^7.0.2",
     "workbox-build": "^7.4.1"
   },
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.4.2",
   "devDependencies": {
     "@vite-pwa/astro": "^1.2.0",
     "sass": "^1.104.1",
