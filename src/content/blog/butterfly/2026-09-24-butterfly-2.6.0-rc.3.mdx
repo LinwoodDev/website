@@ -1,0 +1,68 @@
+---
+
+title: Butterfly Dreamy Duskywing (2.6.0-rc.3) released
+date: "2026-09-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.0-rc.3"
+---
+
+The fourth release candidate of Butterfly Dreamy Duskywing is now available.
+
+RC 3 is another focused reliability and polish update, with important fixes for high-quality image exports, better links to the documentation, and a few improvements to embeds, recent files, and selection handling.
+
+Highlights:
+
+* 🖼️ More reliable high-quality image exports
+* ❓ Contextual help where you need it
+* 🧩 Embeds can now reset documents
+* 🐛 Recent files and selection fixes
+
+## More reliable high-quality image exports
+
+> [#1269](https://github.com/LinwoodDev/Butterfly/issues/1269)
+
+Image exporting has received several fixes in RC 3.
+
+Renderers are now updated for the requested export quality instead of potentially reusing state prepared for the current screen resolution. This fixes exports at different quality settings using incorrectly scaled renderer caches.
+
+High-resolution exports also handle GPU texture limits more gracefully. If the requested raster size is larger than the supported texture size, Butterfly now adjusts the raster quality and renders the complete export instead of cropping content from the right or bottom.
+
+Offscreen canvas recordings now also use explicit raster bounds, making the intended output size clear during rendering.
+
+## Contextual help where you need it
+
+More parts of Butterfly now provide direct links to the relevant documentation.
+
+Contextual help buttons have been added to several dialogs, including collections, image and PDF exports, packs, synchronization, and templates.
+
+Tool help links have also been expanded for tools such as tables, importing, assets, and exporting, making it easier to jump directly from a feature to the corresponding documentation.
+
+## Embeds can now reset documents
+
+Embeds can now replace the current document with a new blank document without reloading the iframe.
+
+A new `reset` embed message has been added, and sending `null` through `setData` performs the same reset.
+
+This gives applications integrating Butterfly a simple way to clear the current embedded document and start again.
+
+## Recent files and selection fixes
+
+> [#1273](https://github.com/LinwoodDev/Butterfly/issues/1273)
+> [#1275](https://github.com/LinwoodDev/Butterfly/issues/1275)
+
+Tooltips in the recent files view are now positioned outside the file card instead of overlapping the file name.
+
+Changing the thumbnail setting also refreshes the recent files view immediately, so previews correctly appear or disappear without requiring another action.
+
+Finally, hidden selection transform boxes no longer continue catching pointer input after the selection has been cleared. Once an element is deselected, its old transform area should no longer interfere with clicks or other tools.
+
+## Full changelog
+
+* Add explicit raster bounds to offscreen canvas recordings
+* Add more contextual help buttons
+* Fix high-quality image exports being cropped at GPU texture limits ([#1269](https://github.com/LinwoodDev/Butterfly/issues/1269))
+* Fix image exports reusing screen-resolution renderer caches at different quality settings
+* Fix recent file tooltips overlapping file names and refresh thumbnails when their setting changes ([#1273](https://github.com/LinwoodDev/Butterfly/issues/1273))
+* Fix hidden selection transform boxes continuing to catch input after deselection ([#1275](https://github.com/LinwoodDev/Butterfly/issues/1275))
+* Add reset functionality to embeds
