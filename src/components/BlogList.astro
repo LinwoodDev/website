@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
-import { getEntryDescription, getEntryUrl } from "../blog";
+import { getEntryDescription, getEntryUrl, getPostAuthorIds } from "../blog";
 import FormattedDate from "./FormattedDate.astro";
 import Link from "./Link.astro";
 import type { Page } from "astro";
@@ -16,7 +16,8 @@ const posts = page.data;
 const postsWithAuthors = await Promise.all(
   posts.map(async (post) => ({
     post,
-    author: await getEntry("authors", post.data.author.id),
+    authors: (await Promise.all(getPostAuthorIds(post.data.author).map((id) => getEntry("authors", id))))
+      .filter((author) => author !== undefined),
   }))
 );
 ---
@@ -34,7 +35,7 @@ const postsWithAuthors = await Promise.all(
   }
   <ul class="col gap-md align-stretch pv-md ph-xs">
     {
-      postsWithAuthors.map(({ post, author }) => (
+      postsWithAuthors.map(({ post, authors }) => (
         <li>
           <Link
             variant="secondary"
@@ -47,19 +48,23 @@ const postsWithAuthors = await Promise.all(
                 <FormattedDate date={post.data.date} />
               </div>
               {
-                author && (
+                authors.length > 0 && (
                   <p class="blog-list-author m-none">
-                    <span class="blog-list-avatar">
-                      <img
-                        src={author.data.avatar}
-                        width={32}
-                        height={32}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </span>
-                    <span>{author.data.name}</span>
+                    {authors.map((author) => (
+                      <span class="blog-list-author-person">
+                        <span class="blog-list-avatar">
+                          <img
+                            src={author.data.avatar}
+                            width={32}
+                            height={32}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </span>
+                        <span>{author.data.name}</span>
+                      </span>
+                    ))}
                   </p>
                 )
               }
@@ -128,10 +133,17 @@ const postsWithAuthors = await Promise.all(
   .blog-list-author {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
     color: var(--ls-background-text);
     font-size: 0.9rem;
     opacity: 0.72;
+  }
+
+  .blog-list-author-person {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .blog-list-avatar {

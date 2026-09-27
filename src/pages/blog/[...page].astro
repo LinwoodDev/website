@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BlogList from "@components/BlogList.astro";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import type { PaginateFunction } from "astro";
-import { getEntriesCacheKey, getPosts } from "../../blog";
+import { getEntriesCacheKey, getPostAuthorIds, getPosts } from "../../blog";
 
 export const PAGE_SIZE = 20;
 
@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate } : {paginate : PaginateFunction
   return paginate(posts, { pageSize: PAGE_SIZE }).map((path) => {
     const { page } = path.props;
     const pageAuthors = page.data
-      .map((post) => authors.get(post.data.author.id))
+      .flatMap((post) => getPostAuthorIds(post.data.author).map((id) => authors.get(id)))
       .filter((author) => author !== undefined);
     return {
       ...path,

@@ -2,7 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
-import { getEntriesCacheKey, getEntryDescription, getEntryProject, getEntryUrl } from '../blog';
+import { getEntriesCacheKey, getEntryDescription, getEntryProject, getEntryUrl, getPostAuthorIds } from '../blog';
 import Table from '@components/Table.astro';
 import TableItem from '@components/TableItem.astro';
 import { render } from 'astro:content';
@@ -11,8 +11,8 @@ import { OG_TEMPLATE_HASH } from '../og';
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return Promise.all(posts.map(async (post) => {
-		const [author, project] = await Promise.all([
-			getEntry('authors', post.data.author.id),
+		const [authors, project] = await Promise.all([
+			Promise.all(getPostAuthorIds(post.data.author).map((id) => getEntry('authors', id))),
 			getEntryProject(post),
 		]);
 		return {
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 			},
 			cacheKey: `${getEntriesCacheKey([
 				post,
-				...(author ? [author] : []),
+				...authors.filter((author) => author !== undefined),
 				...(project ? [project] : []),
 			])}|og:${OG_TEMPLATE_HASH}`,
 		};

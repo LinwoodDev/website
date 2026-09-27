@@ -8,6 +8,7 @@ import ProjectHero from "@components/ProjectHero.astro";
 import Author from "@components/Author.astro";
 import { getEntry } from "astro:content";
 import { OG_TEMPLATE_HASH } from "../og";
+import { getPostAuthorIds } from "../blog";
 
 type Props = CollectionEntry<"blog">["data"] & {
   project?: string;
@@ -16,8 +17,9 @@ type Props = CollectionEntry<"blog">["data"] & {
 
 const { title, description, date, heroImage, project, author, tags, url } =
   Astro.props;
-const currentAuthor = await getEntry("authors", author.id);
-const authorName = currentAuthor?.data.name;
+const currentAuthors = (await Promise.all(getPostAuthorIds(author).map((id) => getEntry("authors", id))))
+  .filter((entry) => entry !== undefined);
+const authorName = currentAuthors.map((entry) => entry.data.name).join(", ");
 const absoluteUrl = new URL(url, Astro.site).toString();
 const ogImagePath = `/og${url}.png?v=${OG_TEMPLATE_HASH}`;
 const imageUrl = heroImage
@@ -34,11 +36,11 @@ const structuredData = {
     "@type": "WebPage",
     "@id": absoluteUrl,
   },
-  author: currentAuthor && {
+  author: currentAuthors.map((entry) => ({
     "@type": "Person",
-    name: currentAuthor.data.name,
-    url: currentAuthor.data.url,
-  },
+    name: entry.data.name,
+    url: entry.data.url,
+  })),
   publisher: {
     "@type": "Organization",
     name: "Linwood",
@@ -113,7 +115,9 @@ const platforms = [
     <h1>{title}</h1>
     <FormattedDate date={date} />
     <ProjectHero project={project} />
-    <Author author={author.id} />
+    <div class="row wrap gap-md">
+      {getPostAuthorIds(author).map((id) => <Author author={id} />)}
+    </div>
     <div class="row wrap gap-xs mv-xs">
       <button class="btn secondary icon-btn p-xs" id="mastodon-btn">
         <span
