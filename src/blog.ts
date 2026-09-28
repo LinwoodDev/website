@@ -10,6 +10,9 @@ type CacheableEntry = {
 export const getEntryCacheKey = (entry: CacheableEntry) =>
   `${entry.id}:${entry.digest ?? JSON.stringify([entry.data, entry.body])}`;
 
+export const getPostAuthorIds = (author: CollectionEntry<"blog">["data"]["author"]) =>
+  (Array.isArray(author) ? author : [author]).map((entry) => entry.id);
+
 export const getEntriesCacheKey = (entries: CacheableEntry[]) =>
   entries.map(getEntryCacheKey).join("|");
 

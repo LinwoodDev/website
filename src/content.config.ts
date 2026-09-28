@@ -17,7 +17,7 @@ const blog = defineCollection({
       .transform((val) => new Date(val)),
     heroImage: z.string().optional(),
     unlisted: z.boolean().default(false),
-    author: reference("authors"),
+    author: z.union([reference("authors"), z.array(reference("authors")).min(1)]),
   }),
 });
 const projects = defineCollection({

@@ -13,6 +13,7 @@ import {
   getEntriesCacheKey,
   getEntryProject,
   getEntryUrl,
+  getPostAuthorIds,
 } from "../../blog";
 
 const WIDTH = 1200;
@@ -168,8 +169,8 @@ export async function getStaticPaths() {
     posts
       .filter((post) => !post.data.unlisted)
       .map(async (post) => {
-        const [author, project] = await Promise.all([
-          getEntry("authors", post.data.author.id),
+        const [authors, project] = await Promise.all([
+          Promise.all(getPostAuthorIds(post.data.author).map((id) => getEntry("authors", id))),
           getEntryProject(post),
         ]);
         const logo = project?.data.logo ?? project?.id ?? "logo";
@@ -185,7 +186,7 @@ export async function getStaticPaths() {
           props: { post },
           cacheKey: `${getEntriesCacheKey([
             post,
-            ...(author ? [author] : []),
+            ...authors.filter((author) => author !== undefined),
             ...(project ? [project] : []),
           ])}|logo:${logoDigest}|template:${OG_TEMPLATE_HASH}`,
         };
@@ -195,12 +196,13 @@ export async function getStaticPaths() {
 
 export async function GET({ props }: APIContext) {
   const post = props.post as Awaited<ReturnType<typeof getCollection<"blog">>>[number];
-  const author = await getEntry("authors", post.data.author.id);
+  const authors = (await Promise.all(getPostAuthorIds(post.data.author).map((id) => getEntry("authors", id))))
+    .filter((author) => author !== undefined);
   const project = await getEntryProject(post);
   const svgContent = svg({
     title: post.data.title,
     date: post.data.date,
-    author: author?.data.name ?? "Linwood",
+    author: authors.map((author) => author.data.name).join(" & ") || "Linwood",
     project: project?.data.title,
     logo: project?.data.logo ?? project?.id ?? "logo",
     color: project?.data.color ?? "#35EF53",
