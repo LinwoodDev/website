@@ -1,0 +1,104 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.1-rc.0) released
+date: "2026-10-02"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.1-rc.0"
+---
+
+The first and currently planned only release candidate for Butterfly 2.6.1 is now available.
+
+A lot of the work for 2.6.1 was already prepared in the weeks before Butterfly 2.6.0 was released. This allowed development to continue on new improvements while the final 2.6.0 release candidates were being tested and prepared for stable.
+
+Because of that, 2.6.1 already contains quite a few improvements despite arriving shortly after 2.6.0.
+
+I will keep this post relatively short though. The bigger features will get a proper explanation in the stable 2.6.1 release post.
+
+Highlights:
+
+* 🖥️ Improved presentation tool
+* 🖼️ Automatic document thumbnails
+* 🔍 Better zoom, rotation and input controls
+* 📁 Smoother file management and saving
+* 🐛 Collaboration, embeds and smaller reliability fixes
+
+## Improved presentation tool
+
+The presentation tool has received a larger upgrade with slides, keyframes, camera rotation and transition controls.
+
+There is quite a bit to talk about here, so this will get a proper explanation in the stable 2.6.1 post.
+
+## Automatic document thumbnails
+
+Butterfly can now automatically generate a document thumbnail when you close a document.
+
+This can be controlled per document and through the default settings, making it easier to keep useful previews without having to create them manually.
+
+## Better zoom, rotation and input controls
+
+> [#1256](https://github.com/LinwoodDev/Butterfly/issues/1256)
+> [#1283](https://github.com/LinwoodDev/Butterfly/issues/1283)
+> [#1287](https://github.com/LinwoodDev/Butterfly/issues/1287)
+> [#1223](https://github.com/LinwoodDev/Butterfly/issues/1223)
+> [#1200](https://github.com/LinwoodDev/Butterfly/issues/1200)
+> [#1288](https://github.com/LinwoodDev/Butterfly/issues/1288)
+
+Zoom and rotation controls are now combined and include step buttons, direct angle input and a rotation reset.
+
+There are also several different zoom panel layouts, separate sensitivity settings for pan, zoom, rotation and scrolling, plus configurable Shift+Space dragging for rotating the canvas.
+
+Double-tap and triple-tap shortcuts are now grouped inside the mouse, touch and stylus settings. A note also explains that these shortcuts add a small input delay while Butterfly waits to see whether another tap follows.
+
+This release also fixes held keyboard shortcuts not being released correctly and temporary hand navigation remaining active after releasing a mouse or pen button.
+
+## Smoother file management and saving
+
+Renaming files now preserves note extensions and hides those extensions from the rename field.
+
+Saving notes without an extension has also been fixed and failed saves can now be retried.
+
+The file view stays visible while renaming, creating, deleting or refreshing files instead of disappearing during those actions.
+
+## Collaboration, embeds and smaller reliability fixes
+
+> [#1278](https://github.com/LinwoodDev/Butterfly/issues/1278)
+> [#1280](https://github.com/LinwoodDev/Butterfly/issues/1280)
+> [#1274](https://github.com/LinwoodDev/Butterfly/issues/1274)
+
+Undo and redo now render correctly during collaboration.
+
+Embeds can now get and set the current view state, making it possible for integrations to control and restore the current camera state.
+
+Pasted images should no longer show small visual artifacts either.
+
+There are also several smaller UI and platform fixes, including improved settings navigation, number inputs, branding, Linux release information, AppImage update channels and Android page size support.
+
+## Full changelog
+
+* Migrate the app interface to the Material UI package
+* Improve the presentation tool with slides, keyframes, camera rotation, and transition controls
+* Keep settings subpages inside the settings dialog and fix keyboard and Escape navigation ([#1272](https://github.com/LinwoodDev/Butterfly/issues/1272))
+* Add automatic document thumbnails when closing a document, with per-document and default settings
+* Add slider steps and improve number input controls ([#1256](https://github.com/LinwoodDev/Butterfly/issues/1256))
+* Fix releasing held keyboard shortcuts ([#1200](https://github.com/LinwoodDev/Butterfly/issues/1200))
+* Fix undo and redo rendering during collaboration ([#1278](https://github.com/LinwoodDev/Butterfly/issues/1278))
+* Separate pan, zoom, rotation, and scroll sensitivity settings ([#1283](https://github.com/LinwoodDev/Butterfly/issues/1283))
+* Group double- and triple-tap shortcuts in mouse, touch, and stylus settings with a visible note explaining their input delay
+* Fix temporary hand navigation remaining active after releasing mouse or pen buttons ([#1288](https://github.com/LinwoodDev/Butterfly/issues/1288))
+* Preserve note extensions when renaming, fix saving extensionless notes, and allow retrying failed saves
+* Hide file extensions in rename fields
+* Keep the file view visible when renaming, creating, deleting, or refreshing files
+* Add view state getter and setter to embeds ([#1280](https://github.com/LinwoodDev/Butterfly/issues/1280))
+* Combine zoom and rotation controls with step buttons, angle input and rotation reset ([#1287](https://github.com/LinwoodDev/Butterfly/issues/1287), [#1223](https://github.com/LinwoodDev/Butterfly/issues/1223))
+* Add five zoom panel layouts and rotation display settings ([#1223](https://github.com/LinwoodDev/Butterfly/issues/1223))
+* Add configurable Shift+Space dragging to rotate the canvas
+* Fix unbounded number input layouts in the stroke-width toolbar and keyframe dialog
+* Fix zoom input text editing and smooth cached canvas images during rotation
+* Fix pasting images having small visual artifacts ([#1274](https://github.com/LinwoodDev/Butterfly/issues/1274))
+* Fix stable and nightly branding, Linux app store release notes, and AppImage update channels
+* Restore 16kb page size on Android
+
+Upstreamed from 2.6.0:
+* Fix fractional-pixel mismatch in the viewport cache ([#1279](https://github.com/LinwoodDev/Butterfly/issues/1279))
+* Fix editor state loading and saving across WebDAV connections ([#1281](https://github.com/LinwoodDev/Butterfly/issues/1281))
+* Automatically sync pinned files while the app is open and after reconnecting ([#1281](https://github.com/LinwoodDev/Butterfly/issues/1281))
