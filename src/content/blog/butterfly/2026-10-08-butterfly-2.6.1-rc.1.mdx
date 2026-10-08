@@ -1,0 +1,76 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.1-rc.1) released
+date: "2026-10-08"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.1-rc.1"
+---
+
+Well... so much for rc.0 being the only release candidate.
+
+Butterfly 2.6.1-rc.1 is now available with another smaller round of improvements and fixes before the stable release.
+
+This release focuses mostly on file and storage handling, keyboard input, the web version and a few drawing improvements.
+
+Highlights:
+
+* 🖼️ Import multiple images at once
+* 📁 Better file and storage handling
+* ⌨️ More reliable keyboard input
+* 🌐 Offline web support is back
+* ✏️ Smoother handwriting previews
+
+## Import multiple images at once
+
+You can now select and import multiple images at the same time instead of adding them one by one.
+
+A small addition, but a very useful one if you regularly bring several images into the same document.
+
+## Better file and storage handling
+
+Several issues around opening and saving files have been cleaned up.
+
+Notes opened from your system file manager now save back to their original location and also keep that location in the recent files list.
+
+Local connection directories are also explained more clearly, folder pickers have been fixed and Butterfly will no longer try to save to connections that have already been removed.
+
+You can now also leave the document, template or pack directory empty on a storage connection if you do not want that type of content to be used there.
+
+## More reliable keyboard input
+
+> [#1294](https://github.com/LinwoodDev/Butterfly/issues/1294)
+
+Keyboard shortcuts should now behave more reliably after touch gestures and other focus changes.
+
+Space is also no longer intercepted by canvas shortcuts while you are editing text.
+
+The temporary simple toolbar now properly disappears again when drawing starts too.
+
+## Offline web support is back
+
+Offline loading for the web version has been restored with an app-managed service worker.
+
+This means Butterfly Web can once again load without an internet connection after the required files have been cached.
+
+## Smoother handwriting previews
+
+Handwriting previews could previously lag behind while completed strokes were waiting to be cached.
+
+This has been fixed, so what you see while writing should stay closer to your actual pen input.
+
+Input sensitivity settings have also been moved to the settings framework sliders, with their descriptions shown as tooltips.
+
+And with that, 2.6.1 is getting closer to stable. The larger additions from both release candidates will get a more detailed explanation in the final 2.6.1 release post.
+
+## Full changelog
+
+* Add importing multiple images at once
+* Fix saving notes opened from the file manager to their original path and preserve their location in recent files
+* Clarify local connection directories, fix folder pickers, and prevent saving to removed connections
+* Allow disabling documents, templates, or packs for a storage connection by leaving their directory paths empty
+* Fix Space being intercepted by canvas shortcuts while editing text
+* Keep document keyboard shortcuts working after touch gestures and other focus changes ([#1294](https://github.com/LinwoodDev/Butterfly/issues/1294))
+* Fix temporary simple toolbar visibility not hiding the toolbar when drawing starts
+* Restore offline web loading with an app-managed service worker
+* Fix handwriting previews lagging behind while completed strokes are waiting to be cached
+* Use settings framework sliders for input sensitivities and show their descriptions as tooltips
