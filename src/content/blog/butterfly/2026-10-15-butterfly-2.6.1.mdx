@@ -1,0 +1,193 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.1) released
+date: "2026-10-15"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.1"
+---
+
+Butterfly 2.6.1 is here!
+
+Although the version number suggests a small patch release, this update has grown into something quite a bit larger.
+
+A lot of the work for 2.6.1 was already prepared in the weeks before Butterfly 2.6.0 was released. While the final 2.6.0 release candidates were being tested, development continued on improvements that were not going to make it into 2.6.0 anymore.
+
+The result is a surprisingly large patch release with a much more capable presentation tool, automatic document thumbnails, improved camera controls, better file and storage handling and plenty of smaller refinements.
+
+You can read the release candidate posts here:
+
+* [2.6.1-rc.0](/butterfly/2.6.1-rc.0)
+* [2.6.1-rc.1](/butterfly/2.6.1-rc.1)
+
+Let's take a closer look at the most important changes.
+
+## Highlights
+
+<Table>
+<TableItem href="#presentation">
+    📽️ A much better presentation tool
+</TableItem>
+<TableItem href="#thumbnails">
+    🖼️ Automatic document thumbnails
+</TableItem>
+<TableItem href="#camera">
+    🔍 Better zoom and rotation controls
+</TableItem>
+<TableItem href="#files">
+    📁 Better file and storage handling
+</TableItem>
+<TableItem href="#import-web">
+    🌐 Multiple image import and offline web
+</TableItem>
+<TableItem href="#ux">
+    ✨ UI, input and reliability improvements
+</TableItem>
+</Table>
+
+## A much better presentation tool \{#presentation\}
+
+The presentation tool received one of the largest improvements in Butterfly 2.6.1.
+
+Butterfly's infinite canvas has always made it possible to use a document for presentations, but setting one up is now much more flexible.
+
+Presentations can use **slides and keyframes** to define how the camera moves through your document.
+
+Instead of manually navigating around the canvas while presenting, you can prepare the camera movement beforehand. Keyframes can store camera position, zoom and rotation, allowing the presentation to move between different parts of the page.
+
+Breakpoints can pause the presentation at a specific point, while transition controls give you more control over how the camera moves between keyframes.
+
+So yes, the presentation tool that was once mostly "move the camera around and hope for the best" is becoming a proper presentation system.
+
+## Automatic document thumbnails \{#thumbnails\}
+
+Document previews are useful, but manually updating them every time something changes is not particularly exciting.
+
+Butterfly can now automatically generate a thumbnail when you close a document.
+
+Automatic thumbnails can be configured for individual documents and through the default settings, so new documents can use them automatically if you want.
+
+This should make the home page and file browser much easier to navigate, especially when you have many notes where the filename alone does not tell the full story.
+
+And if all your documents are still called "Untitled", Butterfly can now at least give you a visual hint.
+
+## Better zoom and rotation controls \{#camera\}
+
+> [#1287](https://github.com/LinwoodDev/Butterfly/issues/1287)
+> [#1223](https://github.com/LinwoodDev/Butterfly/issues/1223)
+> [#1283](https://github.com/LinwoodDev/Butterfly/issues/1283)
+
+Canvas rotation was introduced in Butterfly 2.6. Version 2.6.1 improves the controls around it.
+
+Zoom and rotation are now combined into the same control, with step buttons, direct angle input and a quick rotation reset.
+
+There are also **five different zoom panel layouts**, allowing you to choose how much space the controls should use and what information should be visible.
+
+Camera controls can automatically fade away after five seconds of inactivity. On mobile, temporary controls are now used by default so they do not permanently take up valuable canvas space.
+
+You can also configure **Shift+Space dragging** to rotate the canvas.
+
+Input sensitivity settings are now separated for pan, zoom, rotation and scrolling, making it possible to tune each interaction independently.
+
+The zoom input and cached canvas rendering during rotation also received some smaller fixes for a smoother experience.
+
+## Better file and storage handling \{#files\}
+
+Butterfly 2.6.1 includes several improvements to file handling, especially when working with files outside the default Butterfly directory.
+
+Notes opened directly from your system file manager now save back to their original location and keep that location in the recent files list.
+
+Renaming notes also preserves the file extension while hiding it from the rename field. You can change the name without accidentally removing `.bfly` and confusing both Butterfly and yourself.
+
+Saving notes without an extension has been fixed and failed saves can now be retried.
+
+The file view also remains visible while files are renamed, created, deleted or refreshed, making these operations feel less disruptive.
+
+### More flexible storage connections
+
+Custom storage connections have become more flexible too.
+
+Local connection directories are explained more clearly, folder pickers have been fixed and Butterfly will no longer try to save to a connection after it has been removed.
+
+Documents, templates and packs can also be disabled individually for a connection by leaving their directory path empty.
+
+For example, a custom connection can now be used only for documents while templates and packs stay in the default storage.
+
+This gives you much more control over where Butterfly stores different parts of your data.
+
+## Multiple image import and offline web \{#import-web\}
+
+Importing images has received a small but useful improvement: **multiple images can now be imported at once**.
+
+Instead of opening the import dialog for every single image, you can select several files and add them together.
+
+Butterfly Web also has offline loading again.
+
+An app-managed service worker now handles the required caching, allowing the web version to load without an internet connection after its files have been cached.
+
+Not the most glamorous feature until your internet connection disappears exactly when you need your notes.
+
+## UI, input and reliability improvements \{#ux\}
+
+A large part of 2.6.1 consists of smaller changes that make Butterfly more consistent and reliable.
+
+The application interface has been migrated further to the **Material UI package**, including popover menus and additional controls.
+
+Settings subpages now remain inside the settings dialog and keyboard and Escape navigation have been improved.
+
+Number inputs and sliders received some polish as well, including slider steps and tooltips for input sensitivity settings.
+
+### More reliable keyboard and pointer input
+
+> [#1200](https://github.com/LinwoodDev/Butterfly/issues/1200)
+> [#1294](https://github.com/LinwoodDev/Butterfly/issues/1294)
+> [#1288](https://github.com/LinwoodDev/Butterfly/issues/1288)
+
+Keyboard shortcuts should now continue working correctly after touch gestures and other focus changes.
+
+Space is no longer intercepted by canvas shortcuts while editing text and held shortcuts are released correctly.
+
+Temporary hand navigation now also stops properly after releasing a mouse or pen button.
+
+Double-tap and triple-tap shortcuts are grouped in the mouse, touch and stylus settings. Butterfly also explains that these shortcuts can introduce a small input delay because it briefly needs to wait and check whether another tap follows.
+
+### Smoother handwriting
+
+Handwriting previews could previously fall behind while completed strokes were waiting to be cached.
+
+This has been fixed, keeping the preview closer to your actual pen input.
+
+The temporary simple toolbar also hides correctly again when drawing starts.
+
+### Collaboration and embeds
+
+> [#1278](https://github.com/LinwoodDev/Butterfly/issues/1278)
+> [#1280](https://github.com/LinwoodDev/Butterfly/issues/1280)
+
+Undo and redo now render correctly during collaboration sessions.
+
+Embeds can also read and change the current view state, allowing integrations to store or control the current camera position.
+
+### Some final fixes
+
+Pasted images should no longer show small visual artifacts and imported Markdown notes now receive their default formatting correctly.
+
+There are also fixes for stable and nightly branding, Linux app store release notes, AppImage update channels and Android 16 KB page size support.
+
+None of these fixes are huge on their own, but they clean up quite a few small annoyances that showed up while polishing 2.6.
+
+## Notes
+
+Thanks to everyone who tested the 2.6.1 release candidates, reported issues, contributed code and helped with translations. 💚
+
+Butterfly 2.6.1 isn't the last patch release of the 2.6 series. I try to make smaller feature releases like this one more often, so you can expect more improvements in the future.
+
+As always, please report any issues you find on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+
+## Full changelog
+
+Changes since 2.6.1-rc.1:
+* Add camera control visibility settings with fading after five seconds of inactivity and temporary visibility by default on mobile
+* Migrate popover menus to Material UI
+* Fix missing default Markdown formatting when importing notes ([#1300](https://github.com/LinwoodDev/Butterfly/issues/1300))
+
+This is a stable release, it includes all the changes from the 2.6.1 nightly releases.
