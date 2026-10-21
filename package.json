@@ -10,21 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-satteri": "0.4.3",
-    "@astrojs/mdx": "8.0.3",
+    "@astrojs/markdown-satteri": "0.4.5",
+    "@astrojs/mdx": "8.1.1",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.4",
     "@linwooddev/style": "^0.4.3",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "7.3.8",
+    "astro": "7.4.2",
     "sharp": "^0.35.5",
     "typescript": "^7.0.2",
     "workbox-build": "^7.4.1"
   },
-  "packageManager": "pnpm@12.11.2",
+  "packageManager": "pnpm@12.14.0",
   "devDependencies": {
     "@vite-pwa/astro": "^1.2.0",
-    "sass": "^1.105.1",
+    "sass": "^1.106.0",
     "vite-plugin-pwa": "^2.0.0",
     "workbox-window": "^7.4.1"
   }

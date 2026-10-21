@@ -1,0 +1,145 @@
+---
+title: Setonix 0.9.1 released!
+date: "2026-10-20"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.9.1"
+---
+
+**Setonix 0.9.1 is here!**
+
+Don't let the version number fool you: **this is a huge release!**
+
+After 0.9.0 introduced the larger multiplayer, permissions and security foundations, 0.9.1 focuses on making Setonix a much better experience for actually playing games.
+
+This release brings a redesigned game interface, major improvements to Blackjack, scripting support on the web and several improvements to the home page and game creation.
+
+Most importantly, Setonix is starting to feel much more like an actual game rather than a technical demonstration of what it could become.
+
+## Highlights
+
+* 🎮 Reworked game interface
+* 🃏 A much better Blackjack game mode
+* 📏 Restricted table sizes
+* 🌐 Scripting and offline support on the web
+* 🏠 A simpler home page and faster game creation
+* 🎨 Smaller platform and visual improvements
+
+## Reworked game interface
+
+The game screen has received one of its biggest redesigns yet.
+
+Until now, Setonix often felt more like a tech demo than an actual game. The functionality was there, but the interface still focused heavily on managing the underlying systems rather than simply playing.
+
+**With 0.9.1, Setonix finally looks and feels like a real game instead of a tech demo.**
+
+Game actions are now displayed in a button row, making common actions easier to reach without opening additional menus.
+
+The old game drawer has been replaced with a dialog, while the chat is now displayed as an overlay directly on top of the game. This allows you to keep an eye on the conversation without leaving the board.
+
+Notes and multiplayer options have been moved into the main game actions, while advanced options are now found in the edit dialog.
+
+The goal is simple: make the board the center of attention and keep the interface out of the way until you need it.
+
+There is still more work to do, but this redesign is a big step towards the experience I want Setonix 1.0 to offer.
+
+## A much better Blackjack game mode
+
+The bundled Blackjack game mode has received a major upgrade.
+
+You can now configure the rules of the game, allowing different tables to use different setups instead of relying on a single fixed configuration.
+
+Rounds can also be saved, making it easier to keep track of previous games. Live notes have been added and the card layouts have been improved to make the table easier to read.
+
+Blackjack is also an important example of what Setonix's scripting system can do.
+
+The idea behind Setonix is not just to provide a collection of built-in games, but to give users the tools to create and customize their own.
+
+With the improvements in this release, Blackjack is becoming a better example of how those tools can be used to create a more complete game experience.
+
+## Restricted table sizes
+
+Not every board game needs an infinite table.
+
+Setonix now supports restricting the size of a table, allowing games to define boundaries for the playable area.
+
+This is particularly useful for custom game modes where the board dimensions are part of the rules.
+
+The scripting helpers have also been improved, alongside fixes for board rendering, camera bounds and hidden-card handling.
+
+These changes give game mode creators more control over the playing field and help make scripted games behave more reliably.
+
+## Scripting and offline support on the web
+
+One of the more important technical improvements in this release is **scripting support on the web**.
+
+Previously, scripting was not available in the web version. With 0.9.1, scripted game modes can now run there too.
+
+This brings Setonix closer to offering the same game experience across its supported platforms and makes it easier to share scripted games with people who prefer using a browser.
+
+Offline loading has also been restored using an app-managed service worker.
+
+After the required files have been cached, the web version can load without an active internet connection.
+
+Since Setonix is designed around playing games without depending on online services, this is an especially welcome improvement.
+
+Game board rendering in Firefox has also been fixed.
+
+## A simpler home page and faster game creation
+
+The home page has received several improvements to make navigating between games easier.
+
+The header has been simplified and a new Games shortcut has been added next to the recent games section.
+
+Duplicate headings have been removed and game card titles are now more prominent, making the available games easier to identify.
+
+One particularly useful change is that **newly created worlds now open automatically**.
+
+Previously, creating a world meant returning to the game list and opening it manually. Now you can start playing or editing immediately after creating it.
+
+It's a small change, but one that makes the process feel much more natural.
+
+## Smaller platform and visual improvements
+
+The classic theme colors have been improved to create a more consistent appearance across the interface.
+
+The Android build has also been updated to restore support for 16 KB page sizes.
+
+Alongside the larger features, these smaller changes help improve the overall experience across different devices and platforms.
+
+## The road to Setonix 1.0
+
+As mentioned in the [0.9.0 release announcement](/setonix/0.9.0), all the major features I originally planned for Setonix 1.0 are now implemented.
+
+That means the focus has shifted towards improving what is already there rather than continuously adding new systems.
+
+Setonix 0.9.1 is a good example of that direction. The underlying functionality has existed for a while, but the interface and game modes are finally starting to come together into something that feels much more complete.
+
+There is still work ahead, especially around usability, reliability and polishing the existing features, but I'm happy with the progress so far.
+
+And despite the amount of work in this release, it is still only called 0.9.1. I suppose version numbers don't always tell the whole story.
+
+As always, thanks to everyone testing Setonix, reporting issues and helping improve the project. 💚
+
+Stay tuned for more updates on the road to 1.0!
+
+## Full changelog
+
+* Rework game view
+  * Show game actions as button row
+  * Change game drawer to a dialog
+  * Change chat screen to an overlay
+  * Move notes and multiplayer options to scaffold actions
+  * Move advanced game options to edit dialog
+* Add restrictions for table size
+* Improve blackjack with configurable rules, saved rounds, live notes, and better card layouts
+* Improve scripting helpers and fix board rendering, camera bounds, and hidden-card handling
+* Add scripting on web
+* Fix table renaming shows background dialog title
+* Fix 16kb page size on Android
+* Fix game board rendering in Firefox
+* Improve classic theme colors
+* Restore offline web loading with an app-managed service worker
+* Open newly created worlds automatically
+* Simplify home header and add a Games shortcut beside recent games
+* Remove duplicate Games heading and improve game card titles
