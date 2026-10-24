@@ -1,0 +1,156 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.2-rc.0) released
+date: "2026-10-24"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.2-rc.0"
+---
+
+Butterfly 2.6.2-rc.0 is here!
+
+This release comes a little earlier than expected, mainly because of an important security issue affecting Flutter applications.
+
+But besides the security update, there are also several new features and improvements, including an experimental floating editor layout, more collaboration options, better backups and improvements to PDF handling.
+
+Highlights:
+
+* 🔒 Important TLS security update
+* 🪟 Experimental floating editor layout
+* 🤝 More collaboration synchronization options
+* 💾 Better backups and automatic thumbnails
+* 📄 PDF and document search improvements
+* 🛠️ Bug fixes and build improvements
+
+## Important TLS security update
+
+> [Dart SDK #64644](https://github.com/dart-lang/sdk/issues/64644)
+
+A critical TLS security issue has recently been discovered that potentially affects Butterfly on **Android, Windows and Linux**.
+
+The issue originates from compromised eMudhra certificate authority keys. Under certain conditions, an attacker who can intercept network traffic could use a forged HTTPS certificate to impersonate a trusted server.
+
+For Butterfly, this is particularly important when using **WebDAV or Nextcloud synchronization**, where sensitive documents and authentication credentials may be transmitted over HTTPS.
+
+Even though operating systems and browsers have already received protections, Flutter's networking implementation did not correctly reject all affected certificates.
+
+Butterfly 2.6.2-rc.0 has therefore been rebuilt using **Flutter 3.47.8**, which includes the security fix.
+
+**Web, iOS and macOS versions of Butterfly are unaffected by this particular Flutter vulnerability.**
+
+I currently plan to release the stable 2.6.2 update on **Wednesday, October 28**.
+
+Until you have installed a patched version, I recommend avoiding synchronization of sensitive documents over untrusted networks, especially public Wi-Fi.
+
+There is also another security-related fix in this release: requests for connection icons no longer leak WebDAV credentials to other origins.
+
+Security is especially important for a note-taking app, so these fixes take priority over the usual release schedule.
+
+## Experimental floating editor layout
+
+A new floating editor layout is now available for wider screens.
+
+Instead of keeping the editor controls in their usual positions, this layout presents them as floating interface elements, making better use of the available screen space.
+
+The feature is currently hidden behind a new **Experiments** setting.
+
+It is still experimental, so there might be some rough edges. If you try it out, feedback is very welcome!
+
+## More collaboration synchronization options
+
+> [#1295](https://github.com/LinwoodDev/Butterfly/issues/1295)
+
+Collaboration has received several improvements to make working together more flexible.
+
+You can now configure synchronization options for the toolbar, current page, areas, cursor and live previews.
+
+These options can be configured as defaults and adjusted for individual collaboration sessions.
+
+This gives you more control over which parts of your editing experience are shared with other participants.
+
+Another important fix ensures that collaborative edits remain on their original page and layer, even when participants navigate independently.
+
+Previously, navigating to another page during collaboration could cause edits to be associated with the wrong location.
+
+Now everyone can navigate independently without accidentally moving someone else's work.
+
+## Better backups and automatic thumbnails
+
+> [#1073](https://github.com/LinwoodDev/Butterfly/issues/1073)
+
+Backups are getting a little more flexible.
+
+Previously, manual and automatic backups were primarily intended for remote connections.
+
+With this update, **local connections can also be used as backup destinations**.
+
+This means you can store your backups in another local directory or drive instead of requiring a remote server.
+
+An issue where backups could fail when the destination folder did not exist has also been fixed.
+
+Automatic document thumbnails received two new framing options as well.
+
+You can now choose between capturing the **whole page** or using the **last viewport**.
+
+This is particularly useful for documents with large canvases, where the entire page might not be the most useful thumbnail.
+
+## PDF and document search improvements
+
+PDF handling has received an important change to make document dimensions more consistent.
+
+When exporting a PDF, Butterfly now treats **one canvas unit as one millimeter**.
+
+PDF imports also preserve the original page sizes, making it easier to work with documents where dimensions matter.
+
+Document search has been improved too.
+
+Search results are now clearer, queries are treated literally, Markdown content is included in matches and navigating to a result brings you to the correct page.
+
+These changes should make it easier to find specific content, especially in larger documents.
+
+## Bug fixes and build improvements
+
+> [#1305](https://github.com/LinwoodDev/Butterfly/issues/1305)
+
+Several smaller issues have been addressed in this release.
+
+The pen-only toggle has received a performance improvement, making switching this input mode more responsive.
+
+There are also fixes for hand navigation being blocked when input gestures are disabled and for rapid pointer events accidentally starting gestures with the previously active tool.
+
+Stamps now preserve their stroke positions correctly when working on rotated canvases, preventing them from becoming distorted.
+
+On Windows, a crash during application shutdown has been fixed, while Android received a fix for a crash when copying content to the clipboard.
+
+Finally, the build system has received some attention.
+
+An offline build script has been added and reproducible builds are now supported, making it easier to build and verify Butterfly without depending entirely on the usual online build environment.
+
+## What's next?
+
+The main priority for 2.6.2 is getting the security update into the stable release as soon as possible.
+
+If testing goes well, the stable release is planned for **October 28**.
+
+In the meantime, please test this release candidate and report any issues you encounter on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+
+Thanks to everyone reporting bugs, testing new releases and helping improve Butterfly! 💚
+
+## Full changelog
+
+* Add a floating editor layout for wide screens behind an Experiments setting
+* Add default and session collaboration options for toolbar, page, area, cursor, and live preview synchronization ([#1295](https://github.com/LinwoodDev/Butterfly/issues/1295))
+* Add offline builds script
+* Add reproducable builds
+* Add whole page and last viewport framing for automatic thumbnails
+* Allow local connections as destinations for manual and automatic backups ([#1073](https://github.com/LinwoodDev/Butterfly/issues/1073))
+* Export each canvas unit as one millimeter in PDFs and preserve PDF page sizes on import
+* Improve document search with clearer results, literal queries, Markdown matches, and accurate page navigation
+* Improve pen only toggle performance ([#1305](https://github.com/LinwoodDev/Butterfly/issues/1305))
+* Fix a Windows crash during app shutdown
+* Fix an Android crash when copying content to the clipboard
+* Fix connection icon requests leaking WebDAV credentials to other origins
+* Fix backups failing when the destination folder is missing
+* Fix hand navigation being blocked when input gestures are disabled and rapid pointer events starting gestures with the previously active tool
+* Fix stamps losing stroke positions and becoming distorted on rotated canvases
+* Keep collaboration edits on their original page and layer when participants navigate independently
+* Upgrade to flutter 3.47.8
