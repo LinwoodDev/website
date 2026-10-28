@@ -1,0 +1,137 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.2) released
+date: "2026-10-28"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.2"
+---
+
+**Butterfly 2.6.2 is here!**
+
+This release is a little different from the previous updates. While there are several new features and improvements, the main reason for releasing 2.6.2 now is an important security vulnerability discovered in Flutter.
+
+I wanted to make sure that Butterfly users receive the fix as quickly as possible, especially those relying on WebDAV or Nextcloud to synchronize their notes.
+
+Most of these changes were already explained in the [2.6.2-rc.0 release post](/butterfly/2.6.2-rc.0).
+
+## Highlights
+
+<Table>
+<TableItem href="#security">
+    🔒 Important security fixes
+</TableItem>
+<TableItem href="#collaboration">
+    🤝 More control over collaboration
+</TableItem>
+<TableItem href="#backups">
+    💾 More flexible backups and thumbnails
+</TableItem>
+<TableItem href="#workflow">
+    🪟 A more customizable workflow
+</TableItem>
+<TableItem href="#fixes">
+    🐛 Stability and selection fixes
+</TableItem>
+</Table>
+
+## Important security fixes \{#security\}
+
+> [Dart security advisory](https://github.com/dart-lang/sdk/security/advisories/GHSA-frr6-h895-5pxp)
+
+This is the most important reason to update to Butterfly 2.6.2.
+
+A critical vulnerability involving compromised certificate authority keys could allow attackers to intercept HTTPS connections under certain conditions.
+
+For Butterfly, this potentially affects synchronization with WebDAV and Nextcloud servers on **Android, Windows and certain Linux environments**.
+
+The vulnerability was not specific to Butterfly, but affected applications using Flutter's networking implementation.
+
+**Butterfly 2.6.2 has been rebuilt with Flutter 3.47.8**, which includes the necessary security fix.
+
+If you are using Butterfly on one of the affected platforms, I strongly recommend updating, particularly if you synchronize documents over the internet.
+
+Operating system security updates alone may not be enough to protect older Flutter application builds.
+
+**The web, iOS and macOS versions are unaffected by this particular vulnerability.**
+
+There is also a separate fix for WebDAV connection icon requests that could previously expose credentials to other origins.
+
+For more technical details, you can read the [release candidate announcement](/butterfly/2.6.2-rc.0).
+
+## More control over collaboration \{#collaboration\}
+
+> [#1295](https://github.com/LinwoodDev/Butterfly/issues/1295)
+
+Collaboration continues to improve in this release.
+
+Instead of automatically sharing every part of the editor experience, you now have more control over what gets synchronized between participants.
+
+This includes settings for pages, areas, cursors, toolbars and live previews. You can configure defaults and adjust them for individual sessions.
+
+An important issue has also been fixed where edits could end up on the wrong page or layer when participants navigated independently.
+
+These changes make collaboration more practical when people want to work together without necessarily looking at exactly the same thing all the time.
+
+## More flexible backups and thumbnails \{#backups\}
+
+> [#1073](https://github.com/LinwoodDev/Butterfly/issues/1073)
+
+Backups can now be stored in local connections too, instead of requiring a remote destination.
+
+Whether you prefer a local folder, another drive or a remote server, you have more options for where to keep your backups.
+
+Automatic thumbnails have also become more configurable. You can choose whether a thumbnail should show the whole page or the last viewport.
+
+This is especially helpful for large documents where showing the entire canvas would make the actual content almost impossible to recognize.
+
+A few small changes, but useful ones if you regularly work with larger documents.
+
+## A more customizable workflow \{#workflow\}
+
+If you enjoy trying new interface ideas, there is something new under **Experiments**.
+
+A floating editor layout is now available for wide screens, offering a different way to arrange the editing interface.
+
+It is still experimental, so feedback is very welcome.
+
+Document search has also received improvements to make finding content more reliable, including Markdown matches and better navigation to results.
+
+PDF handling is more consistent with document dimensions too, with canvas units corresponding to millimeters on export and original page sizes being preserved during import.
+
+None of these changes completely reinvent Butterfly, but they should make everyday tasks a little more comfortable.
+
+## Stability and selection fixes \{#fixes\}
+
+> [#1323](https://github.com/LinwoodDev/Butterfly/issues/1323)
+
+One additional issue has been fixed since the release candidate.
+
+Perfectly horizontal or vertical lines could sometimes not be selected, particularly when using snapping.
+
+This should now work correctly.
+
+Apparently, drawing a perfectly straight line was enough to confuse the selection system.
+
+The release also includes several fixes introduced in rc.0, including crashes on Windows and Android, improved pen-only input handling and corrections for stamps on rotated canvases.
+
+Reproducible builds and an offline build script have also been added, helping make Butterfly builds easier to verify and reproduce.
+
+## What's next?
+
+With 2.6.2 released, the immediate security issue has been addressed and development can continue with the next improvements.
+
+I want to keep the smaller release cycle introduced with 2.6.1, rather than saving every improvement for one enormous release.
+
+Of course, security fixes will continue to take priority whenever necessary.
+
+Thanks to everyone who tested the release candidate, reported issues and helped improve Butterfly! 💚
+
+If you experience any problems, please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+
+## Full changelog
+
+Changes since 2.6.2-rc.0:
+
+* Fix selecting perfectly horizontal and vertical lines ([#1323](https://github.com/LinwoodDev/Butterfly/issues/1323))
+
+This is a stable release. It includes all changes from the [Butterfly 2.6.2-rc.0 release](/butterfly/2.6.2-rc.0).
