@@ -1,0 +1,188 @@
+---
+title: Setonix 0.9.2 released!
+date: "2026-11-02"
+author: codedoctor
+tags: [setonix]
+slug: "setonix/0.9.2"
+---
+
+**Setonix 0.9.2 is here!**
+
+The road to 1.0 continues!
+
+After 0.9.1 focused on making Setonix look and feel more like an actual game, this release takes another step forward with one particularly exciting addition: **fully scripted Chess!**
+
+But Chess isn't the only improvement. This update also makes multiplayer connections more reliable, introduces better server administration tools, improves scripting and brings several fixes to the server browser.
+
+The focus remains the same: making Setonix easier to use, more reliable and ready for 1.0.
+
+## Highlights
+
+* ♟️ Fully scripted Chess
+* 🎲 More reliable game scripts and worlds
+* 🌐 Better multiplayer connections and server discovery
+* 🖥️ Improved dedicated server administration
+* 📦 Web and build improvements
+
+## Fully scripted Chess
+
+Chess has been available in Setonix for quite a while, but until now, it was mostly a prepared board with pieces that you could move around freely.
+
+With 0.9.2, Chess has become a **fully scripted game mode**!
+
+The new implementation understands the rules of Chess and checks whether moves are legal. You can no longer move your bishop like a knight and expect the game to accept it.
+
+Special moves such as **castling, en passant and pawn promotion** are supported too.
+
+The scripting system also handles checks, game-ending conditions and move history, making Chess much closer to what you would expect from a dedicated Chess game.
+
+Games can be saved and resumed, and the mode works in both **singleplayer and multiplayer**.
+
+This is another good example of what Setonix's scripting system can do. Instead of implementing every game directly in the application, the rules are defined using Luau scripts.
+
+That means the same system can be used to create entirely different board games in the future.
+
+Between Blackjack and Chess, Setonix now has two fairly different examples of complete scripted games.
+
+And if you prefer moving the pieces however you want, the sandbox is still there for you.
+
+## More reliable game scripts and worlds
+
+The scripting system itself has received several improvements.
+
+New shared action guards and event blockers make it easier for scripts to control which actions are allowed during a game.
+
+For example, a Chess game should not allow players to simply spawn extra pieces or move objects outside the rules.
+
+Previously, implementing these restrictions required more repetitive code inside individual game scripts. The new helpers make this easier and provide a more consistent foundation for future game modes.
+
+Script storage has also been improved.
+
+Each script now has its own isolated storage, preventing unrelated scripts from accidentally interfering with each other's saved data.
+
+Dedicated servers have received an important fix for event routing between worlds too.
+
+When multiple games are running on the same server, events should only affect the world they belong to. This is now handled more reliably.
+
+These changes might not be immediately visible while playing, but they are important for making scripted multiplayer games dependable.
+
+Especially when a server hosts several games at once.
+
+## Better multiplayer connections and server discovery
+
+Several improvements in this release focus on making joining multiplayer games less frustrating.
+
+Connection handling has been fixed for server addresses containing ports, reconnecting to servers and displaying connection errors.
+
+An issue where multiplayer account authentication could fail before a world was fully initialized has also been addressed.
+
+There is also a fix for multiplayer worlds without a background sometimes displaying a completely black board.
+
+Unless you're playing a game about staring into the void, that probably wasn't intended.
+
+### A more reliable server browser
+
+The server browser has received quite a few smaller improvements too.
+
+Adding server lists now includes better URL prompts and validation, while saved addresses are handled more consistently.
+
+Editing and deleting saved servers also works correctly after searching. These options are hidden for discovered servers, since those entries are not directly managed by the user.
+
+Public server listings now remain visible while local entries are being updated, avoiding unnecessary interruptions.
+
+Highlighted servers have received subtle primary-colored backgrounds to make them easier to distinguish, and long server titles no longer overflow on mobile.
+
+Overall, browsing, saving and connecting to servers should feel more consistent.
+
+## Improved dedicated server administration
+
+The standalone Setonix server has received a substantial upgrade in 0.9.2.
+
+### Reverse proxy support
+
+Setonix servers now support running behind trusted reverse proxies.
+
+This is particularly useful when hosting a public server behind **nginx or another reverse proxy**.
+
+Administrators can configure trusted proxy addresses so Setonix can determine the actual connecting client's IP address from forwarded headers without blindly trusting information provided by arbitrary clients.
+
+This helps with logging and authentication rate limits when the server is deployed behind a proxy.
+
+It also makes self-hosting Setonix alongside other services much easier.
+
+### A better server console
+
+The server console has been upgraded to make administration more convenient.
+
+Commands are now case-insensitive, so `HELP` and `help` work the same way.
+
+There is also improved help output, including detailed descriptions, examples and information about subcommands.
+
+Interactive terminals now support **command history and Tab completion**, making it much easier to work with longer commands.
+
+The console output has also been cleaned up to improve readability.
+
+### Server status and automation
+
+A new `status` command provides information about the running server.
+
+You can also use `status --json` to receive structured output, which is useful for monitoring scripts and other automation.
+
+Several commands now support filtering by world, making it easier to manage servers hosting multiple games.
+
+These changes are especially helpful for administrators who want to run Setonix as a persistent multiplayer service rather than only hosting games directly from the application.
+
+## Web and build improvements
+
+The web scripting plugin has been migrated from Emscripten to the **wasm32-unknown-unknown** target.
+
+This changes how the WebAssembly plugin is built and helps simplify the web build infrastructure.
+
+There are also improvements to the release build process.
+
+Setonix now supports **reproducible and offline builds**, making it easier to build the application independently and verify that builds produce consistent results.
+
+The application has also been upgraded to **Flutter 3.47.8**, alongside several dependency and build tool updates.
+
+These changes are mostly behind the scenes, but they help keep the project maintainable as it approaches 1.0.
+
+## The road to Setonix 1.0
+
+Setonix 0.9.2 continues the work started with the previous releases.
+
+The larger systems are already in place, and the focus is increasingly shifting towards making them work well together.
+
+The new Chess implementation is particularly important to me because it shows how far the scripting system has come. Setonix can now provide complete game experiences without having to implement every game's rules directly in the application.
+
+There is still plenty of work to do before 1.0, especially around usability, stability and multiplayer reliability.
+
+But with each release, Setonix is getting closer to the game sandbox I originally wanted to create.
+
+Thanks to everyone who uses Setonix, reports issues and helps improve the project! 💚
+
+As always, if you find a bug or have an idea, feel free to open an issue on [GitHub](https://github.com/LinwoodDev/Setonix/issues).
+
+Stay tuned!
+
+## Full changelog
+
+* Add reproducable and offline build
+* Add scripted chess with legal moves, special moves, saved games, and local or multiplayer play
+* Add shared action guards and event blockers for game scripts
+* Add proxy support on server
+* Fix script storage isolation and dedicated-server event routing between worlds
+* Migrate the web plugin from Emscripten to wasm32-unknown-unknown
+* Upgrade to Flutter 3.47.8
+* Update dependencies and build tools
+* Fix game URLs for newly created and recent saved games
+* Fix multiplayer account authentication before the world is initialized
+* Improve server console with case-insensitive commands, detailed help, history, tab completion, and cleaner output
+* Add server status with JSON output and world filters for console commands
+* Fix black boards in multiplayer worlds without backgrounds
+* Fix server addresses with ports, reconnects, and connection error handling
+* Add subtle primary backgrounds to highlighted servers
+* Fix server-list URL prompts, validation, and saved addresses
+* Fix editing and deleting saved servers after searching and hide these actions for discovered servers
+* Keep public server listings visible during local updates and close discovery streams on disposal
+* Fix overflowing server titles on mobile
+* Trim redundant server regression tests
