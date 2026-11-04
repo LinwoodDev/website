@@ -10,22 +10,24 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-satteri": "0.4.5",
-    "@astrojs/mdx": "8.1.1",
+    "@astrojs/markdown-satteri": "0.4.6",
+    "@astrojs/mdx": "8.1.2",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.4",
     "@linwooddev/style": "^0.4.3",
     "@phosphor-icons/web": "^2.1.2",
-    "astro": "7.4.2",
-    "sharp": "^0.35.5",
-    "typescript": "^7.0.2",
-    "workbox-build": "^7.4.1"
+    "astro": "7.4.5",
+    "sharp": "^0.35.5"
   },
-  "packageManager": "pnpm@12.15.0",
+  "packageManager": "pnpm@12.16.1",
   "devDependencies": {
-    "@vite-pwa/astro": "^1.2.0",
-    "sass": "^1.106.1",
-    "vite-plugin-pwa": "^2.0.0",
-    "workbox-window": "^7.4.1"
+    "@unplugin-pwa/core": "^0.0.3",
+    "@vite-pwa/astro": "^2.0.0",
+    "@vite-pwa/workbox-swkit": "^8.0.13",
+    "@vite-pwa/workbox-window": "^8.0.13",
+    "magicast": "^0.5.5",
+    "rolldown": "^1.2.16",
+    "sass": "^1.107.1",
+    "typescript": "^7.0.2"
   }
 }

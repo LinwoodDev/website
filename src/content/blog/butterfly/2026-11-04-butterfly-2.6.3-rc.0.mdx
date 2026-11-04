@@ -1,0 +1,154 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.3-rc.0) released
+date: "2026-11-04"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.3-rc.0"
+---
+
+Butterfly 2.6.3-rc.0 is here!
+
+After the security-focused 2.6.2 release, this update returns to improving the everyday experience of using Butterfly.
+
+There are some long-requested features in this release, including **drag and drop imports**, a redesigned pack interface, better synchronization progress and improvements to page switching performance.
+
+A lot of smaller usability issues have also been addressed, making common workflows a little easier.
+
+Highlights:
+
+* 🖼️ Drag and drop imports
+* 📦 Redesigned pack management
+* 🔗 Better connection setup and synchronization
+* ⚡ Faster page switching and improved reliability
+* 🔍 More customizable camera controls
+* 📁 A better file dialog for imports and exports
+
+## Drag and drop imports
+
+> [#1314](https://github.com/LinwoodDev/Butterfly/issues/1314)
+
+One of the most requested improvements to importing content is finally here!
+
+You can now **drag and drop files directly into Butterfly** instead of opening the import menu and manually selecting them.
+
+This also works with images dragged from your browser, making it much easier to collect references, create mood boards or bring content from other applications into your notes.
+
+For example, if you are researching something online, you can simply drag an image from the browser into your document.
+
+This should make Butterfly much more convenient for workflows involving lots of images and external resources.
+
+Sometimes the simplest features make the biggest difference.
+
+## Redesigned pack management
+
+The pack dialogs have received a significant redesign.
+
+Instead of the previous layout, packs now use a **compact grid with responsive sidebar navigation**.
+
+The interface has also been updated with more consistent styling, making it easier to browse and manage different parts of a pack.
+
+Another useful improvement is that you can now add assets before creating a pack.
+
+Previously, you had to create the pack first before adding content. This is now more flexible and should make creating new packs feel more natural.
+
+An issue where pack actions ignored the currently selected storage connection has also been fixed.
+
+Together, these changes should make working with packs more straightforward, especially if you regularly create or edit your own resources.
+
+## Better connection setup and synchronization
+
+> [#1330](https://github.com/LinwoodDev/Butterfly/issues/1330)
+> [#1337](https://github.com/LinwoodDev/Butterfly/issues/1337)
+
+Setting up storage connections has become easier.
+
+The connection dialog now uses help tooltips with additional guidance, instead of placing longer descriptions directly below input fields.
+
+Custom icons have also been added, allowing connections to be distinguished more easily.
+
+And when deleting a connection, Butterfly now asks for confirmation first.
+
+That should help prevent accidentally removing a connection you actually wanted to keep.
+
+### More detailed synchronization progress
+
+The synchronization dialog has received an important improvement too.
+
+Previously, the progress indicator mainly reflected top-level folders. If a connection contained only a few folders with hundreds of files inside them, the progress could appear to barely change for a long time.
+
+Butterfly now displays **more detailed progress for nested folders and files**, making it easier to understand how far synchronization has progressed.
+
+This is done without requiring an additional scan of the entire directory structure.
+
+Especially for larger WebDAV or Nextcloud connections, the progress indicator should now provide much more useful feedback.
+
+## Faster page switching and improved reliability
+
+> [#1336](https://github.com/LinwoodDev/Butterfly/issues/1336)
+> [#1324](https://github.com/LinwoodDev/Butterfly/pull/1324)
+
+Switching between pages could sometimes feel slower than expected, particularly in larger documents.
+
+Butterfly now avoids unnecessary save operations and renderer initialization when changing pages.
+
+This reduces work that previously happened during navigation and should make switching between pages more responsive.
+
+The release also includes fixes for several memory leaks.
+
+These are particularly important for longer editing sessions, where unnecessary memory usage can accumulate over time.
+
+Embed handling and archive imports have also received security improvements, adding further protection when working with external content.
+
+Not every performance or reliability improvement is immediately visible, but these are exactly the kinds of changes that help make Butterfly more comfortable to use every day.
+
+## More customizable camera controls
+
+> [#1223](https://github.com/LinwoodDev/Butterfly/issues/1223)
+
+The camera controls introduced in previous 2.6 releases have received some additional customization options.
+
+You can now independently choose whether to display **sliders, text fields and buttons**.
+
+This makes it possible to configure the camera panel according to how you prefer to navigate the canvas.
+
+For example, you might want precise text inputs without sliders, or prefer a compact layout with only buttons.
+
+The panel also adjusts its layout when sliders or text fields are hidden, avoiding unnecessary empty space.
+
+These changes should be particularly useful on smaller screens or when you want to keep as much room as possible for the canvas.
+
+## A better file dialog for imports and exports
+
+Importing and exporting files now uses a better file dialog.
+
+This provides a more familiar experience when choosing files and destinations, especially on desktop platforms.
+
+Custom save extensions are now enforced as well, helping ensure exported files receive the correct extension.
+
+Combined with the new drag and drop functionality, working with files outside Butterfly should feel much more integrated with the rest of your system.
+
+## What's next?
+
+Butterfly 2.6.3 continues the smaller release cycle introduced with 2.6.1.
+
+Instead of waiting for the next major version, I want to keep bringing improvements to the existing 2.6 series, especially when they address common usability problems.
+
+This release candidate includes several changes that should make Butterfly easier to use, but as always, testing is important before the stable release.
+
+If you encounter any issues, please report them on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+
+Thanks to everyone reporting bugs, suggesting improvements and testing Butterfly! 💚
+
+## Full changelog
+
+* Add drag and drop imports from files and browser images ([#1314](https://github.com/LinwoodDev/Butterfly/issues/1314))
+* Redesign pack dialogs with a compact grid, unified styling, and responsive sidebar navigation
+* Allow adding assets before creating a pack
+* Simplify connection setup with help tooltips, custom icons, and deletion confirmation ([#1330](https://github.com/LinwoodDev/Butterfly/issues/1330))
+* Fix pack actions ignoring the selected connection
+* Fix memory leaks and secure embed and archive imports ([#1324](https://github.com/LinwoodDev/Butterfly/pull/1324))
+* Avoid unnecessary saves and renderer initialization when switching pages ([#1336](https://github.com/LinwoodDev/Butterfly/issues/1336))
+* Allow choosing camera sliders, text fields and buttons independently ([#1223](https://github.com/LinwoodDev/Butterfly/issues/1223))
+* Keep camera panels compact when sliders and text fields are hidden
+* Show detailed synchronization progress for nested folders and files without an additional scan ([#1337](https://github.com/LinwoodDev/Butterfly/issues/1337))
+* Use native file dialogs for imports and exports, with enforced custom save extensions

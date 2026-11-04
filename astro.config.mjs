@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import { satteri } from "@astrojs/markdown-satteri";
 import sitemap from "@astrojs/sitemap";
-import AstroPWA from "@vite-pwa/astro";
+import { AstroPWAIntegration } from "@vite-pwa/astro";
 import manifest from "./webmanifest.json";
 
 const customHeadingIds = {
@@ -45,8 +45,11 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    AstroPWA({
-      workbox: {
+    AstroPWAIntegration({
+      maximumFileSizeToCacheInBytes: 3000000,
+      // PNG icons are already included by generateSW.globPatterns.
+      includeManifestIcons: false,
+      generateSW: {
         skipWaiting: true,
         clientsClaim: true,
         navigateFallback: "/404",
@@ -54,7 +57,6 @@ export default defineConfig({
         globPatterns: [
           "**/*.{html,js,css,png,svg,json,ttf,pf_fragment,pf_index,pf_meta,pagefind,wasm}",
         ],
-        maximumFileSizeToCacheInBytes: 3000000,
       },
       experimental: {
         directoryAndTrailingSlashHandler: true,

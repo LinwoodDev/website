@@ -68,3 +68,6 @@ const imageURL = image ? new URL(image, Astro.site) : undefined;
 {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 
 <ClientRouter />
+<script>
+  import "@scripts/pwa";
+</script>
