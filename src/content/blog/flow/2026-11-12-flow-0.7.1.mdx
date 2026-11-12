@@ -1,0 +1,86 @@
+---
+title: Linwood Flow 0.7.1 released
+date: "2026-11-12"
+author: codedoctor
+tags: [flow]
+slug: "flow/0.7.1"
+---
+
+**Flow 0.7.1 is here!**
+
+This update is mostly about making the existing features easier to use, especially when managing calendars from different sources.
+
+The sources page has received some improvements, settings have been migrated to a new framework, and the build system has been brought in line with the other Linwood applications.
+
+Highlights:
+
+* 📅 Better calendar source management
+* 🔗 Easier source setup and read-only handling
+* ⚙️ Updated settings and navigation
+* 📦 More reliable and reproducible builds
+
+## Better calendar source management
+
+Managing multiple calendar sources should now be a little easier.
+
+The sources page has been improved to show **more information about each source**, including its details and the number of associated items.
+
+You can now also delete sources directly from the list instead of having to navigate through additional dialogs.
+
+Additionally, sources can have **custom names**, making it easier to distinguish between several CalDAV, iCalendar or device calendar connections.
+
+This is particularly useful if you have multiple calendars from the same provider.
+
+## Easier source setup and read-only handling
+
+Flow can now automatically extract usernames and passwords from source URLs, simplifying the setup of connections that include authentication information.
+
+Read-only calendar sources are also handled more consistently.
+
+Previously, some editing actions could still be available even when the source did not support modifications.
+
+Flow now prevents these changes while keeping the calendar item details accessible.
+
+You can still inspect events from read-only calendars without accidentally attempting unsupported operations.
+
+## Updated settings and navigation
+
+The settings interface has been migrated to the shared **Linwood settings framework**, bringing it closer to the other Linwood applications.
+
+The newer navigation items have also been reverted in favor of the previous navigation style.
+
+Alongside some icon fixes, these changes should make the interface feel more consistent.
+
+## More reliable and reproducible builds
+
+A large part of this release also focuses on the build infrastructure.
+
+Flow now supports **offline and reproducible builds**, including deterministic release archives.
+
+This makes builds easier to reproduce and verify independently.
+
+The CI workflows and desktop packaging have also been aligned with Butterfly's stable and nightly release infrastructure, reducing differences between the projects.
+
+Linux app store metadata now includes release notes as well, so changes can be displayed directly in supported software centers.
+
+Finally, variable fonts are now used to reduce the size of bundled font assets.
+
+These aren't the most visible changes, but they help keep Flow easier to maintain and distribute.
+
+That's it for 0.7.1! If you encounter any issues, please report them on [GitHub](https://github.com/LinwoodDev/Flow/issues).
+
+Thanks to everyone contributing code, reporting bugs and suggesting improvements!
+
+## Full changelog
+
+* Migrate to settings framework
+* Revert modern navigation items
+* Improve the sources page with source details, item counts, and delete buttons
+* Add custom names for calendar sources
+* Automatically extract usernames and passwords from source URLs
+* Prevent changes to read-only sources while keeping calendar item details visible
+* Align CI and desktop packaging with Butterfly's stable and nightly builds
+* Add offline and reproducible builds with deterministic release archives
+* Reduce bundled font size with variable fonts
+* Include release notes in Linux app store metadata
+* Fix icons
