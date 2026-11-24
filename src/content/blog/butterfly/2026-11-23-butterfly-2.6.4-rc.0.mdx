@@ -1,0 +1,126 @@
+---
+title: Butterfly Dreamy Duskywing (2.6.4-rc.0) released
+date: "2026-11-23"
+author: codedoctor
+tags: [butterfly]
+slug: "butterfly/2.6.4-rc.0"
+---
+
+**Butterfly 2.6.4-rc.0 is here, and this update has grown quite a bit larger than expected!**
+
+As announced in the [2.6.3 release post](/butterfly/2.6.3), Butterfly now uses **Flutter 3.50**. But the framework upgrade is only one part of this release.
+
+There are improvements to PDF importing, customizable stylus shortcuts and a large number of fixes for drawing, clipboard handling and Android. Several of these address issues that could interrupt editing or even cause content to disappear.
+
+So while this is still a patch release, there's quite a lot to talk about.
+
+Highlights:
+
+* 🚀 Flutter 3.50 and platform updates
+* 📄 Redesigned PDF import dialog
+* ✏️ Better stylus and touch handling
+* 📋 Important clipboard and asset fixes
+* 🎨 Drawing and usability improvements
+
+## Flutter 3.50 and platform updates
+
+Butterfly has been upgraded to **Flutter 3.50**, bringing the application up to date with the newer Flutter framework.
+
+This also includes dependency and build system updates. The Snap package now uses **core26 instead of core24**.
+
+These upgrades are important for keeping Butterfly compatible with newer systems and making future development easier.
+
+## Redesigned PDF import dialog
+
+> [#1359](https://github.com/LinwoodDev/Butterfly/issues/1359)
+
+The PDF import dialog has received a redesign, including a new **scale slider ranging from 10% to 1000%**.
+
+This makes it much easier to control the size of imported PDFs, particularly when trying to match an existing background grid or drawing.
+
+Several PDF-related bugs have also been fixed. PDFs imported through the Add dialog can now be placed on the first canvas click, and crashes involving large PDFs on Android have been addressed.
+
+## Better stylus and touch handling
+
+> [#1307](https://github.com/LinwoodDev/Butterfly/issues/1307)
+> [#1354](https://github.com/LinwoodDev/Butterfly/issues/1354)
+> [#1353](https://github.com/LinwoodDev/Butterfly/issues/1353)
+
+Input shortcuts can now reference **tool presets** instead of only toolbar positions.
+
+The inverted stylus also defaults to the core eraser, so supported pens with an eraser end should behave more naturally.
+
+Another important fix concerns accidental touch contacts during drawing. Previously, a brief touch from your palm could interrupt an active stylus stroke, sometimes even causing it to disappear.
+
+This should no longer happen.
+
+On Android, swiping to reveal the navigation bar in fullscreen mode should also no longer leave unwanted strokes behind.
+
+## Important clipboard and asset fixes
+
+> [#1361](https://github.com/LinwoodDev/Butterfly/issues/1361)
+> [#1362](https://github.com/LinwoodDev/Butterfly/issues/1362)
+> [#1363](https://github.com/LinwoodDev/Butterfly/issues/1363)
+
+Copying content between documents could cause embedded assets to disappear.
+
+This affected images, SVGs, PDF pages and textured strokes or fills, sometimes leaving gray placeholders instead of the original content.
+
+**Assets are now preserved when pasting between documents.**
+
+Paste positioning has also been corrected, including cases where keeping the context menu open caused content to appear in the wrong location.
+
+Copying and pasting canvas content in web browsers has been fixed as well.
+
+## Drawing and usability improvements
+
+> [#1356](https://github.com/LinwoodDev/Butterfly/issues/1356)
+> [#1364](https://github.com/LinwoodDev/Butterfly/issues/1364)
+> [#1365](https://github.com/LinwoodDev/Butterfly/issues/1365)
+> [#1349](https://github.com/LinwoodDev/Butterfly/issues/1349)
+> [#1348](https://github.com/LinwoodDev/Butterfly/issues/1348)
+
+Several rendering issues have been addressed.
+
+Blurred strokes and fills could erase content behind them when **Combine paths** was enabled. Image painter assets could also disappear after deleting all strokes that used them.
+
+Both issues have been fixed, alongside clipped strokes when navigating beyond the cached viewport and freezes caused by negative label sizes.
+
+There are also some improvements outside the canvas:
+
+* Note titles can now contain characters that are invalid in file names, with a preview of the converted file name.
+* Browser navigation now asks for confirmation before leaving a document with unsaved changes.
+* Desktop scrollbar edge dragging has been fixed.
+
+## What's next?
+
+Butterfly 2.6.4 has already become a fairly substantial update, but there's still more work planned before the stable release.
+
+I intend to publish **a few more 2.6.4 nightly builds** with additional improvements and fixes.
+
+Testing is especially important this time, considering the Flutter 3.50 upgrade and the number of changes to drawing, input handling and clipboard functionality. I want to make sure these improvements work reliably across different devices and platforms before calling 2.6.4 stable.
+
+If you're using the nightly builds, please give them a try and report any issues you encounter on [GitHub](https://github.com/LinwoodDev/Butterfly/issues).
+
+Thanks to everyone who has been testing, reporting bugs and helping improve Butterfly!
+
+## Full changelog
+
+* Allow input shortcuts to use tool presets and default the inverted stylus to the core eraser ([#1307](https://github.com/LinwoodDev/Butterfly/issues/1307))
+* Redesign the PDF import dialog and add a scale slider from 10% to 1000% ([#1359](https://github.com/LinwoodDev/Butterfly/issues/1359))
+* Accept note titles with invalid file name characters and preview the converted file name when creating notes ([#1349](https://github.com/LinwoodDev/Butterfly/issues/1349))
+* Preserve paste positions while the context menu is open and clear invisible selection targets after copying ([#1363](https://github.com/LinwoodDev/Butterfly/issues/1363))
+* Fix the first canvas click failing to place a PDF imported from the Add dialog
+* Fix crashes when importing, saving, and reopening large PDFs on Android
+* Fix browser navigation closing documents with unsaved changes without confirmation
+* Fix negative label sizing causing freezes ([#1365](https://github.com/LinwoodDev/Butterfly/issues/1365))
+* Fix touch contacts interrupting an active stylus stroke ([#1354](https://github.com/LinwoodDev/Butterfly/issues/1354))
+* Prevent Android navigation-bar swipes from drawing in fullscreen ([#1353](https://github.com/LinwoodDev/Butterfly/issues/1353))
+* Fix clipped strokes when moving the canvas beyond the cached viewport
+* Fix blurred pen strokes and fills erasing content behind them when Combine paths is enabled ([#1356](https://github.com/LinwoodDev/Butterfly/issues/1356))
+* Fix images, SVGs, PDF pages, and textured strokes and fills losing their assets when pasted between documents ([#1361](https://github.com/LinwoodDev/Butterfly/issues/1361))
+* Fix image painter assets being deleted when all strokes using the tool are removed ([#1364](https://github.com/LinwoodDev/Butterfly/issues/1364))
+* Fix copying and pasting canvas content in web browsers ([#1362](https://github.com/LinwoodDev/Butterfly/issues/1362))
+* Fix desktop scrollbar edge dragging ([#1348](https://github.com/LinwoodDev/Butterfly/issues/1348))
+* Upgrade to flutter 3.50
+* Upgrade snap from core24 to core26
