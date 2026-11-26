@@ -1,0 +1,105 @@
+---
+title: Swamp 0.2.0 released!
+date: "2026-11-26"
+author: codedoctor
+tags: [swamp]
+slug: "swamp/0.2.0"
+---
+
+It's been a while since the last Swamp release!
+
+Version 0.2.0 focuses on making Swamp easier to self-host, giving server administrators more control over their instances and improving the reliability of the protocol.
+
+The biggest addition is an optional authentication system, which opens up new possibilities for hosting private or restricted Swamp servers.
+
+Highlights:
+
+* 🔐 Optional authentication and room creation permissions
+* ⚙️ More server configuration options
+* 🖥️ Improved server console and startup options
+* 🛠️ Protocol and connection improvements
+* 📚 Updated API documentation
+
+## Authentication and room creation permissions
+
+Until now, anyone connecting to a Swamp server could create rooms. Depending on how you want to host your instance, this might not always be desirable.
+
+Swamp now supports **optional token-based authentication**, with two authentication sources:
+
+* Static JSON files containing tokens and user permissions
+* External REST APIs for validating access tokens
+
+Multiple authentication sources can be configured together.
+
+Server administrators can decide whether authentication is required to connect, whether users are allowed to create rooms and how many simultaneous connections a user can establish.
+
+This makes it possible to host private instances or integrate Swamp into an existing authentication infrastructure without implementing authentication directly in Swamp.
+
+Authentication remains disabled by default, so existing public server setups can continue working without additional configuration.
+
+The Dart client also supports an `accessToken` parameter to handle authentication automatically.
+
+## More server configuration options
+
+Server limits can now be configured directly through environment variables, which is particularly useful for Docker deployments.
+
+| Environment variable | Description |
+| --- | --- |
+| `SWAMP_MAX_PLAYERS_PER_ROOM` | Maximum players in a single room |
+| `SWAMP_MAX_CONCURRENT_PLAYERS` | Maximum players across all rooms |
+| `SWAMP_MAX_ROOMS` | Maximum number of active rooms |
+| `SWAMP_NO_DARK_ROOMS` | Disable rooms with limited visibility |
+
+Environment variables override values from the JSON configuration file, making it easier to adapt deployments without modifying configuration files.
+
+## Improved server console and startup options
+
+Swamp now supports command-line arguments for configuring the listening address, port, configuration file, log level and console behavior.
+
+For example:
+
+```bash
+swamp --host 127.0.0.1 --port 8080 --no-console
+```
+
+The server console has also received several improvements:
+
+* `rooms` — List active rooms and their capacity
+* `room <code>` — Inspect an individual room
+* `config` — Display the active configuration
+* `config reload` — Reload the configuration without restarting
+* `stop` — Shut down the server
+
+Invalid configuration changes are rejected while keeping the last valid configuration active.
+
+Shutdown handling has also been improved, particularly when running Swamp inside containers or as a system service.
+
+## Protocol and connection improvements
+
+Several parts of the protocol and client connection handling have been revised.
+
+Player kicks are now restricted to room hosts, and room-local player IDs, kick reasons and player list messages are handled more consistently.
+
+There are also improvements to connection initialization, cleanup, malformed protocol messages and secure Swamp URLs.
+
+These changes provide a more reliable foundation for applications using Swamp, including Butterfly and Setonix.
+
+## Updated API documentation
+
+> [#28](https://github.com/LinwoodDev/Swamp/pull/28)
+
+The API documentation now includes explicit event and command IDs, making it easier to implement Swamp clients in languages other than Dart without having to look through the existing client implementation.
+
+Thanks to [@mobilex1122](https://github.com/mobilex1122) for contributing these documentation improvements and fixing the documentation build dependencies.
+
+You can find more information about the new configuration options and protocol in the [Swamp documentation](https://swamp.linwood.dev/docs/v1/intro).
+
+## Full changelog
+
+* Add optional authentication and room creation authorization, including client access token support.
+* Add environment configuration for server player and room limits.
+* Add server startup flags, clarify configuration precedence, and improve console commands.
+* Improve client connection initialization, cleanup, and server shutdown handling.
+* Restrict player kicks to room hosts and fix room-local player IDs and kick reason decoding.
+* Fix player list framing, room and application ID comparisons, and default room player limits.
+* Improve handling of malformed protocol data and secure Swamp URLs.
